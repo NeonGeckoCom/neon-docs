@@ -1,0 +1,8 @@
+site_name: NeonAI© Documentation
+site_url: https://neongeckocom.github.io/neon-docs
+theme: readthedocs
+
+nav:
+    - Neon OS:
+        - Installation: neon_os_installation.md
+        - Updating: neon_os_updates.md
