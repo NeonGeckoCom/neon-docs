@@ -3,6 +3,7 @@ site_url: https://neongeckocom.github.io/neon-docs
 theme: readthedocs
 
 nav:
+    - Introduction: index.md
     - Neon OS:
-        - Installation: neon_os_installation.md
-        - Updating: neon_os_updates.md
+        - Installation: neon_os/neon_os_installation.md
+        - Updating: neon_os/neon_os_updates.md
