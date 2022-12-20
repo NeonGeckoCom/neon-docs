@@ -4,11 +4,11 @@ In most cases though, you can perform in-place updates from your device.
 
 ## Updates via Skill Intent (since Neon Core 22.10.2a15)
 For images as of December 20, 2022, you may check for updates by asking your
-device `"are there any updates?"`. Neon will let your current Neon Core version
-and if there is a newer one available. If a newer version available, you will be
+device `"are there any updates?"`. Neon will tell you the installed Neon Core version
+and if there is an update available. If a newer version is available, you will be
 given the option to install it.
 
-## Manual Update for Installations prior to Neon Core 22.10.2a15
+## Manual Update for Installations (prior to Neon Core 22.10.2a15)
 If you have an older version of Neon that does not include the update skill, you
 may still update your device manually without having to install a new image.
 
