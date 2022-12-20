@@ -7,3 +7,5 @@ nav:
     - Neon OS:
         - Installation: neon_os/neon_os_installation.md
         - Updating: neon_os/neon_os_updates.md
+        - Debos Base Images: neon_os/neon_debos.md
+        - Neon Image Recipes: neon_os/neon_image_recipe.md
