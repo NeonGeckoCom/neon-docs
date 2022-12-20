@@ -1,6 +1,8 @@
 # NeonOS Updates
 You can always download the latest NeonOS image from [neon.ai](https://neon.ai/NeonAIforMycroftMarkII).
-In most cases though, you can perform in-place updates from your device.
+In most cases though, you can perform in-place updates from your device. Updates
+will generally take about 30 minutes to complete and once started, you will not
+be able to use your device until updates finish.
 
 ## Updates via Skill Intent (since Neon Core 22.10.2a15)
 For images as of December 20, 2022, you may check for updates by asking your
@@ -33,6 +35,6 @@ to start the update.
 ### Run the one-time script
 Run the following commands to download and run the one-time update script:
 > ```shell
-> wget https://raw.githubusercontent.com/NeonGeckoCom/neon-image-recipe/FEAT_ImagePatches/patches/add_updater_service.sh
+> wget https://raw.githubusercontent.com/NeonGeckoCom/neon-image-recipe/a756628e82d7c3d6350896a8b068b7094de60625/patches/add_updater_service.sh
 > bash add_updater_service.sh
 > ```
