@@ -2,8 +2,8 @@ name: Build Page
 
 on:
   push:
-    branches:
-      - master
+#    branches:
+#      - master
   workflow_dispatch:
 
 jobs:
