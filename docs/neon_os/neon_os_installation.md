@@ -11,7 +11,7 @@ The website is updated with new images as they are published and images may be w
 an 8GB or larger USB drive or Micro SD card.
 
 ### Prepared Boot Media
-If you prefer a simpler solution, NeonAI© sells prepared boot devices on 
+If you prefer a simpler solution, NeonAI® sells prepared boot devices on 
 our [square site](https://neonai.square.site/s/shop). USB drives with the latest
 NeonOS are available for purchase and can be shipped internationally.
 
