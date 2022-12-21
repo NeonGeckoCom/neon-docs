@@ -1,4 +1,4 @@
-site_name: NeonAI© Documentation
+site_name: NeonAI® Documentation
 site_url: https://neongeckocom.github.io/neon-docs
 theme: readthedocs
 
@@ -10,3 +10,5 @@ nav:
         - Updating: neon_os/neon_os_updates.md
         - Debos Base Images: neon_os/neon_debos.md
         - Neon Image Recipes: neon_os/neon_image_recipe.md
+    - Neon Core:
+          - Introduction: neon_core/index.md
