@@ -14,9 +14,9 @@ nav:
           - Introduction: neon_core/index.md
           - Quick Start: neon_core/quick_start.md
           - Core Modules:
+              - Messagebus: neon_core/neon_messagebus.md
               - Speech: neon_core/neon_speech.md
               - Audio: neon_core/neon_audio.md
               - Skills: neon_core/neon_skills.md
-              - Messagebus: neon_core/neon_messagebus.md
-              - Enclosure: neon_core/neon_enclosure.md
               - GUI: neon_core/neon_gui.md
+              - Enclosure: neon_core/neon_enclosure.md
