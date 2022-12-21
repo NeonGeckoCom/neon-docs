@@ -1,5 +1,5 @@
 # Neon Documentation
-Welcome to the official NeonAI© Documentation. All NeonAI© project documentation
+Welcome to the official Neon AI© Documentation. All Neon AI© project documentation
 is available here and is updated regularly from source project repositories.
 
 ## Get Involved
@@ -17,7 +17,7 @@ We are proud to partner with other projects with our shared goal of making great
 open source products.
 
 ### OpenVoiceOS
-The OpenVoiceOS project is a closely related project to NeonAI© with many shared
+The OpenVoiceOS project is a closely related project to Neon AI© with many shared
 components and regular collaboration. You can find more information at 
 [OpenVoiceOS.com](https://openvoiceos.com/), and in their chat rooms
 [on Matrix](https://matrix.to/#/!XFpdtmgyCoPDxOMPpH:matrix.org?via=matrix.org).
