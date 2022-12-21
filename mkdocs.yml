@@ -12,3 +12,11 @@ nav:
         - Neon Image Recipes: neon_os/neon_image_recipe.md
     - Neon Core:
           - Introduction: neon_core/index.md
+          - Quick Start: neon_core/quick_start.md
+          - Core Modules:
+              - Speech: neon_core/neon_speech.md
+              - Audio: neon_core/neon_audio.md
+              - Skills: neon_core/neon_skills.md
+              - Messagebus: neon_core/neon_messagebus.md
+              - Enclosure: neon_core/neon_enclosure.md
+              - GUI: neon_core/neon_gui.md
