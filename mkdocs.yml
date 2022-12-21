@@ -5,6 +5,7 @@ theme: readthedocs
 nav:
     - Introduction: index.md
     - Neon OS:
+        - Introduction: neon_os/index.md
         - Installation: neon_os/neon_os_installation.md
         - Updating: neon_os/neon_os_updates.md
         - Debos Base Images: neon_os/neon_debos.md
