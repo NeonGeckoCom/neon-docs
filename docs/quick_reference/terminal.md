@@ -25,4 +25,22 @@ There's an authenticity warning or error when I try to SSH to my device
     your computer will ask you if this is a trusted connection; type `yes` to connect
     after making sure you have the correct IP address entered.
 > - If a different device is found at an address you've used before, you'll have a
-    different warning that the host device is changed
+    different warning like the one below that the host device is changed. You can
+    follow the directions to remove the old device key with: 
+    `ssh-keygen -f "/home/d_mcknight/.ssh/known_hosts" -R "<device_ip>"`
+
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+    Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+    It is also possible that a host key has just been changed.
+    The fingerprint for the ED25519 key sent by the remote host is
+    SHA256:A6cPMYCjIHujtDAp1uVrcMId+5416d8VOqdHIPu1Sl0.
+    Please contact your system administrator.
+    Add correct host key in /home/d_mcknight/.ssh/known_hosts to get rid of this message.
+    Offending ECDSA key in /home/d_mcknight/.ssh/known_hosts:12
+      remove with:
+      ssh-keygen -f "/home/d_mcknight/.ssh/known_hosts" -R "192.168.1.142"
+    Host key for 192.168.1.142 has changed and you have requested strict checking.
+    Host key verification failed.
