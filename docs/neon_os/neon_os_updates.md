@@ -17,11 +17,31 @@ may still update your device manually without having to install a new image.
 ### Update via SSH
 If you have another computer available on the same network as your Neon device,
 you can connect via SSH to start the update.
-1. Ask your Neon device `"what is your IP address"`.
-2. From a terminal on your other computer, `ssh neon@<device ip address`.
-3. The default password for neon images is `neon`.
-   You will be prompted to change this after your first login.
-4. [Run the one-time update script](#run-the-one-time-script)
+1. Ask your Neon device `"what is your IP address"` and type it somewhere you can copy & paste from.
+2. From a terminal on your other computer, enter `ssh neon@<device ip address`. 
+   
+   *(Windows 10/11 has an app called 'Terminal' that you can find using the 'search' feature in your Start menu. It will open a terminal window for you.)*
+   
+   Your terminal address will differ, but here is an example:
+   
+   ![image](https://user-images.githubusercontent.com/100237954/209027681-6d966348-2733-451d-95a7-32a5869e950e.png)
+
+   You might see this warning: 
+   
+   ![image](https://user-images.githubusercontent.com/100237954/209027884-96830a15-64b1-4871-b7e2-1e6bfb10b589.png)
+
+   That's normal. Type in 'yes' and press enter. After the change is made, you'll be returned to where you started.
+   ![image](https://user-images.githubusercontent.com/100237954/209027927-d7035228-0cc2-4325-85e6-4cade6189da0.png)
+
+3. Type in `ssh neon@<device ip address` again to start the password update process. You'll be prompted to enter the password. The default password for Neon AI OS images is 'neon'. 
+   It will not show in the terminal window when you type passwords. Type in neon, and press enter. Follow the prompts to set a new password.
+![image](https://user-images.githubusercontent.com/100237954/209028532-1bb47ea8-1537-4270-a072-fa98642c09af.png)
+   
+4. One more time, type in `ssh neon@<device ip address` and enter your password.                                          
+   Your terminal prompt should change to show that you are accessing Neon on your Mark II device. For example: 
+   ![image](https://user-images.githubusercontent.com/100237954/209031943-4c8c4633-7128-4446-b514-b4709e7cf097.png)
+
+   **Now [Run the one-time update script](#run-the-one-time-script)**
 
 ### Update via on-device terminal
 If you have a USB keyboard available, you can open a terminal on your Neon device
@@ -34,7 +54,15 @@ to start the update.
 
 ### Run the one-time script
 Run the following commands to download and run the one-time update script:
-> ```shell
+> ```
 > wget https://raw.githubusercontent.com/NeonGeckoCom/neon-image-recipe/a756628e82d7c3d6350896a8b068b7094de60625/patches/add_updater_service.sh
 > bash add_updater_service.sh
 > ```
+   Example of running wget:
+   
+   ![image](https://user-images.githubusercontent.com/100237954/209029608-cc138b16-8579-445a-aa5a-4ab033c24e9f.png)   
+   Example of running bash:
+   
+   ![image](https://user-images.githubusercontent.com/100237954/209029661-ad42346a-9efd-4955-9f24-6c289894d1cf.png)
+   
+   **Your Mark II display should change to show the Neon logo, and words showing its status. This may take a couple minutes, or longer depending on your connection speed. When you see the home screen return, you're good to go!**
