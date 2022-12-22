@@ -14,21 +14,21 @@ and even Windows [PowerShell](https://en.wikipedia.org/wiki/PowerShell).
   regular shell, it will exit.
 
 ## FAQ
-Typed input isn't showing up in the terminal
-> - First, make sure the window you're trying to type into has focus (click or tap on it).
-    Usually, you'll see a blinking line or square where you're typing
-> - If you're entering a password, input is often not printed to the terminal for security.
-    Type your password and press `Enter`; `Backspace` should work normally too.
+### Typed input isn't showing up in the terminal
+- First, make sure the window you're trying to type into has focus (click or tap on it).
+   Usually, you'll see a blinking line or square where you're typing
+- If you're entering a password, input is often not printed to the terminal for security.
+   Type your password and press `Enter`; `Backspace` should work normally too.
 
-There's an authenticity warning or error when I try to SSH to my device
-> - When you try to connect to a new device via [SSH](https://en.wikipedia.org/wiki/Secure_Shell),
-    your computer will ask you if this is a trusted connection; type `yes` to connect
-    after making sure you have the correct IP address entered.
-> - If a different device is found at an address you've used before, you'll have a
-    different warning like the one below that the host device is changed. You can
-    follow the directions to remove the old device key with: 
-    `ssh-keygen -f "/home/d_mcknight/.ssh/known_hosts" -R "<device_ip>"`
-
+### There's an authenticity warning or error when I try to SSH to my device
+- When you try to connect to a new device via [SSH](https://en.wikipedia.org/wiki/Secure_Shell),
+   your computer will ask you if this is a trusted connection; type `yes` to connect
+   after making sure you have the correct IP address entered.
+- If a different device is found at an address you've used before, you'll have a
+  different warning like the one below that the host device is changed. You can
+  follow the directions to remove the old device key with: 
+  `ssh-keygen -f "/home/d_mcknight/.ssh/known_hosts" -R "<device_ip>"`
+    ```
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -44,3 +44,4 @@ There's an authenticity warning or error when I try to SSH to my device
       ssh-keygen -f "/home/d_mcknight/.ssh/known_hosts" -R "192.168.1.142"
     Host key for 192.168.1.142 has changed and you have requested strict checking.
     Host key verification failed.
+    ```
