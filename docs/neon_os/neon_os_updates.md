@@ -55,9 +55,10 @@ to start the update.
 ### Run the one-time script
 Run the following commands to download and run the one-time update script:
 > ```
-> wget https://raw.githubusercontent.com/NeonGeckoCom/neon-image-recipe/a756628e82d7c3d6350896a8b068b7094de60625/patches/add_updater_service.sh
+> wget https://raw.githubusercontent.com/NeonGeckoCom/neon-image-recipe/master/patches/add_updater_service.sh 
 > bash add_updater_service.sh
 > ```
+   
    Example of running wget:
    
    ![image](https://user-images.githubusercontent.com/100237954/209029608-cc138b16-8579-445a-aa5a-4ab033c24e9f.png)   
