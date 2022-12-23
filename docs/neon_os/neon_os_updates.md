@@ -55,11 +55,13 @@ to start the update.
 ### Run the one-time script
 Run the following commands to download and run the one-time update script:
 > ```
-> wget https://raw.githubusercontent.com/NeonGeckoCom/neon-image-recipe/master/patches/add_updater_service.sh 
+> wget https://neon.ai/one-time-update 
 > bash add_updater_service.sh
 > ```
    
    Example of running wget:
+   
+   *(The https://neon.ai/one-time-update page is a friendly url which redirects to the longer one I used in the example.)*
    
    ![image](https://user-images.githubusercontent.com/100237954/209029608-cc138b16-8579-445a-aa5a-4ab033c24e9f.png)   
    Example of running bash:
