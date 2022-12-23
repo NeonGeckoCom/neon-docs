@@ -56,12 +56,12 @@ to start the update.
 Run the following commands to download and run the one-time update script:
 > ```
 > wget https://neon.ai/one-time-update 
-> bash one-time-update.sh
+> bash one-time-update
 > ```
    
    Example of running wget:
    
-   *(The https://neon.ai/one-time-update page is a friendly url which redirects to the longer one I used in the example.)*
+   *(The https://neon.ai/one-time-update page is a friendly url which redirects to the longer one used in the example.)*
    
    ![image](https://user-images.githubusercontent.com/100237954/209029608-cc138b16-8579-445a-aa5a-4ab033c24e9f.png)   
 
