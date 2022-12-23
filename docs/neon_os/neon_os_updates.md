@@ -56,7 +56,7 @@ to start the update.
 Run the following commands to download and run the one-time update script:
 > ```
 > wget https://neon.ai/one-time-update 
-> bash add_updater_service.sh
+> bash one-time-update.sh
 > ```
    
    Example of running wget:
@@ -64,8 +64,5 @@ Run the following commands to download and run the one-time update script:
    *(The https://neon.ai/one-time-update page is a friendly url which redirects to the longer one I used in the example.)*
    
    ![image](https://user-images.githubusercontent.com/100237954/209029608-cc138b16-8579-445a-aa5a-4ab033c24e9f.png)   
-   Example of running bash:
-   
-   ![image](https://user-images.githubusercontent.com/100237954/209029661-ad42346a-9efd-4955-9f24-6c289894d1cf.png)
-   
+
    **Your Mark II display should change to show the Neon logo, and words showing its status. This may take a couple minutes, or longer depending on your connection speed. When you see the home screen return, you're good to go!**
