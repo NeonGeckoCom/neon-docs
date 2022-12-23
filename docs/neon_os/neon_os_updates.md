@@ -55,14 +55,14 @@ to start the update.
 ### Run the one-time script
 Run the following commands to download and run the one-time update script:
 > ```
-> wget https://raw.githubusercontent.com/NeonGeckoCom/neon-image-recipe/a756628e82d7c3d6350896a8b068b7094de60625/patches/add_updater_service.sh
-> bash add_updater_service.sh
+> wget https://neon.ai/one-time-update 
+> bash one-time-update
 > ```
+   
    Example of running wget:
    
+   *(The https://neon.ai/one-time-update page is a friendly url which redirects to the longer one used in the example.)*
+   
    ![image](https://user-images.githubusercontent.com/100237954/209029608-cc138b16-8579-445a-aa5a-4ab033c24e9f.png)   
-   Example of running bash:
-   
-   ![image](https://user-images.githubusercontent.com/100237954/209029661-ad42346a-9efd-4955-9f24-6c289894d1cf.png)
-   
+
    **Your Mark II display should change to show the Neon logo, and words showing its status. This may take a couple minutes, or longer depending on your connection speed. When you see the home screen return, you're good to go!**
