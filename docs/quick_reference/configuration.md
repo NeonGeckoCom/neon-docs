@@ -34,7 +34,7 @@ Neon Core adds support for multiple users which is not currently implemented in
 Mycroft or OVOS. Part of this support includes separating user configuration from
 core configuration, since there might be multiple users connected to one core.
 
-### Core Configuration Changes
+### Core Configuration Overrides
 The core configuration values for location, units, and language are still specified
 and are treated as default values. If a user location is not set, then
 core configuration values are used. Some configuration references are also not tied
