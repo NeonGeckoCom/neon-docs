@@ -4,10 +4,13 @@ theme: readthedocs
 
 nav:
     - About: index.md
+    - Overview:
+        - Definitions: overview/definitions
     - Neon Core:
           - Introduction: neon_core/index.md
           - Quick Start: neon_core/quick_start.md
           - Core Modules:
+                - Introduction: neon_core/index.md
                 - Messagebus: neon_core/neon_messagebus.md
                 - Speech: neon_core/neon_speech.md
                 - Audio: neon_core/neon_audio.md
