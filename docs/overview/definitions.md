@@ -12,7 +12,7 @@ More information about these modules can be found in the
 of this documentation.
 
 ### Neon OS
-Neon OS refers to operating systems (sometimes referred to as 'images') that
+Neon OS (and Neon AI OS) refers to operating systems (sometimes referred to as 'images') that
 include Neon Core and other software. More information can be found in the
 [Neon OS](https://neongeckocom.github.io/neon-docs/neon_os/) section of this
 documentation.
