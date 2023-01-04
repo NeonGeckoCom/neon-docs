@@ -66,3 +66,29 @@ Run the following commands to download and run the one-time update script:
    ![image](https://user-images.githubusercontent.com/100237954/209029608-cc138b16-8579-445a-aa5a-4ab033c24e9f.png)   
 
    **Your Mark II display should change to show the Neon logo, and words showing its status. This may take a couple minutes, or longer depending on your connection speed. When you see the home screen return, you're good to go!**
+
+## Update Process
+The update process may vary slightly as systems mature, but a description of the
+components is included here.
+
+### Neon Updates Skill
+The [Neon Updates Skill](https://github.com/NeonGeckoCom/skill-update/tree/dev)
+handles user requests to check for updates. If an update is requested, the skill
+will emit a message to start an update which the [PHAL Plugin](#core-updater-plugin)
+will handle. This skill is also where settings determine if pre-release versions
+are included in updates.
+
+### Core Updater Plugin
+Updates are managed by the [Core Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-core-updater)
+which is configured in Neon OS to run the `neon-updater` SystemD service. The
+[`neon-updater`](#neon-updater-service) service is responsible for backing up 
+the current system and installing a newer version of `neon-core`.
+
+### neon-updater Service
+The `neon-updater` service comes from 
+[neon-image-recipe](https://github.com/NeonGeckoCom/neon-image-recipe/blob/master/10_updater/configure_updates.sh)
+and is responsible for performing Python package updates. The service will stop
+all core processes, backup the current Python environment, and then update 
+Python packages. After installation, the service will check that the core services
+load before optionally rolling back failed changes and then restarting Neon.
+
