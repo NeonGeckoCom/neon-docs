@@ -28,3 +28,4 @@ nav:
           - Terminal: quick_reference/terminal.md
           - Logs: quick_reference/logging.md
           - Configuration: quick_reference/configuration.md
+          - Installing Skills: quick_reference/installing_skills.md
