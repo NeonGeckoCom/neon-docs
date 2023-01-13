@@ -1,6 +1,10 @@
 # Neon Enclosure
-Enclosure module to handle any core interactions with hardware, including volume controls,
-lights, buttons, etc.
+The enclosure module implements the Platform and Hardware Abstraction Layer (PHAL)
+from [OpenVoiceOS](https://github.com/OpenVoiceOS/ovos-PHAL). This service loads
+PHAL plugins that provide different functionality to the core; plugins primarily 
+differ from skills in that they do not have any intents and that they may only
+be valid in certain core environments (i.e. only for particular hardware or
+operating system environments).
 
 ## Admin Services
 `neon_enclosure.admin` contains a service much like `neon_enclosure`, but plugins
