@@ -25,6 +25,22 @@ Skill installation from git has the possibility of breaking Python dependencies.
 If you run into trouble after installing a skill, you may want to perform a
 factory reset to get back to a set of working Python packages.
 
+## Locating Installed Skills
+Skills are generally installed to one of two locations, depending on whether they
+were installed as Python packages or cloned from Git.
+
+### Python Packages
+For Python packaged skills, a skill is installed like any other Python package.
+In most cases, you should have core modules and skills installed to a `venv`. On
+Neon OS devices, this environment is located at `/home/neon/venv` and skills can
+be found at `/home/neon/venv/lib/python3.7/site-packages/skill_*`.
+
+### Git Cloned Skills
+For skills installed from Git (usually using OSM), the default install location
+is `~/.local/share/neon/skills`, but this may be configured in `neon.yaml` to
+any location. More detailed configuration documentation is available 
+[in the OVOS Docs](https://openvoiceos.github.io/community-docs/config/).
+
 ## Other Skill Indices
 ### OpenVoiceOS Organization
 There are several skills in the [OpenVoiceOS organization](https://github.com/OpenVoiceOS?q=skill-ovos&type=all&language=&sort=)
