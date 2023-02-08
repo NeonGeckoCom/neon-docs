@@ -6,6 +6,7 @@ nav:
   - About: index.md
   - Overview:
     - Definitions: overview/definitions
+    - Frequently Asked Questions: overview/faq
   - Neon Core:
     - Introduction: neon_core/index.md
     - Quick Start: neon_core/quick_start.md
