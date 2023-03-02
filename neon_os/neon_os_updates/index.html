@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://neongeckocom.github.io/neon-docs/neon_os/neon_os_updates/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Updating - NeonAI® Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Updating";
+        var mkdocs_page_input_path = "neon_os/neon_os_updates.md";
+        var mkdocs_page_url = "/neon-docs/neon_os/neon_os_updates/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> NeonAI® Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../overview/definitions">Definitions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../overview/faq">Frequently Asked Questions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon Core</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_core/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_core/quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Core Modules</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_messagebus/">Messagebus</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_speech/">Speech</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_audio/">Audio</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../neon_core/neon_skills.md">Skills</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_gui/">GUI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_enclosure/">Enclosure</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon OS</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../neon_os_installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Updating</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#updates-via-skill-intent-since-neon-core-22102a15">Updates via Skill Intent (since Neon Core 22.10.2a15)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#manual-update-for-installations-prior-to-neon-core-22102a15">Manual Update for Installations (prior to Neon Core 22.10.2a15)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#update-via-ssh">Update via SSH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#update-via-on-device-terminal">Update via on-device terminal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#run-the-one-time-script">Run the one-time script</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#update-process">Update Process</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#neon-updates-skill">Neon Updates Skill</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#core-updater-plugin">Core Updater Plugin</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#neon-updater-service">neon-updater Service</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../neon_debos/">Debos Base Images</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../neon_image_recipe/">Neon Image Recipes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tips/">Tips</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Quick Reference Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/terminal/">Terminal</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/logging/">Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/configuration/">Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/installing_skills/">Installing Skills</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/installing_plugins/">Installing Plugins</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer References</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developers/git_overview/">Working with Git(Hub)</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">NeonAI® Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Neon OS &raquo;</li>
+      <li>Updating</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="neonos-updates">NeonOS Updates</h1>
+<p>You can always download the latest NeonOS image from <a href="https://neon.ai/NeonAIforMycroftMarkII">neon.ai</a>.
+In most cases though, you can perform in-place updates from your device. Updates
+will generally take about 30 minutes to complete and once started, you will not
+be able to use your device until updates finish.</p>
+<h2 id="updates-via-skill-intent-since-neon-core-22102a15">Updates via Skill Intent (since Neon Core 22.10.2a15)</h2>
+<p>For images as of December 20, 2022, you may check for updates by asking your
+device <code>"are there any updates?"</code>. Neon will tell you the installed Neon Core version
+and if there is an update available. If a newer version is available, you will be
+given the option to install it.</p>
+<h2 id="manual-update-for-installations-prior-to-neon-core-22102a15">Manual Update for Installations (prior to Neon Core 22.10.2a15)</h2>
+<p>If you have an older version of Neon that does not include the update skill, you
+may still update your device manually without having to install a new image.</p>
+<h3 id="update-via-ssh">Update via SSH</h3>
+<p>If you have another computer available on the same network as your Neon device,
+you can connect via SSH to start the update.
+1. Ask your Neon device <code>"what is your IP address"</code> and type it somewhere you can copy &amp; paste from.
+2. From a terminal on your other computer, enter <code>ssh neon@&lt;device ip address</code>. </p>
+<p><em>(Windows 10/11 has an app called 'Terminal' that you can find using the 'search' feature in your Start menu. It will open a terminal window for you.)</em></p>
+<p>Your terminal address will differ, but here is an example:</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/100237954/209027681-6d966348-2733-451d-95a7-32a5869e950e.png" /></p>
+<p>You might see this warning: </p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/100237954/209027884-96830a15-64b1-4871-b7e2-1e6bfb10b589.png" /></p>
+<p>That's normal. Type in 'yes' and press enter. After the change is made, you'll be returned to where you started.
+   <img alt="image" src="https://user-images.githubusercontent.com/100237954/209027927-d7035228-0cc2-4325-85e6-4cade6189da0.png" /></p>
+<ol>
+<li>
+<p>Type in <code>ssh neon@&lt;device ip address</code> again to start the password update process. You'll be prompted to enter the password. The default password for Neon AI OS images is 'neon'. 
+   It will not show in the terminal window when you type passwords. Type in neon, and press enter. Follow the prompts to set a new password.
+<img alt="image" src="https://user-images.githubusercontent.com/100237954/209028532-1bb47ea8-1537-4270-a072-fa98642c09af.png" /></p>
+</li>
+<li>
+<p>One more time, type in <code>ssh neon@&lt;device ip address</code> and enter your password.                                        <br />
+   Your terminal prompt should change to show that you are accessing Neon on your Mark II device. For example: 
+   <img alt="image" src="https://user-images.githubusercontent.com/100237954/209031943-4c8c4633-7128-4446-b514-b4709e7cf097.png" /></p>
+</li>
+</ol>
+<p><strong>Now <a href="#run-the-one-time-script">Run the one-time update script</a></strong></p>
+<h3 id="update-via-on-device-terminal">Update via on-device terminal</h3>
+<p>If you have a USB keyboard available, you can open a terminal on your Neon device
+to start the update.
+1. Connect a USB keyboard to your Neon device.
+2. Press <code>ctrl</code>+<code>shift</code>+<code>F1</code> to open a terminal.
+3. Tap or click on the terminal.
+4. <a href="#run-the-one-time-script">Run the one-time update script</a></p>
+<h3 id="run-the-one-time-script">Run the one-time script</h3>
+<p>Run the following commands to download and run the one-time update script:</p>
+<blockquote>
+<p><code>wget https://neon.ai/one-time-update 
+bash one-time-update</code></p>
+</blockquote>
+<p>Example of running wget:</p>
+<p><em>(The https://neon.ai/one-time-update page is a friendly url which redirects to the longer one used in the example.)</em></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/100237954/209029608-cc138b16-8579-445a-aa5a-4ab033c24e9f.png" />   </p>
+<p><strong>Your Mark II display should change to show the Neon logo, and words showing its status. This may take a couple minutes, or longer depending on your connection speed. When you see the home screen return, you're good to go!</strong></p>
+<h2 id="update-process">Update Process</h2>
+<p>The update process may vary slightly as systems mature, but a description of the
+components is included here.</p>
+<h3 id="neon-updates-skill">Neon Updates Skill</h3>
+<p>The <a href="https://github.com/NeonGeckoCom/skill-update/tree/dev">Neon Updates Skill</a>
+handles user requests to check for updates. If an update is requested, the skill
+will emit a message to start an update which the <a href="#core-updater-plugin">PHAL Plugin</a>
+will handle. This skill is also where settings determine if pre-release versions
+are included in updates.</p>
+<h3 id="core-updater-plugin">Core Updater Plugin</h3>
+<p>Updates are managed by the <a href="https://github.com/NeonGeckoCom/neon-phal-plugin-core-updater">Core Updater Plugin</a>
+which is configured in Neon OS to run the <code>neon-updater</code> SystemD service. The
+<a href="#neon-updater-service"><code>neon-updater</code></a> service is responsible for backing up 
+the current system and installing a newer version of <code>neon-core</code>.</p>
+<h3 id="neon-updater-service">neon-updater Service</h3>
+<p>The <code>neon-updater</code> service comes from 
+<a href="https://github.com/NeonGeckoCom/neon-image-recipe/blob/master/10_updater/configure_updates.sh">neon-image-recipe</a>
+and is responsible for performing Python package updates. The service will stop
+all core processes, backup the current Python environment, and then update 
+Python packages. After installation, the service will check that the core services
+load before optionally rolling back failed changes and then restarting Neon.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../neon_os_installation/" class="btn btn-neutral float-left" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../neon_debos/" class="btn btn-neutral float-right" title="Debos Base Images">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../neon_os_installation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../neon_debos/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

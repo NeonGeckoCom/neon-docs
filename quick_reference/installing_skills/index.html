@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://neongeckocom.github.io/neon-docs/quick_reference/installing_skills/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Installing Skills - NeonAI® Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Installing Skills";
+        var mkdocs_page_input_path = "quick_reference/installing_skills.md";
+        var mkdocs_page_url = "/neon-docs/quick_reference/installing_skills/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> NeonAI® Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../overview/definitions">Definitions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../overview/faq">Frequently Asked Questions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon Core</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_core/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_core/quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Core Modules</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_messagebus/">Messagebus</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_speech/">Speech</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_audio/">Audio</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../neon_core/neon_skills.md">Skills</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_gui/">GUI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_enclosure/">Enclosure</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon OS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_os_installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_os_updates/">Updating</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_debos/">Debos Base Images</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_image_recipe/">Neon Image Recipes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/tips/">Tips</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Quick Reference Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../terminal/">Terminal</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../logging/">Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Installing Skills</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#default-neon-skills">Default Neon Skills</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installing-skills-from-github">Installing Skills from GitHub</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#other-considerations">Other Considerations</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#locating-installed-skills">Locating Installed Skills</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#python-packages">Python Packages</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#git-cloned-skills">Git Cloned Skills</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-skill-indices">Other Skill Indices</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#openvoiceos-organization">OpenVoiceOS Organization</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mycroft-marketplace">Mycroft Marketplace</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#andlos-list">Andlo's List</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installing_plugins/">Installing Plugins</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer References</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developers/git_overview/">Working with Git(Hub)</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">NeonAI® Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Quick Reference Guides &raquo;</li>
+      <li>Installing Skills</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="installing-skills">Installing Skills</h1>
+<p>Most distributions of Neon Core will include some installed skills. 
+<a href="https://openvoiceos.github.io/community-docs/osm/">OVOS Skills Manager</a> (OSM) 
+can be used to install new skills, including Mycroft and OVOS community skills.
+The simple answer to "how do I install a skill?" is: <code>osm install &lt;skill_url&gt;</code>.</p>
+<h2 id="default-neon-skills">Default Neon Skills</h2>
+<p>Many <a href="https://github.com/NeonGeckoCom/neon_skills">Neon skills</a> are included by
+default and all of them should be installable via <code>pip</code>. Many of the skills can
+be installed <a href="https://pypi.org/search/?q=neon-skill">from PyPI</a> (i.e. <code>pip install
+neon-skill-translation</code>), and any containing <code>setup.py</code> can be installed from git
+(i.e. <code>pip install git+https://github.com/NeonGeckoCom/skill-translation</code>).</p>
+<h2 id="installing-skills-from-github">Installing Skills from GitHub</h2>
+<p>There are many community skills published to GitHub that may be searched for and
+installed using <a href="https://openvoiceos.github.io/community-docs/osm/">OSM</a>. Hints
+are available from the CLI via <code>osm --help</code> or <code>osm install --help</code>. Beware that
+not all skills are tested and skills installed from GitHub may not work, may be
+malicious, or may no longer be maintained. The <a href="#other-skill-indices">skill lists below</a>
+have generally been evaluated to some degree, but still be careful about running
+any code from the internet.</p>
+<h3 id="other-considerations">Other Considerations</h3>
+<p>Skill installation from git has the possibility of breaking Python dependencies.
+If you run into trouble after installing a skill, you may want to perform a
+factory reset to get back to a set of working Python packages.</p>
+<h2 id="locating-installed-skills">Locating Installed Skills</h2>
+<p>Skills are generally installed to one of two locations, depending on whether they
+were installed as Python packages or cloned from Git.</p>
+<h3 id="python-packages">Python Packages</h3>
+<p>For Python packaged skills, a skill is installed like any other Python package.
+In most cases, you should have core modules and skills installed to a <code>venv</code>. On
+Neon OS devices, this environment is located at <code>/home/neon/venv</code> and skills can
+be found at <code>/home/neon/venv/lib/python3.7/site-packages/skill_*</code>.</p>
+<h3 id="git-cloned-skills">Git Cloned Skills</h3>
+<p>For skills installed from Git (usually using OSM), the default install location
+is <code>~/.local/share/neon/skills</code>, but this may be configured in <code>neon.yaml</code> to
+any location. More detailed configuration documentation is available 
+<a href="https://openvoiceos.github.io/community-docs/config/">in the OVOS Docs</a>.</p>
+<h2 id="other-skill-indices">Other Skill Indices</h2>
+<h3 id="openvoiceos-organization">OpenVoiceOS Organization</h3>
+<p>There are several skills in the <a href="https://github.com/OpenVoiceOS?q=skill-ovos&amp;type=all&amp;language=&amp;sort=">OpenVoiceOS organization</a>
+that may be <code>pip</code> installed.</p>
+<h3 id="mycroft-marketplace">Mycroft Marketplace</h3>
+<p>There are also skills in the <a href="https://github.com/MycroftAI/mycroft-skills">Mycroft Marketplace</a>
+(note that there are more open Pull Requests there too).</p>
+<h3 id="andlos-list">Andlo's List</h3>
+<p>There is a list of Mycroft skills maintained by community member
+<a href="https://github.com/andlo/mycroft-skills-list-gitbook/tree/master/skills">andlo on GitHub</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../configuration/" class="btn btn-neutral float-left" title="Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../installing_plugins/" class="btn btn-neutral float-right" title="Installing Plugins">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../configuration/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../installing_plugins/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

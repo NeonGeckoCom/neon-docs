@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://neongeckocom.github.io/neon-docs/neon_core/neon_gui/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>GUI - NeonAI® Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "GUI";
+        var mkdocs_page_input_path = "neon_core/neon_gui.md";
+        var mkdocs_page_url = "/neon-docs/neon_core/neon_gui/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> NeonAI® Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../overview/definitions">Definitions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../overview/faq">Frequently Asked Questions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon Core</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Core Modules</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../neon_messagebus/">Messagebus</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../neon_speech/">Speech</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../neon_audio/">Audio</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../neon_skills.md">Skills</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">GUI</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#neon-enhancements">Neon Enhancements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#compatibility">Compatibility</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#running-in-docker">Running in Docker</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../neon_enclosure/">Enclosure</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon OS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_os_installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_os_updates/">Updating</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_debos/">Debos Base Images</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_image_recipe/">Neon Image Recipes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/tips/">Tips</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Quick Reference Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/terminal/">Terminal</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/logging/">Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/configuration/">Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/installing_skills/">Installing Skills</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/installing_plugins/">Installing Plugins</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer References</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developers/git_overview/">Working with Git(Hub)</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">NeonAI® Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Neon Core &raquo;</li>
+          <li>Core Modules &raquo;</li>
+      <li>GUI</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="neon-gui">Neon GUI</h1>
+<p>GUI Module for Neon Core. This module extracts the GUI components from the 
+<a href="https://github.com/MycroftAI/skill-mark-2">Mycroft Mark 2 Skill</a> and the <code>enclosure</code> module
+from <a href="https://github.com/MycroftAI/mycroft-core/tree/dev/mycroft/enclosure">mycroft-core</a>. </p>
+<h2 id="neon-enhancements">Neon Enhancements</h2>
+<p>Isolating the GUI to a standalone module allows for standardized implementation of common 
+components.</p>
+<h2 id="compatibility">Compatibility</h2>
+<p>This package can be treated as a drop-in replacement for the GUI components in <code>skill-mark-2</code>.
+<code>RestingScreen</code>, and gui bus events are handled here.</p>
+<h2 id="running-in-docker">Running in Docker</h2>
+<p>The included <code>Dockerfile</code> may be used to build a docker container for the neon_messagebus module. The below command may be used
+to start the container.</p>
+<pre><code class="language-shell">docker run -d \
+--name=neon_gui \
+--network=host \
+neon_gui
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../neon_audio/" class="btn btn-neutral float-left" title="Audio"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../neon_enclosure/" class="btn btn-neutral float-right" title="Enclosure">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../neon_audio/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../neon_enclosure/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

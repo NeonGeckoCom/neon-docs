@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://neongeckocom.github.io/neon-docs/developers/git_overview/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Working with Git(Hub) - NeonAI® Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Working with Git(Hub)";
+        var mkdocs_page_input_path = "developers/git_overview.md";
+        var mkdocs_page_url = "/neon-docs/developers/git_overview/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> NeonAI® Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../overview/definitions">Definitions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../overview/faq">Frequently Asked Questions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon Core</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_core/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_core/quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Core Modules</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_messagebus/">Messagebus</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_speech/">Speech</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_audio/">Audio</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../neon_core/neon_skills.md">Skills</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_gui/">GUI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_enclosure/">Enclosure</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon OS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_os_installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_os_updates/">Updating</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_debos/">Debos Base Images</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_image_recipe/">Neon Image Recipes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/tips/">Tips</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Quick Reference Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/terminal/">Terminal</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/logging/">Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/configuration/">Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/installing_skills/">Installing Skills</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/installing_plugins/">Installing Plugins</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer References</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Working with Git(Hub)</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#definitions">Definitions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#git">Git</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#github">GitHub</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#common-workflows">Common Workflows</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pull-requests">Pull Requests</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#squash-and-merge">Squash and Merge</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#create-a-merge-commit">Create a Merge Commit</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rebase-and-merge">Rebase and merge</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rebase">Rebase</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cherry-pick">Cherry Pick</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#drop">Drop</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resourcesreferences">Resources/References</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">NeonAI® Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Developer References &raquo;</li>
+      <li>Working with Git(Hub)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="working-with-github">Working With Git(Hub)</h1>
+<p>This overview is meant to define some commonly used git and GitHub concepts as 
+well as document how Neon code is managed.</p>
+<h2 id="definitions">Definitions</h2>
+<h3 id="git">Git</h3>
+<ul>
+<li><a href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">Repository</a> -
+  A directory with changes tracked by git</li>
+<li><a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Refs</a> -
+  Human-readable names given to a particular <code>commit</code></li>
+<li><a href="https://git-scm.com/docs/git-commit">Commit</a> - A unit of code changes as determined by the code author</li>
+<li><a href="https://git-scm.com/docs/git-branch">Branch</a> - A version of code, built off of some specified <code>ref</code></li>
+<li><a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">HEAD</a> A reference to the current <code>branch</code></li>
+<li><a href="https://git-scm.com/docs/git-remote">Remote</a> - A reference to a remote code <code>repository</code></li>
+<li><a href="https://git-scm.com/docs/git-push">Push</a> - Copy new <code>commits</code> from a local 
+  <code>ref</code> to a remote <code>ref</code>. These <code>refs</code> usually have the same names on the local and remote, but not necessarily</li>
+<li>Force Push - Copy the <code>commit</code> history from the local <code>ref</code> to the remote <code>ref</code>. 
+    Note that this can result in losing <code>commits</code> that exist on the <code>remote</code> but not the <code>local</code> <code>branch</code>. 
+    You usually do this after rebasing changes or dropping <code>commits</code>.</li>
+<li><a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">Tag</a> - A <code>ref</code> that is tied
+  to a static <code>commit</code> and is not mutable; the <code>tag</code> will always reference the same <code>commit</code></li>
+</ul>
+<h3 id="github">GitHub</h3>
+<ul>
+<li><a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">Fork</a> - 
+  A copy of a <code>repository</code> at a particular point in time/<code>commit</code> history</li>
+<li><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">Pull Request</a> - 
+  A request to include <code>commits</code> from some <code>head</code> branch into a <code>base</code> branch </li>
+<li><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases">Release</a> - 
+  Basically a git <code>tag</code> but specific to GH with some additional UI/Notifications </li>
+<li><a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">Upstream</a> - 
+  The parent repository of a <code>fork</code></li>
+<li>Organization (Org) - An entity that has <code>repositories</code> (like a user) and that is managed by several users with various permissions</li>
+</ul>
+<h2 id="common-workflows">Common Workflows</h2>
+<h3 id="pull-requests">Pull Requests</h3>
+<p>Pull Requests have three options for resolution (exluding closing the PR):
+- Create a merge commit - Creates a new commit to the base branch AND applies all commits from the head branch to the base branch
+- <a href="(https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-commits/squashing-commits)">Squash and merge</a> - 
+  A shortcut to rewriting Git history. Takes multiple commits and translates all changes into a single commit on the base branch
+- Rebase and merge - Rebase all commits from the head to the base</p>
+<h4 id="squash-and-merge">Squash and Merge</h4>
+<p>This is generally desired for merging feature/bugfix <code>branches</code> into a shared development <code>branch</code>. 
+This means 1 <code>commit</code> == 1 logical change and makes commit history more readable.</p>
+<h4 id="create-a-merge-commit">Create a Merge Commit</h4>
+<p>This is generally used when merging changes from a development <code>branch</code> into a 
+master or release <code>branch</code>. This preserves the <code>commit history</code> and adds <code>commits</code> 
+that indicate when/where the release <code>branch</code> was updated. In most cases, a <code>commit</code> 
+to the release <code>branch</code> corresponds to a <code>tag</code> and <code>release</code> that will reference the <code>merge commit</code>.</p>
+<h4 id="rebase-and-merge">Rebase and merge</h4>
+<p>This could be useful if contributing to a feature <code>branch</code>. This would maintain <code>commit history</code> without generating an extra merge <code>commit</code>.</p>
+<h3 id="rebase"><a href="https://git-scm.com/docs/git-rebase">Rebase</a></h3>
+<p>When working on a <code>branch</code>, it often is necessary to <code>rebase</code> your changes on other 
+changes merged into the <code>base</code> while you are working on a feature. Rebasing is 
+the process of taking the <code>commits</code> from your <code>branch</code> and applying them after the 
+<code>commits</code> on the <code>base</code> <code>branch</code>. If there are conflicts, you will have to resolve 
+them, which modifies the <code>commits</code> on your <code>branch</code>. After resolving conflicts, 
+you should Force Push your <code>branch</code> to the <code>remote</code>.</p>
+<h3 id="cherry-pick"><a href="https://git-scm.com/docs/git-cherry-pick">Cherry Pick</a></h3>
+<p>When working with a <code>fork</code>, it is often helpful to <code>cherry-pick</code> changes from the <code>upstream</code>. 
+There are a couple common situations where <code>cherry-picking</code> is useful:
+- Projects forked from an open source repository where the fork is diverged from the original repository
+- <code>Branches</code> that include both fixes and features may be split into 2 <code>branches</code> with 2 <code>PR</code>’s.
+  The “FIX” <code>PR</code> could <code>cherry-pick</code> the relevant commits from the “FEAT” <code>PR</code> 
+  and the “FEAT” <code>PR</code> would later be <code>rebased</code> after the “FIX” PR is <code>merged</code></p>
+<h3 id="drop">Drop</h3>
+<p>Sometimes a <code>commit</code> is accidentally added or was added for testing and the 
+changes were not successful. In these instances, <code>dropping</code> the <code>commit</code> is 
+generally easier and cleaner than creating an additional <code>commit</code> to roll back 
+the changes. It may also be useful to drop <code>commits</code> that were <code>cherry-picked</code> 
+to a different <code>fork</code> as described <a href="#cherry-pick">above</a>.</p>
+<h2 id="resourcesreferences">Resources/References</h2>
+<p><a href="https://training.github.com/downloads/github-git-cheat-sheet.pdf">GitHub quick reference</a>
+<a href="https://git-scm.com/docs">Official Git documentation</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../quick_reference/installing_plugins/" class="btn btn-neutral float-left" title="Installing Plugins"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../quick_reference/installing_plugins/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

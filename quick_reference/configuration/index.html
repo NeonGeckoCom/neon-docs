@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://neongeckocom.github.io/neon-docs/quick_reference/configuration/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Configuration - NeonAI® Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Configuration";
+        var mkdocs_page_input_path = "quick_reference/configuration.md";
+        var mkdocs_page_url = "/neon-docs/quick_reference/configuration/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> NeonAI® Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../overview/definitions">Definitions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../overview/faq">Frequently Asked Questions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon Core</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_core/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_core/quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Core Modules</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_messagebus/">Messagebus</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_speech/">Speech</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_audio/">Audio</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../neon_core/neon_skills.md">Skills</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_gui/">GUI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_enclosure/">Enclosure</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon OS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_os_installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_os_updates/">Updating</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_debos/">Debos Base Images</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/neon_image_recipe/">Neon Image Recipes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_os/tips/">Tips</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Quick Reference Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../terminal/">Terminal</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../logging/">Logs</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Configuration</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#core-configuration-files">Core Configuration Files</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#default-configuration">Default Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#system-configuration">System Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#user-configuration">User Configuration</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#user-configuration_1">User Configuration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#core-configuration-overrides">Core Configuration Overrides</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#common-configuration-tasks">Common Configuration Tasks</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#change-stttts-engines">Change STT/TTS engines</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#blacklist-a-skill">Blacklist a skill</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installing_skills/">Installing Skills</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installing_plugins/">Installing Plugins</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer References</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developers/git_overview/">Working with Git(Hub)</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">NeonAI® Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Quick Reference Guides &raquo;</li>
+      <li>Configuration</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="configuration">Configuration</h1>
+<p>Neon Core configuration follows the same general structure as 
+<a href="https://mycroft-ai.gitbook.io/docs/using-mycroft-ai/customizations/mycroft-conf">Mycroft</a> 
+and <a href="https://openvoiceos.github.io/community-docs/config/">OVOS</a>, with the main
+difference that Neon uses <a href="https://yaml.org/">YAML</a> formatting.</p>
+<h2 id="core-configuration-files">Core Configuration Files</h2>
+<p>The full documentation for configuration files is available in the 
+<a href="https://openvoiceos.github.io/community-docs/config/">OVOS Documentation</a>, but
+this document describes the default configuration for NeonOS.</p>
+<h3 id="default-configuration">Default Configuration</h3>
+<p>A default configuration comes included with the <a href="https://github.com/NeonGeckoCom/NeonCore/blob/master/neon_core/configuration/neon.yaml">neon-core</a>
+package. This configuration file contains all possible configuration parameters
+with default values. The configuration is updated with the <code>neon-core</code> package
+and is not intended to be modified by anyone other than neon-core contributors.</p>
+<h3 id="system-configuration">System Configuration</h3>
+<p>A system configuration is included in <a href="https://neongeckocom.github.io/neon-docs/neon_os/">Neon OS</a>
+images at <code>/etc/neon/neon.yaml</code> to override default values and add more 
+configuration that is specific to those installations. For example, 
+<a href="https://openvoiceos.github.io/community-docs/PHAL/">PHAL Plugins</a> that are 
+included with NeonOS have their configuration set in <code>/etc/neon/neon.yaml</code>. This
+configuration is intended to me modified by image builders and not end-users.</p>
+<h3 id="user-configuration">User Configuration</h3>
+<p>A user configuration file exists in <code>~/.config/neon/neon.yaml</code> and values here
+generally override any other configuration files. This file is where an end-user
+would set configuration, for example to enable debug logging or to prevent certain
+skills from loading.</p>
+<h2 id="user-configuration_1">User Configuration</h2>
+<p>Neon Core adds support for multiple users which is not currently implemented in
+Mycroft or OVOS. Part of this support includes separating user configuration from
+core configuration, since there might be multiple users connected to one core.</p>
+<h3 id="core-configuration-overrides">Core Configuration Overrides</h3>
+<p>The core configuration values for location, units, and language are still specified
+and are treated as default values. If a user location is not set, then
+core configuration values are used. Some configuration references are also not tied
+to a particular user, i.e. the Home Screen display; these references will also use
+core configuration.</p>
+<p>Any time a skill knows what user made a request, that user's specific configuration
+will take priority over core configuration. For voice inputs, the local user configuration
+saved at <code>~/.config/neon/ngi_user_info.yml</code> will be used.</p>
+<h2 id="common-configuration-tasks">Common Configuration Tasks</h2>
+<p>There are a few common configuration changes a user might want to make to their
+Neon installation.</p>
+<h3 id="change-stttts-engines">Change STT/TTS engines</h3>
+<p>To override default STT/TTS engines, a user can add or change the following configuration
+in <code>~/.config/neon/neon.yaml</code>:</p>
+<pre><code class="language-yaml">stt:
+  module: &lt;stt plugin entrypoint name&gt;
+  fallback_module: &lt;fallback stt plugin entrypoint name&gt;
+tts:
+  module: &lt;tts plugin entrypoint name&gt;
+  fallback_module: &lt;fallback tts plugin entrypoint name&gt;
+</code></pre>
+<blockquote>
+<p>More information about plugins can be found <a href="https://openvoiceos.github.io/community-docs/OPM/">in the OVOS docs</a>.</p>
+</blockquote>
+<h3 id="blacklist-a-skill">Blacklist a skill</h3>
+<p>If you want to disable a skill without uninstalling it, you can use configuration
+to prevent that skill from loading. This may be useful for troubleshooting intent
+conflicts or for making sure a skill that is known to cause conflicts never loads.</p>
+<pre><code class="language-yaml">skills:
+  blacklisted_skills:
+    - &lt;blacklisted skill id&gt;
+    - &lt;other blacklisted skill id&gt; 
+</code></pre>
+<blockquote>
+<p>More information about skills can be found <a href="https://openvoiceos.github.io/community-docs/skills/">in the OVOS docs</a>.</p>
+</blockquote>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../logging/" class="btn btn-neutral float-left" title="Logs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../installing_skills/" class="btn btn-neutral float-right" title="Installing Skills">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../logging/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../installing_skills/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

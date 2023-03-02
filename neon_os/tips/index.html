@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://neongeckocom.github.io/neon-docs/neon_os/tips/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Tips - NeonAI® Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Tips";
+        var mkdocs_page_input_path = "neon_os/tips.md";
+        var mkdocs_page_url = "/neon-docs/neon_os/tips/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> NeonAI® Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../overview/definitions">Definitions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../overview/faq">Frequently Asked Questions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon Core</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_core/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_core/quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Core Modules</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_messagebus/">Messagebus</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_speech/">Speech</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_audio/">Audio</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../neon_core/neon_skills.md">Skills</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_gui/">GUI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_enclosure/">Enclosure</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon OS</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../neon_os_installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../neon_os_updates/">Updating</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../neon_debos/">Debos Base Images</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../neon_image_recipe/">Neon Image Recipes</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Tips</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#ssh">SSH</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#on-device-terminal">On-device Terminal</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#taking-a-screenshot">Taking a screenshot</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-device-ip-address">Getting device IP address</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installing-on-raspberry-pi">Installing On Raspberry Pi</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Quick Reference Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/terminal/">Terminal</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/logging/">Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/configuration/">Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/installing_skills/">Installing Skills</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/installing_plugins/">Installing Plugins</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer References</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developers/git_overview/">Working with Git(Hub)</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">NeonAI® Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Neon OS &raquo;</li>
+      <li>Tips</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="tips">Tips</h1>
+<p>Here are a few useful tips for working with NeonOS</p>
+<h2 id="ssh">SSH</h2>
+<p>You can connect a remote terminal to your NeonOS device using SSH and the default
+username/password of <code>neon</code>/<code>neon</code>. For most terminals, the command will look like:</p>
+<pre><code>ssh neon@&lt;Neon Device IP Address&gt;
+</code></pre>
+<h2 id="on-device-terminal">On-device Terminal</h2>
+<p>A terminal can be accessed on a NeonOS device by connecting a keyboard and
+pressing <code>ctrl</code>+<code>shift</code>+<code>f1</code>. The terminal will be shown on-screen until dismissed
+but note that changes in the GUI may take focus away from the terminal until you tap/click it again.</p>
+<h2 id="taking-a-screenshot">Taking a screenshot</h2>
+<p>You can ask Neon to "take a screenshot" to create a screenshot saved on-device.
+The path of the created file will be displayed on-screen as a notification. To
+retrieve a screenshot, you can use <code>scp</code> or shut down your mark 2 and plug the
+USB drive into another computer that can read an EXT4 file system(Linux or MacOS).</p>
+<h2 id="getting-device-ip-address">Getting device IP address</h2>
+<p>You can ask Neon "what is my IP address" to get the device IP address. You can
+also access this via the <code>Settings Menu</code>, under <code>About</code>.</p>
+<h2 id="installing-on-raspberry-pi">Installing On Raspberry Pi</h2>
+<p>The OS drive should be installed to the port marked in the image below. Other
+ports may work, but installing to the proper port ensures that the boot drive
+is loaded first and helps avoid issues with other USB devices at boot time.</p>
+<p><img alt="Raspberry Pi 4" src="../RPi.jpg" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../neon_image_recipe/" class="btn btn-neutral float-left" title="Neon Image Recipes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../quick_reference/terminal/" class="btn btn-neutral float-right" title="Terminal">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../neon_image_recipe/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../quick_reference/terminal/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

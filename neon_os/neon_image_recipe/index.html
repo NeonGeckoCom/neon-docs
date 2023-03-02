@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://neongeckocom.github.io/neon-docs/neon_os/neon_image_recipe/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Neon Image Recipes - NeonAI® Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Neon Image Recipes";
+        var mkdocs_page_input_path = "neon_os/neon_image_recipe.md";
+        var mkdocs_page_url = "/neon-docs/neon_os/neon_image_recipe/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> NeonAI® Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../overview/definitions">Definitions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../overview/faq">Frequently Asked Questions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon Core</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_core/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../neon_core/quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Core Modules</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_messagebus/">Messagebus</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_speech/">Speech</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_audio/">Audio</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../neon_core/neon_skills.md">Skills</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_gui/">GUI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../neon_core/neon_enclosure/">Enclosure</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Neon OS</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../neon_os_installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../neon_os_updates/">Updating</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../neon_debos/">Debos Base Images</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Neon Image Recipes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#docker-automated-image-building">Docker Automated Image Building</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#base-image-selection">Base Image Selection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#build-time-overlay-files">Build-Time Overlay Files</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#interactive-image-building">Interactive Image Building</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#image-overlay-files">Image Overlay Files</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#preparation">Preparation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#core_configuration">core_configuration</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#network_manager">network_manager</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sj201">sj201</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#embedded_shell">embedded_shell</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#neon_core">neon_core</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dashboard">dashboard</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#camera">camera</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#splash_screen">splash_screen</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#updater">updater</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#clean-up">Clean Up</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tips/">Tips</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Quick Reference Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/terminal/">Terminal</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/logging/">Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/configuration/">Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/installing_skills/">Installing Skills</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick_reference/installing_plugins/">Installing Plugins</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer References</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developers/git_overview/">Working with Git(Hub)</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">NeonAI® Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Neon OS &raquo;</li>
+      <li>Neon Image Recipes</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="neon-image-recipe">neon-image-recipe</h1>
+<p>Make a Pi image from scratch.
+- <a href="#core_configuration">Core Configuration</a> - Base configuration of ubuntu server
+- <a href="#network_manager">Network Manager</a> - Configures networking to allow for wifi configuration via
+  <a href="https://github.com/balena-os/wifi-connect">wifi-connect</a>.
+- <a href="#sj201">SJ201 Support</a> - Installs and configures drivers and scripts to run the SJ-201 HAT.
+- <a href="#embedded_shell">OVOS Shell</a> - Installs and configures the GUI shell
+- <a href="#neon_core">Neon Core</a> - Installs Neon Core with dependencies.
+- <a href="#dashboard">Dashboard</a> - Installs a web dashboard for device diagnostics
+- <a href="#camera">Camera</a> - Installs system dependencies for CSI Camera Support
+- <a href="#splash_screen">Splash Screen</a> - Configures device splash screen on boot</p>
+<h2 id="docker-automated-image-building">Docker Automated Image Building</h2>
+<p>The included Dockerfile can be used to build a default image in a Docker environment.</p>
+<p>The following dependencies must be installed on the build system before running the
+container:</p>
+<ul>
+<li><a href="https://wiki.debian.org/chroot">chroot</a></li>
+<li><a href="https://wiki.debian.org/QemuUserEmulation">qemu-user-static</a></li>
+</ul>
+<p>First, create the Docker container:</p>
+<pre><code class="language-shell">docker build . -t neon-image-builder
+</code></pre>
+<p>Then, run the container to create a Neon Image. Set <code>CORE_REF</code> to the branch of
+<code>neon-core</code> that you want to build and <code>RECIPE_REF</code> to the branch of <code>neon-image-recipe</code>
+you want to use. Set <code>MAKE_THREADS</code> to the number of threads to use for <code>make</code> processes.</p>
+<pre><code class="language-shell">sudo mknod /dev/loop99 b 7 99
+sudo losetup -P /dev/loop99 {image}
+# TODO: Above is just creating p1/p2 files; can this be done via mknod or something?
+
+docker run \
+-v /home/${USER}/output:/output:rw \
+-v /run/systemd/resolve:/run/systemd/resolve \
+-v /dev/loop99:/dev/loop99 \
+-v /dev/loop99p1:/dev/loop99p1 \
+-v /dev/loop99p2:/dev/loop99p2 \
+-e CORE_REF=${CORE_REF:-dev} \
+-e RECIPE_REF=${RECIPE_REF:-master} \
+-e BASE_IMAGE=${BASE_IMAGE:-debian-base-image-rpi4} \
+-e MAKE_THREADS=${MAKE_THREADS:-4} \
+--privileged \
+--network=host \
+--name=neon-image-builder \
+neon-image-builder
+</code></pre>
+<h3 id="base-image-selection">Base Image Selection</h3>
+<p>The <code>BASE_IMAGE</code> environment variable selects which image is mounted and built on.
+Valid base images are uploaded to <a href="https://2222.us/app/files/neon_images/pi/">2222.us</a> and
+specified by their file basename (i.e. <code>debian-base-image-rpi4_2022-11-08_18_50</code>).
+The latest <code>debian-base-image-rpi4</code> is generally a good choice and is the latest
+output from <a href="https://github.com/neongeckocom/neon_debos">neon_debos</a>.</p>
+<p>The entire build process will generally take several hours; it takes 1-2 hours
+on a build server with 2x Xeon Gold 5118 CPUs (48T Total).</p>
+<h3 id="build-time-overlay-files">Build-Time Overlay Files</h3>
+<p>Files to be overlaid on the image file system can be placed in <code>/output/overlay</code>.
+These files will be moved to the build directory and applied as described in <a href="#image-overlay-files">below</a>.</p>
+<h2 id="interactive-image-building">Interactive Image Building</h2>
+<p>The scripts in the <code>automation</code> directory are available to help automate building a default image.
+For building an image interactively, specify paths for <code>IMAGE_FILE</code> and <code>BUILD_DIR</code>
+before running the below commands:</p>
+<pre><code class="language-shell">bash automation/prepare.sh &quot;${IMAGE_FILE}&quot; &quot;${BUILD_DIR}&quot;
+bash /tmp/run_scripts.sh
+</code></pre>
+<h3 id="image-overlay-files">Image Overlay Files</h3>
+<p>Extra files to be included in the image can be placed in <code>${BUILD_DIR}/overlay</code>.
+This directory will be recursively copied to the image at the beginning of the
+build process. This may be useful for including key files or other files that
+do not belong in the image recipe repository.</p>
+<p>The below documentation describes how to manually build an image using the individual scripts in this repository.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>The scripts and overlay files in this repository are designed to be applied to Ubuntu Server 22.04
+as the <code>root</code> user. It is recommended to apply these scripts to a clean image 
+<a href="https://cdimage.ubuntu.com/releases/22.04/release/">available here</a>. Instructions are available
+<a href="https://opensource.com/article/20/5/disk-image-raspberry-pi">at opensource.com</a>.</p>
+<blockquote>
+<p><strong>Note</strong>: The GUI shell is not installable under Ubuntu 20.04 and earlier</p>
+</blockquote>
+<p>For each step except <a href="#boot_overlay">boot_overlay</a>, the directory corresponding
+to the step should be copied to the mounted image and the script run from a terminal
+<code>chroot</code>-ed to the image. If running scripts from a booted image, they should be
+run as <code>root</code>.</p>
+<h2 id="preparation">Preparation</h2>
+<p>From the host system where this repository is cloned, running <code>prepare.sh &lt;base_image&gt;</code>
+will copy boot overlay files, mount the image, mount DNS resolver config from the host system,
+copy all other image overlay files to <code>/tmp</code>, and <code>chroot</code> into the image. From here, you can
+run any/all of the following scripts to prepare the image before <a href="#Clean-Up">cleaning up</a></p>
+<h2 id="core_configuration">core_configuration</h2>
+<p>Configures user accounts and base functionality for RPi. <code>neon</code> user is created with proper permissions here.</p>
+<p>At this stage, a booted image should resize its file system to fill the drive it is flashed to. Local login and 
+ssh connections should use <code>neon</code>/<code>neon</code> to authenticate and be prompted to change password on login.</p>
+<h2 id="network_manager">network_manager</h2>
+<p>Adds Balena wifi-connect to enable a portal for connecting the Pi device to a wifi network.</p>
+<p>A booted image will now be ready to connect to a network via SSID <code>Neon</code>.</p>
+<h2 id="sj201">sj201</h2>
+<p>For SJ201 board support, the included script will build/install drivers, add required overlays, install required system 
+packages, and add a systemd service to flash the SJ201 chip on boot. This will modify pulseaudio and potentially overwrite 
+any previous settings.</p>
+<blockquote>
+<p><em>Note:</em> Running this scripts grants GPIO permissions to the <code>gpio</code> group. Any user that interfaces with the SJ201 board
+should be a member of the <code>gpio</code> group. Group permissions are not modified by this script</p>
+</blockquote>
+<p>Audio devices should now show up with <code>pactl list</code>.
+Audio devices can be tested in the image by recording a short audio clip and playing it back.</p>
+<pre><code class="language-shell">parecord test.wav
+paplay test.wav
+</code></pre>
+<h2 id="embedded_shell">embedded_shell</h2>
+<p>Installs ovos-shell and mycroft-gui-app. Adds and enables neon-gui.service to start the shell
+on system boot.</p>
+<p>The image should now boot to the GUI shell.</p>
+<h2 id="neon_core">neon_core</h2>
+<p>Installs <code>neon-core</code> and dependencies. Configures services for core modules.</p>
+<p>At this stage, the image is complete and when booted should start Neon.</p>
+<h2 id="dashboard">dashboard</h2>
+<p>Installs the <a href="https://github.com/openvoiceos/ovos-dashboard">OVOS Dashboard</a> and service
+to start the dashboard from the GUI.</p>
+<p>From the GUI <code>Settings</code> -&gt; <code>Developer Settings</code> menu, <code>Enable Dashboard</code> will now start
+the dashboard for remote access to device diagnostics.</p>
+<h2 id="camera">camera</h2>
+<p>Installs <code>libcamera</code> and other dependencies for using a CSI camera.</p>
+<p>The default camera skill can be used to take a photo; <code>libcamera-apps</code> are also
+installed for testing via CLI.</p>
+<h2 id="splash_screen">splash_screen</h2>
+<p>Enables a custom splash screen and disables on-device TTY at boot.</p>
+<p>On boot, a static image should be shown until the GUI Shell starts.</p>
+<h2 id="updater">updater</h2>
+<p>Enables an updater service to update python packages.</p>
+<p><code>systemctl start neon-updater</code> will stop core services, create a code backup, 
+install updated Python packages, validate the core modules load properly and
+optionally roll back changes, and then restart core services.</p>
+<h2 id="clean-up">Clean Up</h2>
+<p><code>cleanup.sh</code> removes any temporary files from the mounted image before unmounting it.
+After running <code>cleanup.sh</code>, the image is ready to burn to a drive and boot.</p>
+<h1 id="patches">Patches</h1>
+<p>The <code>patches</code> directory contains scripts used to patch existing installations to
+add new features or make them compatible with updates Python modules. These files
+are intended to be referenced by updater scripts and should not be used during 
+image creation.</p>
+<h1 id="deprecated-scripts">Deprecated Scripts</h1>
+<h2 id="base_ubuntu_server">base_ubuntu_server</h2>
+<p>For Ubuntu Server base images, the included scripts install the openbox DE, add a <code>neon</code> user with default <code>neon</code> password, 
+and configure the system to auto-login and disable sleep. <code>cleanup.sh</code> removes the <code>ubuntu</code> user, expires the <code>neon</code> user 
+password, and schedules a device restart.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../neon_debos/" class="btn btn-neutral float-left" title="Debos Base Images"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tips/" class="btn btn-neutral float-right" title="Tips">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../neon_debos/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../tips/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
