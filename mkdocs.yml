@@ -1,8 +1,35 @@
-site_name: NeonAI© Documentation
+site_name: NeonAI® Documentation
 site_url: https://neongeckocom.github.io/neon-docs
 theme: readthedocs
 
 nav:
-    - Neon OS:
-        - Installation: neon_os_installation.md
-        - Updating: neon_os_updates.md
+  - About: index.md
+  - Overview:
+    - Definitions: overview/definitions
+    - Frequently Asked Questions: overview/faq
+  - Neon Core:
+    - Introduction: neon_core/index.md
+    - Quick Start: neon_core/quick_start.md
+    - Core Modules:
+      - Introduction: neon_core/index.md
+      - Messagebus: neon_core/neon_messagebus.md
+      - Speech: neon_core/neon_speech.md
+      - Audio: neon_core/neon_audio.md
+      - Skills: neon_core/neon_skills.md
+      - GUI: neon_core/neon_gui.md
+      - Enclosure: neon_core/neon_enclosure.md
+  - Neon OS:
+    - Introduction: neon_os/index.md
+    - Installation: neon_os/neon_os_installation.md
+    - Updating: neon_os/neon_os_updates.md
+    - Debos Base Images: neon_os/neon_debos.md
+    - Neon Image Recipes: neon_os/neon_image_recipe.md
+    - Tips: neon_os/tips.md
+  - Quick Reference Guides:
+    - Terminal: quick_reference/terminal.md
+    - Logs: quick_reference/logging.md
+    - Configuration: quick_reference/configuration.md
+    - Installing Skills: quick_reference/installing_skills.md
+    - Installing Plugins: quick_reference/installing_plugins.md
+  - Developer References:
+      - Working with Git(Hub): developers/git_overview.md
