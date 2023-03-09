@@ -20,4 +20,4 @@ To use NeonOS:
 1. Turn off and unplug your Mark2.
 2. Remove any USB drives and plug your NeonOS drive into one of the blue USB 3 
    ports at the back of your Mark2.
-3. Plug your Mark2 back in and complete a brief network setup.
+3. Plug your Mark2 back in and [get started](https://neongeckocom.github.io/neon-docs/neon_os/using_neon_os/)
