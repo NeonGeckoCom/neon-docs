@@ -4,7 +4,7 @@ There is [official documentation](https://mycroft-ai.gitbook.io/docs/mycroft-tec
 published by Mycroft, but this document addresses Padatious in the context of
 creating a skill for Neon/OVOS/Mycroft "Classic".
 
-## Intent Files
+## Intents
 Unlike Adapt intents, Padatious intents are specified as a list of potential user
 utterances. These examples are specified in an `.intent` file. For example, the
 Update Skill uses a Padatious intent [update_device.intent](https://github.com/NeonGeckoCom/skill-update/blob/ae8ac710bb133aa2b9805319e3d513bfb934e6c7/locale/en-us/intent/update_device.intent).
@@ -55,7 +55,7 @@ From our skill example:
 :0 update my device
 ```
 
-### Entities
+## Entities
 It might be useful to extract a word or phrase from an utterance. Below is an
 example from the [stock skill](https://github.com/NeonGeckoCom/skill-stock/blob/4f4b7c526994060c88c5e5031d8d4a6245f61acc/locale/en-us/intent/stock_price.intent):
 
@@ -69,7 +69,7 @@ In the above intent file, `company` is an entity, so the utterance "what is micr
 would match the intent and include: `{"company": "microsoft"}` in the `Message` data.
 > Note that entity names should always be specified as lowercase alpha characters.
 
-#### .entity files
+### .entity files
 If you wanted to limit valid values for `company` in the above example, you could
 create a `company.entity` file that looks like:
 ```
@@ -83,16 +83,28 @@ apple
 This would limit `company` to only values in the `company.entity` file, so the
 utterance "what is tesla trading at" would NOT match in this case.
 
+## Registering an Intent
+Once you have specified an `.intent` file, you can register an intent handler
+method in the skill.
+
+Using the [update skill example](https://github.com/NeonGeckoCom/skill-update/blob/ae8ac710bb133aa2b9805319e3d513bfb934e6c7/__init__.py#L130):
+```python
+from mycroft.skills import intent_file_handler
+class UpdateSkill:
+    @intent_file_handler("update_device.intent")
+    def handle_update_device(self, message):
+        """
+        Handle a user request to check for updates.
+        :param message: message object associated with request
+        """
+        pass
+```
+
+Note that the intent file basename, including the file extension, is passed to the decorator.
+
 ## Advantages over Adapt
 The above intents could just as easily be added to a `.voc` file and then a user
 request "update my device" would behave exactly the same. One of the advantages
 of Padatious is that an intent is trained on examples, so where Adapt would match
 "are there any updates in my inbox" because it contains "are there any updates",
 Padatious is less likely to match that utterance.
-
-
-
-``````
-do you have any updates
-run updates
-```

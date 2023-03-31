@@ -34,4 +34,5 @@ nav:
   - Developer References:
       - Working with Git(Hub): developers/git_overview.md
   - Skill Development:
+      - Adapt Intents: skill_development/adapt_intents.md
       - Padatious Intents: skill_development/padatious_intents.md
