@@ -33,3 +33,5 @@ nav:
     - Installing Plugins: quick_reference/installing_plugins.md
   - Developer References:
       - Working with Git(Hub): developers/git_overview.md
+  - Skill Development:
+      - Padatious Intents: skill_development/padatious_intents.md
