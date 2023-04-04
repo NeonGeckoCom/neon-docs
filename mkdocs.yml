@@ -36,3 +36,4 @@ nav:
   - Skill Development:
       - Adapt Intents: skill_development/adapt_intents.md
       - Padatious Intents: skill_development/padatious_intents.md
+      - Testing: skill_development/skill_testing.md
