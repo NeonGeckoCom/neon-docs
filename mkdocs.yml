@@ -34,3 +34,8 @@ nav:
     - Installing Plugins: quick_reference/installing_plugins.md
   - Developer References:
       - Working with Git(Hub): developers/git_overview.md
+      - skill.json: developers/skill_json.md
+  - Skill Development:
+      - Adapt Intents: skill_development/adapt_intents.md
+      - Padatious Intents: skill_development/padatious_intents.md
+      - Testing: skill_development/skill_testing.md
