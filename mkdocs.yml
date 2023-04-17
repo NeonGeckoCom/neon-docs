@@ -23,6 +23,7 @@ nav:
     - Installation: neon_os/neon_os_installation.md
     - Using Neon OS: neon_os/using_neon_os.md
     - Updating: neon_os/neon_os_updates.md
+    - Neon OS on the Mark II: neon_os/On_the_MarkII.md
     - Debos Base Images: neon_os/neon_debos.md
     - Neon Image Recipes: neon_os/neon_image_recipe.md
     - Tips: neon_os/tips.md
