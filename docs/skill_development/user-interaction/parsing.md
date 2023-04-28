@@ -1,10 +1,12 @@
 ---
 description: >-
-  Mycroft provides a range of easy to use methods to parse the contents of
+  Neon provides a range of easy to use methods to parse the contents of
   utterances from Users.
 ---
 
 # Parsing Utterances
+
+**Note:** The links to the various NeonSkill methods in this documentation point to the `mycroft-core` documentation. There is no material difference between them for the methods referenced and, since there is not publicly available `neon_core` documentation, we will reference `mycroft-core` instead.
 
 ## Extracting data
 
@@ -39,4 +41,3 @@ See [`extract_duration()`](https://mycroft-core.readthedocs.io/en/latest/source/
 ### Match One
 
 [`match_one()`](https://mycroft-core.readthedocs.io/en/latest/source/mycroft.util.parse.html#mycroft.util.parse.match_one) finds the best match from a list or dictionary given an input.
-

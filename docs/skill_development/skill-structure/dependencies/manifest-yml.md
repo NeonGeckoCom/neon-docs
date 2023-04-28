@@ -1,12 +1,12 @@
 ---
 description: >-
   A Skill's `manifest.yml` file is the default method for defining the
-  dependencies of a Mycroft Skill.
+  dependencies of a Neon Skill.
 ---
 
 # Manifest.yml
 
-In this file we can include Python packages, Linux applications or other Mycroft skills that are required for our own Skill to function properly.
+In this file we can include Python packages, Linux applications or other Neon skills that are required for our own Skill to function properly.
 
 {% hint style="info" %}
 [YAML](https://en.wikipedia.org/wiki/YAML) is a language commonly used for configuration files. It uses indentation rather than brackets or parentheses to define the structure or hierarchy of its contents.
@@ -32,13 +32,13 @@ dependencies:
     - gensim
 ```
 
-When a Skill with this `manifest.yml` file is being installed, Mycroft would check for, and if required install, both packages from [PyPI](https://pypi.org/) using the PIP installer.
+When a Skill with this `manifest.yml` file is being installed, Neon would check for, and if required install, both packages from [PyPI](https://pypi.org/) using the PIP installer.
 
 There is no limit to the number of packages you can install, however these are reviewed during the [Skills Acceptance Process](../../marketplace-submission/skills-acceptance-process/) to ensure they are appropriate for the Skill being installed.
 
 ### Linux System Packages
 
-Linux packages are defined under the `system` key. As Mycroft can be installed on many different Linux distributions, support is provided for a range of package managers.
+Linux packages are defined under the `system` key. As Neon can be installed on many different Linux distributions, support is provided for a range of package managers.
 
 For packages that have consistent naming across package managers, we can use `all`.
 
@@ -63,7 +63,7 @@ Finally we can check that certain executables are available for the install to s
 dependencies:
   system:
     all: pianobar piano-dev
-    apt-get: pianobar libpiano-dev  
+    apt-get: pianobar libpiano-dev
 
   exes:
     - pianobar
@@ -71,9 +71,9 @@ dependencies:
 
 Here we have installed a number of `pianobar` packages, and then verify that the `pianobar` executable is available for our Skill.
 
-### Other Mycroft Skills
+### Other Neon Skills
 
-A Skill may even require that other Mycroft Skills are installed rather than duplicate functionality. Here we can see that the Cocktails Skill and the Mozilla Webthings Gateway are listed as dependencies.
+A Skill may even require that other Neon Skills are installed rather than duplicate functionality. Here we can see that the Cocktails Skill and the Mozilla Webthings Gateway are listed as dependencies.
 
 ```yaml
 dependencies:
@@ -82,11 +82,10 @@ dependencies:
     - webthings-gateway
 ```
 
-Anything listed in this section will be passed to the [Mycroft Skills Manager](https://mycroft-ai.gitbook.io/docs/mycroft-technologies/mycroft-core/msm) for installation. A feature of MSM is that it will search for Skills that most closely match the given string. So even though the `mozilla-webthings-gateway` Skill has not been perfectly entered, it will still match with a high enough confidence to install the Skill.
+Anything listed in this section will be passed to Neon for installation.
 
 ## Example files
 
-A complete `manifest.yml` example can be found in the [official Template Skill on Github](https://github.com/MycroftAI/mycroft-skills/blob/19.08/00__skill_template/manifest.yml).
+A complete `manifest.yml` example can be found in the [official Mycroft Template Skill on Github](https://github.com/MycroftAI/mycroft-skills/blob/19.08/00__skill_template/manifest.yml).
 
 A simple example from a real Skill can be found in the [Desktop Launcher Skill](https://github.com/MycroftAI/skill-desktop-launcher/blob/19.08/manifest.yml).
-

@@ -8,7 +8,7 @@ description: >-
 
 To track events and data within your Skill we can use logging. If you are new to programming, this is a way to output a message that can tell you the state of your Skill at a particular point in time, details about an error that has occured, or simply noting that a program reached a particular point in the code.
 
-## Video Tutorial
+## Video Tutorial (Courtesy of Mycroft.AI, which NeonSkills extends)
 
 {% embed url="https://www.youtube.com/watch?v=1_yX1JCCYoM" %}
 Video Tutorial: Logging from Mycroft Skills
@@ -16,15 +16,16 @@ Video Tutorial: Logging from Mycroft Skills
 
 ## Basic Usage
 
-A logger is available through the `MycroftSkill` base class. This means that you can use it within a Skill without needing to import the `logging` package. You can simply call `self.log` from within the class of your Skill.
+A logger is available through the `NeonSkill` base class. This means that you can use it within a Skill without needing to import the `logging` package. You can simply call `self.log` from within the class of your Skill.
 
 Here is a quick example of an INFO level log message used in a Skill. We will learn more about the other levels shortly.
 
 ```python
 from adapt.intent import IntentBuilder
-from mycroft import MycroftSkill, intent_handler
+from neon_utils.skills.neon_skill import NeonSkill
+from mycroft.skills.core import intent_handler
 
-class LoggingSkill(MycroftSkill):
+class LoggingSkill(NeonSkill):
 
     @intent_handler(IntentBuilder('HelloWorldIntent')
                     .require('HelloWorld'))
@@ -48,19 +49,19 @@ The above Skill would log an INFO level message each time the intent handler was
 
 From left to right, this consists of:
 
-* A timestamp identifying when the log was emitted.
-* The level of the log message
-* The Process ID (PID) of the system process where the log originated.
-* The origin of the log from within Mycroft. In the case of Skills the Class name is used.
-* The log message passed as an argument to the logger.
+- A timestamp identifying when the log was emitted.
+- The level of the log message
+- The Process ID (PID) of the system process where the log originated.
+- The origin of the log from within Neon. In the case of Skills the Class name is used.
+- The log message passed as an argument to the logger.
 
 ### Where do these messages get logged?
 
-Log messages from a Skill are displayed in the Mycroft CLI so that a User can see in real-time what is happening in the Skill. They are also written to the `skills.log` file located at: `/var/log/mycroft/skills.log`
+Log messages from a Skill are displayed in the Neon CLI so that a User can see in real-time what is happening in the Skill. They are also written to the `skills.log` file. The location of this file varies depending on your Neon installation, but is often located at: `/var/log/neon/skills.log`. On a Mark 2, you can access logs by running `journalctl -xeu neon-skills`.
 
-By default all INFO, WARNING, ERROR, EXCEPTION and CRITICAL level messages will be logged. DEBUG level messages will be logged if the User explicitly requests it. This can be done by issuing the `:log level debug` command in the CLI, or changing the `log_level` attribute in the [mycroft configuration](../../using-mycroft-ai/customizations/config-manager.md).
+By default all INFO, WARNING, ERROR, EXCEPTION and CRITICAL level messages will be logged. DEBUG level messages will be logged if the User explicitly requests it. This can be done by issuing the `:log level debug` command in the CLI, or changing the `log_level` attribute in the Neon configuration. Typically this will be located at `~/.config/neon/neon.yaml`.
 
-When you first turn on DEBUG level logging, you will quickly notice that there is a lot happening behind the scenes in Mycroft. If you are debugging a particular Skill it is very useful to limit the displayed log messages using the Class name of your Skill. For the HelloWorldSkill we would use the CLI command: `:find HelloWorldSkill`
+When you first turn on DEBUG level logging, you will quickly notice that there is a lot happening behind the scenes in Neon. If you are debugging a particular Skill it is very useful to limit the displayed log messages using the Class name of your Skill. For the HelloWorldSkill we would use the CLI command: `:find HelloWorldSkill`
 
 Finally to return to the default INFO level logging, you can issue the `:log level info` CLI command.
 
@@ -100,7 +101,7 @@ Warning messages are used to indicate that something has gone wrong, but the Ski
 self.log.error()
 ```
 
-Error messages indicate that a serious problem has occured and the Skill will not be able to function. In the Mycroft CLI these messages are shown in red to make them highly visible.
+Error messages indicate that a serious problem has occured and the Skill will not be able to function. In the Neon CLI these messages are shown in red to make them highly visible.
 
 ### EXCEPTION
 
@@ -127,25 +128,26 @@ A more serious error, indicating that the Skill is unable to continue running.
 
 ## Using the logger outside the Skill class
 
-As the logger is provided by the MycroftSkill class, it is only available within that scope. If you need to log messages from outside of this class, you can import the logger manually.
+As the logger is provided by the NeonSkill class, it is only available within that scope. If you need to log messages from outside of this class, you can import the logger manually.
 
 ```python
-from mycroft.util import LOG
+from neon_utils.log_utils import LOG
 ```
 
 This can then be used outside your Skill's class. Extending our first example:
 
 ```python
 from adapt.intent import IntentBuilder
-from mycroft import MycroftSkill, intent_handler
-from mycroft.util import LOG
+from neon_utils.skills.neon_skill import NeonSkill
+from mycroft.skills.core import intent_handler
+from neon_utils.log_utils import LOG
 
-LOG.info("This is a logged info level message outside of the MycroftSkill Class scope")
+LOG.info("This is a logged info level message outside of the NeonSkill Class scope")
 
 def my_special_function():
   LOG.info("Another usage of LOG.")
 
-class LoggingSkill(MycroftSkill):
+class LoggingSkill(NeonSkill):
 
     @intent_handler(IntentBuilder('HelloWorldIntent')
                     .require('HelloWorld'))

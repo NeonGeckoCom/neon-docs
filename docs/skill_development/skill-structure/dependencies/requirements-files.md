@@ -1,12 +1,12 @@
 ---
 description: >-
   A Skill's `requirements.txt` and `requirements.sh` files provide an
-  alternative method to define the dependencies of a Mycroft Skill.
+  alternative method to define the dependencies of a Neon Skill.
 ---
 
 # Requirements files
 
-The older method of defining requirements is still available, and is present in the majority of Skills available in the Marketplace. This uses a `requirements.txt` and/or `requirements.sh` file.
+The older method of defining requirements is still available, and is present in the majority of Skills available in the Mycroft Marketplace. This uses a `requirements.txt` and/or `requirements.sh` file.
 
 ## requirements.txt
 
@@ -21,16 +21,16 @@ gensim
 
 If specific versions of a package are required, we can use comparison operators to indicate which version.
 
-* `requests==2.22.0` The package must must be version `2.22.0`.
-* `requests>=2.22.0` The package must be version `2.22.0` or higher.
-* `requests<=2.22.0` The package must be version `2.22.0` or lower.
+- `requests==2.22.0` The package must must be version `2.22.0`.
+- `requests>=2.22.0` The package must be version `2.22.0` or higher.
+- `requests<=2.22.0` The package must be version `2.22.0` or lower.
 
 It is strongly recommended to only use these operators when required. If submitting a Skill to the Marketplace, you will be asked to provide reasoning as to why a specific version of a package is necessary.
 
 ### Examples of requirements.txt
 
-* [Weather Skill](https://github.com/MycroftAI/skill-weather/blob/19.08/requirements.txt)
-* [Wiki Skill](https://github.com/MycroftAI/skill-wiki/blob/19.08/requirements.txt)
+- [Weather Skill](https://github.com/NeonGeckoCom/skill-weather/blob/dev/requirements.txt)
+- [Wikipedia Skill](https://github.com/NeonGeckoCom/skill-wikipedia/blob/dev/requirements.txt)
 
 ## requirements.sh
 
@@ -38,9 +38,8 @@ The `requirements.sh` file may contain a shell script that is run during install
 
 Prior to the `manifest.yml` file, this was the only method available to install system packages. If you are only installing packages, using the [`manifest.yml`](manifest-yml.md) file instead is recommended.
 
-The contents of this file will be checked carefully if a Skill is submitted for inclusion in the [Skills Marketplace](https://market.mycroft.ai)
+The contents of this file will be checked carefully if a Skill is submitted for inclusion as an official Neon skill. If you are installing a skill outside of the NeonGeckoCom or OpenVoiceOS organization in GitHub, please check the `requirements.sh` file carefully first!
 
 ### Examples of requirements.sh
 
-* [Zork \(adventure game\)](https://github.com/forslund/white-house-adventure/blob/6eba5df187bc8a7735b05e93a28a6390b8c6f40c/requirements.sh)
-
+- [Zork \(adventure game\)](https://github.com/forslund/white-house-adventure/blob/6eba5df187bc8a7735b05e93a28a6390b8c6f40c/requirements.sh)

@@ -11,7 +11,7 @@ description: >-
 
 The Common Query Framework handles the common use case of "general information" or question answering. Many Skills may implement handlers for "what is X" or "when did Y", the Common Query Framework allows all these Skills be queried and a single "best" answer to be selected. This is similar to the Common Play Framework that handles the common use of "playing" music or other media.
 
-The Common Query Skill System is led by the [Query Fallback Skill](https://github.com/MycroftAI/skill-query). This Skill handles queries matching a question pattern such as "What is the height of the Eiffle Tower" and "When is lunch". A matched question will be sent to all Skills based upon the `CommonQuerySkill` base class. The Skills will return wether they can answer the query along with an answer when applicable. The "best" match will be selected and spoken to the user.
+The Common Query Skill System is led by the [Query Fallback Skill](https://github.com/NeonGeckoCom/skill-query). This Skill handles queries matching a question pattern such as "What is the height of the Eiffle Tower" and "When is lunch". A matched question will be sent to all Skills based upon the `CommonQuerySkill` base class. The Skills will return wether they can answer the query along with an answer when applicable. The "best" match will be selected and spoken to the user.
 
 ## CommonQuerySkill
 
@@ -42,13 +42,13 @@ The input query is returned to map the query to the answer.
 
 `CQSMatchLevel` is an Enum with the possible values
 
-* `CQSMatchLevel.EXACT`: The Skill is very confident that it has the precise answer the user is looking for. There was a category match and a known entity is referenced.
-* `CQSMatchLevel.CATEGORY`: The Skill could determine that the type of question matches a category that the Skill is good at finding.
-* `CQSMatchLevel.GENERAL`: This Skill tries to answer all questions and found an answer.
+- `CQSMatchLevel.EXACT`: The Skill is very confident that it has the precise answer the user is looking for. There was a category match and a known entity is referenced.
+- `CQSMatchLevel.CATEGORY`: The Skill could determine that the type of question matches a category that the Skill is good at finding.
+- `CQSMatchLevel.GENERAL`: This Skill tries to answer all questions and found an answer.
 
-There is also a directly equivalent `CQSVisualMatchLevel`  that provides a small confidence bonus on platforms that can display visual media. The intention being that if two answers are otherwise equal, if a device can also display an image, then the response with an image is preferred. `CQSVisualMatchLevel` is an exact copy of `CQSMatchLevel` and requires no other changes to use.
+There is also a directly equivalent `CQSVisualMatchLevel` that provides a small confidence bonus on platforms that can display visual media. The intention being that if two answers are otherwise equal, if a device can also display an image, then the response with an image is preferred. `CQSVisualMatchLevel` is an exact copy of `CQSMatchLevel` and requires no other changes to use.
 
-To actual show the visuals, see the [`CQS_action()` method](common-query-framework.md#cqs\_action) below.
+To actual show the visuals, see the [`CQS_action()` method](common-query-framework.md#cqs_action) below.
 
 ## An Example
 
@@ -59,7 +59,7 @@ from mycroft.skills.common_query_skill import CommonQuerySkill, CQSMatchLevel
 
 
 
-# Dict mapping python members to their age and whether they're alive or dead     
+# Dict mapping python members to their age and whether they're alive or dead
 PYTHONS = {
     'eric idle': (77,'alive'),
     'michael palin': (77, 'alive'),
@@ -157,7 +157,7 @@ We'll change the end of the `CQS_match_query_phrase()` method to
 
 So if the utterance contains the phrase "monty python" the confidence will be set to `CQSMatchLevel.EXACT` making the Skill very very likely to be chosen to answer the query.
 
-## CQS\_action()
+## CQS_action()
 
 In some cases the Skill should do additional operations when selected as the best match. It could be prepared for follow-up questions or show an image on the screen. The `CQS_action()` method allows for this, when a Skill is selected this method will be called.
 

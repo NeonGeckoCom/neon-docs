@@ -8,9 +8,9 @@ description: >-
 
 If you are new to Python or programming in general there are lots of resources online to catering to all experience levels. Once you have the basics, a simple Skill can be a great way to try them out in a real project.
 
-Mycroft uses Python 3 and as of December 2019 supports Python 3.5-3.7.
+Neon uses Python 3 and as of December 2019 supports Python 3.7-3.10.
 
-The following are a collection of resources recommended by members of our Community. If you know of other great resources please let us know in the [Dev channel of Mycroft Chat](https://chat.mycroft.ai/community/channels/dev).
+The following are a collection of resources recommended by members of our Community. If you know of other great resources please let us know in the [Neon Chat](https://matrix.to/#/#NeonMycroft:matrix.org).
 
 ## Video Tutorials
 
@@ -56,6 +56,6 @@ The book is available to purchase through normal retailers, or to download for f
 
 Books and courses are great to get started but once you have the basics you often just need good documentation to point you in the right direction. The official Python documentation can be found at: [https://docs.python.org/3/](https://docs.python.org/3/)
 
-For an alternative view of this same documentation, try [DevDocs.io](https://devdocs.io/python\~3.7/).
+For an alternative view of this same documentation, try [DevDocs.io](https://devdocs.io/python~3.7/).
 
 If you're a little more visual, check out this [Python Cheat Sheet](https://websitesetup.org/python-cheat-sheet/) that covers all the basics.

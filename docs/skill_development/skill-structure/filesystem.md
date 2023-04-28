@@ -6,11 +6,11 @@ description: >-
 
 # Filesystem access
 
-Many Skills may want access to parts of the filesystem. To account for the many different platforms that can run Mycroft there are three locations that a Skill can utilize.
+Many Skills may want access to parts of the filesystem. To account for the many different platforms that can run Neon there are three locations that a Skill can utilize.
 
-* Persistent filesystem
-* Temporary cache
-* Skill's own root directory
+- Persistent filesystem
+- Temporary cache
+- Skill's own root directory
 
 ## Persistent Files
 
@@ -20,8 +20,8 @@ When your Skill needs to store some data that will persist over time and cannot 
 
 This uses the standard Python `open()` method to read and write files. It takes two parameters:
 
-* file\_name \(str\) - a path relative to the namespace. subdirs not currently supported.
-* mode \(str\) – a file handle mode \[r, r+, w, w+, rb, rb+, wb+, a, ab, a+, ab+, x\]
+- file_name \(str\) - a path relative to the namespace. subdirs not currently supported.
+- mode \(str\) – a file handle mode \[r, r+, w, w+, rb, rb+, wb+, a, ab, a+, ab+, x\]
 
 Example:
 
@@ -53,16 +53,16 @@ Example:
         # False
 ```
 
-### Get the path of the namespaced directory.
+### Get the path of the namespaced directory
 
 `self.file_system.path` is a member value containing the root path of the namespace. However it is recommended that you use the `self.file_system.open()` method to read and write files.
 
 Example:
 
 ```python
-from mycroft import MycroftSkill
+from neon_utils.skills.neon_skill import NeonSkill
 
-class FileSystemSkill(MycroftSkill):
+class FileSystemSkill(NeonSkill):
 
     def initialize(self):
         """Log the path of this Skills persistent namespace."""
@@ -82,9 +82,9 @@ In this example, we create a subdirectory called "cache", then write to a text f
 from os import mkdir
 from os.path import join
 
-from mycroft import MycroftSkill
+from neon_utils.skills.neon_skill import NeonSkill
 
-class FileSystemSkill(MycroftSkill):
+class FileSystemSkill(NeonSkill):
 
     def initialize(self):
         """Create a cache subdirectory and write to a file inside it"""
@@ -103,9 +103,10 @@ def create_skill():
 ### Example Skill
 
 ```python
-from mycroft import MycroftSkill, intent_handler
+from neon_utils.skills.neon_skill import NeonSkill
+from mycroft.skills.core import intent_handler
 
-class FileSystemSkill(MycroftSkill):
+class FileSystemSkill(NeonSkill):
 
     def initialize(self):
         """Perform initial setup for the Skill.
@@ -146,10 +147,11 @@ This directory will likely be part of a small RAM disk and may be cleared at any
 
 ```python
 from os.path import join
-from mycroft import MycroftSkill, intent_handler
+from neon_utils.skills.neon_skill import NeonSkill
+from mycroft.skills.core import intent_handler
 from mycroft.util import get_cache_directory
 
-class CachingSkill(MycroftSkill):
+class CachingSkill(NeonSkill):
 
     def initialize(self):
         """Perform initial setup for the Skill.
@@ -168,11 +170,11 @@ class CachingSkill(MycroftSkill):
         self.log.info(self.read_cached_data())
 
     def cache_data(self):
-        with open(self.cache_file, "w") as cache_file: 
-            cache_file.write("Some cached data") 
+        with open(self.cache_file, "w") as cache_file:
+            cache_file.write("Some cached data")
 
     def read_cached_data(self):
-        with open(self.cache_file, "r") as cache_file: 
+        with open(self.cache_file, "r") as cache_file:
             return cache_file.read()
 
 def create_skill():
@@ -185,7 +187,6 @@ def create_skill():
 self.root_dir
 ```
 
-This member variable contains the absolute path of a Skill’s root directory e.g. `~.local/share/mycroft/skills/my-skill.me/`.
+This member variable contains the absolute path of a Skill’s root directory e.g. `~/.local/share/neon/skills/my-skill.me/`.
 
 Generally Skills should not modify anything within this directory. Modifying anything in the Skill directory will reload the Skill. This will also prevent the Skill from updating as we do not want to overwrite changes made during development. It is also not guaranteed that the Skill will have permission to write to this directory.
-

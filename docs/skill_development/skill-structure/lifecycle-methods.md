@@ -1,18 +1,18 @@
 ---
 description: >-
-  Mycroft Skills provide a number of methods to perform actions at different
+  Neon Skills provide a number of methods to perform actions at different
   points during the lifecycle of the Class instance.
 ---
 
 # Lifecycle Methods
 
-The MycroftSkill class that all Skills inherit from contains a number of methods that can be overridden by an instance of the Class. This enables a Skill to execute code at specific points in the lifecycle of a Skill. Each of these is optional, meaning none are required to be defined in your Skill.
+The NeonSkill class that all Skills inherit from contains a number of methods that can be overridden by an instance of the Class. This enables a Skill to execute code at specific points in the lifecycle of a Skill. Each of these is optional, meaning none are required to be defined in your Skill.
 
 ## **\_\_init\_\_**
 
-The `__init__` method is called when the Skill is first constructed. It is often used to declare variables or perform setup actions, however it cannot utilize other MycroftSkill methods and properties as the class does not yet exist. This includes `self.bus`and `self.settings` which must instead be called from your Skill's `initialize` method.
+The `__init__` method is called when the Skill is first constructed. It is often used to declare variables or perform setup actions, however it cannot utilize other NeonSkill methods and properties as the class does not yet exist. This includes `self.bus`and `self.settings` which must instead be called from your Skill's `initialize` method.
 
-Th `__init__` method is optional, but if used, the `__init__` method from the Super Class \(MycroftSkill\) must be called.
+Th `__init__` method is optional, but if used, the `__init__` method from the Super Class \(NeonSkill\) must be called.
 
 In the following example we assign a variable `learning` to be `True`. The variable is appended to the instance using `self` so that we can access this variable in any part of our Skill.
 
@@ -39,8 +39,8 @@ The `converse` method can be used to handle follow up utterances prior to the no
 
 The method receives two arguments:
 
-* `utterances` \(list\): The utterances from the user. If there are multiple utterances, consider them all to be transcription possibilities. Commonly, the first entry is the raw utterance and the second is a `normalized` version of the first utterance.
-* `lang` \(string\): The language the utterance is in. This defaults to None.
+- `utterances` \(list\): The utterances from the user. If there are multiple utterances, consider them all to be transcription possibilities. Commonly, the first entry is the raw utterance and the second is a `normalized` version of the first utterance.
+- `lang` \(string\): The language the utterance is in. This defaults to None.
 
 Once the Skill has initially been triggered by the User, the `converse` method will be called each time an utterance is received. It is therefore important to check the contents of the utterance to ensure it matches what you expected.
 
@@ -79,4 +79,3 @@ In the following example we cancel a scheduled event and call a method in our Sk
         self.cancel_scheduled_event('my_event')
         self.stop_my_subprocess()
 ```
-

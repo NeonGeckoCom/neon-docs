@@ -1,34 +1,36 @@
 ---
 description: >-
-  A visual and display framework for Mycroft running on top of KDE Plasma
+  A visual and display framework for Neon running on top of KDE Plasma
   Technology and built using Kirigami, a lightweight user interface framework
   for convergent applications empowered by Qt.
 ---
 
 # GUI Framework
 
+**Note:** Neon is backwards-compatible with Mycroft code, so despite references here to Mycroft-specific code, it will work with Neon.
+
 In the age of information visualization is eminently essential to grab attention and create a promising communication strategy. Visual content that supports your spoken content can make it easier to present information well and more engaging for your audience and users.
 
-![](https://images.theconversation.com/files/205921/original/file-20180212-58348-1sbutu2.jpg?ixlib=rb-1.1.0\&rect=0%2C604%2C3994%2C1994\&q=45\&auto=format\&w=1356\&h=668\&fit=crop)
+![](https://images.theconversation.com/files/205921/original/file-20180212-58348-1sbutu2.jpg?ixlib=rb-1.1.0&rect=0%2C604%2C3994%2C1994&q=45&auto=format&w=1356&h=668&fit=crop)
 
-### Introduction
+## Introduction
 
-Mycroft-GUI is an open source visual and display framework for Mycroft running on top of KDE Plasma Technology and built using Kirigami a lightweight user interface framework for convergent applications which are empowered by Qt.
+Mycroft-GUI is an open source visual and display framework for Neon running on top of KDE Plasma Technology and built using Kirigami a lightweight user interface framework for convergent applications which are empowered by Qt.
 
-### Getting Started
+## Getting Started
 
-Mycroft is an open source voice assistant that can be extended and expanded to the limits of your imagination. Mycroft can run anywhere from your desktop to your automobiles or on smart devices that empower your home.
+Neon is an open source voice assistant that can be extended and expanded to the limits of your imagination. Neon can run anywhere from your desktop to your automobiles or on smart devices that empower your home.
 
-Want Mycroft to do something new? Teach Mycroft a skill, share it, and improve the experience for tens of thousands of people all over the world. This guide aims to provide you with resources to create familiar and consistent visual experiences with your expanding and innovative skills.
+Want Neon to do something new? Teach Neon a skill, share it, and improve the experience for tens of thousands of people all over the world. This guide aims to provide you with resources to create familiar and consistent visual experiences with your expanding and innovative skills.
 
 ## VISUAL SKILL DEVELOPMENT API FOUNDATION
 
-Mycroft enabled devices with displays such as the Mark II, KDE Plasmoid provide skill developers the opportunity to create skills that can be empowered by both voice and screen interaction. The display interaction technology is based on the QML user interface markup language that gives you complete freedom to create in-depth innovative interactions without boundaries or provide you with simple templates within the Mycroft GUI framework that allow minimalistic display of text and images based on your skill development specifics and preferences.
+Neon enabled devices with displays such as the Mark II, KDE Plasmoid provide skill developers the opportunity to create skills that can be empowered by both voice and screen interaction. The display interaction technology is based on the QML user interface markup language that gives you complete freedom to create in-depth innovative interactions without boundaries or provide you with simple templates within the Mycroft GUI framework that allow minimalistic display of text and images based on your skill development specifics and preferences.
 
 This section of the guide is divided into two skill examples that will show you how to create:
 
-* In-depth QML based audio and visual interaction skills
-* Simple template based text and image skills
+- In-depth QML based audio and visual interaction skills
+- Simple template based text and image skills
 
 ### In-depth QML based audio and visual interaction skills
 
@@ -38,20 +40,20 @@ QML user interface markup language is a declarative language built on top of Qt'
 
 A collection of resources to familiarize you with QML and Kirigami Framework.
 
-* [Introduction to QML ](http://doc.qt.io/qt-5/qml-tutorial.html)
-* [Introduction to Kirigami](https://www.kde.org/products/kirigami/)
+- [Introduction to QML](http://doc.qt.io/qt-5/qml-tutorial.html)
+- [Introduction to Kirigami](https://www.kde.org/products/kirigami/)
 
 #### Building your skill to support display
 
-Skills for Mycroft AI are written in Python, using the skills development guide available [here](https://mycroft.ai/documentation/skills/developing-skills/)
+Skills for Mycroft AI are written in Python, using the skills development guide available [here](../../skill_development/)
 
 Let's walk you through some basics of writing your QML user interface, this section is divided into 5 parts:
 
-* [Importing Modules](mycroft-gui.md#importing-modules)
-* [Using Mycroft-GUI Framework Base Delegates](mycroft-gui.md#using-mycroft-gui-framework-base-delegates)
-* [Using Mycroft Framework Components](mycroft-gui.md#using-mycroft-framework-components)
-* [Event Handling](mycroft-gui.md#event-handling)
-* [Resting Faces](mycroft-gui.md#resting-faces)
+- [Importing Modules](mycroft-gui.md#importing-modules)
+- [Using Mycroft-GUI Framework Base Delegates](mycroft-gui.md#using-mycroft-gui-framework-base-delegates)
+- [Using Mycroft Framework Components](mycroft-gui.md#using-mycroft-framework-components)
+- [Event Handling](mycroft-gui.md#event-handling)
+- [Resting Faces](mycroft-gui.md#resting-faces)
 
 #### Importing Modules
 
@@ -82,7 +84,7 @@ QtQuick Layouts are a set of QML types used to arrange items in a user interface
 
 **Kirigami Module:**
 
-[Kirigami](https://api.kde.org/frameworks/kirigami/html/index.html) is a set of QtQuick components for mobile and convergent applications. [Kirigami](https://api.kde.org/frameworks/kirigami/html/index.html) is a set of high level components to make the creation of applications that look and feel great on mobile as well as desktop devices and follow the [Kirigami Human Interface Guidelines](https://community.kde.org/KDE\_Visual\_Design\_Group/KirigamiHIG)
+[Kirigami](https://api.kde.org/frameworks/kirigami/html/index.html) is a set of QtQuick components for mobile and convergent applications. [Kirigami](https://api.kde.org/frameworks/kirigami/html/index.html) is a set of high level components to make the creation of applications that look and feel great on mobile as well as desktop devices and follow the [Kirigami Human Interface Guidelines](https://community.kde.org/KDE_Visual_Design_Group/KirigamiHIG)
 
 **Mycroft Module:**
 
@@ -96,92 +98,93 @@ This provides a QML `Item` to render Adobe® After Effects™ animations exporte
 
 When you design your skill with QML, Mycroft-GUI frameworks provides you with some base delegates you should use when designing your GUI skill. The base delegates provide you with a basic presentation layer for your skill with some property assignments that can help you setup background images, background dim, timeout and grace time properties to give you the control you need for rendering an experience. In your GUI Skill you can use:
 
-*   Mycroft.Delegate: A basic and simple page based on Kirigami.Page
+- Mycroft.Delegate: A basic and simple page based on Kirigami.Page
 
-    Simple display Image and Text Example using Mycroft.Delegate
+  Simple display Image and Text Example using Mycroft.Delegate
 
-    ```
-    import Mycroft 1.0 as Mycroft
+  ```
+  import Mycroft 1.0 as Mycroft
 
-    Mycroft.Delegate {
-        skillBackgroundSource: sessionData.exampleImage
-        ColumnLayout {
-            anchors.fill: parent
-            Image {
-                id: imageId
-                Layout.fillWidth: true
-                Layout.preferredHeight: Kirigami.Units.gridUnit * 2
-                source: "https://source.unsplash.com/1920x1080/?+autumn"
-             }
-             Label {
-                id: labelId
-                Layout.fillWidth: true
-                Layout.preferredHeight: Kirigami.Units.gridUnit * 4
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."            
-            }
-        }
-    }
-    ```
-*   Mycroft.ScrollableDelegate: A delegate that displays skill visuals in a scroll enabled Kirigami Page.
+  Mycroft.Delegate {
+      skillBackgroundSource: sessionData.exampleImage
+      ColumnLayout {
+          anchors.fill: parent
+          Image {
+              id: imageId
+              Layout.fillWidth: true
+              Layout.preferredHeight: Kirigami.Units.gridUnit * 2
+              source: "https://source.unsplash.com/1920x1080/?+autumn"
+           }
+           Label {
+              id: labelId
+              Layout.fillWidth: true
+              Layout.preferredHeight: Kirigami.Units.gridUnit * 4
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+      }
+  }
+  ```
 
-    Example of using Mycroft.ScrollableDelegate
+- Mycroft.ScrollableDelegate: A delegate that displays skill visuals in a scroll enabled Kirigami Page.
 
-    ```
-    import QtQuick 2.4
-    import QtQuick.Controls 2.2
-    import QtQuick.Layouts 1.4
-    import org.kde.kirigami 2.4 as Kirigami
-    import Mycroft 1.0 as Mycroft
+  Example of using Mycroft.ScrollableDelegate
 
-    Mycroft.ScrollableDelegate{
-        id: root
-        skillBackgroundSource: sessionData.background
-        property var sampleModel: sessionData.sampleBlob
+  ```
+  import QtQuick 2.4
+  import QtQuick.Controls 2.2
+  import QtQuick.Layouts 1.4
+  import org.kde.kirigami 2.4 as Kirigami
+  import Mycroft 1.0 as Mycroft
 
-        Kirigami.CardsListView {
-            id: exampleListView
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            model: sampleModel.lorem
-            delegate: Kirigami.AbstractCard {
-                id: rootCard
-                implicitHeight: delegateItem.implicitHeight + Kirigami.Units.largeSpacing
-                contentItem: Item {
-                    implicitWidth: parent.implicitWidth
-                    implicitHeight: parent.implicitHeight
-                    ColumnLayout {
-                        id: delegateItem
-                        anchors.left: parent.left
-                        anchors.right: parent.right
-                        anchors.top: parent.top
-                        spacing: Kirigami.Units.largeSpacing
-                        Kirigami.Heading {
-                            id: restaurantNameLabel
-                            Layout.fillWidth: true
-                            text: modelData.text
-                            level: 2
-                            wrapMode: Text.WordWrap
-                        }
-                        Kirigami.Separator {
-                            Layout.fillWidth: true
-                        }
-                        Image {
-                            id: placeImage
-                            source: modelData.image
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: Kirigami.Units.gridUnit * 3
-                            fillMode: Image.PreserveAspectCrop
-                        }
-                        Item {
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: Kirigami.Units.gridUnit * 1
-                        }
-                    }
-                }
-            }
-        }
-    }
-    ```
+  Mycroft.ScrollableDelegate{
+      id: root
+      skillBackgroundSource: sessionData.background
+      property var sampleModel: sessionData.sampleBlob
+
+      Kirigami.CardsListView {
+          id: exampleListView
+          Layout.fillWidth: true
+          Layout.fillHeight: true
+          model: sampleModel.lorem
+          delegate: Kirigami.AbstractCard {
+              id: rootCard
+              implicitHeight: delegateItem.implicitHeight + Kirigami.Units.largeSpacing
+              contentItem: Item {
+                  implicitWidth: parent.implicitWidth
+                  implicitHeight: parent.implicitHeight
+                  ColumnLayout {
+                      id: delegateItem
+                      anchors.left: parent.left
+                      anchors.right: parent.right
+                      anchors.top: parent.top
+                      spacing: Kirigami.Units.largeSpacing
+                      Kirigami.Heading {
+                          id: restaurantNameLabel
+                          Layout.fillWidth: true
+                          text: modelData.text
+                          level: 2
+                          wrapMode: Text.WordWrap
+                      }
+                      Kirigami.Separator {
+                          Layout.fillWidth: true
+                      }
+                      Image {
+                          id: placeImage
+                          source: modelData.image
+                          Layout.fillWidth: true
+                          Layout.preferredHeight: Kirigami.Units.gridUnit * 3
+                          fillMode: Image.PreserveAspectCrop
+                      }
+                      Item {
+                          Layout.fillWidth: true
+                          Layout.preferredHeight: Kirigami.Units.gridUnit * 1
+                      }
+                  }
+              }
+          }
+      }
+  }
+  ```
 
 #### Using Mycroft Framework Components
 
@@ -194,7 +197,7 @@ Designing a simple skill and only want to display text or images ? Mycroft GUI f
 ```python
 ...
 def handle_hello_world(self, message):
-... 
+...
 self.gui.show_text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo tempor incididunt ut labore et dolore magna aliqua.")
 ...
 ```
@@ -235,7 +238,7 @@ rawhtmlexample = """<!DOCTYPE html>
 <p>Hello World</p>
 </body>
 </html>
-""" 
+"""
 self.gui.show_html(rawhtmlexample)
 ...
 ```
@@ -257,14 +260,14 @@ import Mycroft 1.0 as Mycroft
 import org.kde.lottie 1.0
 
 Mycroft.Delegate {
-    LottieAnimation {     
-        id: fancyAnimation 
+    LottieAnimation {
+        id: fancyAnimation
         anchors.fill: parent
         source: Qt.resolvedUrl("animations/fancy_animation.json")
         loops: Animation.Infinite
-        fillMode: Image.PreserveAspectFit    
+        fillMode: Image.PreserveAspectFit
         running: true
-    }    
+    }
 }
 ```
 
@@ -283,7 +286,7 @@ import Mycroft 1.0 as Mycroft
 
 Mycroft.Delegate {
      background: Mycroft.SlidingImage {
-     source: "foo.jpg" 
+     source: "foo.jpg"
      running: bool    //If true the sliding animation is active
      speed: 1         //Animation speed in Kirigami.Units.gridUnit / second
    }
@@ -460,13 +463,13 @@ Mycroft.Delegate {
     id: root
 
     Mycroft.SlideShow {
-        id: simpleSlideShow 
+        id: simpleSlideShow
         model: sessionData.exampleModel // model with slideshow data
         anchors.fill: parent
-        interval: 5000 // time to switch between slides 
+        interval: 5000 // time to switch between slides
         running: true // can be set to false if one wants to swipe manually
         loop: true // can be set to play through continously or just once
-        delegate: Kirigami.AbstractCard { 
+        delegate: Kirigami.AbstractCard {
             width: rootItem.width
             height: rootItem.height
             contentItem: ColumnLayout {
@@ -515,7 +518,7 @@ Mycroft.Delegate {
         anchors.fill: parent
         source: sessionData.audioSource        //Set URL of audio file
         thumbnail: sessionData.audioThumbnail  //Set Thumbnail of audio
-        title: sessionData.audioTitle          //Set Title of audio 
+        title: sessionData.audioTitle          //Set Title of audio
         nextAction: "author.example-player.next" //Event to drive next button action in skill
         previousAction: "author.example-player.previous" //Event to drive previous button action in skill
         status: sessionData.status             //Current status of playing audio
@@ -592,7 +595,7 @@ Mycroft.Delegate {
     property var fooString: sessionData.foobar
 
     onFooStringChanged: {
-        fooRect.color = sessionData.color 
+        fooRect.color = sessionData.color
     }
 
     Rectangle {
@@ -664,10 +667,7 @@ Mycroft.Delegate {
     Kirigami.Heading {
         id: headerExample
         anchors.centerIn: parent
-        text: fooString 
+        text: fooString
     }
 }
 ```
-
-
-

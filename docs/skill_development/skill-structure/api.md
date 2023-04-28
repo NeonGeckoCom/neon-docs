@@ -6,7 +6,7 @@ description: >-
 
 # Skill API
 
-The Skill API uses the Mycroft Message Bus to communicate between Skills and wraps the interaction in simple Python objects making them easy to use.
+The Skill API uses the Neon Message Bus to communicate between Skills and wraps the interaction in simple Python objects making them easy to use.
 
 ## Making a method available through the Skill API
 
@@ -28,9 +28,10 @@ The Skill API works over the Message Bus. This requires that the return values a
 ### Example
 
 ```python
-from mycroft.skills import MycroftSkill, skill_api_method
+from neon_utils.skills.neon_skill import NeonSkill
+from mycroft.skills import skill_api_method
 
-class RobberSkill(MycroftSkill):
+class RobberSkill(NeonSkill):
     @skill_api_method
     def robber_lang(self, sentence):
         """Encode a sentence to "Rövarspråket".
@@ -61,9 +62,10 @@ If you want to make use of exported functionality from another Skill, you must f
 To access the `robber_lang()` method we created above, we could write:
 
 ```python
+from neon_utils.skills.neon_skill import NeonSkill
 from mycroft.skills.api import SkillApi
 
-class NewRobberSkill(MycroftSkill):
+class NewRobberSkill(NeonSkill):
     def initialize(self):
         self.robber = SkillApi.get('robber-skill.forslund')
         self.speak(self.robber.robber_lang('hello world'))
@@ -79,11 +81,10 @@ Our `NewRobberSkill` will therefore speak something like "hoh e lol lol o wow o 
 
 ## Getting information on a Skill's exported API
 
-The Mycroft CLI has an `:api` command for exploring Skill APIs.
+The Neon CLI has an `:api` command for exploring Skill APIs.
 
 ```text
 :api robber-lang.forslund
 ```
 
 will show any exported method from the `robber-lang.forslund` Skill. Each exported method's docstring will automatically be extracted and presented, providing information on how each method is intended to be used.
-

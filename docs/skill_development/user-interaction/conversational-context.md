@@ -1,12 +1,12 @@
 ---
 description: >-
   A Skill can add context to the Intent Parser to create more natural
-  interaction with Mycroft.
+  interaction with Neon.
 ---
 
 # Conversational Context
 
-_NOTE: Conversational context is currently only available with the_ [_Adapt_](https://mycroft.ai/documentation/adapt) _Intent Parser, and is not yet available for_ [_Padatious_](https://mycroft.ai/documentation/padatious)
+_NOTE: Conversational context is currently only available with the_ [_Adapt_](./intents/adapt-intents) _Intent Parser, and is not yet available for_ [_Padatious_](./intents/padatious-intents)
 
 > How tall is John Cleese?
 
@@ -36,12 +36,12 @@ To interact with the above handlers the user would need to say
 
 ```text
 User: How tall is John Cleese?
-Mycroft: John Cleese is 196 centimeters
+Neon: John Cleese is 196 centimeters
 User: Where is John Cleese from?
-Mycroft: He's from England
+Neon: He's from England
 ```
 
-To get a more natural response the functions can be changed to let Mycroft know which `PythonPerson` we're talking about by using the `self.set_context()` method to give context:
+To get a more natural response the functions can be changed to let Neon know which `PythonPerson` we're talking about by using the `self.set_context()` method to give context:
 
 ```python
     @intent_handler(IntentBuilder().require('PythonPerson').require('Length'))
@@ -59,21 +59,21 @@ To get a more natural response the functions can be changed to let Mycroft know 
         self.set_context('PythonPerson', python)
 ```
 
-When either of the methods are called the `PythonPerson` keyword is added to Mycroft's context, which means that if there is a match with `Length` but `PythonPerson` is missing Mycroft will assume the last mention of that keyword. The interaction can now become the one described at the top of the page.
+When either of the methods are called the `PythonPerson` keyword is added to Neon's context, which means that if there is a match with `Length` but `PythonPerson` is missing Neon will assume the last mention of that keyword. The interaction can now become the one described at the top of the page.
 
 > User: How tall is John Cleese?
 
-Mycroft detects the `Length` keyword and the `PythonPerson` keyword
+Neon detects the `Length` keyword and the `PythonPerson` keyword
 
-> Mycroft: 196 centimeters
+> Neon: 196 centimeters
 
 John Cleese is added to the current context
 
 > User: Where's he from?
 
-Mycroft detects the `WhereFrom` keyword but not any `PythonPerson` keyword. The Context Manager is activated and returns the latest entry of `PythonPerson` which is _John Cleese_
+Neon detects the `WhereFrom` keyword but not any `PythonPerson` keyword. The Context Manager is activated and returns the latest entry of `PythonPerson` which is _John Cleese_
 
-> Mycroft: He's from England
+> Neon: He's from England
 
 The context isn't limited by the keywords provided by the current **Skill**. For example
 
@@ -91,9 +91,9 @@ Enables conversations with other **Skills** as well.
 
 ```text
 User: Where is John Cleese from?
-Mycroft: He's from England
+Neon: He's from England
 User: What's the weather like over there?
-Mycroft: Raining and 14 degrees...
+Neon: Raining and 14 degrees...
 ```
 
 ## Using context to enable **Intents**
@@ -101,18 +101,18 @@ Mycroft: Raining and 14 degrees...
 To make sure certain **Intents** can't be triggered unless some previous stage in a conversation has occured. Context can be used to create "bubbles" of available intent handlers.
 
 ```text
-User: Hey Mycroft, bring me some Tea
-Mycroft: Of course, would you like Milk with that?
+User: Hey Neon, bring me some Tea
+Neon: Of course, would you like Milk with that?
 User: No
-Mycroft: How about some Honey?
+Neon: How about some Honey?
 User: All right then
-Mycroft: Here you go, here's your Tea with Honey
+Neon: Here you go, here's your Tea with Honey
 ```
 
 ```python
 from mycroft.skills.context import adds_context, removes_context
 
-class TeaSkill(MycroftSkill):
+class TeaSkill(NeonSkill):
     @intent_handler(IntentBuilder('TeaIntent').require("TeaKeyword"))
     @adds_context('MilkContext')
     def handle_tea_intent(self, message):
@@ -159,4 +159,3 @@ When starting up only the `TeaIntent` will be available. When that has been trig
 You can find an example [Tea Skill using conversational context on Github](https://github.com/krisgesling/tea-skill).
 
 As you can see, Conversational Context lends itself well to implementing a [dialog tree or conversation tree](https://en.wikipedia.org/wiki/Dialog_tree).
-

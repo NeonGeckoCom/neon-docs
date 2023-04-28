@@ -6,13 +6,15 @@ description: >-
 
 # Skill Settings
 
+**Note:** Skill settings are commonly used in most Mycroft skills, but less common in Neon or OVOS skills. The examples in this documentation come from Mycroft skills which may or may not be compatible with Neon. However, the skill settings portion is compatible with Neon.
+
 Skill settings provide the ability for users to configure a Skill using a web-based interface. This is often used to:
 
-* Change default behaviors - such as the sound used for users alarms.
-* Authenticate with external services - such as Spotify
-* Enter longer data as text rather than by voice - such as the IP address of the users Home Assistant server.
+- Change default behaviors - such as the sound used for users alarms.
+- Authenticate with external services - such as Spotify
+- Enter longer data as text rather than by voice - such as the IP address of the users Home Assistant server.
 
-Skill settings are completely optional.
+Skill settings are completely optional. Also note that the web-based interface for a skill setting is only available if a backend is being used for your Neon setup. By default, there is no backend. For more information see [the OpenVoice OS backend documentation](https://openvoiceos.github.io/community-docs/arch_backend/).
 
 ## Define settings for a Skill
 
@@ -46,20 +48,20 @@ Now, here is the same settings, as it would be defined with YAML in a `settingsm
 
 ```yaml
 skillMetadata:
-   sections:
-      - name: Display
-        fields:
-          - name: show_time
-            type: checkbox
-            label: Show digital clock when idle
-            value: "true"
+  sections:
+    - name: Display
+      fields:
+        - name: show_time
+          type: checkbox
+          label: Show digital clock when idle
+          value: "true"
 ```
 
-Notice that the value of `false` is surrounded by "quotation marks". This is because Mycroft expects a string of `"true"` or `"false"` rather than a Boolean.
+Notice that the value of `false` is surrounded by "quotation marks". This is because Neon expects a string of `"true"` or `"false"` rather than a Boolean.
 
 Both of these files would result in the same settings block.
 
-![](<../../../img/Date-Time-Settings (1).png>)
+![Date-Time skill settings example](<../../../img/Date-Time-Settings (1).png>)
 
 It is up to your personal preference which syntax you choose.
 
@@ -79,38 +81,41 @@ Each section must contain a `name` attribute that is used as the heading for tha
 
 Each section has one or more `fields`. Each field is a setting available to the user. Each field takes four properties:
 
-*   `name` (String)
+- `name` (String)
 
-    The `name` of the `field` is used by the Skill to get and set the value of the `field`. It will not usually be displayed to the user, unless the `label` property has not been set.
-*   `type` (Enum)
+  The `name` of the `field` is used by the Skill to get and set the value of the `field`. It will not usually be displayed to the user, unless the `label` property has not been set.
 
-    The data type of this field. The supported types are:
+- `type` (Enum)
 
-    * `text`: any kind of text
-    * `email`: text validated as an email address
-    * `checkbox`: boolean, True or False
-    * `number`: text validated as a number
-    * `password`: text hidden from view by default
-    * `select`: a drop-down menu of options
-    * `label`: special field to display text for information purposes only. No name or value is required for a `label` field.
-*   `label` (String)
+  The data type of this field. The supported types are:
 
-    The text to be displayed above the setting field.
-*   `value` (String)
+  - `text`: any kind of text
+  - `email`: text validated as an email address
+  - `checkbox`: boolean, True or False
+  - `number`: text validated as a number
+  - `password`: text hidden from view by default
+  - `select`: a drop-down menu of options
+  - `label`: special field to display text for information purposes only. No name or value is required for a `label` field.
 
-    The initial value of the field.
+- `label` (String)
+
+  The text to be displayed above the setting field.
+
+- `value` (String)
+
+  The initial value of the field.
 
 Examples for each type of field are provided in JSON and YAML at the end of this page.
 
 ## Using settings in your Skill
 
-Once settings have been defined using a `settingsmeta` file, they will be presented to the user on their personal [Skill Settings page](https://home.mycroft.ai/skills).
+Once settings have been defined using a `settingsmeta` file, they will only be presented to the user if they are using a backend with a web-based interface.
 
-When settings are fetched from the Mycroft server, they are saved into a `settings.json` file. This file is automatically created when a Skill is loaded even if the Skill does not have any settings. Your Skill then accesses the settings from this file. Nowadays the file is located in the Skill's XDG\_CONFIG\_DIR (usually `~/config/mycroft/skills/<skillname>`), however if a `settings.json` file already exists in the Skill's root directory (the deprecated location) that location is used for compatibility.
+When settings are fetched from the backend, they are saved into a `settings.json` file. This file is automatically created when a Skill is loaded even if the Skill does not have any settings. Your Skill then accesses the settings from this file. Nowadays the file is located in the Skill's XDG_CONFIG_DIR (usually `~/config/neon/skills/<skillname>`), however if a `settings.json` file already exists in the Skill's root directory (the deprecated location) that location is used for compatibility.
 
 ### Reading settings
 
-Skill settings are available on the MycroftSkill class and inherit from a Python Dict. This means that you can use it just like you would any other Python dictionary.
+Skill settings are available on the NeonSkill class and inherit from a Python Dict. This means that you can use it just like you would any other Python dictionary.
 
 To access the `show_time` variable from our example above we would use the `Dict.get` method:
 
@@ -146,7 +151,7 @@ It is also important to note that the `settings` dictionary will not be availabl
 
 ### Handling settings changes
 
-Each Mycroft device will check for updates to a users settings regularly, and write these to the Skills `settings.json`. To perform some action when settings are updated, you can register a callback function in your Skill.
+Each Neon device will check for updates to a users settings regularly, and write these to the Skills `settings.json`. To perform some action when settings are updated, you can register a callback function in your Skill.
 
 ```python
 def initialize(self):
@@ -178,6 +183,7 @@ The new value for the `show_time` setting will persist until a new setting is as
 
 {% tabs %}
 {% tab title="JSON" %}
+
 ```javascript
 {
     "skillMetadata": {
@@ -195,17 +201,20 @@ The new value for the `show_time` setting will persist until a new setting is as
     }
 }
 ```
+
 {% endtab %}
 
 {% tab title="YAML" %}
+
 ```yaml
 skillMetadata:
-   sections:
-      - name: Label Field Example
-        fields:
-          - type: label
-            label: This is descriptive text.
+  sections:
+    - name: Label Field Example
+      fields:
+        - type: label
+          label: This is descriptive text.
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -213,6 +222,7 @@ skillMetadata:
 
 {% tabs %}
 {% tab title="JSON" %}
+
 ```javascript
 {
     "skillMetadata": {
@@ -232,19 +242,22 @@ skillMetadata:
     }
 }
 ```
+
 {% endtab %}
 
 {% tab title="YAML" %}
+
 ```yaml
 skillMetadata:
-   sections:
-      - name: Text Field Example
-        fields:
-          - name: my_string
-            type: text
-            label: Enter any text
-            value:
+  sections:
+    - name: Text Field Example
+      fields:
+        - name: my_string
+          type: text
+          label: Enter any text
+          value:
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -252,6 +265,7 @@ skillMetadata:
 
 {% tabs %}
 {% tab title="JSON" %}
+
 ```javascript
 {
     "skillMetadata": {
@@ -271,19 +285,22 @@ skillMetadata:
     }
 }
 ```
+
 {% endtab %}
 
 {% tab title="YAML" %}
+
 ```yaml
 skillMetadata:
-   sections:
-      - name: Email Field Example
-        fields:
-          - name: my_email_address
-            type: email
-            label: Enter your email address
-            value:
+  sections:
+    - name: Email Field Example
+      fields:
+        - name: my_email_address
+          type: email
+          label: Enter your email address
+          value:
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -291,6 +308,7 @@ skillMetadata:
 
 {% tabs %}
 {% tab title="JSON" %}
+
 ```javascript
 {
     "skillMetadata": {
@@ -310,19 +328,22 @@ skillMetadata:
     }
 }
 ```
+
 {% endtab %}
 
 {% tab title="YAML" %}
+
 ```yaml
 skillMetadata:
-   sections:
-      - name: Checkbox Field Example
-        fields:
-          - name: my_boolean
-            type: checkbox
-            label: This is an example checkbox. It creates a Boolean value.
-            value: "false"
+  sections:
+    - name: Checkbox Field Example
+      fields:
+        - name: my_boolean
+          type: checkbox
+          label: This is an example checkbox. It creates a Boolean value.
+          value: "false"
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -330,6 +351,7 @@ skillMetadata:
 
 {% tabs %}
 {% tab title="JSON" %}
+
 ```javascript
 {
     "skillMetadata": {
@@ -349,19 +371,22 @@ skillMetadata:
     }
 }
 ```
+
 {% endtab %}
 
 {% tab title="YAML" %}
+
 ```yaml
 skillMetadata:
-   sections:
-      - name: Number Field Example
-        fields:
-          - name: my_number
-            type: number
-            label: Enter any number
-            value: 7
+  sections:
+    - name: Number Field Example
+      fields:
+        - name: my_number
+          type: number
+          label: Enter any number
+          value: 7
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -369,6 +394,7 @@ skillMetadata:
 
 {% tabs %}
 {% tab title="JSON" %}
+
 ```javascript
 {
     "skillMetadata": {
@@ -388,19 +414,22 @@ skillMetadata:
     }
 }
 ```
+
 {% endtab %}
 
 {% tab title="YAML" %}
+
 ```yaml
 skillMetadata:
-   sections:
-      - name: Password Field Example
-        fields:
-          - name: my_password
-            type: password
-            label: Enter your password
-            value:
+  sections:
+    - name: Password Field Example
+      fields:
+        - name: my_password
+          type: password
+          label: Enter your password
+          value:
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -408,6 +437,7 @@ skillMetadata:
 
 {% tabs %}
 {% tab title="JSON" %}
+
 ```javascript
 {
     "skillMetadata": {
@@ -428,19 +458,22 @@ skillMetadata:
     }
 }
 ```
+
 {% endtab %}
 
 {% tab title="YAML" %}
+
 ```yaml
 skillMetadata:
-   sections:
-      - name: Select Field Example
-        fields:
-          - name: my_selected_option
-            type: select
-            label: Select an option
-            options: Option 1|option_one;Option 2|option_two;Option 3|option_three
-            value: option_one
+  sections:
+    - name: Select Field Example
+      fields:
+        - name: my_selected_option
+          type: select
+          label: Select an option
+          options: Option 1|option_one;Option 2|option_two;Option 3|option_three
+          value: option_one
 ```
+
 {% endtab %}
 {% endtabs %}

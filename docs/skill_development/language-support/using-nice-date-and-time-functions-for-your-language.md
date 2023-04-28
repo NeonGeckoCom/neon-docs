@@ -5,11 +5,11 @@ description: >-
 
 # Configuring some of the “nice” functions for a language
 
-The following functions are used to convert a Python datetime to a pronounceable string, for a given language [please refer to the Mycroft API documentation](http://mycroft-core.readthedocs.io/en/stable/))
+The following functions are used to convert a Python datetime to a pronounceable string, for a given language [please refer to the Mycroft API documentation](http://mycroft-core.readthedocs.io/en/stable/)), which is compatible with Neon.
 
-* ```nice_date(dt, lang='en-us', now=None)```
-* ```nice_date_time(dt, lang='en-us', now=None, use_24hour=False, use_ampm=False)```
-* ```nice_year(dt, lang='en-us', bc=False)```
+- `nice_date(dt, lang='en-us', now=None)`
+- `nice_date_time(dt, lang='en-us', now=None, use_24hour=False, use_ampm=False)`
+- `nice_year(dt, lang='en-us', bc=False)`
 
 Adding a new language and unit testing it can be added using configuration only.
 
@@ -18,10 +18,11 @@ This page describe how to add a new language, or change configuration for an exi
 ## Configuration files in the file system
 
 Each language has a configuration file and a unit test file. The configuration files are written in json. The configurations are:
-* ```mycroft/res/text//date_time.json```
-* ```mycroft/res/text//date_time_test.json```
 
-For example: ```mycroft/res/text/en-us/date_time.json```
+- `mycroft/res/text//date_time.json`
+- `mycroft/res/text//date_time_test.json`
+
+For example: `mycroft/res/text/en-us/date_time.json`
 
 The `mycroft.util.nice_time()` function is not configurable using the approach described in this document (historical reasons). The `nice_date_and_time()` depends on `nice_time()`, which must be able to support the selected language, if you want nice results from `nice_date_time()`. Without support for a language in `nice_time()`, `nice_date_and_time(`) will still return a string, but the time part not be appropriate for your language.
 
@@ -40,12 +41,12 @@ The template sections are:
 
 The map sections are:
 
-* weekday
-* date
-* month
-* number
+- weekday
+- date
+- month
+- number
 
-The format templates operate on a number of components, like a ```{formatted_year}```. The components are substituted by a value calculated by the `nice_*()` function. In general, a format created by a template at the top of the list above, can be used in a template lower on the list. The exact possibilities are described later in this document.
+The format templates operate on a number of components, like a `{formatted_year}`. The components are substituted by a value calculated by the `nice_*()` function. In general, a format created by a template at the top of the list above, can be used in a template lower on the list. The exact possibilities are described later in this document.
 
 ### The building blocks
 
@@ -53,18 +54,18 @@ Before the template sections are considered, the input year is decomposed into c
 
 A list of basic components with examples for year 1969 in en-us are shown below:
 
-* {x} example: 'nine'
-* {xx} example: '69' (fall back to number since the map does not contain '69')
-* {x0} example: 'sixty'
-* {x_in_x0} example: 'six'
-* {xxx} example: '969' (fall back to number since the map does not contain '969')
-* {x00} example: '969' (fall back to number since the map does not contain '900')
-* {x_in_x00} example: 'one'
-* {xx00} example: '1969' (fall back number since the map does not contain '1900')
-* {xx_in_xx00} example: 'nineteen'
-* {x000} example: '1969' (fall back number since the map does not contain '1000')
-* {x_in_x000} example: 'one'
-* {number} example: '1969' (can be used for fall back by templates, if no other patterns match)
+- {x} example: 'nine'
+- {xx} example: '69' (fall back to number since the map does not contain '69')
+- {x0} example: 'sixty'
+- {x_in_x0} example: 'six'
+- {xxx} example: '969' (fall back to number since the map does not contain '969')
+- {x00} example: '969' (fall back to number since the map does not contain '900')
+- {x_in_x00} example: 'one'
+- {xx00} example: '1969' (fall back number since the map does not contain '1900')
+- {xx_in_xx00} example: 'nineteen'
+- {x000} example: '1969' (fall back number since the map does not contain '1000')
+- {x_in_x000} example: 'one'
+- {number} example: '1969' (can be used for fall back by templates, if no other patterns match)
 
 When we look at the list above, it is possible to create 'nineteen sixty nine' if we choose the correct components. That process happens in the templates.
 
@@ -100,7 +101,7 @@ The string '1969' is used, and the first match is index 4: `^[2-9]d`. The compon
 
 In some languages, for instance Danish, the order of ones and tens is reversed, so 69 is pronounced 'ni og tres' (nine and sixty). The list entry for Danish would be:
 
-```"4": {"match": "^[2-9]\\d$", "format": "{x} og {x0}"}```
+`"4": {"match": "^[2-9]\\d$", "format": "{x} og {x0}"}`
 
 The result of the decade format is `{formatted_decade}`, that can be used as a component in other formats.
 
@@ -108,11 +109,11 @@ The result of the decade format is `{formatted_decade}`, that can be used as a c
 
 The following components can be used in the decade format:
 
-* {x}
-* {xx}
-* {x0}
-* {x_in_x0}
-* {number}
+- {x}
+- {xx}
+- {x0}
+- {x_in_x0}
+- {number}
 
 ### The hundreds format
 
@@ -133,16 +134,15 @@ The result of the hundreds format is `{formatted_hundreds}`, that can be used as
 
 In the hundreds format, we are only interested in how to pronounce the first digit of the hundreds, we use the `year_format` to put together the decade, hundreds and thousand formats laster.
 
-
-##### Components in the hundreds format
+#### Components in the hundreds format
 
 The following components can be used in the hundreds format:
 
-* {xxx}
-* {x00}
-* {x_in_x00}
-* {formatted_decade}
-* {number}
+- {xxx}
+- {x00}
+- {x_in_x00}
+- {formatted_decade}
+- {number}
 
 Even if `{formatted_decade}` can be used as a component in hundreds, it is usually easier to configure, test and read if it is not used. Instead use the `year_format` to put hundreds and decades together.
 
@@ -160,6 +160,7 @@ The thousand format will work on the four rightmost digits of the year. For `en-
     "default": "{number}"
 }
 ```
+
 The first list entry handles thousands and the first decade (year 0-9) of a thousand, e.g. 3004, or 2000.
 
 The second list entry handles the hundreds in range 1100 to 1900 (e.g. 1800), and the third entry handles the hundreds above 1900, e.g. 2100.
@@ -173,22 +174,22 @@ In the thousands format, we are only interested in how to pronounce the first tw
 
 Lets use 1969 as an example with language `en-us`:
 
-The string `'1969'` is used, it matches the fourth list entry and is formatted to `'nineteen'`. In the `year_format` this will be combined with `'sixty nine'`  from the `decade_format`, to produce `'nineteen sixty nine'`.
+The string `'1969'` is used, it matches the fourth list entry and is formatted to `'nineteen'`. In the `year_format` this will be combined with `'sixty nine'` from the `decade_format`, to produce `'nineteen sixty nine'`.
 
 The result of the thousands format is `{formatted_thousands}`, that can be used as a component in other formats.
 
-##### Components in the thousand format
+#### Components in the thousand format
 
 The following components can be used in the thousand format:
 
-* {x_in_x00}
-* {xx00}
-* {xx_in_xx00}
-* {x000}
-* {x_in_x000}
-* {formatted_decade}
-* {formatted_hundreds}
-* {number}
+- {x_in_x00}
+- {xx00}
+- {xx_in_xx00}
+- {x000}
+- {x_in_x000}
+- {formatted_decade}
+- {formatted_hundreds}
+- {number}
 
 Even if `{formatted_decade}` and `{formatted_hundreds}` can be used as a component in thousands, it is usually easier to configure, test and read if it is not used. Instead use the `year_format` to put thousands, hundreds and decades together.
 
@@ -229,15 +230,15 @@ The entry "bc" is the string to be used in the year format, if the year is b.c. 
 
 The result of the year format is `{formatted_year}`, that can be used as a component in other formats.
 
-##### Components in the year template
+#### Components in the year template
 
-* {formatted_decade}
-* {formatted_hundreds}
-* {formatted_thousands}
-* {century} : The datetime century as digits
-* {decade}: The datetime decade as digits
-* {year}: The datetime year as digits
-* {bc}: A string to apply for years B.C.
+- {formatted_decade}
+- {formatted_hundreds}
+- {formatted_thousands}
+- {century} : The datetime century as digits
+- {decade}: The datetime decade as digits
+- {year}: The datetime year as digits
+- {bc}: A string to apply for years B.C.
 
 ### The date_format
 
@@ -245,12 +246,12 @@ This section contains information on how to format a pronounceable date. For `en
 
 ```json
 "date_format": {
-	"date_full": "{weekday}, {month} {day}, {formatted_year}",
-	"date_full_no_year": "{weekday}, {month} {day}",
-	"date_full_no_year_month": "{weekday}, {day}",
-	"today": "today",
-	"tomorrow": "tomorrow",
-	"yesterday": "yesterday"
+    "date_full": "{weekday}, {month} {day}, {formatted_year}",
+    "date_full_no_year": "{weekday}, {month} {day}",
+    "date_full_no_year_month": "{weekday}, {day}",
+    "today": "today",
+    "tomorrow": "tomorrow",
+    "yesterday": "yesterday"
 }
 ```
 
@@ -261,25 +262,26 @@ If your language don't have, for instance, a tradition for saying yesterday, it 
 ```json
 "yesterday": "{weekday}, {month} {day}, {formatted_year}"
 ```
+
 will create the same output as `date_full` above, in case of yesterday.
 
 The result of the date format is `{formatted_date}`, that can be used as a component in other formats.
 
 The following keys exist for the date_format:
 
-* "date_full": A format containing a full date
-* "date_full_no_year": A format without the year, used if the "now" date parameter is set, and if "now" is in the same year and before the date.
-* "date_full_no_year_month": A format without the year and month, used if the "now" date parameter is set, and if "now" is before the date and is in the same year and month as the date.
-* "today": The word for today, used if the "now" date parameter is set, and if "now" is in the same year and month and day as the date.
-* "tomorrow": The word for tomorrow, used if the "now" date parameter is set, and if "now" is in the same year and month, but one day before the day in the date.
-* "yesterday": The word for yesterday, used if the "now" date parameter is set, and if "now" is in the same year and month, but one day after the day in the date.
+- "date_full": A format containing a full date
+- "date_full_no_year": A format without the year, used if the "now" date parameter is set, and if "now" is in the same year and before the date.
+- "date_full_no_year_month": A format without the year and month, used if the "now" date parameter is set, and if "now" is before the date and is in the same year and month as the date.
+- "today": The word for today, used if the "now" date parameter is set, and if "now" is in the same year and month and day as the date.
+- "tomorrow": The word for tomorrow, used if the "now" date parameter is set, and if "now" is in the same year and month, but one day before the day in the date.
+- "yesterday": The word for yesterday, used if the "now" date parameter is set, and if "now" is in the same year and month, but one day after the day in the date.
 
-##### Components in the date template
+#### Components in the date template
 
-* {formatted_year}: The year formatted like in [The year_format](## The year_format)
-* {weekday}: The weekday, formatted according to [The weekday section](## The weekday section)
-* {month}: The month, formatted according to [The month section](## The month section)
-* {day}: The day of the month, formatted according to [The date section](## The date section)
+- {formatted_year}: The year formatted like in [The year_format](## The year_format)
+- {weekday}: The weekday, formatted according to [The weekday section](## The weekday section)
+- {month}: The month, formatted according to [The month section](## The month section)
+- {day}: The day of the month, formatted according to [The date section](## The date section)
 
 ### The date_time_format
 
@@ -295,18 +297,21 @@ The formatted time is obtained using the existing `mycroft.util.nice_time()` fun
 
 #### Arguments to format templates
 
-* {formatted_date}: Date formatted as specified in the "date_format" section
-* {formatted_time}: Time formatted by nice_time(), [please refer to the Mycroft API documentation](http://mycroft-core.readthedocs.io/en/stable/)
+- {formatted_date}: Date formatted as specified in the "date_format" section
+- {formatted_time}: Time formatted by nice_time(), [please refer to the Mycroft API documentation](http://mycroft-core.readthedocs.io/en/stable/)
 
 ## Maps
 
 ### The weekday section
+
 A map from the day number in the week to the pronounceable weekday name
 
 ### The date section
+
 A map from date as a number to a pronounceable date
 
 ### The month section
+
 A map from the month number to a pronounceable month
 
 ## Unit testing
@@ -315,55 +320,67 @@ A new language requires new unit tests, to ensure that it produce correct result
 
 To prove the likelihood that formatting makes sense, a configuration file must be provided, that lists the unit tests. One unit test file exists for each language, it is placed in:
 
-```
+```text
 mycroft/res/text//date_time_test.json
 ```
 
 Section [Test file for en-us](# Test file for en-us) contains the test file for the en-us language. It has three sections:
 
-* test_nice_year
-* test_nice_date
-* test_nice_date_time
+- test_nice_year
+- test_nice_date
+- test_nice_date_time
 
 one section for each of the three `nice_*()` functions.
 
-For each section there is a list, the index must start at 1 and continue in increments of 1. The content of a list entry is ```datetime_param```, which contains the parameters that the Python datetime.datetime class take. Then there is ```assertEqual```, which is the expected formatted value when given the datetime. Each `nice_*()` function takes different parameters, the parameters must be specified in the list entry as well, they cannot be omitted even if they are Python 'None'
+For each section there is a list, the index must start at 1 and continue in increments of 1. The content of a list entry is `datetime_param`, which contains the parameters that the Python datetime.datetime class take. Then there is `assertEqual`, which is the expected formatted value when given the datetime. Each `nice_*()` function takes different parameters, the parameters must be specified in the list entry as well, they cannot be omitted even if they are Python 'None'
 
 ## Configuration file for en-us
 
 ```json
 {
   "decade_format": {
-    "1": {"match": "^\\d$", "format": "{x}"},
-    "2": {"match": "^1\\d$", "format": "{xx}"},
-    "3": {"match": "^\\d0$", "format": "{x0}"},
-    "4": {"match": "^[2-9]\\d$", "format": "{x0} {x}"},
+    "1": { "match": "^\\d$", "format": "{x}" },
+    "2": { "match": "^1\\d$", "format": "{xx}" },
+    "3": { "match": "^\\d0$", "format": "{x0}" },
+    "4": { "match": "^[2-9]\\d$", "format": "{x0} {x}" },
     "default": "{number}"
   },
-    "hundreds_format": {
-    "1": {"match": "^\\d{3}$", "format": "{x_in_x00} hundred"},
+  "hundreds_format": {
+    "1": { "match": "^\\d{3}$", "format": "{x_in_x00} hundred" },
     "default": "{number}"
   },
-    "thousand_format": {
-    "1": {"match": "^\\d00\\d$", "format": "{x_in_x000} thousand"},
-    "2": {"match": "^1\\d00$", "format": "{xx_in_xx00} hundred"},
-    "3": {"match": "^\\d{2}00$", "format": "{x0_in_x000} {x_in_x00} hundred"},
-    "4": {"match": "^(1\\d{3})|(\\d0\\d{2})$", "format": "{xx_in_xx00}"},
-    "5": {"match": "^\\d{4}$", "format": "{x0_in_x000} {x_in_x00}"},
+  "thousand_format": {
+    "1": { "match": "^\\d00\\d$", "format": "{x_in_x000} thousand" },
+    "2": { "match": "^1\\d00$", "format": "{xx_in_xx00} hundred" },
+    "3": { "match": "^\\d{2}00$", "format": "{x0_in_x000} {x_in_x00} hundred" },
+    "4": { "match": "^(1\\d{3})|(\\d0\\d{2})$", "format": "{xx_in_xx00}" },
+    "5": { "match": "^\\d{4}$", "format": "{x0_in_x000} {x_in_x00}" },
     "default": "{number}"
   },
-    "year_format": {
-    "1": {"match": "^\\d\\d?$", "format": "{formatted_decade} {bc}"},
-    "2": {"match": "^\\d00$", "format": "{formatted_hundreds} {bc}"},
-    "3": {"match": "^\\d{3}$", "format": "{formatted_hundreds} {formatted_decade} {bc}"},
-    "4": {"match": "^\\d{2}00$", "format": "{formatted_thousand} {bc}"},
-    "5": {"match": "^\\d00\\d$", "format": "{formatted_thousand} {formatted_decade} {bc}"},
-    "6": {"match": "^\\d{2}0\\d$", "format": "{formatted_thousand} oh {formatted_decade} {bc}"},
-    "7": {"match": "^\\d{4}$", "format": "{formatted_thousand} {formatted_decade} {bc}"},
+  "year_format": {
+    "1": { "match": "^\\d\\d?$", "format": "{formatted_decade} {bc}" },
+    "2": { "match": "^\\d00$", "format": "{formatted_hundreds} {bc}" },
+    "3": {
+      "match": "^\\d{3}$",
+      "format": "{formatted_hundreds} {formatted_decade} {bc}"
+    },
+    "4": { "match": "^\\d{2}00$", "format": "{formatted_thousand} {bc}" },
+    "5": {
+      "match": "^\\d00\\d$",
+      "format": "{formatted_thousand} {formatted_decade} {bc}"
+    },
+    "6": {
+      "match": "^\\d{2}0\\d$",
+      "format": "{formatted_thousand} oh {formatted_decade} {bc}"
+    },
+    "7": {
+      "match": "^\\d{4}$",
+      "format": "{formatted_thousand} {formatted_decade} {bc}"
+    },
     "default": "{year} {bc}",
     "bc": "b.c."
   },
-    "date_format": {
+  "date_format": {
     "date_full": "{weekday}, {month} {day}, {formatted_year}",
     "date_full_no_year": "{weekday}, {month} {day}",
     "date_full_no_year_month": "{weekday}, {day}",
@@ -371,10 +388,10 @@ For each section there is a list, the index must start at 1 and continue in incr
     "tomorrow": "tomorrow",
     "yesterday": "yesterday"
   },
-    "date_time_format": {
+  "date_time_format": {
     "date_time": "{formatted_date} at {formatted_time}"
   },
-    "weekday": {
+  "weekday": {
     "0": "monday",
     "1": "tuesday",
     "2": "wednesday",
@@ -464,48 +481,193 @@ For each section there is a list, the index must start at 1 and continue in incr
 ```
 
 ## Test file for en-us
+
 ```json
 {
   "test_nice_year": {
-    "1": {"datetime_param": "1, 1, 31, 13, 22, 3", "bc": "True", "assertEqual": "one b.c." },
-    "2": {"datetime_param": "10, 1, 31, 13, 22, 3", "bc": "True", "assertEqual": "ten b.c." },
-    "3": {"datetime_param": "92, 1, 31, 13, 22, 3", "bc": "True", "assertEqual": "ninety two b.c." },
-    "4": {"datetime_param": "803, 1, 31, 13, 22, 3", "bc": "None", "assertEqual": "eight hundred three" },
-    "5": {"datetime_param": "811, 1, 31, 13, 22, 3", "bc": "None", "assertEqual": "eight hundred eleven" },
-    "6": {"datetime_param": "454, 1, 31, 13, 22, 3", "bc": "None", "assertEqual": "four hundred fifty four" },
-    "7": {"datetime_param": "1005, 1, 31, 13, 22, 3", "bc": "False", "assertEqual": "one thousand five" },
-    "8": {"datetime_param": "1012, 1, 31, 13, 22, 3", "bc": "False", "assertEqual": "ten twelve" },
-    "9": {"datetime_param": "1046, 1, 31, 13, 22, 3", "bc": "False", "assertEqual": "ten forty six" },
-    "10": {"datetime_param": "1807, 1, 31, 13, 22, 3", "bc": "None", "assertEqual": "eighteen oh seven" },
-    "11": {"datetime_param": "1717, 1, 31, 13, 22, 3", "bc": "None", "assertEqual": "seventeen seventeen" },
-    "12": {"datetime_param": "1988, 1, 31, 13, 22, 3", "bc": "None", "assertEqual": "nineteen eighty eight"},
-    "13": {"datetime_param": "2009, 1, 31, 13, 22, 3", "bc": "None", "assertEqual": "two thousand nine"},
-    "14": {"datetime_param": "2018, 1, 31, 13, 22, 3", "bc": "None", "assertEqual": "twenty eighteen"},
-    "15": {"datetime_param": "2021, 1, 31, 13, 22, 3", "bc": "None", "assertEqual": "twenty twenty one"},
-    "16": {"datetime_param": "2030, 1, 31, 13, 22, 3", "bc": "None", "assertEqual": "twenty thirty"},
-    "17": {"datetime_param": "2100, 1, 31, 13, 22, 3", "bc": "False", "assertEqual": "twenty one hundred" },
-    "18": {"datetime_param": "1000, 1, 31, 13, 22, 3", "bc": "None", "assertEqual": "one thousand" },
-    "19": {"datetime_param": "2000, 1, 31, 13, 22, 3", "bc": "None", "assertEqual": "two thousand" },
-    "20": {"datetime_param": "3120, 1, 31, 13, 22, 3", "bc": "True", "assertEqual": "thirty one twenty b.c." },
-    "21": {"datetime_param": "3241, 1, 31, 13, 22, 3", "bc": "True", "assertEqual": "thirty two forty one b.c." },
-    "22": {"datetime_param": "5200, 1, 31, 13, 22, 3", "bc": "False", "assertEqual": "fifty two hundred" },
-    "23": {"datetime_param": "1100, 1, 31, 13, 22, 3", "bc": "False", "assertEqual": "eleven hundred" },
-    "24": {"datetime_param": "2100, 1, 31, 13, 22, 3", "bc": "False", "assertEqual": "twenty one hundred" }
+    "1": {
+      "datetime_param": "1, 1, 31, 13, 22, 3",
+      "bc": "True",
+      "assertEqual": "one b.c."
+    },
+    "2": {
+      "datetime_param": "10, 1, 31, 13, 22, 3",
+      "bc": "True",
+      "assertEqual": "ten b.c."
+    },
+    "3": {
+      "datetime_param": "92, 1, 31, 13, 22, 3",
+      "bc": "True",
+      "assertEqual": "ninety two b.c."
+    },
+    "4": {
+      "datetime_param": "803, 1, 31, 13, 22, 3",
+      "bc": "None",
+      "assertEqual": "eight hundred three"
+    },
+    "5": {
+      "datetime_param": "811, 1, 31, 13, 22, 3",
+      "bc": "None",
+      "assertEqual": "eight hundred eleven"
+    },
+    "6": {
+      "datetime_param": "454, 1, 31, 13, 22, 3",
+      "bc": "None",
+      "assertEqual": "four hundred fifty four"
+    },
+    "7": {
+      "datetime_param": "1005, 1, 31, 13, 22, 3",
+      "bc": "False",
+      "assertEqual": "one thousand five"
+    },
+    "8": {
+      "datetime_param": "1012, 1, 31, 13, 22, 3",
+      "bc": "False",
+      "assertEqual": "ten twelve"
+    },
+    "9": {
+      "datetime_param": "1046, 1, 31, 13, 22, 3",
+      "bc": "False",
+      "assertEqual": "ten forty six"
+    },
+    "10": {
+      "datetime_param": "1807, 1, 31, 13, 22, 3",
+      "bc": "None",
+      "assertEqual": "eighteen oh seven"
+    },
+    "11": {
+      "datetime_param": "1717, 1, 31, 13, 22, 3",
+      "bc": "None",
+      "assertEqual": "seventeen seventeen"
+    },
+    "12": {
+      "datetime_param": "1988, 1, 31, 13, 22, 3",
+      "bc": "None",
+      "assertEqual": "nineteen eighty eight"
+    },
+    "13": {
+      "datetime_param": "2009, 1, 31, 13, 22, 3",
+      "bc": "None",
+      "assertEqual": "two thousand nine"
+    },
+    "14": {
+      "datetime_param": "2018, 1, 31, 13, 22, 3",
+      "bc": "None",
+      "assertEqual": "twenty eighteen"
+    },
+    "15": {
+      "datetime_param": "2021, 1, 31, 13, 22, 3",
+      "bc": "None",
+      "assertEqual": "twenty twenty one"
+    },
+    "16": {
+      "datetime_param": "2030, 1, 31, 13, 22, 3",
+      "bc": "None",
+      "assertEqual": "twenty thirty"
+    },
+    "17": {
+      "datetime_param": "2100, 1, 31, 13, 22, 3",
+      "bc": "False",
+      "assertEqual": "twenty one hundred"
+    },
+    "18": {
+      "datetime_param": "1000, 1, 31, 13, 22, 3",
+      "bc": "None",
+      "assertEqual": "one thousand"
+    },
+    "19": {
+      "datetime_param": "2000, 1, 31, 13, 22, 3",
+      "bc": "None",
+      "assertEqual": "two thousand"
+    },
+    "20": {
+      "datetime_param": "3120, 1, 31, 13, 22, 3",
+      "bc": "True",
+      "assertEqual": "thirty one twenty b.c."
+    },
+    "21": {
+      "datetime_param": "3241, 1, 31, 13, 22, 3",
+      "bc": "True",
+      "assertEqual": "thirty two forty one b.c."
+    },
+    "22": {
+      "datetime_param": "5200, 1, 31, 13, 22, 3",
+      "bc": "False",
+      "assertEqual": "fifty two hundred"
+    },
+    "23": {
+      "datetime_param": "1100, 1, 31, 13, 22, 3",
+      "bc": "False",
+      "assertEqual": "eleven hundred"
+    },
+    "24": {
+      "datetime_param": "2100, 1, 31, 13, 22, 3",
+      "bc": "False",
+      "assertEqual": "twenty one hundred"
+    }
   },
   "test_nice_date": {
-    "1": {"datetime_param": "2017, 1, 31, 0, 2, 3", "now": "None", "assertEqual": "tuesday, january thirty-first, twenty seventeen"},
-    "2": {"datetime_param": "2018, 2, 4, 0, 2, 3", "now": "2017, 1, 1, 0, 2, 3", "assertEqual": "sunday, february fourth, twenty eighteen"},
-    "3": {"datetime_param": "2018, 2, 4, 0, 2, 3", "now": "2018, 1, 1, 0, 2, 3", "assertEqual": "sunday, february fourth"},
-    "4": {"datetime_param": "2018, 2, 4, 0, 2, 3", "now": "2018, 2, 1, 0, 2, 3", "assertEqual": "sunday, fourth"},
-    "5": {"datetime_param": "2018, 2, 4, 0, 2, 3", "now": "2018, 2, 3, 0, 2, 3", "assertEqual": "tomorrow"},
-    "6": {"datetime_param": "2018, 2, 4, 0, 2, 3", "now": "2018, 2, 4, 0, 2, 3", "assertEqual": "today"},
-    "7": {"datetime_param": "2018, 2, 4, 0, 2, 3", "now": "2018, 2, 5, 0, 2, 3", "assertEqual": "yesterday"},
-    "8": {"datetime_param": "2018, 2, 4, 0, 2, 3", "now": "2018, 2, 6, 0, 2, 3", "assertEqual": "sunday, february fourth"},
-    "9": {"datetime_param": "2018, 2, 4, 0, 2, 3", "now": "2019, 2, 6, 0, 2, 3", "assertEqual": "sunday, february fourth, twenty eighteen"}
+    "1": {
+      "datetime_param": "2017, 1, 31, 0, 2, 3",
+      "now": "None",
+      "assertEqual": "tuesday, january thirty-first, twenty seventeen"
+    },
+    "2": {
+      "datetime_param": "2018, 2, 4, 0, 2, 3",
+      "now": "2017, 1, 1, 0, 2, 3",
+      "assertEqual": "sunday, february fourth, twenty eighteen"
+    },
+    "3": {
+      "datetime_param": "2018, 2, 4, 0, 2, 3",
+      "now": "2018, 1, 1, 0, 2, 3",
+      "assertEqual": "sunday, february fourth"
+    },
+    "4": {
+      "datetime_param": "2018, 2, 4, 0, 2, 3",
+      "now": "2018, 2, 1, 0, 2, 3",
+      "assertEqual": "sunday, fourth"
+    },
+    "5": {
+      "datetime_param": "2018, 2, 4, 0, 2, 3",
+      "now": "2018, 2, 3, 0, 2, 3",
+      "assertEqual": "tomorrow"
+    },
+    "6": {
+      "datetime_param": "2018, 2, 4, 0, 2, 3",
+      "now": "2018, 2, 4, 0, 2, 3",
+      "assertEqual": "today"
+    },
+    "7": {
+      "datetime_param": "2018, 2, 4, 0, 2, 3",
+      "now": "2018, 2, 5, 0, 2, 3",
+      "assertEqual": "yesterday"
+    },
+    "8": {
+      "datetime_param": "2018, 2, 4, 0, 2, 3",
+      "now": "2018, 2, 6, 0, 2, 3",
+      "assertEqual": "sunday, february fourth"
+    },
+    "9": {
+      "datetime_param": "2018, 2, 4, 0, 2, 3",
+      "now": "2019, 2, 6, 0, 2, 3",
+      "assertEqual": "sunday, february fourth, twenty eighteen"
+    }
   },
   "test_nice_date_time": {
-    "1": {"datetime_param": "2017, 1, 31, 13, 22, 3", "now": "None", "use_24hour": "False", "use_ampm": "True", "assertEqual": "tuesday, january thirty-first, twenty seventeen at one twenty two PM"},
-    "2": {"datetime_param": "2017, 1, 31, 13, 22, 3", "now": "None", "use_24hour": "True", "use_ampm": "False", "assertEqual": "tuesday, january thirty-first, twenty seventeen at thirteen twenty two"}
+    "1": {
+      "datetime_param": "2017, 1, 31, 13, 22, 3",
+      "now": "None",
+      "use_24hour": "False",
+      "use_ampm": "True",
+      "assertEqual": "tuesday, january thirty-first, twenty seventeen at one twenty two PM"
+    },
+    "2": {
+      "datetime_param": "2017, 1, 31, 13, 22, 3",
+      "now": "None",
+      "use_24hour": "True",
+      "use_ampm": "False",
+      "assertEqual": "tuesday, january thirty-first, twenty seventeen at thirteen twenty two"
+    }
   }
 }
 ```

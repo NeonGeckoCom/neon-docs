@@ -1,57 +1,121 @@
 ---
 description: >-
   Ready to create your first Skill? See how easy it is to get a new Skill up and
-  running, then we will step through the basic anatomy of a Mycroft Skill.
+  running, then we will step through the basic anatomy of a Neon Skill.
 ---
 
 # Your First Skill
 
 ## Prerequisites
 
-If you haven't already, check out our [Introduction to Skill Development](./). This walk through assumes you:
+If you haven't already, check out our [Neon AI Software Development Kit Overview](https://neon.ai/NeonSDKOverview).
 
-* Know some basic knowledge of [Python programming](https://www.python.org/),
-* have an account on [Github.com](https://github.com), and
-* have a [working version of Mycroft](../../using-mycroft-ai/get-mycroft/).
+This walkthrough assumes you:
+
+- Know some basic knowledge of [Python programming](https://www.python.org/),
+- have an account on [Github.com](https://github.com), and
+- have a working version of Neon, either on a Mark 2 or a development setup.
 
 ## Understand the flow of your Skill
 
 It's a good idea to start by writing down how your Skill will work, including
 
-* What words will the User speak to activate the Skill?
-* What will Mycroft speak in response?
-* What data will you need to deliver the Skill?
-* Will you need any additional packages or dependencies?
+- What words will the User speak to activate the Skill?
+- What will Neon speak in response?
+- What data will you need to deliver the Skill?
+- Will you need any additional packages or dependencies?
 
 Once you've given these some thought, you can get started.
 
-## Mycroft Skills Kit (MSK)
+## Basic skill repository structure
 
-{% embed url="https://www.youtube.com/watch?v=YNoWpRyx26A" %}
-Video Tutorial: Mycroft Skills Kit
-{% endembed %}
+Neon maintains a Neon skill template repository at [https://github.com/NeonGeckoCom/template-skill](https://github.com/NeonGeckoCom/template-skill). You can visit this page and select `Use this template` > `Create a new repository` from the GitHub UI to start with a basic skill setup.
 
-To setup the foundations of your Skill, we will use the [Mycroft Skills Kit (MSK)](../../mycroft-technologies/mycroft-skills-kit.md) that comes installed with Mycroft. If you chose the defaults during installation, you can run MSK from your Terminal using the command: `mycroft-msk`. Running this command without any arguments will provide a brief overview of what you can do with MSK.
+Once the skill repository has been created changing the name can be tricky, so think through the naming convention early. Typically, it should follow this format:
 
-If you receive a "command not found", then you will need to run `msk` manually from your `mycroft-core` directory. Anytime you see `mycroft-msk` in our documentation you must replace this with:
+`skill-<skill_name>`, with the `setup.py` and `manifest.json` files appending the name of your user or organization to the skill name. For example, you may see skills such as `skill-free_music_archive.neongeckocom` or `skill-plex.d-mcknight` in your Neon device once the skill is installed.
 
-### MSK Create
+After creating a new repository from the template, clone it to your local development environment. Let's take a closer look at the structure:
 
-`mycroft-msk create` is an interactive script that asks you a few questions and generates a new Skill template. This template can immediately be used as a Skill, however you will most likely want to extend its functionaity.
+```shell
+.
+├── .github/workflows
+│   ├── license_tests.yml
+│   ├── propose_release.yml
+│   ├── publish_release.yml
+│   ├── publish_test_build.yml
+│   ├── push_skill_json.yml
+│   ├── skill_tests.yml
+│   └── update_skill_json.md
+├── test
+│   ├── test_intents.yml
+│   ├── test_resources.yml
+│   └── test_skill.md
+├── .gitignore
+├── CHANGELOG.md
+├── LICENSE.md
+├── README.md
+├── __init__.py
+├── requirements.txt
+├── setup.py
+├── skill.json
+└── version.py
+```
 
-To create your first Skill, you will be asked for a:
+### .github/workflows
 
-1. Name  To be readable within the space available on the [Mycroft Skills Marketplace](https://market.mycroft.ai) the name should be short, generally under 22 characters in length. The name must also be unique. You can check the [Marketplace](https://market.mycroft.ai) to see what other Skills already exist.&#x20;
-2. Example phrases (known as utterances)  Utterances that you expect Users to say to Mycroft, that your Skill will respond to.&#x20;
-3. Response dialog  The dialog that your Skill will respond with.&#x20;
-4. Short description  A one-line description, less than 40 characters long.&#x20;
-5. Long description  This can be as short or as long as you like.&#x20;
-6. Author  This is most often your name, and / or Github @username&#x20;
-7. Categories  The [Mycroft Skills Marketplace](https://market.mycroft.ai) categories your Skill belongs to. It's important to note that the first category you select will be set as the default category. This is where your Skill will most often appear in the Marketplace.&#x20;
-8. Tags  Tags provide an additional means for Users to search for or discover relevant Skills. Unlike categories, you can set your tags to anything you like.
+Neon's standard GitHub Actions workflows. For more information on what each one does and how it works, [please see the documentation on skill testing](../voice-user-interface-design-guidelines/skill-testing.md).
 
-After inputting this data you will be asked if you would like a Github repo created for your Skill. This provides an easy way to store your Skill, and will be required if you choose to [publish your Skill in the Marketplace](../marketplace-submission/).
+### test
 
-If you have completed all of these steps, your Skill will have been created in the `/opt/mycroft/skills` directory on your device.
+All your skill's unit tests should go here. Additionally, this is where the files are for Neon's standard GitHub Actions tests. For details on setting those up, please see the files themselves or [the documentation on skill testing](../voice-user-interface-design-guidelines/skill-testing.md).
 
-In the next section, we will explore each component that makes up your Skill.
+### .gitignore
+
+Files that should not be committed to git. As a general rule, binaries, large files, packaged files (usually in a `dist` or `build` folder), and IDE settings should not be committed to a shared git repository. For a list of examples `.gitignore` files, please see [https://github.com/github/gitignore](https://github.com/github/gitignore) or search `https://github.com/NeonGeckoCom` for "skill"
+
+### CHANGELOG.md
+
+Auto-generated by Neon GitHub Actions workflows. No need to edit manually.
+
+### LICENSE.md
+
+Neon is built on components that are mostly using the BSD-2 or BSD-3 license, favoring the BSD-3 license. A full explanation of the legalities of open-source licenses is out of scope of this document, but please read the license file carefully and follow its instructions if you plan to change your skill to use a different license. For legal advice in your country/jurisdiction, please seek an attorney.
+
+The copyright for Neon AI in this file may be safely removed if you are not developing on behalf of Neon AI directly.
+
+### README.md
+
+The `README` file that will appear not just on your GitHub repository main page, but also become the README for any skills published to [pypi.org](https://pypi.org). Follow the template and fill in with the information you came up with in the "Understanding your skill" section above. Be sure to keep this up to date as you add features to your skill.
+
+### \_\_init\_\_.py
+
+The primary Python file for your skill. In standard Python development, the presence of this file in a folder marks that the folder is a Python module. In Neon skill development, historically the Skill class itself goes in here, and for simple skills all of the skill code belongs here.
+
+Note that putting the `__init__.py` file in the root of the repository has fallen out of favor in modern Python development practice. However, to maintain compatibility with older Mycroft skills and installation methods, Neon recommends following the structure outlined in this template repo.
+
+The copyright for Neon AI in this file may be safely removed if you are not developing on behalf of Neon AI directly.
+
+### requirements.txt
+
+Third-party Python package requirements, such as `requests` or libraries for accessing any software you are integrating with Neon. Specifying only a name will cause pip to search [pypi.org](https://pypi.org) and pull the latest version.
+
+Generally, it is considered good software practice to pin your versions in a `requirements.txt` file. For more information on pinning, [please see the linked cheatsheet](https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/python/pip/versions.html).
+
+### setup.py
+
+The file responsible for packaging your skill in a format that can be installed with pip, either by publishing to [pypi.org](https://pypi.org) or installing directly via GitHub. **This file must be edited before it will work as expected!!** Be sure to review the `TODO:` items in the code, as well as all sections passed to the `setup()` function at the end of the file, and update them as appropriate for your skill.
+
+Note that the `find_resource_files()` function in this file can sometimes fail if you do not have certain directories it is searching for (locale, ui, vocab, dialog, regex, res). If this happens to you, you may safely remove the directories you are not using in your skill. _Please be aware that doing so will mean important files in those directories will not be packaged with your skill if you add them later_ - Neon recommends removing these folders at the end of your skill development so you do not forget to add them back in later.
+
+The copyright for Neon AI in this file may be safely removed if you are not developing on behalf of Neon AI directly.
+
+### skill.json
+
+Required file for Neon skills to load properly, but it is automatically generated if you use Neon's default GitHub Actions workflows. Neon recommends you use these workflows, which means you can safely ignore any manual edits to this file.
+
+### version.py
+
+Tracks your skill version. Neon follows OVOS in using [Semantic Versioning](https://semver.org/) and recommends skill developers do the same.
+
+The copyright for Neon AI in this file may be safely removed if you are not developing on behalf of Neon AI directly.

@@ -6,23 +6,23 @@ description: >-
 
 # Development Setup
 
-Mycroft Skills are the voice applications that provide different functionality for users. To create a Skill requires at least basic technical experience, a Mycroft installation or device, and an idea of what your Skill will do, and how people will use it.
+Neon Skills are the voice applications that provide different functionality for users. To create a Skill requires at least basic technical experience, a Neon installation or device, and an idea of what your Skill will do, and how people will use it.
 
 ## Technical Requirements
 
 ### Python programming language
 
-Skills for Mycroft are written using the [Python programming language](https://www.python.org/). A simple Skill can be a great way for new developers to try Python out in a real project, whilst experienced programmers will quickly see the powerful possibilities available in a well crafted Skill.
+Skills for Neon are written using the [Python programming language](https://www.python.org/). A simple Skill can be a great way for new developers to try Python out in a real project, whilst experienced programmers will quickly see the powerful possibilities available in a well crafted Skill.
 
 If you aren't familiar with the basics of Python, check out our [list of Python tutorials and resources](python-resources.md) to get you started. If you've programmed in other object-oriented languages, like Javascript or C\#, then you'll be able to pick it up, but if you're totally new to programming, you might want to look at an [introductory programming course](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11).
 
 ### Github account
 
-Skills are hosted on [Github](https://github.com), so you will need to create an account there if you don't already have one. It is good to have an understanding of the [GitHub basics](https://guides.github.com/activities/hello-world/), however the [Mycroft Skills Kit](../../mycroft-technologies/mycroft-skills-kit.md) also automates some of the more complex aspects of managing a Github repository \(or repo\).
+Skills are hosted on [Gitub](https://github.com), so you will need to create an account there if you don't already have one. It is good to have an understanding of the [Github basics](https://guides.github.com/activities/hello-world/), however the [Neon Skills Kit](../../Neon-technologies/Neon-skills-kit.md) also automates some of the more complex aspects of managing a Github repository \(or repo\).
 
-### Running Mycroft
+### Running Neon
 
-To test your Skill out, you will need to [set up a Mycroft device](../../using-mycroft-ai/get-mycroft/). Mycroft can be installed on your computer, a Raspberry Pi using Picroft, or a dedicated device like the Mycroft Mark 1. Mycroft also comes with a number of helpful tools to create new Skills, host them on Github, run integration tests, and submit them for inclusion in the [Mycroft Marketplace](https://market.mycroft.ai). If you aren't yet familiar with how Mycroft works, check out the [overview of Mycroft components](http://mycroft.ai/documentation/mycroft-software-hardware/) to understand the many technologies that come together to provide an intelligent voice assistant.
+To test your Skill out, you will need to have a Neon environment in which to work. Neon [can be installed on any hardware with Ubuntu](https://neon.ai/NeonAISDKUbuntuInstallation) or a dedicated device like the Mycroft Mark 2. If you don't have dedicated hardware or a virtual machine with Ubuntu, [Neon can also run on Windows Subsystem for Linux](https://neon.ai/WindowsOptionSubsystemLinux), if necessary. Neon also comes with a number of helpful tools to create new Skills, host them on Github, run integration tests, and submit them to the Neon community (and eventually Neon Marketplace). If you aren't yet familiar with how Neon works, check out the [overview of Neon architecture](https://neon.ai/SystemsArchitectureDiagram) to understand the many technologies that come together to provide an intelligent voice assistant. Neon is built on top of [OpenVoice OS](https://openvoiceos.com), a fork of Mycroft with many enhancements and bug fixes, so the overview from Mycroft is a good place to start.
 
 ## What makes a good Skill?
 
@@ -38,15 +38,14 @@ If you haven't already, be sure to read our Voice User Interface Design Guidelin
 
 {% page-ref page="../voice-user-interface-design-guidelines/" %}
 
-If you have an idea for a Skill, it's a great idea to join [Mycroft Chat](https://chat.mycroft.ai), specifically the [~skills](https://chat.mycroft.ai/community/channels/skills) channel, and share what your plans are. You'll be able to get constructive and helpful feedback on your Skill from an experienced community.
+If you have an idea for a Skill, it's a great idea to join [Neon Chat](https://matrix.to/#/#NeonMycroft:matrix.org), and share what your plans are. You'll be able to get constructive and helpful feedback on your Skill from an experienced community.
 
 ## Skill terminology
 
 You'll notice some new terms as you start to develop Skills.
 
-* **utterance** - An utterance is a phrase spoken by the User, after the User says the Wake Word. `what's the weather like in Toronto?` is an utterance.
-* **dialog** - A dialog is a phrase that is spoken by Mycroft. Different Skills will have different dialogs, depending on what the Skill does. For example, in a _weather_ Skill, a dialog might be `the.maximum.temperature.is.dialog`.
-* **intent** - Mycroft matches utterances that a User speaks with a Skill by determining an intent from the utterance. For example, if a User speaks `Hey Mycroft, what's the weather like in Toronto?` then the intent will be identified as _weather_ and matched with the _Weather Skill_. When you develop new Skills, you need to define new intents.
+- **utterance** - An utterance is a phrase spoken by the User, after the User says the Wake Word. `what's the weather like in Toronto?` is an utterance.
+- **dialog** - A dialog is a phrase that is spoken by Neon. Different Skills will have different dialogs, depending on what the Skill does. For example, in a _weather_ Skill, a dialog might be `the.maximum.temperature.is.dialog`.
+- **intent** - Neon matches utterances that a User speaks with a Skill by determining an intent from the utterance. For example, if a User speaks `Hey Neon, what's the weather like in Toronto?` then the intent will be identified as _weather_ and matched with the _Weather Skill_. When you develop new Skills, you need to define new intents.
 
-If you encounter anything else you're not familiar with, checkout the [Mycroft Glossary](../../about-mycroft-ai/glossary.md).
-
+If you encounter anything else you're not familiar with, checkout the [Neon Glossary](../overview/definitions.md).
