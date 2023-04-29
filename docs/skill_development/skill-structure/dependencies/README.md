@@ -14,17 +14,13 @@ There are three main categories of dependencies:
 
 Some of these may already be installed on a User's device, however some may not. To make sure a system has everything that your Skill needs, we can define the dependencies or requirements of the Skill. During installation Neon will then check that they are installed, and if not attempt to do so.
 
-For more information on Python package management and Python virtual environments, see our general Python Resources:
-
-{% page-ref page="../../introduction/python-resources.md" %}
+For more information on Python package management and Python virtual environments, see our [general Python Resources.](../../introduction/python-resources.md)
 
 There are three files that we can use to define these dependencies.
 
 ## Recommended
 
-`manifest.yml` is the default method. This can include all three types of dependencies including variations for different operating systems if required.
-
-{% page-ref page="manifest-yml.md" %}
+[`manifest.yml` is the default method](manifest-yml.md). This can include all three types of dependencies including variations for different operating systems if required.
 
 ## Alternatives
 
@@ -32,7 +28,7 @@ There are three files that we can use to define these dependencies.
 
 `requirements.sh` is used to run a custom script during installation.
 
-{% page-ref page="requirements-files.md" %}
+[More details on each are available in this documentation](requirements-files.md).
 
 Which ever file you choose to use, it must be located in the root directory of your Skill.
 

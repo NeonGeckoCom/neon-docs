@@ -8,9 +8,7 @@ description: >-
 
 In this file we can include Python packages, Linux applications or other Neon skills that are required for our own Skill to function properly.
 
-{% hint style="info" %}
 [YAML](https://en.wikipedia.org/wiki/YAML) is a language commonly used for configuration files. It uses indentation rather than brackets or parentheses to define the structure or hierarchy of its contents.
-{% endhint %}
 
 ## File contents
 

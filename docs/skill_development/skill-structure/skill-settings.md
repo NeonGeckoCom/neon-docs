@@ -131,9 +131,7 @@ self.settings.get('show_time', False)
 
 In this example, if the settings have not been received, or the `show_time` setting has not been assigned, it will return the default value `False`.
 
-{% hint style="warning" %}
 **A few warnings**
-{% endhint %}
 
 We recommend using the `Dict.get` method above rather than accessing the setting directly with:
 
@@ -145,9 +143,7 @@ Directly referencing the value may throw a KeyError if the setting has not yet b
 
 It is also important to note that the `settings` dictionary will not be available in your Skills `__init__` method as this is setting up your Skills Class. You should instead use an `initialize` method which is called after the Skill is fully constructed and registered with the system. More detail is available at:
 
-{% content-ref url="lifecycle-methods.md" %}
 [lifecycle-methods.md](lifecycle-methods.md)
-{% endcontent-ref %}
 
 ### Handling settings changes
 
@@ -181,8 +177,8 @@ The new value for the `show_time` setting will persist until a new setting is as
 
 ### Label Field
 
-{% tabs %}
-{% tab title="JSON" %}
+<details>
+  <summary>JSON</summary>
 
 ```javascript
 {
@@ -202,9 +198,10 @@ The new value for the `show_time` setting will persist until a new setting is as
 }
 ```
 
-{% endtab %}
+</deatils>
 
-{% tab title="YAML" %}
+<details>
+  <summary>YAML</summary>
 
 ```yaml
 skillMetadata:
@@ -215,13 +212,12 @@ skillMetadata:
           label: This is descriptive text.
 ```
 
-{% endtab %}
-{% endtabs %}
+</deatils>
 
 ### Text Field
 
-{% tabs %}
-{% tab title="JSON" %}
+<details>
+  <summary>JSON</summary>
 
 ```javascript
 {
@@ -243,9 +239,10 @@ skillMetadata:
 }
 ```
 
-{% endtab %}
+</details>
 
-{% tab title="YAML" %}
+<details>
+  <summary>YAML</summary>
 
 ```yaml
 skillMetadata:
@@ -258,13 +255,12 @@ skillMetadata:
           value:
 ```
 
-{% endtab %}
-{% endtabs %}
+</details>
 
 ### Email
 
-{% tabs %}
-{% tab title="JSON" %}
+<details>
+  <summary>JSON</summary>
 
 ```javascript
 {
@@ -286,9 +282,10 @@ skillMetadata:
 }
 ```
 
-{% endtab %}
+</deatils>
 
-{% tab title="YAML" %}
+<details>
+  <summary>YAML</summary>
 
 ```yaml
 skillMetadata:
@@ -301,13 +298,12 @@ skillMetadata:
           value:
 ```
 
-{% endtab %}
-{% endtabs %}
+</deatils>
 
 ### Checkbox
 
-{% tabs %}
-{% tab title="JSON" %}
+<details>
+  <summary>JSON</summary>
 
 ```javascript
 {
@@ -329,9 +325,10 @@ skillMetadata:
 }
 ```
 
-{% endtab %}
+</deatils>
 
-{% tab title="YAML" %}
+<details>
+  <summary>YAML</summary>
 
 ```yaml
 skillMetadata:
@@ -344,13 +341,12 @@ skillMetadata:
           value: "false"
 ```
 
-{% endtab %}
-{% endtabs %}
+</deatils>
 
 ### Number
 
-{% tabs %}
-{% tab title="JSON" %}
+<details>
+  <summary>JSON</summary>
 
 ```javascript
 {
@@ -372,9 +368,10 @@ skillMetadata:
 }
 ```
 
-{% endtab %}
+</deatils>
 
-{% tab title="YAML" %}
+<details>
+  <summary>YAML</summary>
 
 ```yaml
 skillMetadata:
@@ -387,13 +384,12 @@ skillMetadata:
           value: 7
 ```
 
-{% endtab %}
-{% endtabs %}
+</deatils>
 
 ### Password
 
-{% tabs %}
-{% tab title="JSON" %}
+<details>
+  <summary>JSON</summary>
 
 ```javascript
 {
@@ -415,9 +411,10 @@ skillMetadata:
 }
 ```
 
-{% endtab %}
+</deatils>
 
-{% tab title="YAML" %}
+<details>
+  <summary>YAML</summary>
 
 ```yaml
 skillMetadata:
@@ -430,13 +427,12 @@ skillMetadata:
           value:
 ```
 
-{% endtab %}
-{% endtabs %}
+</deatils>
 
 ### Select
 
-{% tabs %}
-{% tab title="JSON" %}
+<details>
+  <summary>JSON</summary>
 
 ```javascript
 {
@@ -459,9 +455,10 @@ skillMetadata:
 }
 ```
 
-{% endtab %}
+</deatils>
 
-{% tab title="YAML" %}
+<details>
+  <summary>YAML</summary>
 
 ```yaml
 skillMetadata:
@@ -475,5 +472,4 @@ skillMetadata:
           value: option_one
 ```
 
-{% endtab %}
-{% endtabs %}
+</deatils>

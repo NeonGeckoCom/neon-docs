@@ -12,8 +12,6 @@ Padatious has a number of key benefits over other intent parsing technologies.
 - Intents run independently of each other. This allows quickly installing new skills without retraining all other skill intents.
 - With Padatious, you can easily extract entities and then use these in Skills. For example, "Find the nearest gas station" -&gt; `{ "place":"gas station"}`
 
-{% page-ref page="https://mycroft-ai.gitbook.io/docs/mycroft-technologies/padatious" %}
-
 ## Creating Intents
 
 Padatious uses a series of example sentences to train a machine learning model to identify an intent.
@@ -200,9 +198,7 @@ This _decorator_ must be imported before it is used:
 from mycroft.skills.core import intent_handler
 ```
 
-{% hint style="info" %}
 [Learn more about _decorators_ in Python](https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Decorators).
-{% endhint %}
 
 Now we can create our Tomato Skill:
 
@@ -235,9 +231,7 @@ def create_skill():
     return TomatoSkill()
 ```
 
-{% hint style="info" %}
 See a Padatious intent handler example in the [Mycroft Hello World Skill](https://github.com/MycroftAI/skill-hello-world/blob/67a972792a07da7e3406bf7f94acd54aa2674829/__init__.py#L42)
-{% endhint %}
 
 ## Common Problems
 

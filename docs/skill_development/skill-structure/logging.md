@@ -10,9 +10,7 @@ To track events and data within your Skill we can use logging. If you are new to
 
 ## Video Tutorial (Courtesy of Mycroft.AI, which NeonSkills extends)
 
-{% embed url="https://www.youtube.com/watch?v=1_yX1JCCYoM" %}
-Video Tutorial: Logging from Mycroft Skills
-{% endembed %}
+<iframe width="420" height="315" src="https://www.youtube.com/watch?v=1_yX1JCCYoM" frameborder="0" allowfullscreen>Video Tutorial: Logging from Mycroft Skills</iframe>
 
 ## Basic Usage
 

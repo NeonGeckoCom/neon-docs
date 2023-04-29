@@ -18,9 +18,7 @@ cd neon-gui
 ./dev_setup.sh
 ```
 
-{% hint style="info" %}
 For more detail see the [Getting Started](https://github.com/NeonGeckoCom/neon-gui#getting-started) section of the neon-gui repository
-{% endhint %}
 
 ## Running the application
 

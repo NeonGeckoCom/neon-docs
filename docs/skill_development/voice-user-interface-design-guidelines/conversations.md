@@ -54,6 +54,4 @@ Conversational context is a given when speaking to another person, but not alway
 | **User** | _when did he retire_                                                                                                                                                                                                                     |
 | **Neon** | _2011_                                                                                                                                                                                                                                   |
 
-To learn more about the technical aspects of Conversational Context, see:
-
-{% page-ref page="../user-interaction/conversational-context.md" %}
+To learn more about the technical aspects of Conversational Context, [see the Conversational Context doc page](../user-interaction/conversational-context.md).

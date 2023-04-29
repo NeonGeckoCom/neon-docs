@@ -47,9 +47,7 @@ The `get_response()` method also takes the following optional arguments:
 
 #### See it in action:
 
-{% embed url="https://www.youtube.com/watch?v=Ke7mRl-Qo-U" %}
-Video Tutorial: Asking a question
-{% endembed %}
+<iframe width="420" height="315" src="https://www.youtube.com/watch?v=Ke7mRl-Qo-U" frameborder="0" allowfullscreen>Video Tutorial: Asking a question</iframe>
 
 ## Yes / No Questions
 
@@ -86,9 +84,7 @@ In this example we have asked the User if they like ice cream. We then speak dif
 
 ### See it in action:
 
-{% embed url="https://www.youtube.com/watch?v=vzQX8RocODs" %}
-Video Tutorial: Asking a yes/no question
-{% endembed %}
+<iframe width="420" height="315" src="https://www.youtube.com/watch?v=vzQX8RocODs" frameborder="0" allowfullscreen>Video Tutorial: Asking a yes/no question</iframe>
 
 ## Providing a list of options
 
@@ -129,9 +125,7 @@ There are two optional arguments for this method.
 
 #### See it in action:
 
-{% embed url="https://youtu.be/TNezYhqcX_4" %}
-Video Tutorial: Asking the user to choose an option
-{% endembed %}
+<iframe width="420" height="315" src="https://youtu.be/TNezYhqcX_4" frameborder="0" allowfullscreen>Video Tutorial: Asking the user to choose an option</iframe>
 
 ## Returning responses to the intent parser
 

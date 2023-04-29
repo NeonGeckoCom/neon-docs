@@ -34,9 +34,7 @@ Good Skills meet one or more of the user's needs. Popular Skills are popular bec
 
 Just like a web page with a thoughtfully-designed interface is much more pleasant to use, a Skill with a well designed voice interface is a delight, not a chore, to use. You should anticipate the task the user is trying to accomplish, and how to make that as straightforward as possible.
 
-If you haven't already, be sure to read our Voice User Interface Design Guidelines:
-
-{% page-ref page="../voice-user-interface-design-guidelines/" %}
+If you haven't already, be sure to read our [Voice User Interface Design Guidelines](../voice-user-interface-design-guidelines).
 
 If you have an idea for a Skill, it's a great idea to join [Neon Chat](https://matrix.to/#/#NeonMycroft:matrix.org), and share what your plans are. You'll be able to get constructive and helpful feedback on your Skill from an experienced community.
 

@@ -19,7 +19,3 @@ Even though these are three different expressions, for most of us they probably 
 It is up us as Skill creators to teach Neon the variety of ways that a user might express the same intent. This is a key part of the design process. It is the key difference between a Skill that kind of works if you know what to say, and a Skill that feels intuitive and natural to talk to.
 
 This is handled by an intent parser whose job it is to learn from your Skill what intents it can handle, and extract from the user's speech and key information that might be useful for your Skill. In this case it might include the specified date and location.
-
-For technical details on using Intents in your Neon Skill, see:
-
-{% page-ref page="intents.md" %}

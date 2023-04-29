@@ -2,11 +2,9 @@
 
 Adapt is a keyword based intent parser. It determines user intent based on a list of keywords or entities contained within a users utterance.
 
-{% embed url="https://www.youtube.com/watch?v=zR9xvPtM6Ro" %}
+<iframe width="420" height="315" src="https://www.youtube.com/watch?v=zR9xvPtM6Ro" frameborder="0" allowfullscreen></iframe>
 
-{% hint style="info" %}
 For technical details or usage of Adapt outside of a Neon Skill, see the [Adapt documentation](https://mycroft-ai.gitbook.io/docs/mycroft-technologies/adapt).
-{% endhint %}
 
 ## Defining keywords and entities
 
@@ -53,9 +51,7 @@ Let's consider a `type.rx` file to extract the type of potato we are interested 
 
 **What is this regex doing?** `.*` matches zero, one or more of any single character. `(?P<Type>.*)` is known as a Named Capturing Group. The variable name is defined between the , and what is captured is defined after this name. In this case we use `.*` to capture anything.
 
-{% hint style="info" %}
 [Learn more about Regular Expressions](https://github.com/ziishaned/learn-regex/blob/master/README.md).
-{% endhint %}
 
 So our first line would match an utterance such as:
 
@@ -99,9 +95,7 @@ We will also add some new `.voc` files:
 
 To construct an Adapt Intent, we use the intent*handler() \_decorator* and pass in the Adapt IntentBuilder.
 
-{% hint style="info" %}
 [Learn more about _decorators_ in Python](https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Decorators).
-{% endhint %}
 
 Both of these must be imported before we can use them:
 
@@ -170,9 +164,7 @@ def create_skill():
     return PotatoSkill()
 ```
 
-{% hint style="info" %}
 You can [download this entire Potato Skill from Github](https://github.com/krisgesling/dev-ex-adapt-intents-skill/blob/master/__init__.py), or see another Adapt intent handler example in the [Mycroft Hello World Skill](https://github.com/MycroftAI/skill-hello-world/blob/f3eb89be6d80e1834637a64566c707d05fb8e3fa/__init__.py#L37)
-{% endhint %}
 
 ## Common Problems
 

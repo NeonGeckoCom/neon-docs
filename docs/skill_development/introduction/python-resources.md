@@ -16,15 +16,11 @@ The following are a collection of resources recommended by members of our Commun
 
 ### Python Virtual Environments
 
-{% embed url="https://www.youtube.com/watch?v=QXJZRDYjo7E" %}
-Video Tutorial: Python Virtual Environments
-{% endembed %}
+<iframe width="420" height="315" src="https://www.youtube.com/watch?v=QXJZRDYjo7E" frameborder="0" allowfullscreen>Video Tutorial: Python Virtual Environments</iframe>
 
 ### Python Package Management
 
-{% embed url="https://www.youtube.com/watch?v=noKRb5uoE-Q" %}
-Video Tutorial: Python Package Management
-{% endembed %}
+<iframe width="420" height="315" src="https://www.youtube.com/watch?v=noKRb5uoE-Q" frameborder="0" allowfullscreen>Video Tutorial: Python Package Management</iframe>
 
 ## Books
 

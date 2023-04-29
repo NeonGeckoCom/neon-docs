@@ -34,8 +34,8 @@ The first Intent within the Tomato Skill, **what.is.a.tomato.intent**, handles i
 
 Sample contents of the Intent and dialog files:
 
-{% tabs %}
-{% tab title="what.is.a.tomato.intent" %}
+<details>
+  <summary>what.is.a.tomato.intent</summary>
 
 ```
 what is a tomato
@@ -44,9 +44,9 @@ describe a tomato
 what defines a tomato
 ```
 
-{% endtab %}
+</details>
 
-{% tab title="tomato.description.dialog" %}
+  <summary>tomato.description.dialog</summary>
 
 ```
 The tomato is a fruit of the nightshade family
@@ -54,8 +54,7 @@ A tomato is an edible berry of the plant Solanum lycopersicum
 A tomato is a fruit but nutrionists consider it a vegetable
 ```
 
-{% endtab %}
-{% endtabs %}
+</details>
 
 Observe the statements in the tomato.description.dialog file. They are all acceptable answers to the question: "What is a tomato?" Providing more than one statement in a dialog file is one way to make Neon to seem less robotic, more natural. Neon will randomly select one of the statements.
 
@@ -87,42 +86,39 @@ The [Skill Structure](../skill-structure/) section describes where to place the 
 
 The second Padatious Intent, **do.you.like.intent**, demonstrates the use of variables in the Intent file and in one of the dialog files:
 
-{% tabs %}
-{% tab title="do.you.like.intent" %}
+<details>
+  <summary>do.you.like.intent</summary>
 
 ```text
 do you like tomatoes
 do you like {type} tomatoes
 ```
 
-{% endtab %}
+</details>
 
-{% tab title="like.tomato.type.dialog" %}
+  <summary>like.tomato.type.dialog</summary>
 
 ```text
 I do like {type} tomatoes
 {type} tomatoes are my favorite
 ```
 
-{% endtab %}
+</details>
 
-{% tab title="like.tomato.generic.dialog" %}
+  <summary>like.tomato.generic.dialog</summary>
 
 ```text
 I do like tomatoes
 tomatoes are my favorite
 ```
 
-{% endtab %}
-{% endtabs %}
+</details>
 
 Compare these two dialog files. The **like.tomato.generic.dialog** file contains only simple statements. The statements in the **like.tomato.type.dialog** file include a variable named `type`. The variable is a placeholder in the statement specifying where text may be inserted. The `speak_dialog()` method accepts a dictionary as an optional parameter. If that dictionary contains an entry for a variable named in the statement, then the value from the dictionary will be inserted at the placeholder's location.
 
-{% hint style="info" %}
 Dialog file variables are formed by surrounding the variable's name with curly braces. In Neon parlance, curly braces are known as a _mustache_.
 
 For multi-line dialog files, be sure to include the **same** variable on **all** lines.
-{% endhint %}
 
 The Tomato Skill code snippet:
 
