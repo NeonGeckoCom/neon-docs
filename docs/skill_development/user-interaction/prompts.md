@@ -80,7 +80,7 @@ def create_skill():
     return IceCreamSkill()
 ```
 
-In this example we have asked the User if they like ice cream. We then speak different dialog whether they respond yes or no. We also speak some error dialog if neither yes or no are returned.
+In this example we have asked the User if they like ice cream. We then speak different dialogs whether they respond yes or no. We also speak some error dialog if neither yes nor no are returned.
 
 ### See it in action:
 

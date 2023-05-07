@@ -28,7 +28,7 @@ The `mycroft.util.nice_time()` function is not configurable using the approach d
 
 ## The configuration file
 
-The section [Configuration file for en-us](# Configuration file for en-us) contains an example configuration file. The configuration file contains several main sections, some of which contains maps from numbers to words to be spoken, others containing the format template to use when the pronounceable string is created.
+The section [Configuration file for en-us](# Configuration file for en-us) contains an example configuration file. The configuration file contains several main sections, some of which contain maps from numbers to words to be spoken, others containing the format template to use when the pronounceable string is created.
 
 The template sections are:
 
@@ -255,9 +255,9 @@ This section contains information on how to format a pronounceable date. For `en
 }
 ```
 
-The `nice_date()` function takes an optional now parameter in addition to the `datetime` parameter. If the `now` parameter is not supplied, the `date_full` format is always used. If the `now` parameter is supplied, the other formats may come into play, as described below in the paragraph about keys for the `date_format`.
+The `nice_date()` function takes an optional `now` parameter in addition to the `datetime` parameter. If the `now` parameter is not supplied, the `date_full` format is always used. If the `now` parameter is supplied, the other formats may come into play, as described below in the paragraph about keys for the `date_format`.
 
-If your language don't have, for instance, a tradition for saying yesterday, it is of cause possible to use arguments here instead. For example:
+If your language doesn't have, for instance, a tradition for saying yesterday, it is of course possible to use arguments here instead. For example:
 
 ```json
 "yesterday": "{weekday}, {month} {day}, {formatted_year}"
@@ -298,7 +298,7 @@ The formatted time is obtained using the existing `mycroft.util.nice_time()` fun
 #### Arguments to format templates
 
 - {formatted_date}: Date formatted as specified in the "date_format" section
-- {formatted_time}: Time formatted by nice_time(), [please refer to the Mycroft API documentation](http://mycroft-core.readthedocs.io/en/stable/)
+- {formatted_time}: Time formatted by nice_time(), [please refer to the Mycroft API documentation](https://mycroft-core.readthedocs.io/en/latest/)
 
 ## Maps
 
@@ -316,7 +316,7 @@ A map from the month number to a pronounceable month
 
 ## Unit testing
 
-A new language requires new unit tests, to ensure that it produce correct results. Unit tests that assert that all years between 1 and 9999 produce a non empty string, and that all dates in a year produce a non empty string, already exists. The unit tests will automatically find and test a new language.
+A new language requires new unit tests, to ensure that it produce correct results. Unit tests that assert that all years between 1 and 9999 produce a non-empty string, and that all dates in a year produce a non-empty string, already exist. The unit tests will automatically find and test a new language.
 
 To prove the likelihood that formatting makes sense, a configuration file must be provided, that lists the unit tests. One unit test file exists for each language, it is placed in:
 
@@ -332,7 +332,7 @@ Section [Test file for en-us](# Test file for en-us) contains the test file for 
 
 one section for each of the three `nice_*()` functions.
 
-For each section there is a list, the index must start at 1 and continue in increments of 1. The content of a list entry is `datetime_param`, which contains the parameters that the Python datetime.datetime class take. Then there is `assertEqual`, which is the expected formatted value when given the datetime. Each `nice_*()` function takes different parameters, the parameters must be specified in the list entry as well, they cannot be omitted even if they are Python 'None'
+For each section there is a list, the index must start at 1 and continue in increments of 1. The content of a list entry is `datetime_param`, which contains the parameters that the Python datetime.datetime class take. Then there is `assertEqual`, which is the expected formatted value when given the datetime. Each `nice_*()` function takes different parameters, the parameters must be specified in the list entry as well, they cannot be omitted even if they are Python `None`.
 
 ## Configuration file for en-us
 

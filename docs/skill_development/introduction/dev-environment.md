@@ -1,6 +1,9 @@
 # Setting Up Your Neon Development Environment
 
-Before you can complete your skill you'll need a Neon environment in which to test it. It's not time-efficient to do your initial development inside of existing Neon hardware like a Mycroft Mark 2 or a Plasma Bigscreen, but fully testing all portions of a skill requires that hardware.
+Before you can complete your skill you'll need a Neon environment in which to test it. It's not time-efficient to do your initial development inside of existing Neon hardware like a Mycroft Mark II, but fully testing all portions of a skill requires that hardware.
+
+The Mycroft Mark II [can be purchased from Neon AI](https://neonai.square.site/product/neon-ovos-mycroft-ai-mark-ii/1?cs=true) or [from Mycroft AI](https://mycroft.ai/product/mark-ii/), and is also offered by Neon AI as a bounty for skills development.
+If you're interested in receiving a Mark II for skills development, email [Clary@Neon.AI](mailto:Clary@Neon.AI) describing your skill development plans, or to ask about skills that are priorities for us right now
 
 This section details some of the ways you can set up a Neon development environment and makes some recommendations on the best way to use each one.
 
@@ -20,9 +23,9 @@ For now, Neon only distributes AMD64 Docker images. Each service can be `git clo
 
 The next recommended option for a development environment is running directly on a Linux laptop or VM. This setup is similar to running in Docker containers, but since everything is local to one machine, it is much better for serious GUI development.
 
-For directions on installing a Dev or User environment directly on a Linux laptop or VM, [please see the Neon website](https://neon.ai/NeonSDKInstallationInstructions). Be aware that installing from scratch here is a long process. You can also [purchase a bootable USB drive with Neon pre-installed](https://neonai.square.site/product/NeonAIMycroftMarkIIBootableUSBDrive). Just be aware that this drive is optimized for a Mycroft Mark 2 and will require some configuration adjustments before it will work fully on other hardware.
+For directions on installing a Dev or User environment directly to a Linux laptop or VM, [please see the Neon website](https://neon.ai/NeonSDKInstallationInstructions). Be aware that installing from scratch here is a long process. You can also [purchase a bootable USB drive with Neon pre-installed](https://neonai.square.site/product/NeonAIMycroftMarkIIBootableUSBDrive). Just be aware that this drive is optimized for a Mycroft Mark 2 and will require some configuration adjustments before it will work fully on other hardware.
 
-Finally, there are [Neon images available for Raspberry Pi](https://2222.us/app/files/neon_images/pi/). If you do choose the develop directly on a Raspberry Pi this is the simplest way to get started. Download your preferred image, use imaging software such as Balena Etcher to prepare a USB or MicroSD drive, and insert it into the Pi. Be aware that not all Raspberry Pi models will boot from USB automatically, so you may need to change BIOS/UEFI settings to allow it if you choose.
+Finally, there are [Neon images available for Raspberry Pi](https://2222.us/app/files/neon_images/pi/). If you do choose the develop directly on a Raspberry Pi this is the simplest way to get started. Download your preferred image, use imaging software such as Balena Etcher to prepare a USB or MicroSD drive, and insert it into the Pi. Be aware that not all Raspberry Pi models will boot from USB automatically, so you may need to change BIOS/UEFI settings to allow it.
 
 ### Mark 2 or Dev Kit
 

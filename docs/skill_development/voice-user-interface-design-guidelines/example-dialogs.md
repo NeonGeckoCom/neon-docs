@@ -4,7 +4,7 @@ After working on a list of jobs to be done creating Example Interactions is one 
 
 ## First Draft Interaction Scripts
 
-Begin by writing the example interactions of your skill from start to finish based on your Job Stories. At first don’t worry about organizing the interactions. Just try to write down as many examples as possible. If you skipped ahead and
+Begin by writing the example interactions of your skill from start to finish based on your Job Stories. At first don’t worry about organizing the interactions. Just try to write down as many examples as possible.
 
 Here is an example of a First Draft Interaction of a Moon Phase Skill.
 
@@ -128,13 +128,13 @@ The next step in the process is organizing the first pass of dialogs into groups
 
 ## Converting Example Interactions into Behave Feature files
 
-Once you have finished creating you example interactions and you have done some rounds of testing with some users, then it's time to convert your Interactions into Behave Feature files. You can see an example of the first Scenario from the Example Dialogs converted to a Feature file below.
+Once you have finished creating your example interactions and you have done some rounds of testing with some users, then it's time to convert your Interactions into Behave Feature files. You can see an example of the first Scenario from the Example Dialogs converted to a Feature file below.
 
 ```text
 Feature: neon-moon-phase
 
   Scenario Outline: The user asks for the current moon phase
-    Given an english speaking user
+    Given an English-speaking user
       When the user asks for "<the current moon phase>"
       Then "skill-moon-phase" should reply with "Today’s moon is Waning Crescent with 55% illumination"
 

@@ -8,7 +8,7 @@ description: >-
 
 ## Fallback **Skill** order of precedence
 
-The Fallback **Skills** all have a priority and will be checked in order from low priority value to high priority value. If a Fallback **Skill** can handle the **Utterance** it will create a response and return `True`. After this no other Fallback **Skills** are tried. This means the priority for Fallbacks that can handle a _broad_ range of queries should be _high_ \(80-100\) and Fallbacks that only responds to a very specific range of queries should be higher \(20-80\). The more specific, the lower the priority value.
+The Fallback **Skills** all have a priority and will be checked in order from low priority value to high priority value. If a Fallback **Skill** can handle the **Utterance** it will create a response and return `True`. After this no other Fallback **Skills** are tried. This means the priority for Fallbacks that can handle a _broad_ range of queries should be _high_ \(80-100\) and Fallbacks that only respond to a very specific range of queries should be higher \(20-80\). The more specific, the lower the priority value.
 
 ## Creating a Fallback **Skill**
 
@@ -44,7 +44,7 @@ _Note: a `FallbackSkill` can register any number of fallback handlers_
          # Any other initialize code you like can be placed here
 ```
 
-Implement the fallback handler \(the method that will be called to potentially handle the **Utterance**\). The method implements logic to determine if the **Utterance** can be handled and shall output speech if itcan handle the query. It shall return Boolean `True` if the **Utterance** was handled and Boolean `False` if not.
+Implement the fallback handler \(the method that will be called to potentially handle the **Utterance**\). The method implements logic to determine if the **Utterance** can be handled and shall output speech if it can handle the query. It shall return Boolean `True` if the **Utterance** was handled and Boolean `False` if not.
 
 ```python
     def handle_fallback(self, message):
@@ -83,4 +83,3 @@ def create_skill():
 ```
 
 The above example can be found [here](https://github.com/forslund/fallback-meaning).
-

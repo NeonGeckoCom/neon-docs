@@ -12,7 +12,7 @@ If you haven't already, check out our [Neon AI Software Development Kit Overview
 
 This walkthrough assumes you:
 
-- Know some basic knowledge of [Python programming](https://www.python.org/),
+- have some basic knowledge of [Python programming](https://www.python.org/),
 - have an account on [Github.com](https://github.com), and
 - have a working version of Neon, either on a Mark 2 or a development setup.
 
@@ -24,6 +24,8 @@ It's a good idea to start by writing down how your Skill will work, including
 - What will Neon speak in response?
 - What data will you need to deliver the Skill?
 - Will you need any additional packages or dependencies?
+
+Making a flowchart of events may help you visualize and plan. This could be as simple as drawing one on a sheet of paper. There are also many tools for it available online, some of them are free & some even integrate with your coding. Here is an article that compares several free flowchart tools: [https://www.softwaretestinghelp.com/flowchart-software/](https://www.softwaretestinghelp.com/flowchart-software/) which you may find a helpful place to start.
 
 Once you've given these some thought, you can get started.
 

@@ -16,10 +16,10 @@ self.gui.show_text(self, text, title=None, override_idle=None, override_animatio
 
 Arguments:
 
-- text \(str\): Main text content. It will auto-paginate
+- text \(str\): Main text content. It will auto-paginate.
 - title \(str\): A title to display above the text content.
 - override_idle \(boolean, int\):
-  - True: Takes over the resting page indefinitely
+  - True: Takes over the resting page indefinitely.
   - \(int\): Delays resting page for the specified number of seconds.
 - override_animations \(boolean\):
   - True: Disables showing all platform skill animations.
@@ -43,7 +43,7 @@ Arguments:
   - 'PreserveAspectCrop',
   - 'Stretch'
 - override_idle \(boolean, int\):
-  - True: Takes over the resting page indefinitely
+  - True: Takes over the resting page indefinitely.
   - \(int\): Delays resting page for the specified number of seconds.
 - override_animations \(boolean\):
   - True: Disables showing all platform skill animations.
@@ -67,7 +67,7 @@ Arguments:
   - 'PreserveAspectCrop',
   - 'Stretch'
 - override_idle \(boolean, int\):
-  - True: Takes over the resting page indefinitely
+  - True: Takes over the resting page indefinitely.
   - \(int\): Delays resting page for the specified number of seconds.
 - override_animations \(boolean\):
   - True: Disables showing all platform skill animations.
@@ -86,7 +86,7 @@ Arguments:
 - html \(str\): HTML text to display
 - resource_url \(str\): Pointer to HTML resources
 - override_idle \(boolean, int\):
-  - True: Takes over the resting page indefinitely
+  - True: Takes over the resting page indefinitely.
   - \(int\): Delays resting page for the specified number of seconds.
 - override_animations \(boolean\):
   - True: Disables showing all platform skill animations.
@@ -104,7 +104,7 @@ Arguments:
 
 - url \(str\): URL to render
 - override_idle \(boolean, int\):
-  - True: Takes over the resting page indefinitely
+  - True: Takes over the resting page indefinitely.
   - \(int\): Delays resting page for the specified number of seconds.
 - override_animations \(boolean\):
   - True: Disables showing all platform skill animations.

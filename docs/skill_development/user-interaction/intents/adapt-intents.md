@@ -176,7 +176,7 @@ One of the most common mistakes when getting started with Skills is that the voc
 
 1. Compound words like "don't", "won't", "shouldn't" etc. are normalized by Neon - so they become "do not", "will not", "should not". You should use the normalized words in your `.voc` files. Similarly, definite articles like the word "the" are removed in the normalization process, so avoid using them in your `.voc` or `.rx` files as well.
 2. Tab != 4 Spaces, sometimes your text editor or IDE automatically replaces tabs with spaces or vice versa. This may lead to an indentation error. So make sure there's no extra tabs and that your editor doesn't replace your spaces!
-3. Wrong order of files directories is a very common mistake. You have to make a language sub-folder inside the dialog, vocab or locale folders such as `skill-dir/locale/en-us/somefile.dialog`. So make sure that your `.voc` files and `.dialog` files inside a language subfolder.
+3. Wrong order of files directories is a very common mistake. You have to make a language sub-folder inside the dialog, vocab or locale folders such as `skill-dir/locale/en-us/somefile.dialog`. So make sure that your `.voc` files and `.dialog` files are inside a language subfolder.
 
 ### I am unable to match against the utterance string
 

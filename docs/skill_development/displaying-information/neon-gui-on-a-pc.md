@@ -18,7 +18,7 @@ cd neon-gui
 ./dev_setup.sh
 ```
 
-For more detail see the [Getting Started](https://github.com/NeonGeckoCom/neon-gui#getting-started) section of the neon-gui repository
+For more detail see the [Getting Started](https://github.com/NeonGeckoCom/neon-gui#getting-started) section of the neon-gui repository.
 
 ## Running the application
 

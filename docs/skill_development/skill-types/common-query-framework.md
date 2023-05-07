@@ -9,13 +9,13 @@ description: >-
 
 ## Introduction
 
-The Common Query Framework handles the common use case of "general information" or question answering. Many Skills may implement handlers for "what is X" or "when did Y", the Common Query Framework allows all these Skills be queried and a single "best" answer to be selected. This is similar to the Common Play Framework that handles the common use of "playing" music or other media.
+The Common Query Framework handles the common use case of "general information" or question answering. Many Skills may implement handlers for "what is X" or "when did Y", the Common Query Framework allows all these Skills to be queried and a single "best" answer to be selected. This is similar to the Common Play Framework that handles the common use of "playing" music or other media.
 
-The Common Query Skill System is led by the [Query Fallback Skill](https://github.com/NeonGeckoCom/skill-query). This Skill handles queries matching a question pattern such as "What is the height of the Eiffle Tower" and "When is lunch". A matched question will be sent to all Skills based upon the `CommonQuerySkill` base class. The Skills will return wether they can answer the query along with an answer when applicable. The "best" match will be selected and spoken to the user.
+The Common Query Skill System is led by the [Query Fallback Skill](https://github.com/NeonGeckoCom/skill-query). This Skill handles queries matching a question pattern such as "What is the height of the Eiffel Tower" and "When is lunch". A matched question will be sent to all Skills based upon the `CommonQuerySkill` base class. The Skills will return wether they can answer the query along with an answer when applicable. The "best" match will be selected and spoken to the user.
 
 ## CommonQuerySkill
 
-A Skill interfacing with the Common Query Framework inherits from the the `CommonQuerySkill` and needs to define a method `CQS_match_query_phrase()` taking an utterance as argument.
+A Skill interfacing with the Common Query Framework inherits from the `CommonQuerySkill` and needs to define a method `CQS_match_query_phrase()` taking an utterance as argument.
 
 The general structure is:
 
@@ -40,7 +40,7 @@ The `CQS_match_query_phrase()` method will parse the utterance and determine if 
 
 The input query is returned to map the query to the answer.
 
-`CQSMatchLevel` is an Enum with the possible values
+`CQSMatchLevel` is an Enum with the possible values:
 
 - `CQSMatchLevel.EXACT`: The Skill is very confident that it has the precise answer the user is looking for. There was a category match and a known entity is referenced.
 - `CQSMatchLevel.CATEGORY`: The Skill could determine that the type of question matches a category that the Skill is good at finding.
@@ -48,7 +48,7 @@ The input query is returned to map the query to the answer.
 
 There is also a directly equivalent `CQSVisualMatchLevel` that provides a small confidence bonus on platforms that can display visual media. The intention being that if two answers are otherwise equal, if a device can also display an image, then the response with an image is preferred. `CQSVisualMatchLevel` is an exact copy of `CQSMatchLevel` and requires no other changes to use.
 
-To actual show the visuals, see the [`CQS_action()` method](common-query-framework.md#cqs_action) below.
+To actually show the visuals, see the [`CQS_action()` method](common-query-framework.md#cqs_action) below.
 
 ## An Example
 

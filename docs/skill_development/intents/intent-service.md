@@ -1,10 +1,10 @@
 # Intent Service
 
-Neon supports both Padatious and Adapt intent handlers. Neon Core has an intent service that decides which intent will be triggered by a particular utterance. This is based on the confidence of a
+Neon supports both Padatious and Adapt intent handlers. Neon Core has an intent service that decides which intent will be triggered by a particular utterance. This is based on the confidence of a spoken command or question, converted to text and normalized, and translated (in certain cases).
 
 ## Intent Confidence
 
-## Order of Priority
+### Order of Priority
 
 1. Active skills attempt to handle using `converse()`
 2. Padatious high match intents (confidence > 0.95)

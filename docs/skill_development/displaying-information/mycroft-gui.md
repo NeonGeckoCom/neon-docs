@@ -9,13 +9,13 @@ description: >-
 
 **Note:** Neon is backwards-compatible with Mycroft code, so despite references here to Mycroft-specific code, it will work with Neon.
 
-In the age of information visualization is eminently essential to grab attention and create a promising communication strategy. Visual content that supports your spoken content can make it easier to present information well and more engaging for your audience and users.
+In the age of information, visualization is eminently essential to grab attention and create a promising communication strategy. Visual content that supports your spoken content can make it easier to present information well and more engaging for your audience and users.
 
 ![](https://images.theconversation.com/files/205921/original/file-20180212-58348-1sbutu2.jpg?ixlib=rb-1.1.0&rect=0%2C604%2C3994%2C1994&q=45&auto=format&w=1356&h=668&fit=crop)
 
 ## Introduction
 
-Mycroft-GUI is an open source visual and display framework for Neon running on top of KDE Plasma Technology and built using Kirigami a lightweight user interface framework for convergent applications which are empowered by Qt.
+Mycroft-GUI is an open source visual and display framework for Neon running on top of KDE Plasma Technology and built using Kirigami, a lightweight user interface framework for convergent applications which are empowered by Qt.
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ Want Neon to do something new? Teach Neon a skill, share it, and improve the exp
 
 ## VISUAL SKILL DEVELOPMENT API FOUNDATION
 
-Neon enabled devices with displays such as the Mark II, KDE Plasmoid provide skill developers the opportunity to create skills that can be empowered by both voice and screen interaction. The display interaction technology is based on the QML user interface markup language that gives you complete freedom to create in-depth innovative interactions without boundaries or provide you with simple templates within the Mycroft GUI framework that allow minimalistic display of text and images based on your skill development specifics and preferences.
+Neon-enabled devices with displays, such as the Mark II or KDE Plasmoid, provide skill developers the opportunity to create skills that can be empowered by both voice and screen interaction. The display interaction technology is based on the QML user interface markup language. QML gives you complete freedom to create in-depth innovative interactions without boundaries. It also provides you with simple templates within the Mycroft GUI framework that allow minimalistic display of text and images based on your skill development specifics and preferences.
 
 This section of the guide is divided into two skill examples that will show you how to create:
 
@@ -34,9 +34,9 @@ This section of the guide is divided into two skill examples that will show you 
 
 ### In-depth QML based audio and visual interaction skills
 
-QML user interface markup language is a declarative language built on top of Qt's existing strengths designed to describe the user interface of a program: both what it looks like, and how it behaves. QML provides modules that consist of sophisticated set of graphical and behavioral building elements. In the example below we will showcase how to create a QML interface for your skill including how it interacts with your voice skill.
+QML user interface markup language is a declarative language built on top of Qt's existing strengths designed to describe the user interface of a program: both what it looks like, and how it behaves. QML provides modules that consist of sophisticated sets of graphical and behavioral building elements. In the example below we will showcase how to create a QML interface for your skill including how it interacts with your voice skill.
 
-#### Before Getting Started Resources
+#### Before Getting Started: Resources
 
 A collection of resources to familiarize you with QML and Kirigami Framework.
 
@@ -76,7 +76,7 @@ Qt Quick module is the standard library for writing QML applications, the module
 
 **QTQuick.Controls Module:**
 
-The QtQuick Controls module provides a set of controls that can be used to build complete interfaces in Qt Quick. Some of the controls provided are button controls, container controls, delegate controls, indicator controls, input controls, navigation controls and more, for a complete list of controls and components provided by QtQuick Controls you can refer to [QtQuick Controls 2 Guidelines](https://doc.qt.io/qt-5.11/qtquickcontrols2-guidelines.html)
+The QtQuick Controls module provides a set of controls that can be used to build complete interfaces in Qt Quick. Some of the controls provided are button controls, container controls, delegate controls, indicator controls, input controls, navigation controls and more. For a complete list of controls and components provided by QtQuick Controls you can refer to [QtQuick Controls 2 Guidelines](https://doc.qt.io/qt-5.11/qtquickcontrols2-guidelines.html)
 
 **QtQuick.Layouts Module:**
 
@@ -92,7 +92,7 @@ Mycroft GUI frameworks provides a set of high level components and events system
 
 **QML Lottie Module:**
 
-This provides a QML `Item` to render Adobe® After Effects™ animations exported as JSON with Bodymovin using the Lottie Web library. For list of all properties supported refer [Lottie QML](https://github.com/kbroulik/lottie-qml)
+This provides a QML `Item` to render Adobe® After Effects™ animations exported as JSON with Bodymovin using the Lottie Web library. For list of all properties supported refer to [Lottie QML](https://github.com/kbroulik/lottie-qml)
 
 #### Using Mycroft-GUI Framework Base Delegates
 
@@ -190,7 +190,7 @@ When you design your skill with QML, Mycroft-GUI frameworks provides you with so
 
 ### Simple template based text and image skill displays
 
-Designing a simple skill and only want to display text or images ? Mycroft GUI framework and Mycroft enclosure API provides ready to use QML based template wrappers that can minimalisticly display simple skills data such as text and images. In the example below we will showcase how to create a simple voice skill that displays simple text on your Mycroft enabled device with a display.
+Designing a simple skill and only want to display text or images? Mycroft GUI framework and Mycroft enclosure API provide ready to use QML based template wrappers that can minimalisticly display simple skills data such as text and images. In the example below we will showcase how to create a simple voice skill that displays simple text on your Mycroft enabled device with a display.
 
 **Text Example:**
 
@@ -414,7 +414,7 @@ Mycroft.Delegate{
 
 **ProportionalDelegate** is a delegate which has proportional padding and a columnlayout as mainItem. The delegate supports a proportionalGridUnit which is based upon its size and the contents are supposed to be scaled proportionally to the delegate size either directly or using the proportionalGridUnit.
 
-**AutoFitLabel** is a label that will always scale its text size according to the item size rather than the other way around
+**AutoFitLabel** is a label that will always scale its text size according to the item size rather than the other way around.
 
 **QML Example**
 
@@ -448,7 +448,7 @@ Mycroft.ProportionalDelegate {
 
 **Using Slideshow Component To Show Cards Slideshow**
 
-Slideshow component lets you insert a slideshow with your custom delegate in any skill display which can be tuned to autoplay and loop and also scrolled or flicked manually by the user.
+Slideshow component lets you insert a slideshow with your custom delegate in any skill display, which can be tuned to autoplay and loop and also scrolled or flicked manually by the user.
 
 **QML Example**
 

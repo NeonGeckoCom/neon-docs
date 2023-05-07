@@ -6,7 +6,7 @@ description: >-
 
 # Python Resources
 
-If you are new to Python or programming in general there are lots of resources online to catering to all experience levels. Once you have the basics, a simple Skill can be a great way to try them out in a real project.
+If you are new to Python or programming in general there are lots of resources online catering to all experience levels. Once you have the basics, a simple Skill can be a great way to try them out in a real project.
 
 Neon uses Python 3 and as of December 2019 supports Python 3.7-3.10.
 
@@ -38,7 +38,7 @@ The book is available to purchase through normal retailers, or to download for f
 
 ### FreeCodeCamp.org Video Tutorial
 
-[This video tutorial](https://www.youtube.com/watch?v=rfscVS0vtbw) will give you a full introduction into all of the core concepts in python. The entire video runs for almost 4 and a half hours so better grab a coffee before you get started!
+[This video tutorial](https://www.youtube.com/watch?v=rfscVS0vtbw) will give you a full introduction into all of the core concepts in Python. The entire video runs for almost 4 and a half hours so better grab a coffee before you get started!
 
 ### LearnPython.org by DataCamp
 

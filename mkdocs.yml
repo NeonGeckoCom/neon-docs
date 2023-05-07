@@ -40,6 +40,7 @@ nav:
           - What Can A Skill Do?: skill_development/voice-user-interface-design-guidelines/what-can-a-skill-do.md
           - Design Process: skill_development/voice-user-interface-design-guidelines/design-process.md
           - Interactions:
+              - Overview: skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/README.md
               - Intents: skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/intents.md
               - Statements and Prompts: skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts.md
               - Confirmations: skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations.md
@@ -49,14 +50,17 @@ nav:
           - Prototyping: skill_development/voice-user-interface-design-guidelines/prototyping.md
           - Skill Testing: skill_development/voice-user-interface-design-guidelines/skill-testing.md
       - Development Setup:
+          - Overview: skill_development/introduction/README.md
           - Python Resources: skill_development/introduction/python-resources.md
           - Setting Up Your Development Environment: skill_development/introduction/dev-environment.md
           - Your First Skill: skill_development/introduction/your-first-skill.md
       - Skill Structure:
+          - Overview: skill_development/skill-structure/README.md
           - Lifecycle Methods: skill_development/skill-structure/lifecycle-methods.md
           - Logging: skill_development/skill-structure/logging.md
           - Skill Settings: skill_development/skill-structure/skill-settings.md
           - Dependencies:
+              - Overview: developers/README.md
               - skill.json: developers/skill_json.md
               - Manifest.yml: skill_development/skill-structure/dependencies/manifest-yml.md
               - Requirements files: skill_development/skill-structure/dependencies/requirements-files.md
@@ -65,7 +69,9 @@ nav:
       - Language Support:
           - Using nice date and time functions for your language: skill_development/language-support/using-nice-date-and-time-functions-for-your-language.md
       - User Interaction:
+          - Overview: skill_development/user-interaction/README.md
           - Intents:
+              - Overview: skill_development/user-interaction/intents/README.md
               - Adapt Intents: skill_development/user-interaction/intents/adapt-intents.md
               - Padatious Intents: skill_development/user-interaction/intents/padatious_intents.md
           - Statements: skill_development/user-interaction/statements.md
@@ -75,10 +81,12 @@ nav:
           - Conversational Context: skill_development/user-interaction/conversational-context.md
           - Converse: skill_development/user-interaction/converse.md
       - Displaying Information:
+          - Overview: skill_development/displaying-information/README.md
           - GUI Framework: skill_development/displaying-information/mycroft-gui.md
           - Show Simple Content: skill_development/displaying-information/show-simple-content.md
           - Neon-GUI On A PC: skill_development/displaying-information/neon-gui-on-a-pc.md
       - Advanced Skill Types:
+          - Overview: skill_development/skill-types/README.md
           - Fallback Skill: skill_development/skill-types/fallback-skill.md
           - OVOS Common Play Skills: skill_development/skill-types/ovos-common-play.md
           - Common Query Framework: skill_development/skill-types/common-query-framework.md
