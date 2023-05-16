@@ -19,20 +19,6 @@ skills:
     - YOUR_SKILL
 ```
 
-## How do I increase the priority of Skills during loading?
-
-During Skill development, you may wish to increase the priority of your Skill loading during the startup process. This allows you to start using the Skill as soon as possible. First, identify the name of the Skill.
-
-To prioritize loading one or more Skills on a Mycroft Device, find where your `neon.yaml` file is stored (typically `~/.config/neon/neon.yaml`), then edit it using an editor like `nano` or `vi`.
-
-Search for the string `priority` in the file. Then, edit the line below to include the Skill you wish to prioritize, and save the file. You will then need to reboot, or restart the `neon*` services on the Device.
-
-```yaml
-skills:
-  priority_skills:
-    - skill-pairing
-```
-
 ## How do I find more information on Neon functions?
 
 You can find documentation on Neon functions and helper methods at the [Mycroft Core API documentation](https://mycroft-core.readthedocs.io/en/master/)

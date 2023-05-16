@@ -6,6 +6,8 @@ description: >-
 
 # Manifest.yml
 
+**NOTE:** Manifest.yml is not supported fully by pip-installed skills. [It is recommended to use the `skill.json` file instead](../../development-setup/skill_json.md).
+
 In this file we can include Python packages, Linux applications or other Neon skills that are required for our own Skill to function properly.
 
 [YAML](https://en.wikipedia.org/wiki/YAML) is a language commonly used for configuration files. It uses indentation rather than brackets or parentheses to define the structure or hierarchy of its contents.

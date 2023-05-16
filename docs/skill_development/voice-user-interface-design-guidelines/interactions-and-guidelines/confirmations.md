@@ -33,7 +33,7 @@ This type of confirmation is also a statement. The idea is to parrot the informa
 | **User** | _Hey Neon, add bananas to my shopping list_ |
 | **Neon** | _Adding bananas_                            |
 
-### Explicit Confirmation
+## Explicit Confirmation
 
 This type of confirmation requires an input from the user to verify everything is correct. Only use explicit confirmation when needed as it can be tedious for the user to always confirm their input. This strategy is best when there are multiple steps, and it would be difficult to fix a misstep without starting over, or when deleting or modifying an existing multi-step input.
 

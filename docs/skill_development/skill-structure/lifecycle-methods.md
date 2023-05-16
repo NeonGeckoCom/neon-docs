@@ -26,11 +26,19 @@ In the following example we assign a variable `learning` to be `True`. The varia
 
 The `initialize` method is called after the Skill is fully constructed and registered with the system. It is used to perform any final setup for the Skill including accessing Skill settings.
 
+_This is considered deprecated in the underlying OVOS packages and will eventually be removed. It is recommended to use the `__init__` method or a custom method instead._
+
 In the following example we access the `my_setting` value, that would have been defined in the Skill's [`settingsmeta.json`](skill-settings.md). We use the `get` method in case the variable `my_setting` is undefined.
 
 ```python
     def initialize(self):
-        my_setting = self.settings.get('my_setting')
+        # Perform an action on the handler method when Mycroft is ready
+        self.bus.once("mycroft.ready", self.handler)
+
+    # Dynamically get settings
+    @property
+    def my_setting(self):
+        return self.settings.get('my_setting', 'default_value')
 ```
 
 ## Converse

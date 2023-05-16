@@ -92,6 +92,25 @@ Arguments:
   - True: Disables showing all platform skill animations.
   - False: 'Default' always show animations.
 
+## Input Box
+
+Display an input box.
+
+```python
+self.gui.show_input_box(self, title=None, placeholder=None, confirm_text=None, exit_text=None, override_idle=None, override_animations=False)
+```
+
+- title \(str\): Title to display above the input box
+- placeholder \(str\): Placeholder text to display in the input box
+- confirm_text \(str\): Confirmation text to display on the confirm button
+- exit_text \(str\): Exit text to display on the exit button
+- override_idle \(boolean, int\):
+  - True: Takes over the resting page indefinitely
+  - (int): Delays resting page for the specified number of seconds.
+- override_animations \(boolean\):
+  - True: Disables showing all platform skill animations.
+  - False: 'Default' always show animations.
+
 ## Remote URL
 
 Display a webpage.

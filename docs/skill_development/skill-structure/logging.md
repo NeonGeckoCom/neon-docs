@@ -10,7 +10,7 @@ To track events and data within your Skill we can use logging. If you are new to
 
 ## Video Tutorial (Courtesy of Mycroft.AI, which NeonSkills extends)
 
-<iframe width="420" height="315" src="https://www.youtube.com/watch?v=1_yX1JCCYoM" frameborder="0" allowfullscreen>Video Tutorial: Logging from Mycroft Skills</iframe>
+[![Video Tutorial: Logging from Mycroft Skills](https://img.youtube.com/vi/1_yX1JCCYoM/maxresdefault.jpg)](https://www.youtube.com/watch?v=1_yX1JCCYoM)
 
 ## Basic Usage
 
@@ -41,8 +41,8 @@ def create_skill():
 
 The above Skill would log an INFO level message each time the intent handler was triggered. The resulting log would look like this:
 
-```
-2021-03-19 16:06:43.731 | INFO     | 14745 | HelloWorldSkill | This is an info level log message.
+```log
+14:41:54.639 - skills - skill_hello_world:emit_log:285 - INFO - This is an info level log message.
 ```
 
 From left to right, this consists of:

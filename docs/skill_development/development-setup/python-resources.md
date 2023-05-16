@@ -8,7 +8,7 @@ description: >-
 
 If you are new to Python or programming in general there are lots of resources online catering to all experience levels. Once you have the basics, a simple Skill can be a great way to try them out in a real project.
 
-Neon uses Python 3 and as of December 2019 supports Python 3.7-3.10.
+Neon uses Python 3 and as of May 2023 supports Python 3.7-3.10.
 
 The following are a collection of resources recommended by members of our Community. If you know of other great resources please let us know in the [Neon Chat](https://matrix.to/#/#NeonMycroft:matrix.org).
 
@@ -16,11 +16,11 @@ The following are a collection of resources recommended by members of our Commun
 
 ### Python Virtual Environments
 
-<iframe width="420" height="315" src="https://www.youtube.com/watch?v=QXJZRDYjo7E" frameborder="0" allowfullscreen>Video Tutorial: Python Virtual Environments</iframe>
+[![Video Tutorial: Python Virtual Environments](https://img.youtube.com/vi/QXJZRDYjo7E/maxresdefault.jpg)](https://www.youtube.com/watch?v=QXJZRDYjo7E)
 
 ### Python Package Management
 
-<iframe width="420" height="315" src="https://www.youtube.com/watch?v=noKRb5uoE-Q" frameborder="0" allowfullscreen>Video Tutorial: Python Package Management</iframe>
+[![Video Tutorial: Python Package Management](https://img.youtube.com/vi/noKRb5uoE/maxresdefault.jpg)](https://www.youtube.com/watch?v=noKRb5uoE)
 
 ## Books
 

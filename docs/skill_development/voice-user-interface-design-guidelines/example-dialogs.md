@@ -1,6 +1,6 @@
 # Example Interaction Script
 
-After working on a list of jobs to be done creating Example Interactions is one of the next steps in the design and planning process. In this step you will take the Job Stories and write example Dialogs that get the User's job accomplished. These Example Dialogs will then be used to create Behave tests before development begins. Once development begins the Example Dialogs also become the basis of the Dialog and Vocab files within your skill. Once development begins you will need to update your Behave tests to utilize the Dialog files instead of the natural language responses that were written in the design and planning phases. The process is described in more detail in the example below.
+After working on a list of jobs to be done creating Example Interactions is one of the next steps in the design and planning process. In this step you will take the Job Stories and write example Dialogs that get the User's job accomplished. Once development begins the Example Dialogs also become the basis of the Dialog and Vocab files within your skill. Once development begins you will need to [update your tests files](skill-testing) to utilize the Dialog files instead of the natural language responses that were written in the design and planning phases. The process is described in more detail in the example below.
 
 ## First Draft Interaction Scripts
 
@@ -61,7 +61,7 @@ Here is an example of a First Draft Interaction of a Moon Phase Skill.
 
 ## Organized Interaction Scripts
 
-The next step in the process is organizing the first pass of dialogs into groups. You may already have a good idea of what these groups of similar interactions are based on your Job Stories from the beginning phase. You can also think of these as the features of the skill. In the Behave format these groups or features are called Scenarios.
+The next step in the process is organizing the first pass of dialogs into groups. You may already have a good idea of what these groups of similar interactions are based on your Job Stories from the beginning phase. You can also think of these as the features of the skill. These groups or features are called Scenarios.
 
 | **Scenario** | **When a user asks for the current Moon Phase**         |
 | :----------- | :------------------------------------------------------ |
@@ -70,7 +70,7 @@ The next step in the process is organizing the first pass of dialogs into groups
 
 | **Scenario** | **When a user asks for the next moon phase**     |
 | :----------- | :----------------------------------------------- |
-| **User**     | _Hey Neon, whe is the next full moon?_           |
+| **User**     | _Hey Neon, when is the next full moon?_          |
 | **Neon**     | _The next full moon is on May 7th._              |
 | \_\_         |                                                  |
 | **User**     | _Hey Neon, when is the next First Quarter Moon?_ |
@@ -125,25 +125,6 @@ The next step in the process is organizing the first pass of dialogs into groups
 | **Neon**     | _I’m not sure I understood you, would you like to know when the next moon phase cycle begins?_ |
 | **User**     | _yes_                                                                                          |
 | **Neon**     | _the next moon phase begins with the new moon on April 23rd_                                   |
-
-## Converting Example Interactions into Behave Feature files
-
-Once you have finished creating your example interactions and you have done some rounds of testing with some users, then it's time to convert your Interactions into Behave Feature files. You can see an example of the first Scenario from the Example Dialogs converted to a Feature file below.
-
-```text
-Feature: neon-moon-phase
-
-  Scenario Outline: The user asks for the current moon phase
-    Given an English-speaking user
-      When the user asks for "<the current moon phase>"
-      Then "skill-moon-phase" should reply with "Today’s moon is Waning Crescent with 55% illumination"
-
-   Examples:
-     | the current moon phase |
-     | what’s the moon phase |
-     | what's the phase of the moon |
-     | what is the moon phase today |
-```
 
 ## Converting Example Interactions to Flows \(optional\)
 

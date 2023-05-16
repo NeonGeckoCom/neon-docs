@@ -7,11 +7,11 @@ Neon supports both Padatious and Adapt intent handlers. Neon Core has an intent 
 ### Order of Priority
 
 1. Active skills attempt to handle using `converse()`
-2. Padatious high match intents (confidence > 0.95)
+2. Padatious high match intents
 3. Adapt intent handlers
 4. Fallbacks:
 
-- Padatious near match intents (confidence > 0.8)
+- Padatious near match intents
 - General fallbacks
-- Padatious loose match intents (confidence > 0.5)
+- Padatious loose match intents
 - Unknown intent handler

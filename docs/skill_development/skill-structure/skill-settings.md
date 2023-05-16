@@ -89,13 +89,13 @@ Each section has one or more `fields`. Each field is a setting available to the 
 
   The data type of this field. The supported types are:
 
-  - `text`: any kind of text
-  - `email`: text validated as an email address
-  - `checkbox`: boolean, True or False
-  - `number`: text validated as a number
-  - `password`: text hidden from view by default
-  - `select`: a drop-down menu of options
-  - `label`: special field to display text for information purposes only. No name or value is required for a `label` field.
+> - `text`: any kind of text
+> - `email`: text validated as an email address
+> - `checkbox`: boolean, True or False
+> - `number`: text validated as a number
+> - `password`: text hidden from view by default
+> - `select`: a drop-down menu of options
+> - `label`: special field to display text for information purposes only. No name or value is required for a `label` field.
 
 - `label` (String)
 
@@ -139,9 +139,9 @@ We recommend using the `Dict.get` method above rather than accessing the setting
 self.settings['show_time']
 ```
 
-Directly referencing the value may throw a KeyError if the setting has not yet been fetched from the server.
+Directly referencing the value may throw a KeyError if the setting has not yet been fetched from the server or if the settings does not exist.
 
-It is also important to note that the `settings` dictionary will not be available in your Skills `__init__` method as this is setting up your Skills Class. You should instead use an `initialize` method which is called after the Skill is fully constructed and registered with the system. More detail is available at:
+It is also important to note that the `settings` dictionary will not be available in your Skills `__init__` method as this is setting up your Skills Class. You should instead use a separate method with a `@property` decorator. More detail is available at:
 
 [lifecycle-methods.md](lifecycle-methods.md)
 
@@ -162,6 +162,14 @@ def on_settings_changed(self):
 In the example above, we have registered the `on_settings_changed` method to be our callback function. We have then immediately called the method to perform the relevant actions when the Skill is being initialized even though the Skills settings have not changed.
 
 In the `on_settings_changed` method we have assigned the value of the `show_time` setting to a local variable. Then we have passed it as an argument to another method in our Skill that will trigger the display of the time based on its value.
+
+Also note that this is not necessary if you use a property method, which is preferred:
+
+```python
+@property
+def show_time(self):
+  return self.settings.get('show_time', False)
+```
 
 ### Writing to settings
 
@@ -198,7 +206,7 @@ The new value for the `show_time` setting will persist until a new setting is as
 }
 ```
 
-</deatils>
+</details>
 
 <details>
   <summary>YAML</summary>
@@ -212,7 +220,7 @@ skillMetadata:
           label: This is descriptive text.
 ```
 
-</deatils>
+</details>
 
 ### Text Field
 
@@ -282,7 +290,7 @@ skillMetadata:
 }
 ```
 
-</deatils>
+</details>
 
 <details>
   <summary>YAML</summary>
@@ -298,7 +306,7 @@ skillMetadata:
           value:
 ```
 
-</deatils>
+</details>
 
 ### Checkbox
 
@@ -325,7 +333,7 @@ skillMetadata:
 }
 ```
 
-</deatils>
+</details>
 
 <details>
   <summary>YAML</summary>
@@ -341,7 +349,7 @@ skillMetadata:
           value: "false"
 ```
 
-</deatils>
+</details>
 
 ### Number
 
@@ -368,7 +376,7 @@ skillMetadata:
 }
 ```
 
-</deatils>
+</details>
 
 <details>
   <summary>YAML</summary>
@@ -384,7 +392,7 @@ skillMetadata:
           value: 7
 ```
 
-</deatils>
+</details>
 
 ### Password
 
@@ -411,7 +419,7 @@ skillMetadata:
 }
 ```
 
-</deatils>
+</details>
 
 <details>
   <summary>YAML</summary>
@@ -427,7 +435,7 @@ skillMetadata:
           value:
 ```
 
-</deatils>
+</details>
 
 ### Select
 
@@ -455,7 +463,7 @@ skillMetadata:
 }
 ```
 
-</deatils>
+</details>
 
 <details>
   <summary>YAML</summary>
@@ -472,4 +480,4 @@ skillMetadata:
           value: option_one
 ```
 
-</deatils>
+</details>

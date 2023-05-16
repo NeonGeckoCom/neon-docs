@@ -25,13 +25,17 @@ In the example above, we might extract data elements like:
 - **location** - Julie has stipulated her location as Melbourne, but she does not state that she means Melbourne, Australia. How do we distinguish this from Melbourne, Florida, United States?
 - **date** - Julie has been specific about the _timeframe_ she wants weather data for - today. But how do we know what today means in Julie's timezone. Melbourne, Australia is between 14-18 hours ahead of the United States. We don't want to give Julie yesterday's weather, particularly as Melbourne is renowned for having changeable weather.
 
+It is up us as Skill creators to teach Neon the variety of ways that a user might express the same intent. This is a key part of the design process. It is the key difference between a Skill that kind of works if you know what to say, and a Skill that feels intuitive and natural to talk to.
+
+This is handled by an intent parser whose job it is to learn from your Skill what intents it can handle, and extract from the user's speech any key information that might be useful for your Skill. In this case it might include the specified date and location.
+
 ## Neon's Intent Parsing Engines
 
 Neon has three separate Intent parsing engines each with their own strengths. Each of these can be used in most situations, however they will process the utterance in different ways.
 
 [**Padatious**](https://github.com/MycroftAI/padatious) is a light-weight neural network that is trained on whole phrases. Padatious intents are generally more accurate however require you to include sample phrases that cover the breadth of ways that a User may ask about something.
 
-[**Padatioso**](https://github.com/OpenJarbas/padacioso) is a drop-in replacement for Padatious, built by the OVOS team to resolve several bugs and enhance features of Padatious. The API is the same as Padatious.
+[**Padacioso**](https://github.com/OpenJarbas/padacioso) is a drop-in replacement for Padatious, built by the OVOS team to resolve several bugs and enhance features of Padatious. The API is the same as Padatious.
 
 [**Adapt**](https://github.com/MycroftAI/adapt) is a keyword based parser. It is more flexible, as it detects the presence of one or more keywords in an utterance, however this can result in false matches.
 

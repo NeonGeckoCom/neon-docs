@@ -8,6 +8,8 @@ description: >-
 
 ## Installation
 
+**NOTE:** `neon-gui` will soon be deprecated; use [`ovos-shell`](https://github.com/OpenVoiceOS/ovos-shell) instead where possible.
+
 The [neon-gui](https://github.com/NeonGeckoCom/neon-gui) package requires some newer packages, so a newer distribution such as KDE Neon or K/Ubuntu 20.04 is recommended.
 
 On supported systems, the installation is equivalent to a development installation of mycroft-core:
