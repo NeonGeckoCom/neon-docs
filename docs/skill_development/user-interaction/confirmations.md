@@ -10,6 +10,13 @@ description: >-
 
 May be verbal or non-verbal. See the [Voice User Interface Design Guidelines section on Confirmations](../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations)
 
+Note that Neon has a common practice of enabling confirmation that an intent handler is doing something when the action might take some time.
+
+```python
+if get_user_prefs(message)['response_mode'].get('hesitation'):
+    self.speak_dialog("check_updates")
+```
+
 ## Non-verbal Confirmation
 
 See [`acknowledge()`](https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.acknowledge)

@@ -19,9 +19,9 @@ A logger is available through the `NeonSkill` base class. This means that you ca
 Here is a quick example of an INFO level log message used in a Skill. We will learn more about the other levels shortly.
 
 ```python
-from adapt.intent import IntentBuilder
+from ovos_utils.intents import IntentBuilder
 from neon_utils.skills.neon_skill import NeonSkill
-from mycroft.skills.core import intent_handler
+from ovos_workshop.decorators import intent_handler
 
 class LoggingSkill(NeonSkill):
 
@@ -135,9 +135,9 @@ from neon_utils.log_utils import LOG
 This can then be used outside your Skill's class. Extending our first example:
 
 ```python
-from adapt.intent import IntentBuilder
+from ovos_utils.intents import IntentBuilder
 from neon_utils.skills.neon_skill import NeonSkill
-from mycroft.skills.core import intent_handler
+from ovos_workshop.decorators import intent_handler
 from neon_utils.log_utils import LOG
 
 LOG.info("This is a logged info level message outside of the NeonSkill Class scope")

@@ -7,24 +7,25 @@ description: Exploring the foundational components of a basic Neon Skill.
 ```shell
 $ ls -l
 total 20
-drwxr-xr-x 3 kris kris 4096 Oct  8 22:21 dialog
+drwxr-xr-x 3 kris kris 4096 Oct  8 22:21 locale
 -rw-r--r-- 1 kris kris  299 Oct  8 22:21 __init__.py
 -rw-r--r-- 1 kris kris 9482 Oct  8 22:21 LICENSE
 -rw-r--r-- 1 kris kris  283 Oct  8 22:21 README.md
 -rw-r--r-- 1 kris kris  642 Oct  8 22:21 settingsmeta.yaml
-drwxr-xr-x 3 kris kris 4096 Oct  8 22:21 vocab
 ```
 
 We will look at each of these in turn.
 
-## `vocab`, `dialog`, and `locale` directories
+## `locale` directory
 
-The `dialog`, `vocab`, and `locale` directories contain subdirectories for each spoken language the skill supports. The subdirectories are named using the [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) for the language. For example, Brazilian Portugues is 'pt-br', German is 'de-de', and Australian English is 'en-au'.
+The `locale` directory contain subdirectories for each spoken language the skill supports. The subdirectories are named using the [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) for the language. For example, Brazilian Portugues is 'pt-br', German is 'de-de', and Australian English is 'en-au'.
 
 By default, your new Skill should contain one subdirectory for United States English - 'en-us'. If more languages were supported, then there would be additional language directories.
 
+Note that everything under "language" can be in any structure but is generally organized by resource type: dialog, vocab, regex, ui.
+
 ```bash
-$ ls -l dialog
+$ ls -l locale
 total 4
 drwxr-xr-x 2 kris kris 4096 Oct  8 22:21 en-us
 ```
@@ -34,7 +35,7 @@ drwxr-xr-x 2 kris kris 4096 Oct  8 22:21 en-us
 There will be one file in the language subdirectory (ie. `en-us`) for each type of dialog the Skill will use. Currently this will contain all of the phrases you input when creating the Skill.
 
 ```bash
-$ ls -l dialog/en-us
+$ ls -l locale/en-us/dialog
 total 4
 -rw-r--r-- 1 kris kris 10 Oct  8 22:21 first.dialog
 ```
@@ -62,18 +63,20 @@ We will learn about Intents in more detail shortly. For now, we can see that wit
 In our current example we might see something like:
 
 ```bash
-$ ls -l vocab/en-us
+$ ls -l locale/en-us/vocab
 total 4
 -rw-r--r-- 1 kris kris 23 Oct  8 22:21 first.intent
 ```
 
 This `.intent` file will contain all of the sample utterances we provided when creating the Skill.
 
-### Locale Directory
+### Regex Directory
 
-This directory is a newer addition to Neon and combines `dialog` and `vocab` into a single directory. This was requested by the Community to reduce the complexity of a Skills structure, particularly for smaller Skills. Any of the standard file types that we've looked at so far will be treated the same if they are contained in the `dialog`, `vocab`, or `locale` directories.
+Contains all the files for any regex intents the skill uses (optional). For more information, [see the regex documentation](../user-interaction/intents/adapt-intents.md#regular-expression-rx-files).
 
-This also includes the `regex` directory that you will learn about later in the tutorial.
+### UI Directory
+
+Contains all the files for the GUI of the skill (optional). For more information, [see the GUI documentation](../displaying-information/mycroft-gui.md).
 
 ## \_\_init\_\_.py
 
@@ -84,8 +87,9 @@ Let's take a look:
 ### Importing libraries
 
 ```python
-from adapt.intent import IntentBuilder
-from Neon import NeonSkill, intent_handler
+from ovos_utils.intents import IntentBuilder
+from ovos_workshop.decorators import intent_handler
+from Neon import NeonSkill
 ```
 
 This section of code imports the required _libraries_. Some libraries will be required on every Skill, and your skill may need to import additional libraries.
@@ -109,8 +113,8 @@ This method is the _constructor_. It is called when the Skill is first construct
 An example `__init__` method might be:
 
 ```python
-def __init__(self):
-    super().__init__()
+def __init__(self, *args, **kwargs):
+    super().__init__(*args, **kwargs)
     self.already_said_hello = False
     self.be_friendly = True
 ```
@@ -124,7 +128,7 @@ def initialize(self):
     my_setting = self.settings.get('my_setting')
 ```
 
-Note that in future versions of Neon, the `initialize()` method will be deprecated and merged with the `__init__()` method.
+Note that in future versions of Neon, the `initialize()` method will be deprecated and merged with the `__init__()` method. By passing `*args, **kwargs` to your `__init__()` and `super().__init__()` methods, you will be able to access the same functionality as the `initialize()` method.
 
 ### Intent handlers
 
@@ -140,7 +144,7 @@ In our current HelloWorldSkill we can see two different styles.
        self.speak_dialog("welcome")
    ```
 
-2. A Padatious intent handler, triggered using a list of sample phrases.
+2. A Padatious/Padacioso intent handler, triggered using a list of sample phrases.
 
    ```python
    @intent_handler('HowAreYou.intent')
@@ -193,7 +197,7 @@ The README file contains human readable information about your Skill. The inform
 
 This file defines the settings that will be available to a User through their backend, if they are using a backend. If not, the file is still valuable because it defines expected settings.
 
-Jump to [Skill Settings](skill-settings.md) for more information on this file and handling of Skill settings.
+Jump to [Skill Settings](skill-settings.md) or [skill.json](../development-setup/skill_json.md) for more information on this file and handling of Skill settings.
 
 ## What have we learned
 

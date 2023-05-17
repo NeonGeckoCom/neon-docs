@@ -14,7 +14,7 @@ Vocab files define keywords that Adapt will look for in a Users utterance to det
 
 These files can be located in either the `vocab/lang-code/` or `locale/lang-code/` directories of a Skill. They can have one or more lines to list synonyms or terms that have the same meaning in the context of this Skill. Neon will match _any_ of these keywords with the Intent.
 
-Consider a simple `Potato.voc`. Within this file we might include:
+Consider a simple `potato.voc`. Within this file we might include:
 
 ```
 potato
@@ -82,14 +82,14 @@ Now that we have a Vocab and Regular Expression defined, let's look at how to us
 
 For the following example we will use the two files we outlined above:
 
-- `Potato.voc`
-- `Type.rx`
+- `potato.voc`
+- `type.rx`
 
 We will also add some new `.voc` files:
 
-- `Like.voc` - containing a single line "like"
-- `You.voc` - containing a single line "you"
-- `I.voc` - containing a single line "I"
+- `like.voc` - containing a single line "like"
+- `you.voc` - containing a single line "you"
+- `i.voc` - containing a single line "I"
 
 ### Creating the Intent Handler
 
@@ -100,8 +100,8 @@ To construct an Adapt Intent, we use the intent*handler() \_decorator* and pass 
 Both of these must be imported before we can use them:
 
 ```python
-from adapt.intent import IntentBuilder
-from neon_core.skills.decorators import intent_handler
+from ovos_utils.intents import IntentBuilder
+from ovos_workshop.decorators import intent_handler
 ```
 
 The IntentBuilder is then passed the name of the Intent as a string, followed by one or more parameters that correspond with one of our `.voc` or `.rx` files.
@@ -139,9 +139,9 @@ _Neither the `You` nor `I` keyword is found._
 Now we can create our Potato Skill:
 
 ```python
-from adapt.intent import IntentBuilder
+from ovos_utils.intents import IntentBuilder
 from neon_core.skills import NeonSkill
-from neon_core.skills.decorators import intent_handler
+from ovos_workshop.decorators import intent_handler
 
 class PotatoSkill(NeonSkill):
 

@@ -76,7 +76,7 @@ This must be registered in the Skill before use - most commonly in the `initiali
 
 ```python
 from neon_utils.skills.neon_skill import NeonSkill
-from mycroft.skills.core import intent_handler
+from ovos_workshop.decorators import intent_handler
 
 class TomatoSkill(NeonSkill):
     def initialize(self):
@@ -195,7 +195,7 @@ From our first example above, we created a file `vocab/en-us/what.is.a.tomato.in
 This _decorator_ must be imported before it is used:
 
 ```python
-from mycroft.skills.core import intent_handler
+from ovos_workshop.decorators import intent_handler
 ```
 
 [Learn more about _decorators_ in Python](https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Decorators).
@@ -204,7 +204,7 @@ Now we can create our Tomato Skill:
 
 ```python
 from neon_utils.skills.neon_skill import NeonSkill
-from mycroft.skills.core import intent_handler
+from ovos_workshop.decorators import intent_handler
 
 class TomatoSkill(NeonSkill):
 

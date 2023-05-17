@@ -20,7 +20,7 @@ To see it in action, let's create a simple Skill that asks the User what their f
 
 ```python
 from neon_utils.skills.neon_skill import NeonSkill
-from mycroft.skills.core import intent_handler
+from ovos_workshop.decorators import intent_handler
 
 
 class IceCreamSkill(NeonSkill):
@@ -61,7 +61,7 @@ Let's add a new intent to our `IceCreamSkill` to see how this works.
 
 ```python
 from neon_utils.skills.neon_skill import NeonSkill
-from mycroft.skills.core import intent_handler
+from ovos_workshop.decorators import intent_handler
 
 
 class IceCreamSkill(NeonSkill):
@@ -96,7 +96,7 @@ Let's jump back into our `IceCreamSkill` to give the User a list of options to c
 
 ```python
 from neon_utils.skills.neon_skill import NeonSkill
-from mycroft.skills.core import intent_handler
+from ovos_workshop.decorators import intent_handler
 
 
 class IceCreamSkill(NeonSkill):
@@ -135,7 +135,7 @@ To do this, we use the `expect_response` parameter of the `speak_dialog()` metho
 
 ```python
 from neon_utils.skills.neon_skill import NeonSkill
-from mycroft.skills.core import intent_handler
+from ovos_workshop.decorators import intent_handler
 
 
 class IceCreamSkill(NeonSkill):

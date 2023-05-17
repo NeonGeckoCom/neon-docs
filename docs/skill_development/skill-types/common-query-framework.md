@@ -26,7 +26,8 @@ class MyCommonQuerySkill(CommonQuerySkill):
     def CQS_match_query_phrase(self, utt):
        # Parsing implementation
        # [...]
-       return (utt, CQSMatchLevel.LEVEL, answer_string)
+       # callback_data = {}
+       return (utt, CQSMatchLevel.LEVEL, answer_string, callback_data)
 
 def create_skill():
     return MyCommonQuerySkill()

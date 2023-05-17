@@ -103,7 +103,7 @@ def create_skill():
 
 ```python
 from neon_utils.skills.neon_skill import NeonSkill
-from mycroft.skills.core import intent_handler
+from ovos_workshop.decorators import intent_handler
 
 class FileSystemSkill(NeonSkill):
 
@@ -147,7 +147,7 @@ This directory will likely be part of a small RAM disk and may be cleared at any
 ```python
 from os.path import join
 from neon_utils.skills.neon_skill import NeonSkill
-from mycroft.skills.core import intent_handler
+from ovos_workshop.decorators import intent_handler
 from mycroft.util import get_cache_directory
 
 class CachingSkill(NeonSkill):

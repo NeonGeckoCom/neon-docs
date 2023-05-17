@@ -35,7 +35,7 @@ Neon has three separate Intent parsing engines each with their own strengths. Ea
 
 [**Padatious**](https://github.com/MycroftAI/padatious) is a light-weight neural network that is trained on whole phrases. Padatious intents are generally more accurate however require you to include sample phrases that cover the breadth of ways that a User may ask about something.
 
-[**Padacioso**](https://github.com/OpenJarbas/padacioso) is a drop-in replacement for Padatious, built by the OVOS team to resolve several bugs and enhance features of Padatious. The API is the same as Padatious.
+[**Padacioso**](https://github.com/OpenVoiceOS/padacioso) is a drop-in replacement for Padatious, built by the OVOS team to resolve several bugs and enhance features of Padatious. The API is the same as Padatious.
 
 [**Adapt**](https://github.com/MycroftAI/adapt) is a keyword based parser. It is more flexible, as it detects the presence of one or more keywords in an utterance, however this can result in false matches.
 

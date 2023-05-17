@@ -7,7 +7,7 @@ description: >-
 
 # Converse
 
-Each Skill may define a `converse()` method. This method will be called anytime the Skill has been recently active and a new utterance is processed.&#x20;
+Each Skill may define a `converse()` method. This method will be called anytime the Skill has been recently active and a new utterance is processed.
 
 The converse method expects a single argument which is a standard Neon Message object. This is the same object an intent handler receives.
 
@@ -19,7 +19,7 @@ Let's use a version of the Ice Cream Skill we've been building up and add a conv
 
 ```python
 from neon_utils.skills.neon_skill import NeonSkill
-from mycroft.skills.core import intent_handler
+from ovos_workshop.decorators import intent_handler
 
 
 class IceCreamSkill(NeonSkill):
@@ -45,7 +45,7 @@ def create_skill():
 
 In this example:
 
-1. A User might request an ice cream which is handled by `handle_request_icecream()`&#x20;
+1. A User might request an ice cream which is handled by `handle_request_icecream()`
 2. The Skill would be added to the system Active Skill list for up to 5 minutes.
 3. Any utterance received by Neon would trigger this Skills converse system whilst it is considered active.
 4. If the User followed up with a pleasantry such as "Hey Neon, thanks" - the converse method would match this vocab against the `Thankyou.voc` file in the Skill and speak the contents of the `you-are-welcome.dialog` file. The method would return `True` and the utterance would be consumed meaning the intent parsing service would never be triggered.
@@ -77,6 +77,6 @@ In the case of our Ice Cream Skill - we might have a function that will execute 
 
 Skills that attempt to use the Converse method or the Active Skills List in ways that a normal user would not intend or appreciate, will not be approved.
 
-## Further information&#x20;
+## Further information
 
 See the [`converse()` method documentation](https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.converse).
