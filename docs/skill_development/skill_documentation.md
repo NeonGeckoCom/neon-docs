@@ -141,6 +141,9 @@ Daily
 `Tags` contain some tags that apply to the skill. There are no hard rules about
 what may be in a tag, but `NeonGecko Original` is reserved for use with skills
 owned by the `NeonGeckoCom` organization.
+---
+`Language Support` is used to define the languages this skill supports
+`# TODO: Define Structure`
 
 ## LICENSE.md
 Every project on GitHub should contain a `LICENSE.md` file with a known license.
