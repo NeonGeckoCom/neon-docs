@@ -35,7 +35,7 @@ If you have a Mycroft Mark 2 or Mark 2 Dev Kit, [Neon has images available for d
 
 If you're developing in containers or in an environment with limited resources, note that you do not need to run every single Neon service for it to run properly. The minimum services required are the `neon-messagebus` and `neon-skills` services if you only want to test the text portions of your code. This can make for a quick feedback loop using `neon-cli` or `mana`.
 
-To add STT and TTS, `neon-audio` and `neon-speech` are required.
+To add TTS and STT, `neon-audio` and `neon-speech` are required, respectively.
 
 Finally, `neon-gui` is required only to test out any GUI functionality your skill may require, and `neon-enclosure` is required only if you are using a PHAL plugin or need to interact with Neon hardware in some way.
 
@@ -70,5 +70,6 @@ Installing a skill and restarting the `neon-skills` service can take a long time
 
 1. **Keep your logic separate from the skill itself.** In addition to just being good development practice, this makes it very easy to test key logic for your code without having to restart the skills service. You also get the added benefit of your code being easier to unit test.
    - Example: In the Plex skill, the code to interact with the Plex API and construct dictionaries for OVOS Common Play is in a separate file from the skill itself. That code is also broken into multiple small functions to allow for easy unit testing.
-2. **Take advantage of Neon's testing automation.** Unit tests for your skill's core logic are highly recommended. However, you don't need to unit test Neon-specific behavior in most cases. We handle that for you with automated test suites. For more information [see the documentation on available GitHub Actions tests](../voice-user-interface-design-guidelines/skill-testing.md).
-3. **Develop on your fastest, smallest environment first.** All of the options explored in this page are valid options for creating a development environment. However, you may find it more efficient to do initial development and testing in the smallest and fastest environment possible, e.g. Docker containers on a laptop/desktop. After you've done all the testing you can there, a copy of your skill can be installed in a different environment like a Mycroft Mark 2 for live testing.
+1. **Take advantage of Neon's testing automation.** Unit tests for your skill's core logic are highly recommended. However, you don't need to unit test Neon-specific behavior in most cases. We handle that for you with automated test suites. For more information [see the documentation on available GitHub Actions tests](../voice-user-interface-design-guidelines/skill-testing.md).
+1. **Develop on your fastest, smallest environment first.** All of the options explored in this page are valid options for creating a development environment. However, you may find it more efficient to do initial development and testing in the smallest and fastest environment possible, e.g. Docker containers on a laptop/desktop. After you've done all the testing you can there, a copy of your skill can be installed in a different environment like a Mycroft Mark 2 for live testing.
+1. **Exclude default skills.** The default `docker-compose` setup pulls `neon_skills-default_skills`. If your skill development does not require them, you can change it to `neon_skils` instead. This excludes default skills and only loads the mounted skills directory. Loading skills often takes significant time.

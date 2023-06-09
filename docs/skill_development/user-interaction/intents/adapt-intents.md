@@ -2,7 +2,7 @@
 
 Adapt is a keyword based intent parser. It determines user intent based on a list of keywords or entities contained within a users utterance.
 
-<iframe width="420" height="315" src="https://www.youtube.com/watch?v=zR9xvPtM6Ro" frameborder="0" allowfullscreen></iframe>
+[Introducing the Adapt Parser (YouTube)]("https://www.youtube.com/watch?v=zR9xvPtM6Ro")
 
 For technical details or usage of Adapt outside of a Neon Skill, see the [Adapt documentation](https://mycroft-ai.gitbook.io/docs/mycroft-technologies/adapt).
 

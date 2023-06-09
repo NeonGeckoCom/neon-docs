@@ -47,7 +47,7 @@ The `get_response()` method also takes the following optional arguments:
 
 #### See it in action:
 
-<iframe width="420" height="315" src="https://www.youtube.com/watch?v=Ke7mRl-Qo-U" frameborder="0" allowfullscreen>Video Tutorial: Asking a question</iframe>
+[Video Tutorial: Asking a question](https://www.youtube.com/watch?v=Ke7mRl-Qo-U)
 
 ## Yes / No Questions
 
@@ -84,7 +84,7 @@ In this example we have asked the User if they like ice cream. We then speak dif
 
 ### See it in action:
 
-<iframe width="420" height="315" src="https://www.youtube.com/watch?v=vzQX8RocODs" frameborder="0" allowfullscreen>Video Tutorial: Asking a yes/no question</iframe>
+[Video Tutorial: Asking a yes/no question](https://www.youtube.com/watch?v=vzQX8RocODs)
 
 ## Providing a list of options
 

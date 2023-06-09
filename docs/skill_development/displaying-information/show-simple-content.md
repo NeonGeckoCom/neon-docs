@@ -128,3 +128,24 @@ Arguments:
 - override_animations \(boolean\):
   - True: Disables showing all platform skill animations.
   - False: 'Default' always show animations.
+
+## Show Input Box
+
+Display a fullscreen UI for a user to enter text and confirm or cancel
+
+```python
+self.gui.show_input_box(self, title, placeholder, confirm_text, exit_text, override_idle=True, override_animations=True)
+```
+
+Arguments:
+
+- title (Optional[str]): title of input UI should describe what the input is
+- placeholder (Optional[str]): default text hint to show in an empty entry box
+- confirm_text (Optional[str]): text to display on the submit/confirm button
+- exit_text (Optional[str]): text to display on the cancel/exit button
+- override_idle (Union[int, bool]):
+  - True: takes over the resting page indefinitely
+  - int: Delays resting page for the specified number of seconds.
+- override_animations (bool): disable showing all platform animations
+  - True: Disables showing all platform skill animations.
+  - False: 'Default' always show animations.

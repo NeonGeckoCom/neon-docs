@@ -23,9 +23,9 @@ Neon is an open source voice assistant that can be extended and expanded to the 
 
 Want Neon to do something new? Teach Neon a skill, share it, and improve the experience for tens of thousands of people all over the world. This guide aims to provide you with resources to create familiar and consistent visual experiences with your expanding and innovative skills.
 
-## VISUAL SKILL DEVELOPMENT API FOUNDATION
+## Qt Skill GUI
 
-Neon-enabled devices with displays, such as the Mark II or KDE Plasmoid, provide skill developers the opportunity to create skills that can be empowered by both voice and screen interaction. The display interaction technology is based on the QML user interface markup language. QML gives you complete freedom to create in-depth innovative interactions without boundaries. It also provides you with simple templates within the Mycroft GUI framework that allow minimalistic display of text and images based on your skill development specifics and preferences.
+Neon devices with displays, such as the Mark II, provide skill developers the opportunity to create skills that can be empowered by both voice and screen interaction. Skills may provide custom QML resources for customized UIs, or leverage the provided templates for simple interfaces
 
 This section of the guide is divided into two skill examples that will show you how to create:
 

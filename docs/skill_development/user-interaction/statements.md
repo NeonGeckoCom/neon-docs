@@ -16,7 +16,9 @@ Within a Skill's Intent handler, you may pass a string of text to Neon and Neon 
 
 To support multilingualism, the text that Neon speaks must come from a file. That file is called a dialog file. The dialog file contains statements (lines of text) that a listener in a particular language would consider to be equivalent. For instance, in USA English, the statements "I am okay" and "I am fine" are equivalent, and both of these statements might appear in a dialog file used for responding to the USA English question: "How are you?".
 
-By convention, the dialog filename is formed by _dot connected_ _words_ and must end with ".dialog". The dialog filename should be descriptive of the contents as a whole. Sometimes, the filename describes the question being answered, and other times, the filename describes the answer itself. For the example above, the dialog filename might be: **how.are.you.dialog** or **i.am.fine.dialog**.
+By convention, the dialog filename is historically formed by _dot connected_ _words_ and must end with ".dialog". The dialog filename should be descriptive of the contents as a whole. Sometimes, the filename describes the question being answered, and other times, the filename describes the answer itself. For the example above, the dialog filename might be: **how.are.you.dialog** or **i.am.fine.dialog**.
+
+Newer skills may use _underscore connected_ _words_ ending with ".dialog". For example. **how_are_you.dialog** or **i_am_fine.dialog**. The older convention is still supported, but the newer convention is preferred.
 
 Multilingualism is accomplished by translating the dialog files into other languages, and storing them in their own directory named for the country and language. The filenames remain the same. Using the same filenames in separate language dependent directories allows the Skills to be language agnostic; no hard-coded text strings. Adjust the language setting for your Device \*\*\*\* and Neon uses the corresponding set of dialog files. If the desired file does not exist in the directory for that language, Neon will use the file from the USA English directory.
 
@@ -24,7 +26,7 @@ As an example of the concept, the contents of **how.are.you.dialog** in the dire
 
 ### The Tomato Skill Revisited
 
-To demonstrate the multilingualism design pattern, we examine the usage of the [`speak_dialog()`](https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.speak_dialog) method in the [Tomato Skill](intents/padatious-intents.md) . &#x20;
+To demonstrate the multilingualism design pattern, we examine the usage of the [`speak_dialog()`](https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.speak_dialog) method in the [Tomato Skill](intents/padatious-intents.md) .
 
 The Tomato Skill has two Intents: one demonstrates simple, straightforward statements, and the other demonstrates the use of variables within a statement.
 
@@ -69,18 +71,15 @@ def handle_what_is(self, message):
 
 With the Tomato Skill installed, if the User utters \*\*\*\* "Hey Neon, what is a tomato?", the Intent handler method `handle_what_is()` will be called.
 
-Inside `handle_what_is()`, we find: `self.speak_dialog('tomato.description')` &#x20;
+Inside `handle_what_is()`, we find: `self.speak_dialog('tomato.description')`
 
-As you can probably guess, the parameter `'tomato.description'` is the dialog filename without the ".dialog" extension. Calling this method opens the dialog file, selects one of the statements, and converts that text to speech. Neon will speak a statement from the dialog file. In this example, Neon might say "The tomato is a fruit of the nightshade family". &#x20;
+As you can probably guess, the parameter `'tomato.description'` is the dialog filename without the ".dialog" extension. Calling this method opens the dialog file, selects one of the statements, and converts that text to speech. Neon will speak a statement from the dialog file. In this example, Neon might say "The tomato is a fruit of the nightshade family".
 
 Remember, Neon has a language setting that determines from which directory to find the dialog file.
 
 #### File locations
 
-The [Skill Structure](../skill-structure/) section describes where to place the Intent file and dialog file. Basically, there are two choices:
-
-1. Put both files in `locale/en-us`
-2. Put the dialog file in `dialog/en-us` , and put the Intent file in `vocab/en-us`
+The [Skill Structure](../skill-structure/) section describes where to place the Intent file and dialog file. Basically, you put both files in `locale/en-us`. Other structures are deprecated.
 
 ### Statements with variables
 
@@ -133,7 +132,7 @@ The Tomato Skill code snippet:
             self.speak_dialog('like.tomato.generic')
 ```
 
-When the User utters "Hey Neon, do you like RED tomatoes?", the second of the two Intent lines "do you like {type} tomatoes" is recognized by Neon, and the value 'RED' is returned in the message dictionary assigned to the 'type' entry when `handle_do_you_like()` is called. &#x20;
+When the User utters "Hey Neon, do you like RED tomatoes?", the second of the two Intent lines "do you like {type} tomatoes" is recognized by Neon, and the value 'RED' is returned in the message dictionary assigned to the 'type' entry when `handle_do_you_like()` is called.
 
 The line `tomato_type = message.data.get('type')` extracts the value from the dictionary for the entry 'type'. In this case, the variable `tomato_type` will receive the value 'RED', and `speak_dialog()`will be called with the 'like.tomato.type' dialog file, and a dictionary with 'RED' assigned to 'type'. The statement "i do like {type} tomatoes" might be randomly selected, and after insertion of the value 'RED' for the placeholder variable {type}, Neon would say: "I do like RED tomatoes".
 
@@ -141,9 +140,9 @@ Should the User utter "Hey Neon, do you like tomatoes?", the first line in the I
 
 ## Waiting for speech
 
-By default, the `speak_dialog()` method is non-blocking. That is any code following the call to `speak_dialog()` will execute whilst Neon is talking. This is useful to allow your Skill to perform actions while it is speaking.&#x20;
+By default, the `speak_dialog()` method is non-blocking. That is any code following the call to `speak_dialog()` will execute whilst Neon is talking. This is useful to allow your Skill to perform actions while it is speaking.
 
-Rather than telling the User that we are fetching some data, then going out to fetch it, we can do the two things simultaneously providing a better experience.&#x20;
+Rather than telling the User that we are fetching some data, then going out to fetch it, we can do the two things simultaneously providing a better experience.
 
 However there are times when we need to wait until the statement has been spoken before doing something else. We have two options for this.
 
@@ -186,7 +185,7 @@ There may be a situation where the dialog file and the `speak_dialog()` method d
 
 The NeonSkill class provides four multilingual methods to address these needs. Each method uses a file, and multilingualism is accomplished using the country/language directory system.
 
-The [`translate()`](https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.translate) method returns a random string from a ".dialog" file (modified by a data dictionary). &#x20;
+The [`translate()`](https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.translate) method returns a random string from a ".dialog" file (modified by a data dictionary).
 
 The [`translate_list()`](https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.translate_list) method returns a list of strings from a ".list" file (each modified by the data dictionary). Same as translate_template() just with a different file extension.
 

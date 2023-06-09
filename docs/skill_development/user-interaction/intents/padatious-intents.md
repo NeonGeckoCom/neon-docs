@@ -16,7 +16,7 @@ Padatious has a number of key benefits over other intent parsing technologies.
 
 Padatious uses a series of example sentences to train a machine learning model to identify an intent.
 
-The examples are stored in a Skill's `vocab/lang` or `local/lang` directory, in files ending in the file extension `.intent`. For example, if you were to create a _tomato_ Skill to respond to questions about a _tomato_, you would create the file
+The examples are stored in a Skill's `vocab/lang` or `locale/lang` directory, in files ending in the file extension `.intent`. For example, if you were to create a _tomato_ Skill to respond to questions about a _tomato_, you would create the file
 
 `vocab/en-us/what.is.a.tomato.intent`
 
