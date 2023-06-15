@@ -89,7 +89,7 @@ Let's take a look:
 ```python
 from ovos_utils.intents import IntentBuilder
 from ovos_workshop.decorators import intent_handler
-from Neon import NeonSkill
+from neon_utils.skills.neon_skill import NeonSkill
 ```
 
 This section of code imports the required _libraries_. Some libraries will be required on every Skill, and your skill may need to import additional libraries.
