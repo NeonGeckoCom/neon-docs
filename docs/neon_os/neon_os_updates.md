@@ -74,12 +74,25 @@ components is included here.
 ### Neon Updates Skill
 The [Neon Updates Skill](https://github.com/NeonGeckoCom/skill-update/tree/dev)
 handles user requests to check for updates. If an update is requested, the skill
-will emit a message to start an update which the [PHAL Plugin](#core-updater-plugin)
-will handle. This skill is also where settings determine if pre-release versions
+will emit a message to start an update which the relevant plugin will handle. 
+This skill is also where settings determine if pre-release versions
 are included in updates.
 
+### Device Updater Plugin
+Operating System updates are managed by the [Device Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-device-updater)
+which checks configured remote paths for new SquashFS or InitramFS images to be
+applied. When an update is available, the plugin downloads and applies updates;
+InitramFS is applied without needing a restart, SquashFS updates require a system
+reboot to be applied.
+
+SquashFS updates will overwrite much of the root file system to make sure everything
+is in a working state after updating. Any custom scripts or user files should be
+kept in the `/home` directory to avoid being removed as part of the update 
+process. Note that system packages may be removed during the course of an update,
+so any manually installed packages may need to be re-installed after updating.
+
 ### Core Updater Plugin
-Updates are managed by the [Core Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-core-updater)
+Python package updates are managed by the [Core Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-core-updater)
 which is configured in Neon OS to run the `neon-updater` SystemD service. The
 [`neon-updater`](#neon-updater-service) service is responsible for backing up 
 the current system and installing a newer version of `neon-core`.
