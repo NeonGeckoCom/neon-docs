@@ -91,6 +91,26 @@ kept in the `/home` directory to avoid being removed as part of the update
 process. Note that system packages may be removed during the course of an update,
 so any manually installed packages may need to be re-installed after updating.
 
+#### Advanced Usage
+SquashFS updates attempt to migrate relevant information (like `/var`, `/home`, 
+SSH keys, NetworkManager config, etc.) between updates, but system packages and 
+other manual configuration may be removed as part of the update process. For most
+users, this is helpful to clean up incidental changes and restore an installation
+to a predictable state after updating. For users who want to apply customizations
+that persist updates, here are some guidelines.
+
+- With the exception of `venv`, the user directory is not modified between updates.
+  `venv` is replaced with a clean version as part of an update to ensure package
+  compatibility and allow for updating python versions.
+- Extra skills should be added to the user configuration file. This allows Neon core
+  to manage dependency installation, and makes sure a skill is re-installed after
+  system updates.
+- Any extra customizations can be added to `/root/post_update`. This script will be
+  run as root after an update is applied and is intended to handle any desired
+  system package installation, system service configuration, etc. The system
+  service does specify an interpreter, so this file should start with a `#!`,
+  i.e. `#!/bin/bash` or `#!/usr/bin/python3`
+
 ### Core Updater Plugin
 Python package updates are managed by the [Core Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-core-updater)
 which is configured in Neon OS to run the `neon-updater` SystemD service. The
