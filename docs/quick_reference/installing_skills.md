@@ -24,8 +24,11 @@ skills:
 ```
 
 ## Installing Skills from GitHub
+> OSM installation is documented here, but not recommended. Skills should be 
+> updated to use pip installation, as described above.
+
 There are many community skills published to GitHub that may be searched for and
-installed using [OSM](https://openvoiceos.github.io/community-docs/osm/). Hints
+installed using [OSM](https://github.com/openvoiceos/ovos_skill_manager). Hints
 are available from the CLI via `osm --help` or `osm install --help`. Beware that
 not all skills are tested and skills installed from GitHub may not work, may be
 malicious, or may no longer be maintained. The [skill lists below](#other-skill-indices)
