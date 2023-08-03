@@ -8,6 +8,8 @@ description: >-
 
 The NeonSkill class that all Skills inherit from contains a number of methods that can be overridden by an instance of the Class. This enables a Skill to execute code at specific points in the lifecycle of a Skill. Each of these is optional, meaning none are required to be defined in your Skill.
 
+`NeonSkill` may be imported from `neon_utils.skills.neon_skill`.
+
 ## **\_\_init\_\_**
 
 The `__init__` method is called when the Skill is first constructed. It is often used to declare variables or perform setup actions, however it cannot utilize other NeonSkill methods and properties as the class does not yet exist. This includes `self.bus`and `self.settings` which must instead be called from your Skill's `initialize` method.
@@ -45,10 +47,9 @@ In the following example we access the `my_setting` value, that would have been 
 
 The `converse` method can be used to handle follow up utterances prior to the normal intent handling process. It can be useful for handling utterances from a User that do not make sense as a standalone [intent](../user-interaction/intents/).
 
-The method receives two arguments:
+The method receives one argument:
 
-- `utterances` \(list\): The utterances from the user. If there are multiple utterances, consider them all to be transcription possibilities. Commonly, the first entry is the raw utterance and the second is a `normalized` version of the first utterance.
-- `lang` \(string\): The language the utterance is in. This defaults to None.
+- `message` \(Message\): The message object containing the utterance(s), language, user, and other information.
 
 Once the Skill has initially been triggered by the User, the `converse` method will be called each time an utterance is received. It is therefore important to check the contents of the utterance to ensure it matches what you expected.
 
@@ -57,8 +58,8 @@ If the utterance is handled by the converse method, we return `True` to indicate
 In the following example, we check that utterances is not empty, and if the utterance matches vocabulary from `understood.voc`. If the user has understood we speak a line from `great.dialog` and return `True` to indicate the utterance has been handled. If the vocabulary does not match then we return `False` as the utterance should be passed to the normal intent matching service.
 
 ```python
-    def converse(self, utterances, lang):
-        if utterances and self.voc_match(utterances[0], 'understood'):
+    def converse(self, message):
+        if message.get("utterances") and self.voc_match(utterances[0], 'understood'):
             self.speak_dialog('great')
             return True
         else:

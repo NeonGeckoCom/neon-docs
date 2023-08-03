@@ -5,7 +5,7 @@ description: >-
 
 # Configuring some of the “nice” functions for a language
 
-The following functions are used to convert a Python datetime to a pronounceable string, for a given language [please refer to the Mycroft API documentation](http://mycroft-core.readthedocs.io/en/stable/)), which is compatible with Neon.
+The following functions are used to convert a Python datetime to a pronounceable string for a given language. They are available from the [lingua-franca](https://github.com/OpenVoiceOS/ovos-lingua-franca/) library. If you have an older skill that uses the Mycroft core library functions, please consider converting them to use lingua-franca instead, although backwards compatibility will remain for several versions.
 
 - `nice_date(dt, lang='en-us', now=None)`
 - `nice_date_time(dt, lang='en-us', now=None, use_24hour=False, use_ampm=False)`

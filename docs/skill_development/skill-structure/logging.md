@@ -126,7 +126,7 @@ A more serious error, indicating that the Skill is unable to continue running.
 
 ## Using the logger outside the Skill class
 
-As the logger is provided by the NeonSkill class, it is only available within that scope. If you need to log messages from outside of this class, you can import the logger manually.
+As the logger is provided by the NeonSkill class, it is only available within that scope, for example using `self.log`. If you need to log messages from outside of this class, you can import the logger manually.
 
 ```python
 from neon_utils.log_utils import LOG
