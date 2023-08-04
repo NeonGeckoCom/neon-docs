@@ -78,8 +78,10 @@ will emit a message to start an update which the relevant plugin will handle.
 This skill is also where settings determine if pre-release versions
 are included in updates.
 
-### Device Updater Plugin
-Operating System updates are managed by the [Device Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-device-updater)
+### Device Updater Plugin (since Neon Core 23.7.31a4)
+NeonOS Releases since July 20, 2023 now use SquashFS to perform a different kind
+of updates. Operating System updates are managed by the 
+[Device Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-device-updater)
 which checks configured remote paths for new SquashFS or InitramFS images to be
 applied. When an update is available, the plugin downloads and applies updates;
 InitramFS is applied without needing a restart, SquashFS updates require a system
