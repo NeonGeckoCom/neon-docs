@@ -112,6 +112,9 @@ that persist updates, here are some guidelines.
   system package installation, system service configuration, etc. The system
   service does specify an interpreter, so this file should start with a `#!`,
   i.e. `#!/bin/bash` or `#!/usr/bin/python3`
+- Any changes not explicitly handled during the update will be saved at
+  `/opt/neon/old_overlay`. A `post_update` script may choose to do something to
+  restore specific files from here.
 
 ### Core Updater Plugin
 Python package updates are managed by the [Core Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-core-updater)
