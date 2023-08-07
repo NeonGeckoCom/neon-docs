@@ -2,7 +2,7 @@
 In no particular order, here are the answers to some common questions and some
 common troubleshooting tasks:
 
-### My mark 2 device isn't responding to "hey Mycroft"
+### My Mark 2 device isn't responding to "Hey Mycroft"
 The default wake word for Neon releases is "Hey Neon".
 
 ### There is a problem with Neon after changing configuration
