@@ -19,7 +19,7 @@ ready to go!
 
 ## Resetting
 To reset Neon to original settings, there is a menu option under `Settings` ->
-`Factory Settings` -> `Reset Device`. This removes any user settings, restores a
+`Factory Settings` -> `Factory Reset`. This removes any user settings, restores a
 previous version of Neon (and any other Python dependencies), and then restarts.
 This can be useful to resolve potential configuration errors or Python errors if
 installing an update or new package is causing problems.

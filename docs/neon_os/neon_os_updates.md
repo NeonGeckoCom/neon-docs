@@ -99,7 +99,7 @@ SSH keys, NetworkManager config, etc.) between updates, but system packages and
 other manual configuration may be removed as part of the update process. For most
 users, this is helpful to clean up incidental changes and restore an installation
 to a predictable state after updating. For users who want to apply customizations
-that persist updates, here are some guidelines.
+that persist through updates, here are some guidelines.
 
 - With the exception of `venv`, the user directory is not modified between updates.
   `venv` is replaced with a clean version as part of an update to ensure package
