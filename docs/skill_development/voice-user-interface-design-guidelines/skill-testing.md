@@ -1,10 +1,12 @@
 # Skill Testing
-Testing is an important aspect to skill development to ensure that a skill acts 
+
+Testing is an important aspect to skill development to ensure that a skill acts
 as expected. Neon provides several automations to make basic testing trivial to
 implement and more advanced testing easier.
 
 ## Automating Tests
-To enable automated tests with GitHub actions, create 
+
+To enable automated tests with GitHub actions, create
 `.github/workflows/skill_tests.yml` in your skill repository with the below snippet:
 
 ```yaml
@@ -19,44 +21,48 @@ jobs:
   # TODO: Add any jobs here
 ```
 
-The above automation means that build tests will be run any time a pull_request 
+The above automation means that build tests will be run any time a pull_request
 is created/updated, or `Test Skill` is manually run from GitHub.
 
 ## Build Tests
+
 For skills that include a `setup.py` file for installation, enabling build tests
 can help catch typos or errors. To enable this automation, add the below snippet
 to the GitHub automation [specified above](#automating-tests)
 
 ```yaml
-  py_build_tests:
-    uses: neongeckocom/.github/.github/workflows/python_build_tests.yml@master
+py_build_tests:
+  uses: neongeckocom/.github/.github/workflows/python_build_tests.yml@master
 ```
 
 ## Install Tests
+
 For any skill (even those without `setup.py`), installation tests can be used to
 make sure the skill can be installed via [`osm`](https://github.com/OpenVoiceOS/ovos_skill_manager).
-To enable this automation, add the below snippet to the GitHub automation 
+To enable this automation, add the below snippet to the GitHub automation
 [specified above](#automating-tests):
 
 ```yaml
-  skill_install_tests:
-    uses: neongeckocom/.github/.github/workflows/skill_test_installation.yml@master
+skill_install_tests:
+  uses: neongeckocom/.github/.github/workflows/skill_test_installation.yml@master
 ```
 
 ## Unit Tests
+
 Unit tests are generally a good way to make sure components are working as expected
 while building a skill. It is generally recommended to write unit tests while writing
 a skill.
 
-To enable this automation, specify `test/test_skill.py` and add the below 
+To enable this automation, specify `test/test_skill.py` and add the below
 snippet to the GitHub automation [specified above](#automating-tests):
 
 ```yaml
-  skill_unit_tests:
-    uses: neongeckocom/.github/.github/workflows/skill_tests.yml@master
+skill_unit_tests:
+  uses: neongeckocom/.github/.github/workflows/skill_tests.yml@master
 ```
 
 ### Example
+
 Using [skill-about](https://github.com/NeonGeckoCom/skill-about/blob/0.2.1/test/test_skill.py) as an example,
 unit tests are fairly simple to implement.
 
@@ -117,6 +123,7 @@ system running tests. This also mocks `speak` and `speak_dialog` so test methods
 can check what is passed to those methods.
 
 Continuing with that example, a test for an intent handler would look like:
+
 ```python
 def test_read_license(self):
     valid_message = Message("test_message",
@@ -145,20 +152,22 @@ another helpful resource for testing other methods and there are various guides
 for writing generic unit tests, such as [this one from RealPython](https://realpython.com/python-testing/).
 
 ## Resource Tests
+
 Resource tests ensure that any expected resource files are present and not empty.
 This is particularly useful for making sure supported languages are maintained
 and changes to the skill don't accidentally break language support.
 
-To enable this automation, specify `test/test_resources.yaml` and add the below 
+To enable this automation, specify `test/test_resources.yaml` and add the below
 snippet to the GitHub automation [specified above](#automating-tests):
 
 ```yaml
-  skill_resource_tests:
-    uses: neongeckocom/.github/.github/workflows/skill_test_resources.yml@master
+skill_resource_tests:
+  uses: neongeckocom/.github/.github/workflows/skill_test_resources.yml@master
 ```
 
 ### Example
-Using [skill-about](https://github.com/NeonGeckoCom/skill-about/blob/0.2.1/test/test_resources.yaml) 
+
+Using [skill-about](https://github.com/NeonGeckoCom/skill-about/blob/0.2.1/test/test_resources.yaml)
 as an example, resource tests look like:
 
 ```yaml
@@ -197,6 +206,7 @@ shouldn't change unless a new intent is added to a skill. Also note that both mi
 AND extraneous files will result in a test failure.
 
 ## Intent Tests
+
 Intent tests make sure that a skill matches user utterances to intents as expected.
 Intent tests are very useful in making sure a skill handler handles all the user
 utterance it should and not the ones it shouldn't.
@@ -205,16 +215,17 @@ It is also helpful to take reported intent failures or invalid matches and add
 them to the tests here and then adjust intent resources to achieve the desired
 behavior.
 
-To enable this automation, specify `test/test_intents.yaml` and add the below 
+To enable this automation, specify `test/test_intents.yaml` and add the below
 snippet to the GitHub automation [specified above](#automating-tests):
 
 ```yaml
-  skill_resource_tests:
-    uses: neongeckocom/.github/.github/workflows/skill_test_intents.yml@master
+skill_resource_tests:
+  uses: neongeckocom/.github/.github/workflows/skill_test_intents.yml@master
 ```
 
 ### Example
-Using [skill-about](https://github.com/NeonGeckoCom/skill-about/blob/0.2.1/test/test_intents.yaml) 
+
+Using [skill-about](https://github.com/NeonGeckoCom/skill-about/blob/0.2.1/test/test_intents.yaml)
 as an example, resource tests look like:
 
 ```yaml
@@ -240,16 +251,15 @@ as an example, resource tests look like:
 #        - expected_vocab_key: expected_vocab_value
 #        - expected_entity_key: expected_entity_value
 
-
 en-us:
   LicenseIntent:
-  - what is your license
-  - what is my license
-  - tell me the license
-  - tell me the full license:
-      - long: full
-  - tell me my complete license:
-      - long: complete
+    - what is your license
+    - what is my license
+    - tell me the license
+    - tell me the full license:
+        - long: full
+    - tell me my complete license:
+        - long: complete
   ListSkillsIntent:
     - tell me my skills
     - tell me installed skills
@@ -261,7 +271,7 @@ unmatched intents:
     - what is your name
     - what is my name
     - tell me what a skill is
-#    - tell me what skills are
+    #    - tell me what skills are
     - what can you tell me about life
     - tell me what a license is
 ```
