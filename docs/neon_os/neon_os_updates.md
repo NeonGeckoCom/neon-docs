@@ -80,7 +80,7 @@ are included in updates.
 
 ### Device Updater Plugin (since Neon Core 23.7.31a4)
 NeonOS Releases since July 20, 2023 now use SquashFS to perform a different kind
-of updates. Operating System updates are managed by the 
+of update. Operating System updates are managed by the 
 [Device Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-device-updater)
 which checks configured remote paths for new SquashFS or InitramFS images to be
 applied. When an update is available, the plugin downloads and applies updates;
