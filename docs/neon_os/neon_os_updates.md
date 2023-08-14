@@ -74,12 +74,50 @@ components is included here.
 ### Neon Updates Skill
 The [Neon Updates Skill](https://github.com/NeonGeckoCom/skill-update/tree/dev)
 handles user requests to check for updates. If an update is requested, the skill
-will emit a message to start an update which the [PHAL Plugin](#core-updater-plugin)
-will handle. This skill is also where settings determine if pre-release versions
+will emit a message to start an update which the relevant plugin will handle. 
+This skill is also where settings determine if pre-release versions
 are included in updates.
 
+### Device Updater Plugin (since Neon Core 23.7.31a4)
+NeonOS Releases since July 20, 2023 now use SquashFS to perform a different kind
+of update. Operating System updates are managed by the 
+[Device Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-device-updater)
+which checks configured remote paths for new SquashFS or InitramFS images to be
+applied. When an update is available, the plugin downloads and applies updates;
+InitramFS is applied without needing a restart, SquashFS updates require a system
+reboot to be applied.
+
+SquashFS updates will overwrite much of the root file system to make sure everything
+is in a working state after updating. Any custom scripts or user files should be
+kept in the `/home` directory to avoid being removed as part of the update 
+process. Note that system packages may be removed during the course of an update,
+so any manually installed packages may need to be re-installed after updating.
+
+#### Advanced Usage
+SquashFS updates attempt to migrate relevant information (like `/var`, `/home`, 
+SSH keys, NetworkManager config, etc.) between updates, but system packages and 
+other manual configuration may be removed as part of the update process. For most
+users, this is helpful to clean up incidental changes and restore an installation
+to a predictable state after updating. For users who want to apply customizations
+that persist through updates, here are some guidelines.
+
+- With the exception of `venv`, the user directory is not modified between updates.
+  `venv` is replaced with a clean version as part of an update to ensure package
+  compatibility and allow for updating python versions.
+- Extra skills should be added to the user configuration file. This allows Neon core
+  to manage dependency installation, and makes sure a skill is re-installed after
+  system updates.
+- Any extra customizations can be added to `/root/post_update`. This script will be
+  run as root after an update is applied and is intended to handle any desired
+  system package installation, system service configuration, etc. The system
+  service does specify an interpreter, so this file should start with a `#!`,
+  i.e. `#!/bin/bash` or `#!/usr/bin/python3`
+- Any changes not explicitly handled during the update will be saved at
+  `/opt/neon/old_overlay`. A `post_update` script may choose to do something to
+  restore specific files from here.
+
 ### Core Updater Plugin
-Updates are managed by the [Core Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-core-updater)
+Python package updates are managed by the [Core Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-core-updater)
 which is configured in Neon OS to run the `neon-updater` SystemD service. The
 [`neon-updater`](#neon-updater-service) service is responsible for backing up 
 the current system and installing a newer version of `neon-core`.

@@ -11,9 +11,24 @@ be installed [from PyPI](https://pypi.org/search/?q=neon-skill) (i.e. `pip insta
 neon-skill-translation`), and any containing `setup.py` can be installed from git
 (i.e. `pip install git+https://github.com/NeonGeckoCom/skill-translation`).
 
+## Configuring Extra Skills
+The recommended method for adding non-default skills is to add them to your
+configuration. This will ensure that skills are updated and that they are 
+re-installed after system updates. Extra skills can be added to configuration:
+
+```yaml
+skills:
+  default_skills:
+    - git+https://github.com/NeonGeckoCom/skill-translation
+    - neon-skill-translation~=1.0 
+```
+
 ## Installing Skills from GitHub
+> OSM installation is documented here, but not recommended. Skills should be 
+> updated to use pip installation, as described above.
+
 There are many community skills published to GitHub that may be searched for and
-installed using [OSM](https://openvoiceos.github.io/community-docs/osm/). Hints
+installed using [OSM](https://github.com/openvoiceos/ovos_skill_manager). Hints
 are available from the CLI via `osm --help` or `osm install --help`. Beware that
 not all skills are tested and skills installed from GitHub may not work, may be
 malicious, or may no longer be maintained. The [skill lists below](#other-skill-indices)
