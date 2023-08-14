@@ -29,6 +29,7 @@ nav:
     - Neon OS on the Mark II: neon_os/On_the_MarkII.md
     - Debos Base Images: neon_os/neon_debos.md
     - Neon Image Recipes: neon_os/neon_image_recipe.md
+    - Developer References: neon_os/developers.md
     - Tips: neon_os/tips.md
   - Quick Reference Guides:
     - Terminal: quick_reference/terminal.md
