@@ -1,6 +1,6 @@
 site_name: NeonAI® Documentation
 site_url: https://neongeckocom.github.io/neon-docs
-theme: readthedocs
+theme: mkdocs
 
 nav:
   - About: index.md
