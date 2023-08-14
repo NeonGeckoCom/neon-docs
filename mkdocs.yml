@@ -18,7 +18,7 @@ nav:
       - Messagebus: neon_core/neon_messagebus.md
       - Speech: neon_core/neon_speech.md
       - Audio: neon_core/neon_audio.md
-      - Skills: neon_core/neon_skills.md
+#      - Skills: neon_core/neon_skills.md  TODO: Add page
       - GUI: neon_core/neon_gui.md
       - Enclosure: neon_core/neon_enclosure.md
   - Neon OS:
