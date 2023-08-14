@@ -1,91 +1,92 @@
 site_name: NeonAI® Documentation
 site_url: https://neongeckocom.github.io/neon-docs
-theme: readthedocs
-
+plugins: []
+theme:
+  name: gitbook
+extra_css:
+  - css/gitbook.css
 nav:
-    - About: index.md
-    - Overview:
-          - Definitions: overview/definitions
-          - Frequently Asked Questions: overview/faq
-    - Neon Core:
-          - Introduction: neon_core/index.md
-          - Quick Start: neon_core/quick_start.md
-          - Core Modules:
-                - Introduction: neon_core/index.md
-                - Messagebus: neon_core/neon_messagebus.md
-                - Speech: neon_core/neon_speech.md
-                - Audio: neon_core/neon_audio.md
-                - Skills: neon_core/neon_skills.md
-                - GUI: neon_core/neon_gui.md
-                - Enclosure: neon_core/neon_enclosure.md
-    - Neon OS:
-          - Introduction: neon_os/index.md
-          - Installation: neon_os/neon_os_installation.md
-          - Using Neon OS: neon_os/using_neon_os.md
-          - Updating: neon_os/neon_os_updates.md
-          - Neon OS on the Mark II: neon_os/On_the_MarkII.md
-          - Debos Base Images: neon_os/neon_debos.md
-          - Neon Image Recipes: neon_os/neon_image_recipe.md
-          - Tips: neon_os/tips.md
-    - Quick Reference Guides:
-          - Terminal: quick_reference/terminal.md
-          - Logs: quick_reference/logging.md
-          - Configuration: quick_reference/configuration.md
-          - Installing Skills: quick_reference/installing_skills.md
-          - Installing Plugins: quick_reference/installing_plugins.md
-    - Developer References:
-          -
-    - Skill Development:
-          - Voice User Interface Design Guidelines:
-                - What Can A Skill Do?: skill_development/voice-user-interface-design-guidelines/what-can-a-skill-do.md
-                - Design Process: skill_development/voice-user-interface-design-guidelines/design-process.md
-                - Interactions:
-                      - Statements and Prompts: skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts.md
-                      - Confirmations: skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations.md
-                - Conversations: skill_development/voice-user-interface-design-guidelines/conversations.md
-                - Error Handling: skill_development/voice-user-interface-design-guidelines/error-handling.md
-                - Example Interaction Script: skill_development/voice-user-interface-design-guidelines/example-dialogs.md
-                - Prototyping: skill_development/voice-user-interface-design-guidelines/prototyping.md
-                - Skill Testing: skill_development/voice-user-interface-design-guidelines/skill-testing.md
-          - Development Setup:
-                - Overview: skill_development/development-setup/overview.md
-                - Working with Git(Hub): skill_development/development-setup/git_overview.md
-                - Python Resources: skill_development/development-setup/python-resources.md
-                - Setting Up Your Development Environment: skill_development/development-setup/dev-environment.md
-                - Your First Skill: skill_development/development-setup/your-first-skill.md
-          - Skill Structure:
-                - Overview: skill_development/skill-structure/overview.md
-                - Lifecycle Methods: skill_development/skill-structure/lifecycle-methods.md
-                - Logging: skill_development/skill-structure/logging.md
-                - Skill Settings: skill_development/skill-structure/skill-settings.md
-                - Dependencies:
-                      - skill.json: skill_development/development-setup/skill_json.md
-                      - Manifest.yml: skill_development/skill-structure/dependencies/manifest-yml.md
-                      - Requirements files: skill_development/skill-structure/dependencies/requirements-files.md
-                - Filesystem Access: skill_development/skill-structure/filesystem.md
-                - Skill API: skill_development/skill-structure/api.md
-          - Language Support:
-                - Using nice date and time functions for your language: skill_development/language-support/using-nice-date-and-time-functions-for-your-language.md
-          - User Interaction:
-                - Overview: skill_development/user-interaction/overview.md
-                - Intents:
-                      - Overview: skill_development/user-interaction/intents/overview.md
-                      - Adapt Intents: skill_development/user-interaction/intents/adapt-intents.md
-                      - Padatious Intents: skill_development/user-interaction/intents/padatious-intents.md
-                - Statements: skill_development/user-interaction/statements.md
-                - Prompts: skill_development/user-interaction/prompts.md
-                - Parsing Utterances: skill_development/user-interaction/parsing.md
-                - Confirmations: skill_development/user-interaction/confirmations.md
-                - Conversational Context: skill_development/user-interaction/conversational-context.md
-                - Converse: skill_development/user-interaction/converse.md
-          - Displaying Information:
-                - Overview: skill_development/displaying-information/overview.md
-                - GUI Framework: skill_development/displaying-information/mycroft-gui.md
-                - Show Simple Content: skill_development/displaying-information/show-simple-content.md
-                - Neon-GUI On A PC: skill_development/displaying-information/neon-gui-on-a-pc.md
-          - Advanced Skill Types:
-                - Overview: skill_development/skill-types/overview.md
-                - Fallback Skill: skill_development/skill-types/fallback-skill.md
-                - OVOS Common Play Skills: skill_development/skill-types/ovos-common-play.md
-                - Common Query Framework: skill_development/skill-types/common-query-framework.md
-                - Voice User Interfaces for PHAL Plugins: skill_development/skill-types/vuis-for-phal-plugins.md
+  - About: index.md
+  - Overview:
+    - Definitions: overview/definitions
+    - Frequently Asked Questions: overview/faq
+  - Neon Core:
+    - Introduction: neon_core/index.md
+    - Quick Start: neon_core/quick_start.md
+    - Core Modules:
+      - Introduction: neon_core/index.md
+      - Messagebus: neon_core/neon_messagebus.md
+      - Speech: neon_core/neon_speech.md
+      - Audio: neon_core/neon_audio.md
+#      - Skills: neon_core/neon_skills.md  TODO: Add page
+      - GUI: neon_core/neon_gui.md
+      - Enclosure: neon_core/neon_enclosure.md
+  - Neon OS:
+    - Introduction: neon_os/index.md
+    - Installation: neon_os/neon_os_installation.md
+    - Using Neon OS: neon_os/using_neon_os.md
+    - Updating: neon_os/neon_os_updates.md
+    - Neon OS on the Mark II: neon_os/On_the_MarkII.md
+    - Debos Base Images: neon_os/neon_debos.md
+    - Neon Image Recipes: neon_os/neon_image_recipe.md
+    - Tips: neon_os/tips.md
+  - Quick Reference Guides:
+    - Terminal: quick_reference/terminal.md
+    - Logs: quick_reference/logging.md
+    - Configuration: quick_reference/configuration.md
+    - Installing Skills: quick_reference/installing_skills.md
+    - Installing Plugins: quick_reference/installing_plugins.md
+  - Skill Development:
+    - Voice User Interface Design Guidelines:
+      - What Can A Skill Do?: skill_development/voice-user-interface-design-guidelines/what-can-a-skill-do.md
+      - Design Process: skill_development/voice-user-interface-design-guidelines/design-process.md
+      - Interactions:
+        - Statements and Prompts: skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts.md
+        - Confirmations: skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations.md
+      - Conversations: skill_development/voice-user-interface-design-guidelines/conversations.md
+      - Error Handling: skill_development/voice-user-interface-design-guidelines/error-handling.md
+      - Example Interaction Script: skill_development/voice-user-interface-design-guidelines/example-dialogs.md
+      - Prototyping: skill_development/voice-user-interface-design-guidelines/prototyping.md
+      - Skill Testing: skill_development/voice-user-interface-design-guidelines/skill-testing.md
+    - Development Setup:
+      - Overview: skill_development/development-setup/overview.md
+      - Working with Git(Hub): skill_development/development-setup/git_overview.md
+      - Python Resources: skill_development/development-setup/python-resources.md
+      - Setting Up Your Development Environment: skill_development/development-setup/dev-environment.md
+      - Your First Skill: skill_development/development-setup/your-first-skill.md
+    - Skill Structure:
+      - Overview: skill_development/skill-structure/overview.md
+      - Lifecycle Methods: skill_development/skill-structure/lifecycle-methods.md
+      - Logging: skill_development/skill-structure/logging.md
+      - Skill Settings: skill_development/skill-structure/skill-settings.md
+      - Dependencies:
+        - skill.json: skill_development/development-setup/skill_json.md
+        - Manifest.yml: skill_development/skill-structure/dependencies/manifest-yml.md
+        - Requirements files: skill_development/skill-structure/dependencies/requirements-files.md
+      - Filesystem Access: skill_development/skill-structure/filesystem.md
+      - Skill API: skill_development/skill-structure/api.md
+    - Language Support:
+      - Using nice date and time functions for your language: skill_development/language-support/using-nice-date-and-time-functions-for-your-language.md
+    - User Interaction:
+      - Overview: skill_development/user-interaction/overview.md
+      - Intents:
+        - Overview: skill_development/user-interaction/intents/overview.md
+        - Adapt Intents: skill_development/user-interaction/intents/adapt-intents.md
+        - Padatious Intents: skill_development/user-interaction/intents/padatious-intents.md
+      - Statements: skill_development/user-interaction/statements.md
+      - Prompts: skill_development/user-interaction/prompts.md
+      - Parsing Utterances: skill_development/user-interaction/parsing.md
+      - Confirmations: skill_development/user-interaction/confirmations.md
+      - Conversational Context: skill_development/user-interaction/conversational-context.md
+      - Converse: skill_development/user-interaction/converse.md
+    - Displaying Information:
+      - Overview: skill_development/displaying-information/overview.md
+      - GUI Framework: skill_development/displaying-information/mycroft-gui.md
+      - Show Simple Content: skill_development/displaying-information/show-simple-content.md
+      - Neon-GUI On A PC: skill_development/displaying-information/neon-gui-on-a-pc.md
+    - Advanced Skill Types:
+      - Overview: skill_development/skill-types/overview.md
+      - Fallback Skill: skill_development/skill-types/fallback-skill.md
+      - OVOS Common Play Skills: skill_development/skill-types/ovos-common-play.md
+      - Common Query Framework: skill_development/skill-types/common-query-framework.md
+      - Voice User Interfaces for PHAL Plugins: skill_development/skill-types/vuis-for-phal-plugins.md

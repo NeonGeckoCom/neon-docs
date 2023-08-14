@@ -1,4 +1,4 @@
-name: Build Page
+name: Build Pages
 
 on:
   push:
@@ -7,12 +7,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  gh_pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: Get Repository
+        uses: actions/checkout@v2
+      - name: Install Python
+        uses: actions/setup-python@v2
         with:
-          python-version: 3.x
-      - run: pip install mkdocs
+          python-version: "3.10"
+      - name: Install dependencies
+        run: pip install mkdocs mkdocs-gitbook mkdocs-rtd-dropdown
       - run: mkdocs gh-deploy --force --clean --verbose
