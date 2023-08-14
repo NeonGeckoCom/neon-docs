@@ -3,7 +3,8 @@ site_url: https://neongeckocom.github.io/neon-docs
 plugins: []
 theme:
   name: gitbook
-
+extra_css:
+  - css/gitbook.css
 nav:
   - About: index.md
   - Overview:
