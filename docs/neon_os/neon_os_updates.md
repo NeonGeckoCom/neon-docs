@@ -110,8 +110,9 @@ that persist through updates, here are some guidelines.
 - Any extra customizations can be added to `/root/post_update`. This script will be
   run as root after an update is applied and is intended to handle any desired
   system package installation, system service configuration, etc. The system
-  service does specify an interpreter, so this file should start with a `#!`,
-  i.e. `#!/bin/bash` or `#!/usr/bin/python3`
+  service does *not* specify an interpreter, so this file should start with a `#!`,
+  i.e. `#!/bin/bash` or `#!/usr/bin/python3`. This file will be marked as executable
+  automatically before each execution.
 - Any changes not explicitly handled during the update will be saved at
   `/opt/neon/old_overlay`. A `post_update` script may choose to do something to
   restore specific files from here.
