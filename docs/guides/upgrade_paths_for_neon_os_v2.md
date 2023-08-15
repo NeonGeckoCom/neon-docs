@@ -8,10 +8,6 @@ Describes your basic options for upgrading your Neon OS to V2.0.
 4. Order an SSD from our Square site for $29.99 with coupon code "UPGRADE". The site is https://neonai.square.site/
 5. Visit the upgrade page on our website at https://neon.ai/V2 for written directions, how-to videos, and open tech support calls. That's https://neon.ai/V2
 
-- To hear more detailed directions, you can ask Neon for:
-    - help making bootable media
-    - help making a boot drive using your computer
-
  ## Tags
 - upgrade
 - upgrade choices
