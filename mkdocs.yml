@@ -31,12 +31,17 @@ nav:
     - Neon Image Recipes: neon_os/neon_image_recipe.md
     - Developer References: neon_os/developers.md
     - Tips: neon_os/tips.md
-  - Quick Reference Guides:
+  - Quick References:
     - Terminal: quick_reference/terminal.md
     - Logs: quick_reference/logging.md
     - Configuration: quick_reference/configuration.md
     - Installing Skills: quick_reference/installing_skills.md
     - Installing Plugins: quick_reference/installing_plugins.md
+  - Guides:
+      - Docker Skill Installation: guides/docker_skill_installation.md
+      - Make a Boot Drive Using a Computer: guides/make_a_boot_drive_using_a_computer.md
+      - Make a Boot Drive Using a Mark 2: guides/make_bootable_media.md
+      - Upgrade Paths for Neon OS v2: guides/upgrade_paths_for_neon_os_v2.md
   - Skill Development:
     - Voice User Interface Design Guidelines:
       - What Can A Skill Do?: skill_development/voice-user-interface-design-guidelines/what-can-a-skill-do.md
