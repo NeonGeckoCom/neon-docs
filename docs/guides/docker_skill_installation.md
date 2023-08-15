@@ -7,6 +7,16 @@ This guide summarizes how to add custom skills to a Docker deployment.
 3. Add any desired skill(s) to the list by PyPI name or URL starting with `git+`
 4. Restart the `neon-skills` container
 
+## Example Configuration
+```yaml
+skills:
+  default_skills:
+    - git+https://github.com/neongeckocom/skill-date_time@dev
+    - neon-skill-translation>=0.3.1a4
+    - neon-homeassistant-skill 
+```
+> Skills can be specified by URL or PyPI package spec (versioning optional)
+
 ## Troubleshooting
 - Make sure the `neon.yaml` file being changed is the one used by Docker containers.
 - Make sure any skill package names or URLs are valid.
