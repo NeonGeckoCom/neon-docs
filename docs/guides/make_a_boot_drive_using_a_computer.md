@@ -21,7 +21,7 @@ A portable drive, either USB or SSD with a USB version 3.0 or greater connection
    - Click 'Flash' and wait for the image to be written and verified. This takes several minutes, depending on your system.
 6. Remove the USB or SSD drive from your computer.
 7. Disconnect power from your Mark II.
-8. Plug the newly imaged USB drive into the top left USB port on your Mark II (Port 0).
+8. Plug the newly imaged USB drive into the upper USB port closest to the center of your Mark II (Port 0).
 9. Reconnect power to your Mark II.
 10. Set up as normal, and you're on the new version!
 
