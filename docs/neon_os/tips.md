@@ -9,9 +9,17 @@ ssh neon@<Neon Device IP Address>
 ```
 
 ## On-device Terminal
-A terminal can be accessed on a NeonOS device by connecting a keyboard and
+There are two methods for accessing a terminal on a Mark2 device.
+
+### GUI Terminal
+A terminal UI overlaid on the GUI can be accessed on a NeonOS device by connecting a keyboard and
 pressing `ctrl`+`shift`+`f1`. The terminal will be shown on-screen until dismissed
 but note that changes in the GUI may take focus away from the terminal until you tap/click it again.
+
+### TTY Terminal
+[`getty`](https://en.wikipedia.org/wiki/Getty_(Unix)) can be used to access multiple
+terminals by connecting a keyboard and pressing `alt`+`F2`-`F6`. `alt`+`F1` will
+return to the GUI, leaving any other sessions running in the background.
 
 ## Taking a screenshot
 You can ask Neon to "take a screenshot" to create a screenshot saved on-device.
