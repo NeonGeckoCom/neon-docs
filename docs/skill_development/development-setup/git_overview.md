@@ -34,6 +34,7 @@ well as document how Neon code is managed.
 ## Common Workflows
 ### Pull Requests
 Pull Requests have three options for resolution (exluding closing the PR):
+
 - Create a merge commit - Creates a new commit to the base branch AND applies all commits from the head branch to the base branch
 - [Squash and merge]((https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-commits/squashing-commits)) - 
   A shortcut to rewriting Git history. Takes multiple commits and translates all changes into a single commit on the base branch
@@ -53,7 +54,7 @@ to the release `branch` corresponds to a `tag` and `release` that will reference
 This could be useful if contributing to a feature `branch`. This would maintain `commit history` without generating an extra merge `commit`.
 
 ### [Rebase](https://git-scm.com/docs/git-rebase)
-When working on a `branch`, it often is necessary to `rebase` your changes on other 
+When working on a `branch`, it is often necessary to `rebase` your changes on other 
 changes merged into the `base` while you are working on a feature. Rebasing is 
 the process of taking the `commits` from your `branch` and applying them after the 
 `commits` on the `base` `branch`. If there are conflicts, you will have to resolve 
@@ -63,6 +64,7 @@ you should Force Push your `branch` to the `remote`.
 ### [Cherry Pick](https://git-scm.com/docs/git-cherry-pick)
 When working with a `fork`, it is often helpful to `cherry-pick` changes from the `upstream`. 
 There are a couple common situations where `cherry-picking` is useful:
+
 - Projects forked from an open source repository where the fork is diverged from the original repository
 - `Branches` that include both fixes and features may be split into 2 `branches` with 2 `PR`’s.
   The “FIX” `PR` could `cherry-pick` the relevant commits from the “FEAT” `PR` 
@@ -77,5 +79,6 @@ to a different `fork` as described [above](#cherry-pick).
 
 ## Resources/References
 [GitHub quick reference](https://training.github.com/downloads/github-git-cheat-sheet.pdf)
+
 [Official Git documentation]( https://git-scm.com/docs)
 
