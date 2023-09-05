@@ -22,6 +22,10 @@ skills:
     - git+https://github.com/NeonGeckoCom/skill-translation
     - neon-skill-translation~=1.0 
 ```
+> Note that the skills here are [Python packages](https://packaging.python.org/en/latest/).
+> This is the same kind of string you would pass to 
+> [`pip install`](https://pip.pypa.io/en/stable/cli/pip_install/), including any (optional)
+> version specs.
 
 ## Installing Skills from GitHub
 > OSM installation is documented here, but not recommended. Skills should be 
