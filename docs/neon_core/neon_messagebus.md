@@ -5,6 +5,7 @@ connected modules.
 
 ## Neon Enhancements
 `neon-messagebus` extends `mycroft.messagebus` with the following added functionality:
+
 * Utilities for sending files and other data over the bus
 * A service for managing "signals" used for IPC
 
