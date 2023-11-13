@@ -2,8 +2,8 @@
 
 Neon Core configuration follows the same general structure as
 [Mycroft](https://mycroft-ai.gitbook.io/docs/using-mycroft-ai/customizations/mycroft-conf)
-and [OVOS](https://openvoiceos.github.io/community-docs/config/), with the main
-difference that Neon uses [YAML](https://yaml.org/) formatting.
+and [OVOS](https://openvoiceos.github.io/community-docs//unused/config_ovos_core/),
+with the main difference being that Neon uses [YAML](https://yaml.org/) formatting.
 
 ## Core Configuration Files
 
