@@ -32,6 +32,7 @@ All durations are in seconds.
 - `client_to_core`: Time from the client emit event to the core Messagebus event handler
 - `client_from_core`: Time from the core `klat.response` event emit to the client handler
 - `save_transcript`: Time to save transcripts of input
-- `text_parsers`: Time for Text Parsers service to execute
+- `text_parsers`: DEPRECATED in favor of `transform_utterance`
 - `transform_audio`: Time for Speech Transformers service to evaluate input
+- `transform_utterance`: Time for Utterance Transformer service to execute
 - `wait_in_queue`: Time spent in gradio queue, waiting to be processed
