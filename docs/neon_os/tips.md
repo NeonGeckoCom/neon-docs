@@ -5,8 +5,10 @@ Here are a few useful tips for working with NeonOS
 You can connect a remote terminal to your NeonOS device using SSH and the default
 username/password of `neon`/`neon`. For most terminals, the command will look like:
 ```
-ssh neon@<Neon Device IP Address>
+ssh -X neon@<Neon Device IP Address>
 ```
+> The `-X` flag enables X-forwarding which can be helpful when debugging 
+> GUI/shell bugs.
 
 ## On-device Terminal
 There are two methods for accessing a terminal on a Mark2 device.
