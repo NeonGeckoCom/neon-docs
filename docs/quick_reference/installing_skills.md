@@ -1,8 +1,14 @@
 # Installing Skills
-Most distributions of Neon Core will include some installed skills. 
-[OVOS Skills Manager](https://openvoiceos.github.io/community-docs/osm/) (OSM) 
-can be used to install new skills, including Mycroft and OVOS community skills.
-The simple answer to "how do I install a skill?" is: `osm install <skill_url>`.
+Most distributions of Neon Core will include some installed skills. It is recommended
+to specify additional skills as [described below](#configuring-extra-skills), or
+you can manually install a skill like any other Python package 
+(i.e. `pip install <skill-reference>`).
+
+
+> [OVOS Skills Manager](https://openvoiceos.github.io/community-docs/osm/) (OSM) 
+> was previously recommended here but support has been deprecated. Please use
+> the methods outlined in this document and update any skills as necessary to
+> support installation.
 
 ## Default Neon Skills
 Many [Neon skills](https://github.com/NeonGeckoCom/neon_skills) are included by
@@ -50,11 +56,11 @@ were installed as Python packages or cloned from Git.
 
 ### Python Packages
 For Python packaged skills, a skill is installed like any other Python package.
-In most cases, you should have core modules and skills installed to a `venv`. On
-Neon OS devices, this environment is located at `/home/neon/venv` and skills can
-be found at `/home/neon/venv/lib/python3.7/site-packages/skill_*`.
+You can find a list of all installed python packages with `pip list` and *most*
+skills should be listed with `pip list | grep skill` but it is up to a skill's
+author to choose a package name, so this is not guaranteed to list all skills. 
 
-### Git Cloned Skills
+### Git Cloned Skills (Deprecated)
 For skills installed from Git (usually using OSM), the default install location
 is `~/.local/share/neon/skills`, but this may be configured in `neon.yaml` to
 any location. More detailed configuration documentation is available 
@@ -63,7 +69,7 @@ any location. More detailed configuration documentation is available
 ## Other Skill Indices
 ### OpenVoiceOS Organization
 There are several skills in the [OpenVoiceOS organization](https://github.com/OpenVoiceOS?q=skill-ovos&type=all&language=&sort=)
-that may be `pip` installed.
+that may be installed.
 
 ### Mycroft Marketplace
 There are also skills in the [Mycroft Marketplace](https://github.com/MycroftAI/mycroft-skills)
@@ -71,4 +77,5 @@ There are also skills in the [Mycroft Marketplace](https://github.com/MycroftAI/
 
 ### Andlo's List
 There is a list of Mycroft skills maintained by community member
-[andlo on GitHub](https://github.com/andlo/mycroft-skills-list-gitbook/tree/master/skills).
+[andlo on GitHub](https://github.com/andlo/mycroft-skills-list-gitbook/tree/master/skills). Many of these will need to be updated for installation
+support.
