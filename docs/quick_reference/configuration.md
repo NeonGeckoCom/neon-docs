@@ -2,7 +2,7 @@
 
 Neon Core configuration follows the same general structure as
 [Mycroft](https://mycroft-ai.gitbook.io/docs/using-mycroft-ai/customizations/mycroft-conf)
-and [OVOS](https://openvoiceos.github.io/community-docs//unused/config_ovos_core/),
+and [OVOS](https://openvoiceos.github.io/community-docs/060-config/),
 with the main difference being that Neon uses [YAML](https://yaml.org/) formatting.
 
 ## Core Configuration Files
@@ -23,7 +23,7 @@ and is not intended to be modified by anyone other than neon-core contributors.
 A system configuration is included in [Neon OS](https://neongeckocom.github.io/neon-docs/neon_os/)
 images at `/etc/neon/neon.yaml` to override default values and add more
 configuration that is specific to those installations. For example,
-[PHAL Plugins](https://openvoiceos.github.io/community-docs/PHAL/) that are
+[PHAL Plugins](https://openvoiceos.github.io/community-docs/110-ht_phal/) that are
 included with NeonOS have their configuration set in `/etc/neon/neon.yaml`. This
 configuration is intended to me modified by image builders and not end-users.
 
@@ -71,7 +71,7 @@ tts:
   fallback_module: <fallback tts plugin entrypoint name>
 ```
 
-> More information about plugins can be found [in the OVOS docs](https://openvoiceos.github.io/community-docs/OPM/).
+> More information about plugins can be found [in the OVOS docs](https://openvoiceos.github.io/community-docs/300-glossary/#opm).
 
 ### Blacklist a skill
 
@@ -86,8 +86,9 @@ skills:
     - <other blacklisted skill id>
 ```
 
-> More information about skills can be found [in the OVOS docs](https://openvoiceos.github.io/community-docs/skills/).
+> More information about skills can be found [in the OVOS docs](https://openvoiceos.github.io/community-docs/080-ht_skills/).
 
 ### Change the Wakeword
 
-Information on changing the wakeword (ex: Hey Neon, Hey Mycroft, etc.) can be found [in the OVOS docs](https://openvoiceos.github.io/community-docs/config_wake_word/).
+Information on changing the wakeword (ex: Hey Neon, Hey Mycroft, etc.) can be 
+found [in the OVOS docs](https://openvoiceos.github.io/community-docs//104-ht_ww/#ovos-listener-wakewords-hotwords).
