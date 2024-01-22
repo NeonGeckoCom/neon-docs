@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Neon OS on the Mark II - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet">
+<link href="../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="./" class="active">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../skill_development/development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill_development/skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../skill_development/development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../skill_development/language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../skill_development/user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../skill_development/displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill_development/skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="neon-os-on-the-mark-ii">Neon OS on the Mark II</h1>
+<p>This section is for content specific to the Neon AI private personal assistant on the Mycroft Mark II Device</p>
+<h2 id="making-an-additional-boot-drive">Making an Additional Boot Drive</h2>
+<p>Summary: 
+To create an additional bootable drive using your Mark II, plug a second USB or an SSD into the right hand blue port, and say "Hey Neon, make bootable media" then follow the prompts. When finished, shut down your device, move the new drive into the first port and plug it back in. </p>
+<h3 id="detailed-instructions">Detailed Instructions</h3>
+<p><strong>Supplies needed:</strong></p>
+<ol>
+<li>An SSD (or USB) drive with a minimum of 8GB and USB 3.0 connection. <em>Any content on the drive will be deleted during this process.</em></li>
+</ol>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Make sure your Neon OS is up to date. We reccomend updating to the current release, rather than a beta version. <em>Say, "Enable stable updates" and "Check for updates"</em></li>
+<li>Have your Mark II running.</li>
+<li>Plan for this to take about an hour. It may be much faster.</li>
+<li>When booting using your new drive, you will need to reestablish your internet connection. Other personal information you have taught Neon such as your name will be retained on your original boot drive, but will not be on your new one.</li>
+</ol>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Plug the SSD or USB drive that you want to make into your new boot drive into the upper (blue) USB port to the right of your existing USB drive.</li>
+<li>Tell Neon to "Make Bootable Media". <em>It will ask you to confirm. Then it will download the new OS image file. How long this takes depends on your internet speed and the speed of your current boot drive. It may take as little as 10 minutes, or up to an hour.</em></li>
+<li>When the download is finished, an alert icon will appear on the upper left of the screen and Neon will ask you to confirm that you want it to write to your new SSD drive.  <em>At this time Neon is not providing this verbal alert, we'll have that fixed soon.</em> 
+Select the alert by touching the alert icon, and then the words of the alert itself. Neon should give you a verbal prompt to complete the process, warning you it will erase anything on that drive. Confirm you want it to do that. <em>The time it takes to write the image to the new drive varies based on the drive speeds of both drives. 10 minutes is a reasonable estimate.</em></li>
+<li>When it's finished writing the image, it will tell you, and an alert will appear again at the top left of the screen. When you confirm verbally or select the alert, Neon will shut down automatically. <em>At this time Neon is not providing this verbal alert, we'll have that fixed soon.</em> </li>
+<li>Shut down your device as normal if for any reason it did not shut down on its own.</li>
+<li>Unplug the power from your Mark II.</li>
+<li>Unplug your original drive, and move the new drive over into the upper left USB port.</li>
+<li>Plug power back in and Neon will boot up from the new drive. </li>
+</ol>
+<h3 id="troubleshooting-and-tech-support-with-the-neon-os-on-the-mycroft-mark-ii">Troubleshooting and Tech Support with the Neon OS on the Mycroft Mark II</h3>
+<p>Here is our troubleshooting walk-through, and I am also available for a personal tech support video call if you prefer more in-person assistance. </p>
+<p><strong>The first things to check are the power and your USB boot drive:</strong></p>
+<p>​   <strong>Start by unplugging your Mark II.</strong></p>
+<ol>
+<li>The boot drive (either a USB memory key or SSD) should be securely plugged into the top left USB port, which is port 0. </li>
+<li>There should be no other USB drives plugged in for the first boot.</li>
+<li>You must leave the boot drive plugged in while the Mark II is powered up, including during the entire first boot process, which should take about 5 minutes. </li>
+<li>Securely plug in the Mark II power adapter to your power source, and within 10 seconds you should see a the cursor prompt. That will be followed by text, then a splash screen with the Neon name and logo in orange, and then a loading screen with circling lines &amp; the Neon logo overlayed on OVOS' logo, and lastly a Neon AI screen in white &amp; orange. <em>These splash screens may change in future versions.</em> After the splash screens, you should see a set of three green on green buttons with choices for setup. </li>
+</ol>
+<p><strong>Before you start general troubleshooting, here are a few common issues that we've seen, and the solutions to them:</strong></p>
+<ul>
+<li>
+<p>If you unplug your Neon OS USB boot drive (your USB key or USB SSD) during the first boot, the drive can become corrupted, and you'll need to re-image the USB boot drive - see below. The potential for corrupting USB drives by unplugging or powering down while they are being accessed isn't something we can fix, since it's inherent in the hardware, but we're in the process of putting together a backup boot system on the boot drive in case this occurs.</p>
+</li>
+<li>
+<p>If you see hesitations in the execution of commands on your first try, Neon is building its “cache” for the skills you use, so the second iteration will be smooth. </p>
+</li>
+</ul>
+<p><strong>If you haven't identified the issue yet, then it's time to establish answers to two key questions:</strong></p>
+<ol>
+<li>Is this a hardware issue or a software issue?</li>
+<li>Is the issue with the Mark II device or the boot drive?</li>
+</ol>
+<p><strong>The following steps can help answer those questions:</strong></p>
+<ol>
+<li>
+<p>If your Mark II screen is displaying (typically the time) choose Restart from the swipe down menu.</p>
+</li>
+<li>
+<p>Alternatively, choose Shutdown from the swipe down menu. Then unplug power, wait 20 seconds &amp; plug back in. Your device will restart automatically. </p>
+</li>
+<li>
+<p>Plug in a different USB boot drive (a Mycroft Dinkum OS, OVOS, or another Neon OS drive.)</p>
+</li>
+<li>
+<p>If you have a second Mark II, plug your boot drive into it &amp; see if it will boot. </p>
+</li>
+<li>
+<p>Plug your boot drive into a computer. If it is corrupted, you may receive a message saying that it has errors on it. The solution in that case is to re-image the drive. If that imaging fails, or it becomes corrupted a second time that would indicate a USB drive hardware issue, and the drive needs to be replaced. </p>
+</li>
+<li>
+<p>Re-image your boot drive - see below.</p>
+</li>
+</ol>
+<p><strong>Documenting and sharing issues with Tech Support:</strong></p>
+<ul>
+<li>
+<p>The Support Helper skill provides a direct route to support troubleshooting of more complex issues. If Neon is basically listening and functioning please say "create a support ticket" or "create a troubleshooting package". If you tell Neon your email address first, it can be sent to you. Otherwise it can go directly to us. If you want to submit the report from your email, please forward it to clary@neon.ai and please include your own notes on the technical support issue. </p>
+</li>
+<li>
+<p>Some users find taking a short video is an easier way to share that information with us, instead of typing it up. </p>
+</li>
+</ul>
+<p><strong>How to image or re-image a drive:</strong></p>
+<ol>
+<li>
+<p>Download the Neon OS to your computer from <a href="https://2222.us/app/files/neon_images/pi/mycroft_mark_2/recommended_mark_2.img.xz">here</a> - or use the link <a href="https://neon.ai/NeonAIforMycroftMarkII">here on the Neon.AI webpage</a>. This takes several minutes or more, depending on your connection speed.</p>
+</li>
+<li>
+<p>Download a (free) imaging program, if you don't have one already. We suggest <a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a> or <a href="https://www.balena.io/etcher">Balena Etcher</a>.</p>
+</li>
+<li>
+<p>Plug your blank or nonfunctional USB 3.0 or greater drive or SSD drive into your computer.</p>
+</li>
+<li>
+<p>Open your imager program (we suggest <a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a> or <a href="https://www.balena.io/etcher">Balena Etcher</a>). </p>
+</li>
+<li>
+<p>If using Raspberry Pi Imager:</p>
+</li>
+<li>
+<ol>
+<li>Under the 'Operating System' menu, select 'Use Custom'.</li>
+</ol>
+</li>
+<li>Locate and select the Neon OS image you downloaded.</li>
+<li>Under 'Storage', select the drive you intend to write to.</li>
+<li>
+<p>Click 'Write' and wait for the image to be written and verified. This takes several minutes, depending on your system.</p>
+</li>
+<li>
+<p>If using Balena Etcher</p>
+</li>
+<li>
+<ol>
+<li>Under the '+', choose 'Flash from file'.</li>
+</ol>
+</li>
+<li>Locate and select the Neon OS image you downloaded.</li>
+<li>Under 'Select target', select the drive you intend to write to.</li>
+<li>
+<p>Click 'Flash' and wait for the image to be written and verified. This takes several minutes, depending on your system.</p>
+</li>
+<li>
+<p>Remove the USB or SSD drive from your computer.</p>
+</li>
+<li>
+<p>Disconnect power from your Mark II.</p>
+</li>
+<li>
+<p>Plug the newly imaged USB drive into the top left USB port on your Mark II (Port 0).</p>
+</li>
+<li>
+<p>Reconnect power to your Mark II.</p>
+</li>
+<li>
+<p>After starting up, you will be guided through connecting to WiFi.</p>
+</li>
+</ol>
+<p>It's important to us that you have a functioning Neon OS to use. <strong>If this troubleshooting hasn't resolved your issue, please email me at clary@neon.ai of contact us on any of the forums for a next step.</strong> </p>
+<p>Thank you for working with Neon OS, and improving the experience for all users. </p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Confirmations - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../../css/style.min.css" rel="stylesheet">
+<link href="../../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="./" class="active">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../../skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../../skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../../skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../../skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../../skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../../skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../../skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="confirmations">Confirmations</h1>
+<p>Confirmation approaches can also be defined by Statements or Prompts , but when we talk about them in the context of confirmations we call them Implicit and Explicit.</p>
+<h2 id="implicit-confirmation">Implicit Confirmation</h2>
+<p>This type of confirmation is also a statement. The idea is to parrot the information back to the user to confirm that it was correct, but not require additional input from the user. The implicit confirmation can be used in a majority of situations. For example Neon’s Timer Skill uses implicit confirmation when creating new timers.</p>
+<p><strong>Timer Skill</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Speaker</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon set a timer for 5 minutes</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>Alright, I’m starting a 5 minute timer</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Avoid</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Speaker</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, add bananas to my shopping list</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>done</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Better</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Speaker</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, add bananas to my shopping list</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>Adding bananas</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="explicit-confirmation">Explicit Confirmation</h2>
+<p>This type of confirmation requires an input from the user to verify everything is correct. Only use explicit confirmation when needed as it can be tedious for the user to always confirm their input. This strategy is best when there are multiple steps, and it would be difficult to fix a misstep without starting over, or when deleting or modifying an existing multi-step input.</p>
+<p><strong>Avoid</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Speaker</strong></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, set an alarm for 9:00 am tomorrow</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>Ok, I’ve set an alarm for 9:00 am tomorrow, is that correct?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Yes</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>9:00 am alarm set</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Better</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Speaker</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, set an alarm for 9:00 am tomorrow</em></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;">I've set an alarm for tomorrow at 9:00 am, 16 hours from now</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>The first example requires the user to confirm the alarm. Since the interaction is quite short it isn’t necessary to use explicit confirmation.</p>
+<p><strong>Avoid</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Speaker</strong></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, set a calendar event for a meeting with Chris Stevens</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>When is the event?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Tomorrow at 11:00 am</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>should I send an invite to Chris Stevens?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Yes</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>Alright, I've created a meeting for Tomorrow</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>Alright, I’ve created a meeting for Tomorrow at 11:00 am with Chris Stevens</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Cancel my 11:00 am meeting tomorrow</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>Done</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Better</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Speaker</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, set a calendar event for a meeting with Chris Stevens</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>When is the event?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Tomorrow at 11:00 am</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>should I send an invite to Chris Stevens?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>Alright, I’ve created a meeting for Tomorrow at 11:00 am with Chris Stevens</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Cancel my 11:00 am meeting tomorrow</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>Are you sure you want to delete your meeting tomorrow at 11:00 am?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Yes</em></td>
+</tr>
+</tbody>
+</table>
+<p>Both examples use explicit and implicit confirmation correctly until the end of the interaction when the user wants to cancel the event. Unlike setting a simple timer or an alarm creating this calendar event requires multiple steps and would require reasonable effort to recreate. There may also be significant consequences if the request was misinterpreted and the meeting was cancelled unintentionally.</p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/gitbook.min.js"></script>
+<script src="../../../../js/theme.min.js"></script>
+</body>
+</html>

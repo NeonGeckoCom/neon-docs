@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Prompts - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="./" class="active">Prompts</a>
+</li>
+
+<li>
+<a href="../parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="prompts">Prompts</h1>
+<p><strong>Note:</strong> The links to the various NeonSkill methods in this documentation point to the <code>mycroft-core</code> documentation. There is no material difference between them for the methods referenced and, since there is not publicly available <code>neon_core</code> documentation, we will reference <code>mycroft-core</code> instead.</p>
+<p>Here we look at how to implement the most common types of prompts. For more information on conversation design see the <a href="../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts">Voice User Interface Design Guidelines</a>.</p>
+<h2 id="get-response">Get Response</h2>
+<p>Any Skill can request a response from the user - making a statement or asking a question before the microphone is activated to record the User's response.</p>
+<p>The base implementation of this is the <a href="https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.get_response"><code>get_response()</code> method</a>.</p>
+<p>To see it in action, let's create a simple Skill that asks the User what their favorite flavor of ice cream is.</p>
+<pre><code class="language-python">from neon_utils.skills.neon_skill import NeonSkill
+from ovos_workshop.decorators import intent_handler
+
+
+class IceCreamSkill(NeonSkill):
+    @intent_handler('set.favorite.intent')
+    def handle_set_favorite(self):
+        favorite_flavor = self.get_response('what.is.your.favorite.flavor')
+        self.speak_dialog('confirm.favorite.flavor', {'flavor': favorite_flavor})
+
+
+def create_skill():
+    return IceCreamSkill()
+</code></pre>
+<p>In this Skill we have used <code>get_response()</code> and passed it the name of our dialog file <code>'what.is.your.favorite.flavor.dialog'</code>. This is the simplest form of this method. It will speak dialog from the given file, then activate the microphone for 3-10 seconds allowing the User to respond. The transcript of their response will then be assigned to our variable <code>favorite_flavor</code>. To confirm that we have heard the User correctly we then speak a confirmation dialog passing the value of <code>favorite_flavor</code> to be spoken as part of that dialog.</p>
+<h3 id="optional-arguments">Optional Arguments</h3>
+<p>The <code>get_response()</code> method also takes the following optional arguments:</p>
+<ul>
+<li><code>data</code> (dict) - used to populate the dialog file, just like <code>speak_dialog()</code></li>
+<li><code>validator</code> (function) - returns a boolean to define whether the response meets some criteria for success</li>
+<li><code>on_fail</code> (function) - returns a string that will be spoken if the validator returns False</li>
+<li><code>num_retries</code> (int) - number of times the system should repeat the question to get a successful result</li>
+</ul>
+<h4 id="see-it-in-action">See it in action:</h4>
+<p><a href="https://www.youtube.com/watch?v=Ke7mRl-Qo-U">Video Tutorial: Asking a question</a></p>
+<h2 id="yes-no-questions">Yes / No Questions</h2>
+<p><a href="https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.ask_yesno"><code>ask_yesno()</code></a> checks if the response contains "yes" or "no" like phrases.</p>
+<p>The vocab for this check is sourced from the Skills <code>yes.voc</code> and <code>no.voc</code> files (if they exist), as well as neon-core's defaults (contained within <code>neon-core/res/text/en-us/yes.voc</code>). A longer phrase containing the required vocab is considered successful eg both "yes" and "yeah that would be great thanks" would be considered a successful "yes".</p>
+<p>If "yes" or "no" responses are detected, then the method will return the string "yes" or "no". If the response does not contain "yes" or "no" vocabulary then the entire utterance will be returned. If no speech was detected indicating the User did not respond, then the method will return <code>None</code>.</p>
+<p>Let's add a new intent to our <code>IceCreamSkill</code> to see how this works.</p>
+<pre><code class="language-python">from neon_utils.skills.neon_skill import NeonSkill
+from ovos_workshop.decorators import intent_handler
+
+
+class IceCreamSkill(NeonSkill):
+    @intent_handler('do.you.like.intent')
+    def handle_do_you_like(self):
+        likes_ice_cream = self.ask_yesno('do.you.like.ice.cream')
+        if likes_ice_cream == 'yes':
+            self.speak_dialog('does.like')
+        elif likes_ice_cream == 'no':
+            self.speak_dialog('does.not.like')
+        else:
+            self.speak_dialog('could.not.understand')
+
+
+def create_skill():
+    return IceCreamSkill()
+</code></pre>
+<p>In this example we have asked the User if they like ice cream. We then speak different dialogs whether they respond yes or no. We also speak some error dialog if neither yes nor no are returned.</p>
+<h3 id="see-it-in-action_1">See it in action:</h3>
+<p><a href="https://www.youtube.com/watch?v=vzQX8RocODs">Video Tutorial: Asking a yes/no question</a></p>
+<h2 id="providing-a-list-of-options">Providing a list of options</h2>
+<p><a href="https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.ask_selection"><code>ask_selection()</code></a> provides a list of options to the User for them to select from. The User can respond with either the name of one of these options or select with a numbered ordinal eg "the third".</p>
+<p>This method automatically manages fuzzy matching the users response against the list of options provided.</p>
+<p>Let's jump back into our <code>IceCreamSkill</code> to give the User a list of options to choose from.</p>
+<pre><code class="language-python">from neon_utils.skills.neon_skill import NeonSkill
+from ovos_workshop.decorators import intent_handler
+
+
+class IceCreamSkill(NeonSkill):
+    def __init__(self):
+        NeonSkill.__init__(self)
+        self.flavors = ['vanilla', 'chocolate', 'mint']
+
+    @intent_handler('request.icecream.intent')
+    def handle_request_icecream(self):
+        self.speak_dialog('welcome')
+        selection = self.ask_selection(self.flavors, 'what.flavor')
+        self.speak_dialog('coming.right.up', {'flavor': selection})
+
+
+def create_skill():
+    return IceCreamSkill()
+</code></pre>
+<p>In this example we first speak some <code>welcome.dialog</code>. The list of flavors is then spoken, followed by the <code>what.flavor.dialog</code>. Finally we confirm the Users selection by speaking <code>coming.right.up.dialog</code></p>
+<h3 id="optional-arguments_1">Optional arguments</h3>
+<p>There are two optional arguments for this method.</p>
+<p><code>min_conf</code> (float) defines the minimum confidence level for fuzzy matching the Users response against the list of options. <code>numeric</code> (bool) if set to True will speak the options as a numbered list eg "One, vanilla. Two, chocolate. Or three, mint"</p>
+<h4 id="see-it-in-action_2">See it in action:</h4>
+<iframe width="420" height="315" src="https://youtu.be/TNezYhqcX_4" frameborder="0" allowfullscreen>Video Tutorial: Asking the user to choose an option</iframe>
+
+<h2 id="returning-responses-to-the-intent-parser">Returning responses to the intent parser</h2>
+<p>So far we have looked at ways to prompt the User, and return their response directly to our Skill. It is also possible to speak some dialog, and activate the listener, directing the response back to the standard intent parsing engine. We may do this to let the user trigger another Skill, or because we want to make use of our own intents to handle the response.</p>
+<p>To do this, we use the <code>expect_response</code> parameter of the <code>speak_dialog()</code> method.</p>
+<pre><code class="language-python">from neon_utils.skills.neon_skill import NeonSkill
+from ovos_workshop.decorators import intent_handler
+
+
+class IceCreamSkill(NeonSkill):
+    def __init__(self):
+        NeonSkill.__init__(self)
+        self.flavors = ['vanilla', 'chocolate', 'mint']
+
+    @intent_handler('request.icecream.intent')
+    def handle_request_icecream(self):
+        self.speak_dialog('welcome')
+        selection = self.ask_selection(self.flavors, 'what.flavor')
+        self.speak_dialog('coming.right.up', {'flavor': selection})
+        self.speak_dialog('now.what', expect_response=True)
+
+
+def create_skill():
+    return IceCreamSkill()
+</code></pre>
+<p>Here we have added a new dialog after confirming the Users selection. We may use it to tell the User other things they can do with their Neon device while they enjoy their delicious ice cream.</p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

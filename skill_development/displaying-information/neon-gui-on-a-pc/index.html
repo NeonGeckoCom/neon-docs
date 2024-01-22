@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Neon-GUI On A PC - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="./" class="active">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="neon-gui-on-a-pc">Neon-GUI on a PC</h1>
+<h2 id="installation">Installation</h2>
+<p><strong>NOTE:</strong> <code>neon-gui</code> will soon be deprecated; use <a href="https://github.com/OpenVoiceOS/ovos-shell"><code>ovos-shell</code></a> instead where possible.</p>
+<p>The <a href="https://github.com/NeonGeckoCom/neon-gui">neon-gui</a> package requires some newer packages, so a newer distribution such as KDE Neon or K/Ubuntu 20.04 is recommended.</p>
+<p>On supported systems, the installation is equivalent to a development installation of mycroft-core:</p>
+<pre><code class="language-bash">git clone https://github.com/NeonGeckoCom/neon-gui
+cd neon-gui
+./dev_setup.sh
+</code></pre>
+<p>For more detail see the <a href="https://github.com/NeonGeckoCom/neon-gui#getting-started">Getting Started</a> section of the neon-gui repository.</p>
+<h2 id="running-the-application">Running the application</h2>
+<p>Running the Neon GUI is as simple as launching:</p>
+<pre><code class="language-bash">mycroft-gui-app
+</code></pre>
+<p>If neon-core is not already running, all Neon services will be started.</p>
+<p>By default the GUI window includes a text entry box to send utterances to Neon.</p>
+<p><img alt="Neon-GUI application" src="../../.gitbook/assets/mycroft-gui-screenshot.jpg" /></p>
+<p>In the bottom-left corner of the window is a hamburger-style menu. Here you can find hints for using Neon, settings for the Neon-gui application, and licensing information.</p>
+<h3 id="emulating-a-mark-ii">Emulating a Mark II</h3>
+<p>In order to emulate the display of a Mycroft Mark II, or any other device, you can set the dimensions of the screen and hide the text input bar when launching the application.</p>
+<pre><code class="language-bash">mycroft-gui-app --width=800 --height=480 --hideTextInput
+</code></pre>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

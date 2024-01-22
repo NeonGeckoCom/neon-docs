@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Your First Skill - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="./" class="active">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="your-first-skill">Your First Skill</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>If you haven't already, check out our <a href="https://neon.ai/NeonSDKOverview">Neon AI Software Development Kit Overview</a>.</p>
+<p>This walkthrough assumes you:</p>
+<ul>
+<li>have some basic knowledge of <a href="https://www.python.org/">Python programming</a>,</li>
+<li>have an account on <a href="https://github.com">Github.com</a>, and</li>
+<li>have a working version of Neon, either on a Mark 2 or a development setup.</li>
+</ul>
+<h2 id="understand-the-flow-of-your-skill">Understand the flow of your Skill</h2>
+<p>It's a good idea to start by writing down how your Skill will work, including</p>
+<ul>
+<li>What words will the User speak to activate the Skill?</li>
+<li>What will Neon speak in response?</li>
+<li>What data will you need to deliver the Skill?</li>
+<li>Will you need any additional packages or dependencies?</li>
+</ul>
+<p>Making a flowchart of events may help you visualize and plan. This could be as simple as drawing one on a sheet of paper. There are also many tools for it available online, some of them are free &amp; some even integrate with your coding. Here is an article that compares several free flowchart tools: <a href="https://www.softwaretestinghelp.com/flowchart-software/">https://www.softwaretestinghelp.com/flowchart-software/</a> which you may find a helpful place to start.</p>
+<p>Once you've given these some thought, you can get started.</p>
+<h2 id="basic-skill-repository-structure">Basic skill repository structure</h2>
+<p>Neon maintains a Neon skill template repository at <a href="https://github.com/NeonGeckoCom/template-skill">https://github.com/NeonGeckoCom/template-skill</a>. You can visit this page and select <code>Use this template</code> &gt; <code>Create a new repository</code> from the GitHub UI to start with a basic skill setup.</p>
+<p>Once the skill repository has been created changing the name can be tricky, so think through the naming convention early. Typically, it should follow this format:</p>
+<p><code>skill-&lt;skill_name&gt;</code>, with the <code>setup.py</code> and <code>manifest.json</code> files appending the name of your user or organization to the skill name. For example, you may see skills such as <code>skill-free_music_archive.neongeckocom</code> or <code>skill-plex.d-mcknight</code> in your Neon device once the skill is installed.</p>
+<p>After creating a new repository from the template, clone it to your local development environment. Let's take a closer look at the structure:</p>
+<pre><code class="language-shell">.
+├── .github/workflows
+│   ├── license_tests.yml
+│   ├── propose_release.yml
+│   ├── publish_release.yml
+│   ├── publish_test_build.yml
+│   ├── push_skill_json.yml
+│   ├── skill_tests.yml
+│   └── update_skill_json.md
+├── test
+│   ├── test_intents.yml
+│   ├── test_resources.yml
+│   └── test_skill.md
+├── .gitignore
+├── CHANGELOG.md
+├── LICENSE.md
+├── README.md
+├── __init__.py
+├── requirements.txt
+├── setup.py
+├── skill.json
+└── version.py
+</code></pre>
+<h3 id="githubworkflows">.github/workflows</h3>
+<p>Neon's standard GitHub Actions workflows. For more information on what each one does and how it works, <a href="../../voice-user-interface-design-guidelines/skill-testing/">please see the documentation on skill testing</a>.</p>
+<h3 id="test">test</h3>
+<p>All your skill's unit tests should go here. Additionally, this is where the files are for Neon's standard GitHub Actions tests. For details on setting those up, please see the files themselves or <a href="../../voice-user-interface-design-guidelines/skill-testing/">the documentation on skill testing</a>.</p>
+<h3 id="gitignore">.gitignore</h3>
+<p>Files that should not be committed to git. As a general rule, binaries, large files, packaged files (usually in a <code>dist</code> or <code>build</code> folder), and IDE settings should not be committed to a shared git repository. For a list of examples <code>.gitignore</code> files, please see <a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a> or search <code>https://github.com/NeonGeckoCom</code> for "skill"</p>
+<h3 id="changelogmd">CHANGELOG.md</h3>
+<p>Auto-generated by Neon GitHub Actions workflows. No need to edit manually.</p>
+<h3 id="licensemd">LICENSE.md</h3>
+<p>Neon is built on components that are mostly using the BSD-2 or BSD-3 license, favoring the BSD-3 license. A full explanation of the legalities of open-source licenses is out of scope of this document, but please read the license file carefully and follow its instructions if you plan to change your skill to use a different license. For legal advice in your country/jurisdiction, please seek an attorney.</p>
+<p>The copyright for Neon AI in this file may be safely removed if you are not developing on behalf of Neon AI directly.</p>
+<h3 id="readmemd">README.md</h3>
+<p>The <code>README</code> file that will appear not just on your GitHub repository main page, but also become the README for any skills published to <a href="https://pypi.org">pypi.org</a>. Follow the template and fill in with the information you came up with in the "Understanding your skill" section above. Be sure to keep this up to date as you add features to your skill.</p>
+<h3 id="__init__py">__init__.py</h3>
+<p>The primary Python file for your skill. In standard Python development, the presence of this file in a folder marks that the folder is a Python module. In Neon skill development, historically the Skill class itself goes in here, and for simple skills all of the skill code belongs here.</p>
+<p>Note that putting the <code>__init__.py</code> file in the root of the repository has fallen out of favor in modern Python development practice. However, to maintain compatibility with older Mycroft skills and installation methods, Neon recommends following the structure outlined in this template repo.</p>
+<p>The copyright for Neon AI in this file may be safely removed if you are not developing on behalf of Neon AI directly.</p>
+<h3 id="requirementstxt">requirements.txt</h3>
+<p>Third-party Python package requirements, such as <code>requests</code> or libraries for accessing any software you are integrating with Neon. Specifying only a name will cause pip to search <a href="https://pypi.org">pypi.org</a> and pull the latest version.</p>
+<p>Generally, it is considered good software practice to pin your versions in a <code>requirements.txt</code> file. For more information on pinning, <a href="https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/python/pip/versions.html">please see the linked cheatsheet</a>.</p>
+<h3 id="setuppy">setup.py</h3>
+<p>The file responsible for packaging your skill in a format that can be installed with pip, either by publishing to <a href="https://pypi.org">pypi.org</a> or installing directly via GitHub. <strong>This file must be edited before it will work as expected!!</strong> Be sure to review the <code>TODO:</code> items in the code, as well as all sections passed to the <code>setup()</code> function at the end of the file, and update them as appropriate for your skill.</p>
+<p>Note that the <code>find_resource_files()</code> function in this file can sometimes fail if you do not have certain directories it is searching for (locale, ui, vocab, dialog, regex, res). If this happens to you, you may safely remove the directories you are not using in your skill. <em>Please be aware that doing so will mean important files in those directories will not be packaged with your skill if you add them later</em> - Neon recommends removing these folders at the end of your skill development so you do not forget to add them back in later.</p>
+<p>The copyright for Neon AI in this file may be safely removed if you are not developing on behalf of Neon AI directly.</p>
+<h3 id="skilljson">skill.json</h3>
+<p>Required file for Neon skills to load properly, but it is automatically generated if you use Neon's default GitHub Actions workflows. Neon recommends you use these workflows, which means you can safely ignore any manual edits to this file.</p>
+<h3 id="versionpy">version.py</h3>
+<p>Tracks your skill version. Neon follows OVOS in using <a href="https://semver.org/">Semantic Versioning</a> and recommends skill developers do the same.</p>
+<p>The copyright for Neon AI in this file may be safely removed if you are not developing on behalf of Neon AI directly.</p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Fallback Skill - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="./" class="active">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="fallback-skill">Fallback Skill</h1>
+<h2 id="fallback-skill-order-of-precedence">Fallback <strong>Skill</strong> order of precedence</h2>
+<p>The Fallback <strong>Skills</strong> all have a priority and will be checked in order from low priority value to high priority value. If a Fallback <strong>Skill</strong> can handle the <strong>Utterance</strong> it will create a response and return <code>True</code>. After this no other Fallback <strong>Skills</strong> are tried. This means the priority for Fallbacks that can handle a <em>broad</em> range of queries should be <em>high</em> (80-100) and Fallbacks that only respond to a very specific range of queries should be higher (20-80). The more specific, the lower the priority value.</p>
+<h2 id="creating-a-fallback-skill">Creating a Fallback <strong>Skill</strong></h2>
+<p>Import the <code>FallbackSkill</code> base class:</p>
+<pre><code class="language-python">from mycroft import FallbackSkill
+</code></pre>
+<p>Create a derived class:</p>
+<pre><code class="language-python">class MeaningFallback(FallbackSkill):
+    &quot;&quot;&quot;
+        A Fallback skill to answer the question about the
+        meaning of life, the universe and everything.
+    &quot;&quot;&quot;
+    def __init__(self):
+        super(MeaningFallback, self).__init__(name='My Fallback Skill)
+        # Add your own initialization code here
+</code></pre>
+<p>Register the handler with the fallback system</p>
+<p><em>Note: a <code>FallbackSkill</code> can register any number of fallback handlers</em></p>
+<pre><code class="language-python">    def initialize(self):
+         &quot;&quot;&quot;
+             Registers the fallback handler
+         &quot;&quot;&quot;
+         self.register_fallback(self.handle_fallback, 10)
+         # Any other initialize code you like can be placed here
+</code></pre>
+<p>Implement the fallback handler (the method that will be called to potentially handle the <strong>Utterance</strong>). The method implements logic to determine if the <strong>Utterance</strong> can be handled and shall output speech if it can handle the query. It shall return Boolean <code>True</code> if the <strong>Utterance</strong> was handled and Boolean <code>False</code> if not.</p>
+<pre><code class="language-python">    def handle_fallback(self, message):
+        &quot;&quot;&quot;
+            Answers question about the meaning of life, the universe
+            and everything.
+        &quot;&quot;&quot;
+        utterance = message.data.get(&quot;utterance&quot;)
+        if 'what' in utterance
+            and 'meaning' in utterance
+            and ('life' in utterance
+                or 'universe' in utterance
+                or 'everything' in utterance):
+            self.speak('42')
+            return True
+        else:
+            return False
+</code></pre>
+<p>Finally, the <strong>Skill</strong> creator must make sure the skill handler is removed when the <strong>Skill</strong> is shutdown by the system.</p>
+<pre><code class="language-python">    def shutdown(self):
+        &quot;&quot;&quot;
+            Remove this skill from list of fallback skills.
+        &quot;&quot;&quot;
+        self.remove_fallback(self.handle_fallback)
+        super(MeaningFallback, self).shutdown()
+</code></pre>
+<p>And as with a normal <strong>Skill</strong> the function <code>create_skill()</code> needs to be in the file to instantiate the skill.</p>
+<pre><code class="language-python">def create_skill():
+    return MeaningFallback()
+</code></pre>
+<p>The above example can be found <a href="https://github.com/forslund/fallback-meaning">here</a>.</p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

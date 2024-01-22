@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Example Interaction Script - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="./" class="active">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="example-interaction-script">Example Interaction Script</h1>
+<p>After working on a list of jobs to be done creating Example Interactions is one of the next steps in the design and planning process. In this step you will take the Job Stories and write example Dialogs that get the User's job accomplished. Once development begins the Example Dialogs also become the basis of the Dialog and Vocab files within your skill. Once development begins you will need to <a href="skill-testing">update your tests files</a> to utilize the Dialog files instead of the natural language responses that were written in the design and planning phases. The process is described in more detail in the example below.</p>
+<h2 id="first-draft-interaction-scripts">First Draft Interaction Scripts</h2>
+<p>Begin by writing the example interactions of your skill from start to finish based on your Job Stories. At first don’t worry about organizing the interactions. Just try to write down as many examples as possible.</p>
+<p>Here is an example of a First Draft Interaction of a Moon Phase Skill.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Example Interaction 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, what’s the moon phase?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>Today’s moon is Waning Crescent with 55% illumination</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">__</th>
+<th style="text-align: left;">Example interaction 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, when is the next full moon?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>The next full moon is on May 7th.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">__</th>
+<th style="text-align: left;">Example Dialog 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon when is the next First quarter moon?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>The next First quarter moon is April 30th</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">__</th>
+<th style="text-align: left;">Example Dialog 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>What phase of the moon is May 2nd?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>The moon will be Waxing Gibbous with 68% illumination on May 2nd</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">__</th>
+<th style="text-align: left;">Example Dialog 5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, what’s the moon phase 5 days from today?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>The moon will be Waning Crescent with 5% illumination on May 20th</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">__</th>
+<th style="text-align: left;">Example Dialog 6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, can you tell me the moon phase for a certain day?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>Yes, what day would you like to know the moon phase?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>May 15th</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>On May 15th the moon will be waning crescent and 45% illuminated</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">__</th>
+<th style="text-align: left;">Example Dialog 7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, what are the phases of the moon?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>A lunar cycle lasts 29.53 days and consists of four principal phases, the new moon, first quarter, full moon and third quarter. Would you like to know more?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Yes</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>The apparent shape of the moon between New Moon and First Quarter is known as Waxing Crescent, the apparent shape between First Quarter and Full Moon is known as Waxing Gibbous. The moon is half illuminated in both First Quarter and Third Quarter, the use of the word quarter indicates the period within the cycle and not the illumination.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Example Dialog 8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>What's the moon phase on the next go around?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>The next quarterly moon phase is the last quarter moon on May 14th</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Example Dialog 9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>How many moon phases are there left?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>I’m not sure I understood you, would you like to know when the next moon phase cycle begins?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Yes</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>The next moon phase begins with the new moon on May 22nd</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="organized-interaction-scripts">Organized Interaction Scripts</h2>
+<p>The next step in the process is organizing the first pass of dialogs into groups. You may already have a good idea of what these groups of similar interactions are based on your Job Stories from the beginning phase. You can also think of these as the features of the skill. These groups or features are called Scenarios.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Scenario</strong></th>
+<th style="text-align: left;"><strong>When a user asks for the current Moon Phase</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, what’s the moon phase?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>Today’s moon is Waning Crescent with 55% illumination</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Scenario</strong></th>
+<th style="text-align: left;"><strong>When a user asks for the next moon phase</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, when is the next full moon?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>The next full moon is on May 7th.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">__</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, when is the next First Quarter Moon?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>The next First Quarter Moon is April 30th.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Scenario</strong></th>
+<th style="text-align: left;"><strong>When a user asks for the next moon phase</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>what is the next principal moon phase</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>The next principal moon phase is the full moon, on May 7th</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Scenario</strong></th>
+<th style="text-align: left;"><strong>When the user asks for the Moon Phase on a date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>What phase of the moon is May 2nd?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>The moon will be Waxing Gibbous with 68% illumination on May 2nd</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, what’s the moon phase 5 days from today?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>The moon will be Waning Crescent with 5% illumination on May 20th</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Scenario</strong></th>
+<th style="text-align: left;"><strong>When the user asks for more information on Moon Phases</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, what are the phases of the moon?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>A lunar cycle lasts 29.53 days and consists of four principal phases, the new moon, first quarter, full moon and third quarter. Would you like to know more?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Yes</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>The apparent shape of the moon between New Moon and First Quarter is known as Waxing Crescent, the apparent shape between First Quarter and Full Moon is known as Waxing Gibbous. The First Quarter is half illuminated and is growing in illumination toward a Full Moon. The Last Quarter is half illuminated and shrinking in illumination toward a New Moon. A New Moon is not illuminated and not therefore not visible to the naked eye.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Scenario</strong></th>
+<th style="text-align: left;">When the user needs Help</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, can you tell me the moon phase for a certain day?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>Yes, what day would you like to know the moon phase?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>May 15th</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>On May 15th the moon will be waning crescent and 45% illuminated</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">__</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, how do I get information on the moon phases</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>You can ask me what the current moon phase is, the moon phase on a future date, or more information about moon phases.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Scenario</strong></th>
+<th style="text-align: left;"><strong>Error Handling</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>What’s the moon phase on the next go around?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>For which day would you like to know the moon phase?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>next monday</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Scenario: Error Handling</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Scenario</strong></th>
+<th style="text-align: left;">Error Handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>What’s the moon phase on the next go around?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>For which day would you like to know the moon phase?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>June 5th</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>June 5th is a Full Moon</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">__</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>How many moon phases are there left?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>I’m not sure I understood you, would you like to know when the next moon phase cycle begins?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>yes</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>the next moon phase begins with the new moon on April 23rd</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="converting-example-interactions-to-flows-optional">Converting Example Interactions to Flows (optional)</h2>
+<p>Some might think that creating the Flowcharts would be the first step in the process. After all the flowchart is abstract and doesn’t require full statements or prompts to be written. In a flowchart you just need to see the steps and decision points within the interaction. However, in practice the language used in the interaction can have such a great impact on the user’s input that is more important to start with Example Interactions and real statements and prompts first.</p>
+<p>In a flowchart it's easy to add several decision branches to a step, but in practice the dialog necessary to effectively make the decision might require multiple steps. It's always best to start with the dialog.</p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

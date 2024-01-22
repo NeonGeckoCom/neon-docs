@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Logging - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="./" class="active">Logging</a>
+</li>
+
+<li>
+<a href="../skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="logging">Logging</h1>
+<p>To track events and data within your Skill we can use logging. If you are new to programming, this is a way to output a message that can tell you the state of your Skill at a particular point in time, details about an error that has occured, or simply noting that a program reached a particular point in the code.</p>
+<h2 id="video-tutorial-courtesy-of-mycroftai-which-neonskills-extends">Video Tutorial (Courtesy of Mycroft.AI, which NeonSkills extends)</h2>
+<p><a href="https://www.youtube.com/watch?v=1_yX1JCCYoM">Video Tutorial: Logging from Mycroft Skills</a></p>
+<h2 id="basic-usage">Basic Usage</h2>
+<p>A logger is available through the <code>NeonSkill</code> base class. This means that you can use it within a Skill without needing to import the <code>logging</code> package. You can simply call <code>self.log</code> from within the class of your Skill.</p>
+<p>Here is a quick example of an INFO level log message used in a Skill. We will learn more about the other levels shortly.</p>
+<pre><code class="language-python">from ovos_utils.intents import IntentBuilder
+from neon_utils.skills.neon_skill import NeonSkill
+from ovos_workshop.decorators import intent_handler
+
+class LoggingSkill(NeonSkill):
+
+    @intent_handler(IntentBuilder('HelloWorldIntent')
+                    .require('HelloWorld'))
+    def handle_hello_world_intent(self, message):
+        &quot;&quot;&quot; Skills can log useful information. These will appear in the CLI and
+        the skills.log file.&quot;&quot;&quot;
+        self.log.info(&quot;This is an info level log message.&quot;)
+        self.speak_dialog(&quot;hello.world&quot;)
+
+def create_skill():
+    return LoggingSkill()
+</code></pre>
+<h3 id="what-is-included-in-a-log-message">What is included in a log message?</h3>
+<p>The above Skill would log an INFO level message each time the intent handler was triggered. The resulting log would look like this:</p>
+<pre><code class="language-log">14:41:54.639 - skills - skill_hello_world:emit_log:285 - INFO - This is an info level log message.
+</code></pre>
+<p>From left to right, this consists of:</p>
+<ul>
+<li>A timestamp identifying when the log was emitted.</li>
+<li>The level of the log message</li>
+<li>The Process ID (PID) of the system process where the log originated.</li>
+<li>The origin of the log from within Neon. In the case of Skills the Class name is used.</li>
+<li>The log message passed as an argument to the logger.</li>
+</ul>
+<h3 id="where-do-these-messages-get-logged">Where do these messages get logged?</h3>
+<p>Log messages from a Skill are displayed in the Neon CLI so that a User can see in real-time what is happening in the Skill. They are also written to the <code>skills.log</code> file. The location of this file varies depending on your Neon installation, but is often located at: <code>/var/log/neon/skills.log</code>. On a Mark 2, you can access logs by running <code>journalctl -xeu neon-skills</code>.</p>
+<p>By default all INFO, WARNING, ERROR, EXCEPTION and CRITICAL level messages will be logged. DEBUG level messages will be logged if the User explicitly requests it. This can be done by issuing the <code>:log level debug</code> command in the CLI, or changing the <code>log_level</code> attribute in the Neon configuration. Typically this will be located at <code>~/.config/neon/neon.yaml</code>.</p>
+<p>When you first turn on DEBUG level logging, you will quickly notice that there is a lot happening behind the scenes in Neon. If you are debugging a particular Skill it is very useful to limit the displayed log messages using the Class name of your Skill. For the HelloWorldSkill we would use the CLI command: <code>:find HelloWorldSkill</code></p>
+<p>Finally to return to the default INFO level logging, you can issue the <code>:log level info</code> CLI command.</p>
+<h2 id="logging-levels">Logging Levels</h2>
+<p>There are five types of log messages available that are used for different purposes.</p>
+<h3 id="debug">DEBUG</h3>
+<pre><code class="language-python">self.log.debug()
+</code></pre>
+<p>Debug messages are used for information that will help to diagnose problems. These are particularly useful if there is anything that has the potential to break in the future.</p>
+<p>By default these messages will not be logged unless the User has explicitly turned on debug level logging.</p>
+<h3 id="info">INFO</h3>
+<pre><code class="language-python">self.log.info()
+</code></pre>
+<p>Info messages provide general information when the Skill is running as expected. These messages will always be logged so are useful when actively developing a Skill. When preparing to publish a Skill to the Marketplace, you will likely want to convert many of these to the DEBUG level.</p>
+<h3 id="warning">WARNING</h3>
+<pre><code class="language-python">self.log.warning()
+</code></pre>
+<p>Warning messages are used to indicate that something has gone wrong, but the Skill will continue to function.</p>
+<h3 id="error">ERROR</h3>
+<pre><code class="language-python">self.log.error()
+</code></pre>
+<p>Error messages indicate that a serious problem has occured and the Skill will not be able to function. In the Neon CLI these messages are shown in red to make them highly visible.</p>
+<h3 id="exception">EXCEPTION</h3>
+<pre><code class="language-python">self.log.exception()
+</code></pre>
+<p>Exception messages are an extended form of the <code>error</code> level message. These messages include a stack trace and should only be called from an exception handler. For example:</p>
+<pre><code class="language-python">try:
+    1/0
+except ZeroDivisionError as e:
+    self.log.exception(&quot;Cannot divide by zero&quot;)
+</code></pre>
+<h3 id="critical">CRITICAL</h3>
+<pre><code class="language-python">self.log.critical()
+</code></pre>
+<p>A more serious error, indicating that the Skill is unable to continue running.</p>
+<h2 id="using-the-logger-outside-the-skill-class">Using the logger outside the Skill class</h2>
+<p>As the logger is provided by the NeonSkill class, it is only available within that scope, for example using <code>self.log</code>. If you need to log messages from outside of this class, you can import the logger manually.</p>
+<pre><code class="language-python">from neon_utils.log_utils import LOG
+</code></pre>
+<p>This can then be used outside your Skill's class. Extending our first example:</p>
+<pre><code class="language-python">from ovos_utils.intents import IntentBuilder
+from neon_utils.skills.neon_skill import NeonSkill
+from ovos_workshop.decorators import intent_handler
+from neon_utils.log_utils import LOG
+
+LOG.info(&quot;This is a logged info level message outside of the NeonSkill Class scope&quot;)
+
+def my_special_function():
+  LOG.info(&quot;Another usage of LOG.&quot;)
+
+class LoggingSkill(NeonSkill):
+
+    @intent_handler(IntentBuilder('HelloWorldIntent')
+                    .require('HelloWorld'))
+    def handle_hello_world_intent(self, message):
+        &quot;&quot;&quot; Skills can log useful information. These will appear in the CLI and
+        the skills.log file.&quot;&quot;&quot;
+        self.log.info(&quot;This is an info level log message.&quot;)
+        self.speak_dialog(&quot;hello.world&quot;)
+        my_special_function()
+
+def create_skill():
+    return LoggingSkill()
+</code></pre>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

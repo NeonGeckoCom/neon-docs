@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>GUI Framework - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="./" class="active">GUI Framework</a>
+</li>
+
+<li>
+<a href="../show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="gui-framework">GUI Framework</h1>
+<p><strong>Note:</strong> Neon is backwards-compatible with Mycroft code, so despite references here to Mycroft-specific code, it will work with Neon.</p>
+<p>In the age of information, visualization is eminently essential to grab attention and create a promising communication strategy. Visual content that supports your spoken content can make it easier to present information well and more engaging for your audience and users.</p>
+<p><img alt="" src="https://images.theconversation.com/files/205921/original/file-20180212-58348-1sbutu2.jpg?ixlib=rb-1.1.0&amp;rect=0%2C604%2C3994%2C1994&amp;q=45&amp;auto=format&amp;w=1356&amp;h=668&amp;fit=crop" /></p>
+<h2 id="introduction">Introduction</h2>
+<p>Mycroft-GUI is an open source visual and display framework for Neon running on top of KDE Plasma Technology and built using Kirigami, a lightweight user interface framework for convergent applications which are empowered by Qt.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Neon is an open source voice assistant that can be extended and expanded to the limits of your imagination. Neon can run anywhere from your desktop to your automobiles or on smart devices that empower your home.</p>
+<p>Want Neon to do something new? Teach Neon a skill, share it, and improve the experience for tens of thousands of people all over the world. This guide aims to provide you with resources to create familiar and consistent visual experiences with your expanding and innovative skills.</p>
+<h2 id="qt-skill-gui">Qt Skill GUI</h2>
+<p>Neon devices with displays, such as the Mark II, provide skill developers the opportunity to create skills that can be empowered by both voice and screen interaction. Skills may provide custom QML resources for customized UIs, or leverage the provided templates for simple interfaces</p>
+<p>This section of the guide is divided into two skill examples that will show you how to create:</p>
+<ul>
+<li>In-depth QML based audio and visual interaction skills</li>
+<li>Simple template based text and image skills</li>
+</ul>
+<h3 id="in-depth-qml-based-audio-and-visual-interaction-skills">In-depth QML based audio and visual interaction skills</h3>
+<p>QML user interface markup language is a declarative language built on top of Qt's existing strengths designed to describe the user interface of a program: both what it looks like, and how it behaves. QML provides modules that consist of sophisticated sets of graphical and behavioral building elements. In the example below we will showcase how to create a QML interface for your skill including how it interacts with your voice skill.</p>
+<h4 id="before-getting-started-resources">Before Getting Started: Resources</h4>
+<p>A collection of resources to familiarize you with QML and Kirigami Framework.</p>
+<ul>
+<li><a href="http://doc.qt.io/qt-5/qml-tutorial.html">Introduction to QML</a></li>
+<li><a href="https://www.kde.org/products/kirigami/">Introduction to Kirigami</a></li>
+</ul>
+<h4 id="building-your-skill-to-support-display">Building your skill to support display</h4>
+<p>Skills for Mycroft AI are written in Python, using the skills development guide available <a href="../../skill_development/">here</a></p>
+<p>Let's walk you through some basics of writing your QML user interface, this section is divided into 5 parts:</p>
+<ul>
+<li><a href="./#importing-modules">Importing Modules</a></li>
+<li><a href="./#using-mycroft-gui-framework-base-delegates">Using Mycroft-GUI Framework Base Delegates</a></li>
+<li><a href="./#using-mycroft-framework-components">Using Mycroft Framework Components</a></li>
+<li><a href="./#event-handling">Event Handling</a></li>
+<li><a href="./#resting-faces">Resting Faces</a></li>
+</ul>
+<h4 id="importing-modules">Importing Modules</h4>
+<p>A QML module provides versioned types and JavaScript resources in a type namespace which may be used by clients who import the module. Modules make use of the QML versioning system which allows modules to be independently updated. More in-depth information about QML modules can be found here <a href="http://doc.qt.io/qt-5/qtqml-modules-topic.html">Qt QML Modules Documentation</a></p>
+<p>In the code snippet example below we will look at importing some of the common modules that provide the components required to get started with our Visual User Interface.</p>
+<pre><code>import QtQuick 2.4
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.4
+import org.kde.kirigami 2.4 as Kirigami
+import Mycroft 1.0 as Mycroft
+import org.kde.lottie 1.0
+</code></pre>
+<p><strong>QTQuick Module:</strong></p>
+<p>Qt Quick module is the standard library for writing QML applications, the module provides a visual canvas and includes types for creating and animating visual components, receiving user input, creating data models and views and delayed object instantiation. In-depth information about QtQuick can be found at <a href="https://doc.qt.io/qt-5.11/qtquick-index.html">Qt Quick Documentation</a></p>
+<p><strong>QTQuick.Controls Module:</strong></p>
+<p>The QtQuick Controls module provides a set of controls that can be used to build complete interfaces in Qt Quick. Some of the controls provided are button controls, container controls, delegate controls, indicator controls, input controls, navigation controls and more. For a complete list of controls and components provided by QtQuick Controls you can refer to <a href="https://doc.qt.io/qt-5.11/qtquickcontrols2-guidelines.html">QtQuick Controls 2 Guidelines</a></p>
+<p><strong>QtQuick.Layouts Module:</strong></p>
+<p>QtQuick Layouts are a set of QML types used to arrange items in a user interface. Some of the layouts provided by QtQuick Layouts are Column Layout, Grid Layout, Row Layout and more, for a complete list of layouts you can refer to <a href="http://doc.qt.io/qt-5/qtquicklayouts-index.html">QtQuick Layouts Documentation</a></p>
+<p><strong>Kirigami Module:</strong></p>
+<p><a href="https://api.kde.org/frameworks/kirigami/html/index.html">Kirigami</a> is a set of QtQuick components for mobile and convergent applications. <a href="https://api.kde.org/frameworks/kirigami/html/index.html">Kirigami</a> is a set of high level components to make the creation of applications that look and feel great on mobile as well as desktop devices and follow the <a href="https://community.kde.org/KDE_Visual_Design_Group/KirigamiHIG">Kirigami Human Interface Guidelines</a></p>
+<p><strong>Mycroft Module:</strong></p>
+<p>Mycroft GUI frameworks provides a set of high level components and events system for aiding in the development of Mycroft visual skills. One of the controls provided by Mycroft GUI frameworks are Mycroft-GUI Framework Base Delegates <a href="./">Mycroft-GUI Framework Base Delegates Documentation</a></p>
+<p><strong>QML Lottie Module:</strong></p>
+<p>This provides a QML <code>Item</code> to render Adobe® After Effects™ animations exported as JSON with Bodymovin using the Lottie Web library. For list of all properties supported refer to <a href="https://github.com/kbroulik/lottie-qml">Lottie QML</a></p>
+<h4 id="using-mycroft-gui-framework-base-delegates">Using Mycroft-GUI Framework Base Delegates</h4>
+<p>When you design your skill with QML, Mycroft-GUI frameworks provides you with some base delegates you should use when designing your GUI skill. The base delegates provide you with a basic presentation layer for your skill with some property assignments that can help you setup background images, background dim, timeout and grace time properties to give you the control you need for rendering an experience. In your GUI Skill you can use:</p>
+<ul>
+<li>Mycroft.Delegate: A basic and simple page based on Kirigami.Page</li>
+</ul>
+<p>Simple display Image and Text Example using Mycroft.Delegate</p>
+<p>```
+  import Mycroft 1.0 as Mycroft</p>
+<p>Mycroft.Delegate {
+      skillBackgroundSource: sessionData.exampleImage
+      ColumnLayout {
+          anchors.fill: parent
+          Image {
+              id: imageId
+              Layout.fillWidth: true
+              Layout.preferredHeight: Kirigami.Units.gridUnit * 2
+              source: "https://source.unsplash.com/1920x1080/?+autumn"
+           }
+           Label {
+              id: labelId
+              Layout.fillWidth: true
+              Layout.preferredHeight: Kirigami.Units.gridUnit * 4
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+      }
+  }
+  ```</p>
+<ul>
+<li>Mycroft.ScrollableDelegate: A delegate that displays skill visuals in a scroll enabled Kirigami Page.</li>
+</ul>
+<p>Example of using Mycroft.ScrollableDelegate</p>
+<p>```
+  import QtQuick 2.4
+  import QtQuick.Controls 2.2
+  import QtQuick.Layouts 1.4
+  import org.kde.kirigami 2.4 as Kirigami
+  import Mycroft 1.0 as Mycroft</p>
+<p>Mycroft.ScrollableDelegate{
+      id: root
+      skillBackgroundSource: sessionData.background
+      property var sampleModel: sessionData.sampleBlob</p>
+<pre><code>  Kirigami.CardsListView {
+      id: exampleListView
+      Layout.fillWidth: true
+      Layout.fillHeight: true
+      model: sampleModel.lorem
+      delegate: Kirigami.AbstractCard {
+          id: rootCard
+          implicitHeight: delegateItem.implicitHeight + Kirigami.Units.largeSpacing
+          contentItem: Item {
+              implicitWidth: parent.implicitWidth
+              implicitHeight: parent.implicitHeight
+              ColumnLayout {
+                  id: delegateItem
+                  anchors.left: parent.left
+                  anchors.right: parent.right
+                  anchors.top: parent.top
+                  spacing: Kirigami.Units.largeSpacing
+                  Kirigami.Heading {
+                      id: restaurantNameLabel
+                      Layout.fillWidth: true
+                      text: modelData.text
+                      level: 2
+                      wrapMode: Text.WordWrap
+                  }
+                  Kirigami.Separator {
+                      Layout.fillWidth: true
+                  }
+                  Image {
+                      id: placeImage
+                      source: modelData.image
+                      Layout.fillWidth: true
+                      Layout.preferredHeight: Kirigami.Units.gridUnit * 3
+                      fillMode: Image.PreserveAspectCrop
+                  }
+                  Item {
+                      Layout.fillWidth: true
+                      Layout.preferredHeight: Kirigami.Units.gridUnit * 1
+                  }
+              }
+          }
+      }
+  }
+</code></pre>
+<p>}
+  ```</p>
+<h4 id="using-mycroft-framework-components">Using Mycroft Framework Components</h4>
+<h3 id="simple-template-based-text-and-image-skill-displays">Simple template based text and image skill displays</h3>
+<p>Designing a simple skill and only want to display text or images? Mycroft GUI framework and Mycroft enclosure API provide ready to use QML based template wrappers that can minimalisticly display simple skills data such as text and images. In the example below we will showcase how to create a simple voice skill that displays simple text on your Mycroft enabled device with a display.</p>
+<p><strong>Text Example:</strong></p>
+<pre><code class="language-python">...
+def handle_hello_world(self, message):
+...
+self.gui.show_text(&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo tempor incididunt ut labore et dolore magna aliqua.&quot;)
+...
+</code></pre>
+<p><strong>Image Example</strong></p>
+<pre><code class="language-python">...
+def handle_hello_world(self, message):
+...
+self.gui.show_image(&quot;https://source.unsplash.com/1920x1080/?+autumn&quot;)
+...
+</code></pre>
+<p><strong>HTML URL Example</strong></p>
+<pre><code class="language-python">...
+def handle_hello_world(self, message):
+...
+self.gui.show_url(&quot;https://mycroft.ai&quot;)
+...
+</code></pre>
+<p><strong>HTML Raw Example</strong></p>
+<pre><code>...
+def handle_hello_world(self, message):
+...
+rawhtmlexample = &quot;&quot;&quot;&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot; /&gt;
+&lt;title&gt;Simple HTML Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;Hello World&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&quot;&quot;&quot;
+self.gui.show_html(rawhtmlexample)
+...
+</code></pre>
+<h3 id="advanced-skill-displays-using-qml">Advanced skill displays using QML</h3>
+<p><strong>Display Lottie Animations</strong>:</p>
+<p>You can use the <code>LottieAnimation</code> item just like any other <code>QtQuick</code> element, such as an <code>Image</code> and place it in your scene any way you please.</p>
+<p><strong>QML Example</strong></p>
+<pre><code>import QtQuick 2.4
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.4
+import org.kde.kirigami 2.4 as Kirigami
+import Mycroft 1.0 as Mycroft
+import org.kde.lottie 1.0
+
+Mycroft.Delegate {
+    LottieAnimation {
+        id: fancyAnimation
+        anchors.fill: parent
+        source: Qt.resolvedUrl(&quot;animations/fancy_animation.json&quot;)
+        loops: Animation.Infinite
+        fillMode: Image.PreserveAspectFit
+        running: true
+    }
+}
+</code></pre>
+<p><strong>Display Sliding Images</strong></p>
+<p>Contains an image that will slowly scroll in order to be shown completely</p>
+<p><strong>QML Example</strong></p>
+<pre><code>import QtQuick 2.4
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.4
+import org.kde.kirigami 2.4 as Kirigami
+import Mycroft 1.0 as Mycroft
+
+Mycroft.Delegate {
+     background: Mycroft.SlidingImage {
+     source: &quot;foo.jpg&quot;
+     running: bool    //If true the sliding animation is active
+     speed: 1         //Animation speed in Kirigami.Units.gridUnit / second
+   }
+}
+</code></pre>
+<p><strong>Display Paginated Text</strong></p>
+<p>Takes a long text and breaks it down into pages that can be horizontally swiped</p>
+<p><strong>QML Example</strong></p>
+<pre><code>import QtQuick 2.4
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.4
+import org.kde.kirigami 2.4 as Kirigami
+import Mycroft 1.0 as Mycroft
+
+Mycroft.Delegate {
+     Mycroft.PaginatedText {
+         text: string      //The text that should be displayed
+         currentIndex: 0   //The currently visible page number (starting from 0)
+     }
+}
+</code></pre>
+<p><strong>Display A Vertical ListView With Information Cards</strong></p>
+<p>Kirigami CardsListView is a ListView which can have AbstractCard as its delegate: it will automatically assign the proper spacing and margins around the cards adhering to the design guidelines.</p>
+<p><strong>Python Skill Example</strong></p>
+<pre><code class="language-python">...
+def handle_food_places(self, message):
+...
+self.gui[&quot;foodPlacesBlob&quot;] = results.json
+self.gui.show_page(&quot;foodplaces.qml&quot;)
+...
+</code></pre>
+<p><strong>QML Example</strong></p>
+<pre><code>import QtQuick 2.4
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.4
+import org.kde.kirigami 2.4 as Kirigami
+import Mycroft 1.0 as Mycroft
+
+Mycroft.Delegate{
+    id: root
+    property var foodPlacesModel: sessionData.foodPlacesBlob
+
+    Kirigami.CardsListView {
+        id: restaurantsListView
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        model: foodPlacesModel
+        delegate: Kirigami.AbstractCard {
+            id: rootCard
+            implicitHeight: delegateItem.implicitHeight + Kirigami.Units.largeSpacing
+            contentItem: Item {
+                implicitWidth: parent.implicitWidth
+                implicitHeight: parent.implicitHeight
+                ColumnLayout {
+                    id: delegateItem
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.top: parent.top
+                    spacing: Kirigami.Units.smallSpacing
+                    Kirigami.Heading {
+                        id: restaurantNameLabel
+                        Layout.fillWidth: true
+                        text: modelData.name
+                        level: 3
+                        wrapMode: Text.WordWrap
+                    }
+                    Kirigami.Separator {
+                        Layout.fillWidth: true
+                    }
+                    RowLayout {
+                        Layout.fillWidth: true
+                        Layout.preferredHeight: form.implicitHeight
+                        Image {
+                            id: placeImage
+                            source: modelData.image
+                            Layout.fillHeight: true
+                            Layout.preferredWidth: placeImage.implicitHeight + Kirigami.Units.gridUnit * 2
+                            fillMode: Image.PreserveAspectFit
+                        }
+                        Kirigami.Separator {
+                            Layout.fillHeight: true
+                        }
+                        Kirigami.FormLayout {
+                            id: form
+                            Layout.fillWidth: true
+                            Layout.minimumWidth: aCard.implicitWidth
+                            Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
+                            Label {
+                                Kirigami.FormData.label: &quot;Description:&quot;
+                                Layout.fillWidth: true
+                                wrapMode: Text.WordWrap
+                                elide: Text.ElideRight
+                                text: modelData.restaurantDescription
+                            }
+                            Label {
+                                Kirigami.FormData.label: &quot;Phone:&quot;
+                                Layout.fillWidth: true
+                                wrapMode: Text.WordWrap
+                                elide: Text.ElideRight
+                                text: modelData.phone
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<p><strong>Using Proportional Delegate For Simple Display Skills &amp; Auto Layout</strong></p>
+<p><strong>ProportionalDelegate</strong> is a delegate which has proportional padding and a columnlayout as mainItem. The delegate supports a proportionalGridUnit which is based upon its size and the contents are supposed to be scaled proportionally to the delegate size either directly or using the proportionalGridUnit.</p>
+<p><strong>AutoFitLabel</strong> is a label that will always scale its text size according to the item size rather than the other way around.</p>
+<p><strong>QML Example</strong></p>
+<pre><code>import QtQuick 2.4
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.4
+import org.kde.kirigami 2.4 as Kirigami
+import Mycroft 1.0 as Mycroft
+
+Mycroft.ProportionalDelegate {
+    id: root
+
+    Mycroft.AutoFitLabel {
+        id: monthLabel
+        font.weight: Font.Bold
+        Layout.fillWidth: true
+        Layout.preferredHeight: proportionalGridUnit * 40
+        text: sessionData.month
+    }
+
+    Mycroft.AutoFitLabel {
+        id: dayLabel
+        font.weight: Font.Bold
+        Layout.fillWidth: true
+        Layout.preferredHeight: proportionalGridUnit * 40
+        text: sessionData.day
+    }
+}
+</code></pre>
+<p><strong>Using Slideshow Component To Show Cards Slideshow</strong></p>
+<p>Slideshow component lets you insert a slideshow with your custom delegate in any skill display, which can be tuned to autoplay and loop and also scrolled or flicked manually by the user.</p>
+<p><strong>QML Example</strong></p>
+<pre><code>import QtQuick 2.4
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.4
+import org.kde.kirigami 2.4 as Kirigami
+import Mycroft 1.0 as Mycroft
+
+Mycroft.Delegate {
+    id: root
+
+    Mycroft.SlideShow {
+        id: simpleSlideShow
+        model: sessionData.exampleModel // model with slideshow data
+        anchors.fill: parent
+        interval: 5000 // time to switch between slides
+        running: true // can be set to false if one wants to swipe manually
+        loop: true // can be set to play through continously or just once
+        delegate: Kirigami.AbstractCard {
+            width: rootItem.width
+            height: rootItem.height
+            contentItem: ColumnLayout {
+                anchors.fill: parent
+                Kirigami.Heading {
+                    Layout.fillWidth: true
+                    wrapMode: Text.WordWrap
+                    level: 3
+                    text: modelData.Title
+                }
+                Kirigami.Separator {
+                        Layout.fillWidth: true
+                        Layout.preferredHeight: 1
+                }
+                Image {
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: rootItem.height / 4
+                    source: modelData.Image
+                    fillMode: Image.PreserveAspectCrop
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<h4 id="using-audioplayer-component-to-play-audio-files-audio-streaming">Using AudioPlayer Component To Play Audio Files / Audio Streaming</h4>
+<p>AudioPlayer component is a custom wrapper around Qt Multimedia MediaPlayer, that gives the Skill Authors a basic responsive design audio player they can plug into their skills.</p>
+<p><strong>QML Example</strong></p>
+<pre><code>import QtQuick 2.4
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.4
+import org.kde.kirigami 2.4 as Kirigami
+import Mycroft 1.0 as Mycroft
+
+Mycroft.Delegate {
+    id: root
+    skillBackgroundSource: sessionData.audioThumbnail
+
+    Mycroft.AudioPlayer {
+        id: examplePlayer
+        anchors.fill: parent
+        source: sessionData.audioSource        //Set URL of audio file
+        thumbnail: sessionData.audioThumbnail  //Set Thumbnail of audio
+        title: sessionData.audioTitle          //Set Title of audio
+        nextAction: &quot;author.example-player.next&quot; //Event to drive next button action in skill
+        previousAction: &quot;author.example-player.previous&quot; //Event to drive previous button action in skill
+        status: sessionData.status             //Current status of playing audio
+    }
+}
+</code></pre>
+<h4 id="event-handling">Event Handling</h4>
+<p>Mycroft GUI API provides an Event Handling Protocol between the skill and QML display which allow Skill Authors to forward events in either direction to an event consumer. Skill Authors have the ability to create any amount of custom events. Event names that start with "system." are available to all skills, like previous/next/pick.</p>
+<p><strong>Simple Event Trigger Example From QML Display To Skill</strong></p>
+<p><strong>Python Skill Example</strong></p>
+<pre><code class="language-python">    def initialize(self):
+    # Initialize...
+        self.gui.register_handler('skill.foo.event', self.handle_foo_event)
+...
+    def handle_foo_event(self, message):
+        self.speak(message.data[&quot;string&quot;])
+...
+...
+</code></pre>
+<p><strong>QML Example</strong></p>
+<pre><code>import QtQuick 2.4
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.4
+import org.kde.kirigami 2.4 as Kirigami
+import Mycroft 1.0 as Mycroft
+
+Mycroft.Delegate {
+    id: root
+
+    Button {
+        anchors.fill: parent
+        text: &quot;Click Me&quot;
+        onClicked: {
+            triggerGuiEvent(&quot;skill.foo.event&quot;, {&quot;string&quot;: &quot;Lorem ipsum dolor sit amet&quot;})
+        }
+    }
+}
+</code></pre>
+<p><strong>Simple Event Trigger Example From Skill To QML Display</strong></p>
+<p><strong>Python Skill Example</strong></p>
+<pre><code class="language-python">...
+    def handle_foo_intent(self, message):
+        self.gui['foobar'] = message.data.get(&quot;utterance&quot;)
+        self.gui['color'] = &quot;blue&quot;
+        self.gui.show_page(&quot;foo.qml&quot;)
+...
+...
+</code></pre>
+<p><strong>QML Example</strong></p>
+<pre><code>import QtQuick 2.4
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.4
+import org.kde.kirigami 2.4 as Kirigami
+import Mycroft 1.0 as Mycroft
+
+Mycroft.Delegate {
+    id: root
+    property var fooString: sessionData.foobar
+
+    onFooStringChanged: {
+        fooRect.color = sessionData.color
+    }
+
+    Rectangle {
+        id: fooRect
+        anchors.fill: parent
+        color: &quot;#fff&quot;
+    }
+}
+</code></pre>
+<h4 id="using-videoplayer-component-to-play-video-files-video-streaming">Using VideoPlayer Component To Play Video Files / Video Streaming</h4>
+<p>VideoPlayer component is a custom wrapper around Qt Multimedia MediaPlayer, that gives the Skill Authors a basic responsive design video player they can plug into their skills.</p>
+<pre><code>import QtQuick 2.4
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.4
+import org.kde.kirigami 2.4 as Kirigami
+import Mycroft 1.0 as Mycroft
+
+Mycroft.Delegate {
+    id: root
+    skillBackgroundSource: sessionData.videoThumbnail
+
+    Mycroft.VidioPlayer {
+        id: examplePlayer
+        anchors.fill: parent
+        source: sessionData.videoSource        //Set URL of video file
+        nextAction: &quot;author.example-player.next&quot; //Event to drive next button action in skill
+        previousAction: &quot;author.example-player.previous&quot; //Event to drive previous button action in skill
+        status: sessionData.status             //Current status of playing video
+    }
+}
+</code></pre>
+<h4 id="resting-faces">Resting Faces</h4>
+<p>The resting face API provides skill authors the ability to extend their skills to supply their own customized IDLE screens that will be displayed when there is no activity on the screen.</p>
+<p><strong>Simple Idle Screen Example</strong></p>
+<p><strong>Python Skill Example</strong></p>
+<pre><code>from mycroft.skills.core import resting_screen_handler
+...
+@resting_screen_handler('NameOfIdleScreen')
+def handle_idle(self, message):
+    self.gui.clear()
+    self.log.info('Activating foo/bar resting page')
+    self.gui[&quot;exampleText&quot;] = &quot;This Is A Idle Screen&quot;
+    self.gui.show_page('idle.qml')
+</code></pre>
+<p><strong>QML Example</strong></p>
+<pre><code>import QtQuick 2.4
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.4
+import org.kde.kirigami 2.4 as Kirigami
+import Mycroft 1.0 as Mycroft
+
+Mycroft.Delegate {
+    id: root
+    property var fooString: sessionData.exampleText
+
+    Kirigami.Heading {
+        id: headerExample
+        anchors.centerIn: parent
+        text: fooString
+    }
+}
+</code></pre>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

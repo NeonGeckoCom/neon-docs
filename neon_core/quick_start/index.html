@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Quick Start - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet">
+<link href="../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../" class="">Introduction</a>
+</li>
+
+<li>
+<a href="./" class="active">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../skill_development/development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill_development/skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../skill_development/development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../skill_development/language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../skill_development/user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../skill_development/displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill_development/skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="table-of-contents">Table of Contents</h1>
+<ol>
+<li><a href="#quick-start">Quick Start</a></li>
+<li><a href="#a-prerequisite-setup">a. Prerequisite Setup</a></li>
+<li><a href="#b-running-neon">b. Running Neon</a></li>
+<li><a href="#c-interacting-with-neon">c. Interacting with Neon</a></li>
+<li><a href="#d-skill-development">d. Skill Development</a></li>
+<li><a href="#e-persistent-data">e. Persistent Data</a> </li>
+<li><a href="#making-code-changes">Making Changes</a>  </li>
+<li><a href="#a-system-overview">a. System Overview</a>  </li>
+<li><a href="#b-creating-a-skill">b. Creating a Skill</a>   </li>
+</ol>
+<h1 id="welcome-to-neon-ai">Welcome to Neon AI</h1>
+<p>Neon AI is an open source voice assistant. Follow these instructions to start using Neon on your computer. If you are 
+using a Raspberry Pi, you may use the prebuilt image available <a href="https://neon.ai/DownloadNeonAI">on our website</a>.</p>
+<h1 id="quick-start">Quick Start</h1>
+<p>The fastest method for getting started with Neon is to run the modules in Docker containers.
+The <code>docker</code> directory contains everything you need to run Neon Core with default skills.</p>
+<h2 id="a-prerequisite-setup">a. Prerequisite Setup</h2>
+<p>You will need <code>docker</code> and <code>docker-compose</code> available. Docker provides updated guides for installing 
+<a href="https://docs.docker.com/engine/install/">docker</a> and <a href="https://docs.docker.com/compose/install/">docker-compose</a>.
+Neon Core is only tested on Ubuntu, but should be compatible with any linux distribution that uses
+<a href="https://www.freedesktop.org/wiki/Software/PulseAudio/">PulseAudio</a>.</p>
+<blockquote>
+<p><em>Note</em>: By default, only the <code>root</code> user has permissions to interact with Docker under Ubuntu.
+To allow the current user to modify Docker containers, you can add them to the <code>docker</code> group with:</p>
+<p><code>sudo usermod -aG docker $USER &amp;&amp; newgrp</code></p>
+</blockquote>
+<h2 id="b-running-neon">b. Running Neon</h2>
+<p>You can clone the repository, or just copy the <code>docker</code> directory contents onto your local system; this document will 
+assume that the repository is cloned to: <code>~/NeonCore</code>.</p>
+<blockquote>
+<p><em>Note</em>: The <code>docker</code> directory includes required hidden files. If you copy files, make sure to include any hidden
+files. In must Ubuntu distros, you can toggle hidden file visibility in the file explorer with <code>CTRL</code> + <code>h</code>.</p>
+<p><em>Note</em>: If you run <code>docker</code> commands with <code>sudo</code>, make sure to use the <code>-E</code> flag to preserve runtime envvars.</p>
+<p><em>Note</em>: Some Docker implementations don't handle relative paths.
+If you encounter errors, try updating the paths in <code>.env</code> to absolute paths.
+Also note that any environment variables will override the default values in <code>.env</code>.
+In BASH shells, you can list all current envvars with <code>env</code></p>
+</blockquote>
+<p>You can start all core modules with:</p>
+<pre><code class="language-shell"># cd into the directory containing docker-compose.yml
+cd ~/NeonCore/docker
+docker-compose up -d
+</code></pre>
+<p>Stop all modules with:</p>
+<pre><code class="language-shell"># cd into the directory containing docker-compose.yml
+cd ~/NeonCore/docker
+docker-compose down
+</code></pre>
+<h3 id="optional-gui">Optional GUI</h3>
+<p>The Mycroft GUI is an optional component that can be run on Linux host systems.
+The GUI is available with instructions <a href="https://github.com/MycroftAI/mycroft-gui">on GitHub</a></p>
+<h2 id="c-interacting-with-neon">c. Interacting with Neon</h2>
+<p>With the containers running, you can interact with Neon by voice (i.e. "hey Neon, what time is it?"), or using one of 
+our CLI utilities, like <a href="https://pypi.org/project/neon-mana-utils/">mana</a> or the 
+<a href="https://pypi.org/project/neon-cli-client/">neon_cli_client</a>.
+You can view module logs via docker with:</p>
+<pre><code class="language-shell">docker logs -f neon-skills      # skills module
+docker logs -f neon-speech      # voice module (STT and WW)
+docker logs -f neon-audio       # audio module (TTS)
+docker logs -f neon-gui         # gui module (Optional)
+docker logs -f neon-messagebus  # messagebus module (includes signal manager)
+</code></pre>
+<h2 id="d-skill-development">d. Skill Development</h2>
+<p>By default, the skills container includes a set of default skills to provide base functionality.
+You can pass a local skill directory into the skills container to develop skills and have them
+reloaded in real-time for testing. Just set the environment variable <code>NEON_SKILLS_DIR</code> before starting
+the skills module. Dependency installation is handled on container start automatically.</p>
+<pre><code class="language-shell">export NEON_SKILLS_DIR=~/PycharmProjects/SKILLS
+cd ~/NeonCore/docker
+docker-compose up
+</code></pre>
+<p>To run the skills module without any bundled skills, the image referenced in <code>docker-compose.yml</code> can be changed from:</p>
+<pre><code class="language-yaml">  neon-skills:
+    container_name: neon-skills
+    image: ghcr.io/neongeckocom/neon_skills-default_skills:dev
+</code></pre>
+<p>to:</p>
+<pre><code class="language-yaml">  neon-skills:
+    container_name: neon-skills
+    image: ghcr.io/neongeckocom/neon_skills:dev
+</code></pre>
+<h2 id="e-persistent-data">e. Persistent Data</h2>
+<p>The <code>xdg/config</code> directory is mounted to each of the Neon containers as <code>XDG_CONFIG_HOME</code>.
+<code>xdg/config/neon/neon.yaml</code> can be modified to change core configuration values.
+<code>xdg/config/neon/skills</code> contains settings files for each loaded skill</p>
+<p>The <code>xdg/data</code> directory is mounted to each of the Neon containers as <code>XDG_DATA_HOME</code>.
+<code>xdg/data/neon/filesystem</code> contains skill filesystem files.
+<code>xdg/data/neon/resources</code> contains user skill resource files.</p>
+<p>The <code>xdg/cache</code> directory is mounted to each of the Neon containers as <code>XDG_CACHE_HOME</code>.
+Any cache information should be recreated as needed if manually removed and includes things like
+STT/TTS model files, TTS audio files, and other downloaded files.</p>
+<blockquote>
+<p><em>Note</em>: When Docker creates files on the host filesystem, they are owned by <code>root</code>.
+In order to modify anything in the <code>xdg</code> directory, you may need to take ownership with:
+<code>sudo chown -R $USER:$USER xdg</code></p>
+</blockquote>
+<h1 id="making-code-changes">Making Code Changes</h1>
+<p>After completing setup and testing, you are ready to begin making changes and creating skills. An example workflow for 
+making a change would be:</p>
+<ol>
+<li>Create or modify a skill</li>
+<li>Test changes in the Developer Environment (Look for errors in logs, unexpected behaviour, etc.)</li>
+<li>Run <code>Test Neon</code> to check that all skills and TTS/STT behave as expected</li>
+<li>Commit and Push changes to git (for collaborative development, it is often best to create a new branch for any changes)</li>
+<li>Install your updated skill in a User Environment (check for any missing dependencies, invalid file paths, etc.)</li>
+<li>Run complete tests using <code>Test Neon</code></li>
+<li>Check logs for any errors</li>
+</ol>
+<h2 id="a-system-overview">a. System Overview</h2>
+<p>There are two aspects of the Neon AI system: <code>core</code> and <code>skills</code>.</p>
+<p>The <code>core</code> is composed of several modules, but generally includes:
+  - <code>speech</code> for handling user inputs and performing speech-to-text (STT)
+  - <code>skills</code> for processing user input to find intent and provide a response
+  - <code>audio</code> for speaking the response generated in skills
+  - <code>bus</code> for handling all communications between modules
+  - <code>enclosure</code> for handling any hardware interactions like speakers, microphone, lights, and buttons</p>
+<p>Other modules may also be running for gui functionality, etc and may be added to provide new functionality.</p>
+<p><code>skills</code> provide the functionality of handling user inputs and generating responses or performing actions. </p>
+<h2 id="b-creating-a-skill">b. Creating a Skill</h2>
+<p>Check out our three part youtube series on how to create a skill:
+https://youtu.be/fxg25MaxIcE
+https://youtu.be/DVSroqv6E6k
+https://youtu.be/R_3Q-P3pk8o</p>
+<h2 id="additional-steps-for-developers-using-pycharm">Additional Steps for Developers Using PyCharm</h2>
+<ol>
+<li>Next you should update your IDE in your Developer Environment<blockquote>
+<p><em>Note</em>: This is PyCharm if you followed our setup guide.</p>
+</blockquote>
+</li>
+<li>In PyCharm, select <code>VCS</code> from the menu bar, and then <code>Update Project</code>
+    &gt; <img alt="NewRelease" src="https://0000.us/klatchat/app/files/neon_images/neon_release_screens/NewRelease4.png" /></li>
+<li>You will be prompted to <code>Update Project</code>, you may leave the default settings and click <code>OK</code>
+    &gt; <img alt="NewRelease" src="https://0000.us/klatchat/app/files/neon_images/neon_release_screens/NewRelease5.png" /></li>
+</ol>
+<h1 id="running-docker-modules">Running Docker Modules</h1>
+<p>Skills Service</p>
+<pre><code class="language-shell">docker run -d \
+--name=neon_skills \
+--network=host \
+-v ~/.config/pulse/cookie:/tmp/pulse_cookie:ro \
+-v ${XDG_RUNTIME_DIR}/pulse:${XDG_RUNTIME_DIR}/pulse:ro \
+--device=/dev/snd:/dev/snd \
+-e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
+-e PULSE_COOKIE=/tmp/pulse_cookie \
+neon_skills
+</code></pre>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Voice User Interfaces for PHAL Plugins - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="./" class="active">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="creating-voice-user-interfaces-for-phal-plugins">Creating Voice User Interfaces for PHAL Plugins</h1>
+<p>Neon's enclosure module implements the Platform and Hardware Abstraction Layer (PHAL) from <a href="https://github.com/OpenVoiceOS/ovos-PHAL">OpenVoiceOS</a>. This service loads PHAL plugins that provide different functionality to the core; plugins primarily differ from skills in that they do not have any intents and that they may only be valid in certain core environments (i.e. only for particular hardware or operating system environments).</p>
+<p>In order to implement a Voice User Interface (VUI) and provide intents to PHAL plugins, a separate skill must be created that integrates with the Message Bus events the PHAL plugin implements.</p>
+<h2 id="planning">Planning</h2>
+<p>PHAL plugins will have already implemented many Message Bus events and sometimes a GUI. In many ways this makes the developer's job simpler for the VUI, but planning ahead is still beneficial.</p>
+<p>Ask yourself:</p>
+<ol>
+<li>Which events are worth adding to the VUI?</li>
+<li>Take note of these specific events in a file with your skill</li>
+<li>Example: <code>ovos.phal.plugin.homeassistant.call.supported.function</code> or <code>ovos-PHAL-plugin-homeassistant.close</code></li>
+<li>Are there aspects of the GUI (if one exists) that could/should be voice controlled?</li>
+<li>Is there new functionality that a VUI could contribute? Sometimes a PHAL plugin is created without thinking about how a VUI might work.</li>
+<li>If so, the PHAL plugin will need a pull request to add the functionality.</li>
+</ol>
+<p>Start designing the VUI per <a href="../introduction/your-first-skill.md">this documentation</a>.</p>
+<h2 id="implementing-message-bus-events">Implementing message bus events</h2>
+<p>Once you have a list of events to implement and a VUI design it's time to start implementing them in your skill. VUIs are just like any other skill but must take advantage of the message bus. They will only handle intents, localization, and emitting/receiving messages from the bus.</p>
+<p>For illustration purposes, we will use the <code>ovos.phal.plugin.homeassistant.call.supported.function</code> event from <a href="https://github.com/OpenVoiceOS/ovos-PHAL-plugin-homeassistant/blob/dev/ovos_PHAL_plugin_homeassistant/__init__.py#L63">ovos-PHAL-plugin-homeassistant</a>.</p>
+<p>Looking at the PHAL plugin, when this event is received, it calls <code>self.handle_call_supported_function()</code>.</p>
+<pre><code class="language-python">self.bus.on(&quot;ovos.phal.plugin.homeassistant.call.supported.function&quot;,
+            self.handle_call_supported_function)
+</code></pre>
+<p>This <code>bus.on()</code> method tells the plugin that when the event in the first parameter is received, execute the method in the second parameter. This is important to understand not just for reading from the PHAL plugin but also to use later in the VUI.</p>
+<p>The plugin handler method looks like this:</p>
+<pre><code class="language-python">def handle_call_supported_function(self, message):
+    &quot;&quot;&quot; Handle the call supported function message
+
+    Args:
+        message (Message): The message object
+    &quot;&quot;&quot;
+    device_id = message.data.get(&quot;device_id&quot;, None)
+    function_name = message.data.get(&quot;function_name&quot;, None)
+    function_args = message.data.get(&quot;function_args&quot;, None)
+    if device_id is not None and function_name is not None:
+        for device in self.registered_devices:
+            if device.device_id == device_id:
+                if function_args is not None:
+                    response = device.call_function(
+                        function_name, function_args)
+                else:
+                    response = device.call_function(function_name)
+                self.bus.emit(message.response(data=response))
+                return
+    else:
+        LOG.error(&quot;Device id or function name not provided&quot;)
+</code></pre>
+<p>We can see that the message should have a data section something like this:</p>
+<pre><code class="language-python">{
+    &quot;data&quot;: {
+        &quot;device_id&quot;: &quot;&quot;,
+        &quot;function_name&quot;: &quot;&quot;,
+        &quot;function_args&quot;: &quot;&quot;
+    },
+    ...
+}
+</code></pre>
+<p>That means that our VUI must implement an intent handler that gathers that information and passes it to the message bus, like so:</p>
+<pre><code class="language-python">@intent_handler(&quot;lights.set.brightness.intent&quot;)
+def handle_set_brightness_intent(self, message: Message):
+    device, device_id = self._get_device_from_message(message)
+    if device and device_id:  # If the intent doesn't understand the device, you'll get a device_id but no device
+        brightness = message.data.get(&quot;brightness&quot;)
+        call_data = {
+            &quot;device_id&quot;: device_id,
+            &quot;function_name&quot;: &quot;turn_on&quot;,
+            &quot;function_args&quot;: {&quot;brightness&quot;: self._get_ha_value_from_percentage_brightness(brightness)},
+        }
+        LOG.info(call_data)
+        self.bus.emit(
+            Message(&quot;ovos.phal.plugin.homeassistant.call.supported.function&quot;, call_data, message.context)
+        )
+        self.speak_dialog(&quot;acknowledge&quot;)
+    else:
+        self.speak_dialog(&quot;device.not.found&quot;, data={&quot;device&quot;: device})
+</code></pre>
+<p>The key portion here is <code>self.bus.emit()</code>. This method expects the following parameters:</p>
+<ol>
+<li>The name of the event</li>
+<li>The data portion of the event. Whatever you pass in here will be the value of the <code>data</code> key in the event dictionary</li>
+<li>The context. Usually optional, but depending on the complexity of your skill, it may be essential to know</li>
+</ol>
+<h2 id="avoiding-race-conditions">Avoiding race conditions</h2>
+<p>When developing the VUI, it's important to avoid any race conditions with the PHAL plugin. In most cases this won't be an issue, but sometimes you will want to only perform certain initialization features once you know the PHAL plugin is ready, or even load the plugin in a thread from the VUI if it's not loaded in the Neon system.</p>
+<p><a href="https://github.com/OpenVoiceOS/ovos-ocp-audio-plugin/blob/dev/ovos_plugin_common_play/__init__.py#L38">The OCP plugin implements a ping-pong pattern</a> to wait for both sides of the service to be ready. Something similar could be implemented in your own VUI.</p>
+<h2 id="need-more-help">Need more help?</h2>
+<p>If something isn't working as expected, please join us in the <a href="https://matrix.to/#/#NeonMycroft:matrix.org">Neon Chat</a>.</p>
+<p>It's also really helpful for us if you add an issue to our <a href="https://github.com/NeonGeckoCom/neon-docs/issues">documentation repo</a>. This means we can make sure it gets covered for all developers in the future.</p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

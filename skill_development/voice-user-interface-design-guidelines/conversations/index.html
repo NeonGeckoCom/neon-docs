@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Conversations - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="./" class="active">Conversations</a>
+</li>
+
+<li>
+<a href="../error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="conversations">Conversations</h1>
+<p>Any time the user needs to input a lot of information or the user needs to sort through a variety of options a conversation will be needed. Users may be used to systems that require them to separate input into different chunks. For example, many personal navigation devices (GPS units) require users to input the street number, street name, city, and state separately, like this:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Speaker</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Navigation Device</strong></td>
+<td style="text-align: left;"><em>What is the street number</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>123</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Navigation Device</strong></td>
+<td style="text-align: left;"><em>What is the street name</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Main Street</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Navigation Device</strong></td>
+<td style="text-align: left;"><em>What is the city</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Springfield</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Navigation Device</strong></td>
+<td style="text-align: left;"><em>Oregon</em></td>
+</tr>
+</tbody>
+</table>
+<p>This was a limitation of the technology, both the STT and intent parser were not capable of handling an entire address. With Neon you do not need to separate the address into multiple inputs. It’s also easy to think like a traditional GUI and translate what are typically separate fields into prompts for the user, but that will only slow down the interaction.</p>
+<p>The best solution is to allow the user to input information both ways, all at once, or in pieces. For example the Neon Alarm skill allows the user to set a complicated alarm all in one go, or in steps.</p>
+<p><strong>In Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Speaker</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Hey Neon, set a recurring alarm</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>For what day?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>weekdays</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>For what time?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>7 am</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;">I've set a recurring Alarm for 7 am on weekdays</td>
+</tr>
+</tbody>
+</table>
+<p><strong>All at once:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Speaker</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;">Hey Neon, set a recurring alarm for weekdays at 7 am</td>
+</tr>
+<tr>
+<td style="text-align: left;">Neon</td>
+<td style="text-align: left;">I've set a recurring Alarm for 7 am on weekdays</td>
+</tr>
+</tbody>
+</table>
+<h2 id="context">Context</h2>
+<p>Conversational context is a given when speaking to another person, but not always when interacting with a computer based system. Many skills are designed with only a quick back and forth interaction in mind, and can operate well without conversational context, but conversational context can be a powerful addition to a skill and can make the interaction much more life like. Here are some examples of how to use context in conversation.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Speaker</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>Who is Shaquille O'Neal</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>Shaquille O'Neal is an American former professional basketball player who is a sports analyst on the television program Inside the NBA on TNT. He is considered one of the greatest players in National Basketball Association history</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>How tall is he?</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>seven foot 1 inches tall</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User</strong></td>
+<td style="text-align: left;"><em>when did he retire</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Neon</strong></td>
+<td style="text-align: left;"><em>2011</em></td>
+</tr>
+</tbody>
+</table>
+<p>To learn more about the technical aspects of Conversational Context, <a href="../../user-interaction/conversational-context/">see the Conversational Context doc page</a>.</p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

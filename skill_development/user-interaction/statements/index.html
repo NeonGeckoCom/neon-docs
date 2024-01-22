@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Statements - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="./" class="active">Statements</a>
+</li>
+
+<li>
+<a href="../prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="statements">Statements</h1>
+<p><strong>Note:</strong> The links to the various NeonSkill methods in this documentation point to the <code>mycroft-core</code> documentation. There is no material difference between them for the methods referenced and, since there is not publicly available <code>neon_core</code> documentation, we will reference <code>mycroft-core</code> instead.</p>
+<h2 id="speaking-a-statement">Speaking a statement</h2>
+<p>One of Neon's most important core capabilities is to convert text to speech, that is, to speak a statement.</p>
+<p>Within a Skill's Intent handler, you may pass a string of text to Neon and Neon will speak it. For example: <a href="https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.speak"><code>self.speak('this is my statement')</code></a> That's cool and fun to experiment with, but passing strings of text to Neon doesn't help to make Neon a multilingual product. Rather than hard-coded strings of text, Neon has a design pattern for multilingualism.</p>
+<h3 id="multilingualism">Multilingualism</h3>
+<p>To support multilingualism, the text that Neon speaks must come from a file. That file is called a dialog file. The dialog file contains statements (lines of text) that a listener in a particular language would consider to be equivalent. For instance, in USA English, the statements "I am okay" and "I am fine" are equivalent, and both of these statements might appear in a dialog file used for responding to the USA English question: "How are you?".</p>
+<p>By convention, the dialog filename is historically formed by <em>dot connected</em> <em>words</em> and must end with ".dialog". The dialog filename should be descriptive of the contents as a whole. Sometimes, the filename describes the question being answered, and other times, the filename describes the answer itself. For the example above, the dialog filename might be: <strong>how.are.you.dialog</strong> or <strong>i.am.fine.dialog</strong>.</p>
+<p>Newer skills may use <em>underscore connected</em> <em>words</em> ending with ".dialog". For example. <strong>how_are_you.dialog</strong> or <strong>i_am_fine.dialog</strong>. The older convention is still supported, but the newer convention is preferred.</p>
+<p>Multilingualism is accomplished by translating the dialog files into other languages, and storing them in their own directory named for the country and language. The filenames remain the same. Using the same filenames in separate language dependent directories allows the Skills to be language agnostic; no hard-coded text strings. Adjust the language setting for your Device **** and Neon uses the corresponding set of dialog files. If the desired file does not exist in the directory for that language, Neon will use the file from the USA English directory.</p>
+<p>As an example of the concept, the contents of <strong>how.are.you.dialog</strong> in the directory for the French language in France (fr-fr) might include the statement: "Je vais bien".</p>
+<h3 id="the-tomato-skill-revisited">The Tomato Skill Revisited</h3>
+<p>To demonstrate the multilingualism design pattern, we examine the usage of the <a href="https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.speak_dialog"><code>speak_dialog()</code></a> method in the <a href="../intents/padatious-intents/">Tomato Skill</a> .</p>
+<p>The Tomato Skill has two Intents: one demonstrates simple, straightforward statements, and the other demonstrates the use of variables within a statement.</p>
+<h3 id="simple-statement">Simple statement</h3>
+<p>The first Intent within the Tomato Skill, <strong>what.is.a.tomato.intent</strong>, handles inquiries about tomatoes, and the dialog file, <strong>tomato.description.dialog</strong>, provides the statements for Neon to speak in reply to that inquiry.</p>
+<p>Sample contents of the Intent and dialog files:</p>
+<details>
+  <summary>what.is.a.tomato.intent</summary>
+
+
+<pre><code>what is a tomato
+what would you say a tomato is
+describe a tomato
+what defines a tomato
+</code></pre>
+
+
+</details>
+
+<summary>tomato.description.dialog</summary>
+
+<pre><code>The tomato is a fruit of the nightshade family
+A tomato is an edible berry of the plant Solanum lycopersicum
+A tomato is a fruit but nutrionists consider it a vegetable
+</code></pre>
+</details>
+<p>Observe the statements in the tomato.description.dialog file. They are all acceptable answers to the question: "What is a tomato?" Providing more than one statement in a dialog file is one way to make Neon to seem less robotic, more natural. Neon will randomly select one of the statements.</p>
+<p>The Tomato Skill code snippet:</p>
+<pre><code class="language-python">@intent_handler('what.is.a.tomato.intent')
+def handle_what_is(self, message):
+    &quot;&quot;&quot;Speaks a statement from the dialog file.&quot;&quot;&quot;
+    self.speak_dialog('tomato.description')
+</code></pre>
+<p>With the Tomato Skill installed, if the User utters **** "Hey Neon, what is a tomato?", the Intent handler method <code>handle_what_is()</code> will be called.</p>
+<p>Inside <code>handle_what_is()</code>, we find: <code>self.speak_dialog('tomato.description')</code></p>
+<p>As you can probably guess, the parameter <code>'tomato.description'</code> is the dialog filename without the ".dialog" extension. Calling this method opens the dialog file, selects one of the statements, and converts that text to speech. Neon will speak a statement from the dialog file. In this example, Neon might say "The tomato is a fruit of the nightshade family".</p>
+<p>Remember, Neon has a language setting that determines from which directory to find the dialog file.</p>
+<h4 id="file-locations">File locations</h4>
+<p>The <a href="../skill-structure/">Skill Structure</a> section describes where to place the Intent file and dialog file. Basically, you put both files in <code>locale/en-us</code>. Other structures are deprecated.</p>
+<h3 id="statements-with-variables">Statements with variables</h3>
+<p>The second Padatious Intent, <strong>do.you.like.intent</strong>, demonstrates the use of variables in the Intent file and in one of the dialog files:</p>
+<details>
+  <summary>do.you.like.intent</summary>
+
+
+<pre><code class="language-text">do you like tomatoes
+do you like {type} tomatoes
+</code></pre>
+
+
+</details>
+
+<summary>like.tomato.type.dialog</summary>
+
+<pre><code class="language-text">I do like {type} tomatoes
+{type} tomatoes are my favorite
+</code></pre>
+</details>
+<summary>like.tomato.generic.dialog</summary>
+
+<pre><code class="language-text">I do like tomatoes
+tomatoes are my favorite
+</code></pre>
+</details>
+<p>Compare these two dialog files. The <strong>like.tomato.generic.dialog</strong> file contains only simple statements. The statements in the <strong>like.tomato.type.dialog</strong> file include a variable named <code>type</code>. The variable is a placeholder in the statement specifying where text may be inserted. The <code>speak_dialog()</code> method accepts a dictionary as an optional parameter. If that dictionary contains an entry for a variable named in the statement, then the value from the dictionary will be inserted at the placeholder's location.</p>
+<p>Dialog file variables are formed by surrounding the variable's name with curly braces. In Neon parlance, curly braces are known as a <em>mustache</em>.</p>
+<p>For multi-line dialog files, be sure to include the <strong>same</strong> variable on <strong>all</strong> lines.</p>
+<p>The Tomato Skill code snippet:</p>
+<pre><code class="language-python"> @intent_handler('do.you.like.intent')
+    def handle_do_you_like(self, message):
+        tomato_type = message.data.get('type')
+        if tomato_type is not None:
+            self.speak_dialog('like.tomato.type',
+                              {'type': tomato_type})
+        else:
+            self.speak_dialog('like.tomato.generic')
+</code></pre>
+<p>When the User utters "Hey Neon, do you like RED tomatoes?", the second of the two Intent lines "do you like {type} tomatoes" is recognized by Neon, and the value 'RED' is returned in the message dictionary assigned to the 'type' entry when <code>handle_do_you_like()</code> is called.</p>
+<p>The line <code>tomato_type = message.data.get('type')</code> extracts the value from the dictionary for the entry 'type'. In this case, the variable <code>tomato_type</code> will receive the value 'RED', and <code>speak_dialog()</code>will be called with the 'like.tomato.type' dialog file, and a dictionary with 'RED' assigned to 'type'. The statement "i do like {type} tomatoes" might be randomly selected, and after insertion of the value 'RED' for the placeholder variable {type}, Neon would say: "I do like RED tomatoes".</p>
+<p>Should the User utter "Hey Neon, do you like tomatoes?", the first line in the Intent file "do you like tomatoes" is recognized. There is no variable in this line, and when <code>handle_do_you_like()</code> is called, the dictionary in the message is empty. This means <code>tomato_type</code> is <code>None</code>,<code>speak_dialog('like.tomato.generic')</code> would be called, and Neon might reply with "Yes, I do like tomatoes".</p>
+<h2 id="waiting-for-speech">Waiting for speech</h2>
+<p>By default, the <code>speak_dialog()</code> method is non-blocking. That is any code following the call to <code>speak_dialog()</code> will execute whilst Neon is talking. This is useful to allow your Skill to perform actions while it is speaking.</p>
+<p>Rather than telling the User that we are fetching some data, then going out to fetch it, we can do the two things simultaneously providing a better experience.</p>
+<p>However there are times when we need to wait until the statement has been spoken before doing something else. We have two options for this.</p>
+<h3 id="wait-parameter">Wait Parameter</h3>
+<p>We can pass a <code>wait=True</code> parameter to our <code>speak_dialog()</code> method. This makes the method blocking and no other code will execute until the statement has been spoken.</p>
+<pre><code class="language-python">@intent_handler('what.is.a.tomato.intent')
+def handle_what_is(self, message):
+    &quot;&quot;&quot;Speaks a statement from the dialog file.
+       Waits (i.e. blocks) within speak_dialog() until
+       the speaking has completed. &quot;&quot;&quot;
+    self.speak_dialog('tomato.description', wait=True)
+    self.log.info(&quot;I waited for you&quot;)
+</code></pre>
+<h3 id="wait_while_speaking">wait_while_speaking</h3>
+<p>The <a href="https://mycroft-core.readthedocs.io/en/latest/source/mycroft.audio.html#mycroft.audio.wait_while_speaking"><code>neon_core.audio.wait_while_speaking()</code></a> method allows us to execute some code, then wait for Neon to finish speaking.</p>
+<pre><code class="language-python">@intent_handler('what.is.a.tomato.intent')
+def handle_what_is(self, message):
+    &quot;&quot;&quot;Speaks a statement from the dialog file.
+       Returns from speak_dialog() before the
+       speaking has completed, and logs some info.
+       Then it, waits for the speech to complete. &quot;&quot;&quot;
+    self.speak_dialog('tomato.description')
+    self.log.info(&quot;I am executed immediately&quot;)
+    wait_while_speaking()
+    self.log.info(&quot;But I waited for you&quot;)
+</code></pre>
+<p>Here we have executed one line of code immediately. Our Skill will then wait for the statement from <code>i.do.like.dialog</code> to be spoken before executing the final line of code.</p>
+<h2 id="using-translatable-resources">Using translatable resources</h2>
+<p>There may be a situation where the dialog file and the <code>speak_dialog()</code> method do not give the Skill enough flexibility. For instance, there may be a need to manipulate the statement from the dialog file before having it spoken by Neon.</p>
+<p>The NeonSkill class provides four multilingual methods to address these needs. Each method uses a file, and multilingualism is accomplished using the country/language directory system.</p>
+<p>The <a href="https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.translate"><code>translate()</code></a> method returns a random string from a ".dialog" file (modified by a data dictionary).</p>
+<p>The <a href="https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.translate_list"><code>translate_list()</code></a> method returns a list of strings from a ".list" file (each modified by the data dictionary). Same as translate_template() just with a different file extension.</p>
+<p>The <a href="https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.translate_namedvalue"><code>translate_namedvalue()</code></a> method returns a dictionary formed from CSV entries in a ".value" file.</p>
+<p>The <a href="https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.translate_template"><code>translate_template()</code></a> method returns a list of strings from a ".template" file (each modified by the data dictionary). Same as translate_list() just with a different file extension.</p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Installing Skills - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet">
+<link href="../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="./" class="active">Installing Skills</a>
+</li>
+
+<li>
+<a href="../installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../skill_development/development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill_development/skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../skill_development/development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../skill_development/language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../skill_development/user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../skill_development/displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill_development/skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="installing-skills">Installing Skills</h1>
+<p>Most distributions of Neon Core will include some installed skills. It is recommended
+to specify additional skills as <a href="#configuring-extra-skills">described below</a>, or
+you can manually install a skill like any other Python package 
+(i.e. <code>pip install &lt;skill-reference&gt;</code>).</p>
+<blockquote>
+<p><a href="https://openvoiceos.github.io/community-docs/osm/">OVOS Skills Manager</a> (OSM) 
+was previously recommended here but support has been deprecated. Please use
+the methods outlined in this document and update any skills as necessary to
+support installation.</p>
+</blockquote>
+<h2 id="default-neon-skills">Default Neon Skills</h2>
+<p>Many <a href="https://github.com/NeonGeckoCom/neon_skills">Neon skills</a> are included by
+default and all of them should be installable via <code>pip</code>. Many of the skills can
+be installed <a href="https://pypi.org/search/?q=neon-skill">from PyPI</a> (i.e. <code>pip install
+neon-skill-translation</code>), and any containing <code>setup.py</code> can be installed from git
+(i.e. <code>pip install git+https://github.com/NeonGeckoCom/skill-translation</code>).</p>
+<h2 id="configuring-extra-skills">Configuring Extra Skills</h2>
+<p>The recommended method for adding non-default skills is to add them to your
+configuration. This will ensure that skills are updated and that they are 
+re-installed after system updates. Extra skills can be added to configuration:</p>
+<pre><code class="language-yaml">skills:
+  default_skills:
+    - git+https://github.com/NeonGeckoCom/skill-translation
+    - neon-skill-translation~=1.0 
+</code></pre>
+<blockquote>
+<p>Note that the skills here are <a href="https://packaging.python.org/en/latest/">Python packages</a>.
+This is the same kind of string you would pass to 
+<a href="https://pip.pypa.io/en/stable/cli/pip_install/"><code>pip install</code></a>, including any (optional)
+version specs.</p>
+</blockquote>
+<h2 id="installing-skills-from-github">Installing Skills from GitHub</h2>
+<blockquote>
+<p>OSM installation is documented here, but not recommended. Skills should be 
+updated to use pip installation, as described above.</p>
+</blockquote>
+<p>There are many community skills published to GitHub that may be searched for and
+installed using <a href="https://github.com/openvoiceos/ovos_skill_manager">OSM</a>. Hints
+are available from the CLI via <code>osm --help</code> or <code>osm install --help</code>. Beware that
+not all skills are tested and skills installed from GitHub may not work, may be
+malicious, or may no longer be maintained. The <a href="#other-skill-indices">skill lists below</a>
+have generally been evaluated to some degree, but still be careful about running
+any code from the internet.</p>
+<h3 id="other-considerations">Other Considerations</h3>
+<p>Skill installation from git has the possibility of breaking Python dependencies.
+If you run into trouble after installing a skill, you may want to perform a
+factory reset to get back to a set of working Python packages.</p>
+<h2 id="locating-installed-skills">Locating Installed Skills</h2>
+<p>Skills are generally installed to one of two locations, depending on whether they
+were installed as Python packages or cloned from Git.</p>
+<h3 id="python-packages">Python Packages</h3>
+<p>For Python packaged skills, a skill is installed like any other Python package.
+You can find a list of all installed python packages with <code>pip list</code> and <em>most</em>
+skills should be listed with <code>pip list | grep skill</code> but it is up to a skill's
+author to choose a package name, so this is not guaranteed to list all skills. </p>
+<h3 id="git-cloned-skills-deprecated">Git Cloned Skills (Deprecated)</h3>
+<p>For skills installed from Git (usually using OSM), the default install location
+is <code>~/.local/share/neon/skills</code>, but this may be configured in <code>neon.yaml</code> to
+any location. More detailed configuration documentation is available 
+<a href="https://openvoiceos.github.io/community-docs/config/">in the OVOS Docs</a>.</p>
+<h2 id="other-skill-indices">Other Skill Indices</h2>
+<h3 id="openvoiceos-organization">OpenVoiceOS Organization</h3>
+<p>There are several skills in the <a href="https://github.com/OpenVoiceOS?q=skill-ovos&amp;type=all&amp;language=&amp;sort=">OpenVoiceOS organization</a>
+that may be installed.</p>
+<h3 id="mycroft-marketplace">Mycroft Marketplace</h3>
+<p>There are also skills in the <a href="https://github.com/MycroftAI/mycroft-skills">Mycroft Marketplace</a>
+(note that there are more open Pull Requests there too).</p>
+<h3 id="andlos-list">Andlo's List</h3>
+<p>There is a list of Mycroft skills maintained by community member
+<a href="https://github.com/andlo/mycroft-skills-list-gitbook/tree/master/skills">andlo on GitHub</a>. Many of these will need to be updated for installation
+support.</p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

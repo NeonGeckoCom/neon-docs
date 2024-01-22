@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Using nice date and time functions for your language - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="./" class="active">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="configuring-some-of-the-nice-functions-for-a-language">Configuring some of the “nice” functions for a language</h1>
+<p>The following functions are used to convert a Python datetime to a pronounceable string for a given language. They are available from the <a href="https://github.com/OpenVoiceOS/ovos-lingua-franca/">lingua-franca</a> library. If you have an older skill that uses the Mycroft core library functions, please consider converting them to use lingua-franca instead, although backwards compatibility will remain for several versions.</p>
+<ul>
+<li><code>nice_date(dt, lang='en-us', now=None)</code></li>
+<li><code>nice_date_time(dt, lang='en-us', now=None, use_24hour=False, use_ampm=False)</code></li>
+<li><code>nice_year(dt, lang='en-us', bc=False)</code></li>
+</ul>
+<p>Adding a new language and unit testing it can be added using configuration only.</p>
+<p>This page describe how to add a new language, or change configuration for an existing language. Unit testing is covered as well.</p>
+<h2 id="configuration-files-in-the-file-system">Configuration files in the file system</h2>
+<p>Each language has a configuration file and a unit test file. The configuration files are written in json. The configurations are:</p>
+<ul>
+<li><code>mycroft/res/text//date_time.json</code></li>
+<li><code>mycroft/res/text//date_time_test.json</code></li>
+</ul>
+<p>For example: <code>mycroft/res/text/en-us/date_time.json</code></p>
+<p>The <code>mycroft.util.nice_time()</code> function is not configurable using the approach described in this document (historical reasons). The <code>nice_date_and_time()</code> depends on <code>nice_time()</code>, which must be able to support the selected language, if you want nice results from <code>nice_date_time()</code>. Without support for a language in <code>nice_time()</code>, <code>nice_date_and_time(</code>) will still return a string, but the time part not be appropriate for your language.</p>
+<h2 id="the-configuration-file">The configuration file</h2>
+<p>The section <a href="# Configuration file for en-us">Configuration file for en-us</a> contains an example configuration file. The configuration file contains several main sections, some of which contain maps from numbers to words to be spoken, others containing the format template to use when the pronounceable string is created.</p>
+<p>The template sections are:</p>
+<ol>
+<li>decade_format</li>
+<li>hundreds_format</li>
+<li>thousands_format</li>
+<li>year_format</li>
+<li>date_format</li>
+<li>date_time_format</li>
+</ol>
+<p>The map sections are:</p>
+<ul>
+<li>weekday</li>
+<li>date</li>
+<li>month</li>
+<li>number</li>
+</ul>
+<p>The format templates operate on a number of components, like a <code>{formatted_year}</code>. The components are substituted by a value calculated by the <code>nice_*()</code> function. In general, a format created by a template at the top of the list above, can be used in a template lower on the list. The exact possibilities are described later in this document.</p>
+<h3 id="the-building-blocks">The building blocks</h3>
+<p>Before the template sections are considered, the input year is decomposed into components, and each component is translated to a word using the number map. The components can then be used in the template sections. The building of the basic components are not configurable, and it is typically not necessary to map all components.</p>
+<p>A list of basic components with examples for year 1969 in en-us are shown below:</p>
+<ul>
+<li>{x} example: 'nine'</li>
+<li>{xx} example: '69' (fall back to number since the map does not contain '69')</li>
+<li>{x0} example: 'sixty'</li>
+<li>{x_in_x0} example: 'six'</li>
+<li>{xxx} example: '969' (fall back to number since the map does not contain '969')</li>
+<li>{x00} example: '969' (fall back to number since the map does not contain '900')</li>
+<li>{x_in_x00} example: 'one'</li>
+<li>{xx00} example: '1969' (fall back number since the map does not contain '1900')</li>
+<li>{xx_in_xx00} example: 'nineteen'</li>
+<li>{x000} example: '1969' (fall back number since the map does not contain '1000')</li>
+<li>{x_in_x000} example: 'one'</li>
+<li>{number} example: '1969' (can be used for fall back by templates, if no other patterns match)</li>
+</ul>
+<p>When we look at the list above, it is possible to create 'nineteen sixty nine' if we choose the correct components. That process happens in the templates.</p>
+<p>The <code>decade_format</code>, <code>hundreds_format</code> and <code>thousand_format</code> templates create new components, that can be used by the other templates. And so, those new component are configurable. The <code>year_format</code> template can assemble decades, hundreds and thousands. The <code>date_format</code> will assemble the year_format and dates.</p>
+<p>The best practice is to limit the <code>decade_format</code> to only produce words for the numbers 0 to 99. Consider the decade format as numbers used for years before year 100. For <code>en-us</code> the <code>decade_format</code> produces 'seventeen' for 17, and 'four' for 4.</p>
+<p>Limit the <code>hundreds_format</code> to only produce words for 100, 200,,,900, i.e. do not include decades in the hundreds. Consider the hundreds format as numbers for centuries before year 1000. For <code>en-us</code> the <code>hundreds_format</code> produces 'five hundred' for 524.</p>
+<p>The <code>thousands_format</code> should produce words for thousands, and if needed in your language, hundreds above 999. Consider the <code>thousands_format</code> as numbers for millennium and optionally centuries above 999, and below 10.000. For en-us the <code>thousands_format</code> produces 'nineteen hundred' for 1969, and 'two thousand' for 2018.</p>
+<p>The <code>decade_format</code>, <code>hundreds_format</code>, <code>thousands_format</code> and the <code>year_format</code> are using indexed lists and regular expressions to do their task. Each list entry contains a regular expression to match, and a format to apply. The lists are searched from beginning (index 1) to end. The first match is used, if any. The lists are read from a <code>json</code> configuration file, and must start with index 1, and the increment must be 1.</p>
+<h4 id="the-decade_format">The decade_format</h4>
+<p>The decade format will work on the two rightmost digits of the year. For <code>en-us</code> it looks like this:</p>
+<pre><code class="language-json">&quot;decade_format&quot;: {
+&quot;1&quot;: {&quot;match&quot;: &quot;^\\d$&quot;, &quot;format&quot;: &quot;{x}&quot;},
+&quot;2&quot;: {&quot;match&quot;: &quot;^1\\d$&quot;, &quot;format&quot;: &quot;{xx}&quot;},
+&quot;3&quot;: {&quot;match&quot;: &quot;^\\d0$&quot;, &quot;format&quot;: &quot;{x0}&quot;},
+&quot;4&quot;: {&quot;match&quot;: &quot;^[2-9]\\d$&quot;, &quot;format&quot;: &quot;{x0} {x}&quot;},
+&quot;default&quot;: &quot;{number}&quot;
+}
+</code></pre>
+<p>The format consists of a list of four templates, and a default fall back template. The two rightmost digits of the year are converted to a string, and then matched to the value of the 'match' keyword above, starting from index 1. For instance, the first list entry match <code>^\d$</code>, which is a single digit. The second list entry are for numbers between 10 and 19, the third matches multiples of ten, the fourth is for the rest, the 'default' entry will never be used. The double <code>\\</code> in the <code>json</code> file is used because it acts as an escape character.</p>
+<p>Let's use 1969 as an example with language en-us:</p>
+<p>The string '1969' is used, and the first match is index 4: <code>^[2-9]d</code>. The components <code>{x0}</code> is <code>'sixty'</code> and <code>{x}</code> is <code>{nine}</code>, the end result is <code>'sixty nine'</code>. If the string had been 1910, the second list entry would have been used, since that would be the first match, even if the third entry also match '10'.</p>
+<p>In some languages, for instance Danish, the order of ones and tens is reversed, so 69 is pronounced 'ni og tres' (nine and sixty). The list entry for Danish would be:</p>
+<p><code>"4": {"match": "^[2-9]\\d$", "format": "{x} og {x0}"}</code></p>
+<p>The result of the decade format is <code>{formatted_decade}</code>, that can be used as a component in other formats.</p>
+<h5 id="components-in-the-decade-format">Components in the decade format</h5>
+<p>The following components can be used in the decade format:</p>
+<ul>
+<li>{x}</li>
+<li>{xx}</li>
+<li>{x0}</li>
+<li>{x_in_x0}</li>
+<li>{number}</li>
+</ul>
+<h3 id="the-hundreds-format">The hundreds format</h3>
+<p>The hundreds format will work on the three rightmost digits of the year. For <code>en-us</code> it looks like this:</p>
+<pre><code class="language-json">&quot;hundreds_format&quot;: {
+&quot;1&quot;: {&quot;match&quot;: &quot;^\\d{3}$&quot;, &quot;format&quot;: &quot;{x_in_x00} hundred&quot;},
+&quot;default&quot;: &quot;{number}&quot;
+}
+</code></pre>
+<p>Lets use 1969 as an example with language en-us:</p>
+<p>The string '969' is used, and matches the first (and only) list entry. <code>{x_in_x00}</code> is nine, so the end result is <code>'nine hundred'</code>.</p>
+<p>The result of the hundreds format is <code>{formatted_hundreds}</code>, that can be used as a component in other formats.</p>
+<p>In the hundreds format, we are only interested in how to pronounce the first digit of the hundreds, we use the <code>year_format</code> to put together the decade, hundreds and thousand formats laster.</p>
+<h4 id="components-in-the-hundreds-format">Components in the hundreds format</h4>
+<p>The following components can be used in the hundreds format:</p>
+<ul>
+<li>{xxx}</li>
+<li>{x00}</li>
+<li>{x_in_x00}</li>
+<li>{formatted_decade}</li>
+<li>{number}</li>
+</ul>
+<p>Even if <code>{formatted_decade}</code> can be used as a component in hundreds, it is usually easier to configure, test and read if it is not used. Instead use the <code>year_format</code> to put hundreds and decades together.</p>
+<h3 id="the-thousands_format">The thousands_format</h3>
+<p>The thousand format will work on the four rightmost digits of the year. For <code>en-us</code> it looks like this:</p>
+<pre><code class="language-json">&quot;thousand_format&quot;: {
+    &quot;1&quot;: {&quot;match&quot;: &quot;^\\d00\\d$&quot;, &quot;format&quot;: &quot;{x_in_x000} thousand&quot;},
+    &quot;2&quot;: {&quot;match&quot;: &quot;^1\\d00$&quot;, &quot;format&quot;: &quot;{xx_in_xx00} hundred&quot;},
+    &quot;3&quot;: {&quot;match&quot;: &quot;^\\d{2}00$&quot;, &quot;format&quot;: &quot;{x0_in_x000} {x_in_x00} hundred&quot;},
+    &quot;4&quot;: {&quot;match&quot;: &quot;^(1\\d{3})|(\\d0\\d{2})$&quot;, &quot;format&quot;: &quot;{xx_in_xx00}&quot;},
+    &quot;5&quot;: {&quot;match&quot;: &quot;^\\d{4}$&quot;, &quot;format&quot;: &quot;{x0_in_x000} {x_in_x00}&quot;},
+    &quot;default&quot;: &quot;{number}&quot;
+}
+</code></pre>
+<p>The first list entry handles thousands and the first decade (year 0-9) of a thousand, e.g. 3004, or 2000.</p>
+<p>The second list entry handles the hundreds in range 1100 to 1900 (e.g. 1800), and the third entry handles the hundreds above 1900, e.g. 2100.
+Note that since the first entry caught whole thousands, like 2000, the third entry will only catch the thousand with a century, like 2100.</p>
+<p>The fourth list entry handles whatever was not handled before, and are either below 2000, or before the first century of a thousand, e.g. 1864 or 3021.</p>
+<p>The fifth entry handles the rest, e.g. 2113.</p>
+<p>In the thousands format, we are only interested in how to pronounce the first two digits of the thousand, we use the <code>year_format</code> to put together the decade, hundreds and thousand formats later.</p>
+<p>Lets use 1969 as an example with language <code>en-us</code>:</p>
+<p>The string <code>'1969'</code> is used, it matches the fourth list entry and is formatted to <code>'nineteen'</code>. In the <code>year_format</code> this will be combined with <code>'sixty nine'</code> from the <code>decade_format</code>, to produce <code>'nineteen sixty nine'</code>.</p>
+<p>The result of the thousands format is <code>{formatted_thousands}</code>, that can be used as a component in other formats.</p>
+<h4 id="components-in-the-thousand-format">Components in the thousand format</h4>
+<p>The following components can be used in the thousand format:</p>
+<ul>
+<li>{x_in_x00}</li>
+<li>{xx00}</li>
+<li>{xx_in_xx00}</li>
+<li>{x000}</li>
+<li>{x_in_x000}</li>
+<li>{formatted_decade}</li>
+<li>{formatted_hundreds}</li>
+<li>{number}</li>
+</ul>
+<p>Even if <code>{formatted_decade}</code> and <code>{formatted_hundreds}</code> can be used as a component in thousands, it is usually easier to configure, test and read if it is not used. Instead use the <code>year_format</code> to put thousands, hundreds and decades together.</p>
+<h3 id="the-year_format">The year_format</h3>
+<p>This section contains information on how to format a pronounceable year. For <code>en-us</code> the configuration looks like this:</p>
+<pre><code class="language-json">  &quot;year_format&quot;: {
+    &quot;1&quot;: {&quot;match&quot;: &quot;^\\d\\d?$&quot;, &quot;format&quot;: &quot;{formatted_decade} {bc}&quot;},
+    &quot;2&quot;: {&quot;match&quot;: &quot;^\\d00$&quot;, &quot;format&quot;: &quot;{formatted_hundreds} {bc}&quot;},
+    &quot;3&quot;: {&quot;match&quot;: &quot;^\\d{3}$&quot;, &quot;format&quot;: &quot;{formatted_hundreds} {formatted_decade} {bc}&quot;},
+    &quot;4&quot;: {&quot;match&quot;: &quot;^\\d{2}00$&quot;, &quot;format&quot;: &quot;{formatted_thousand} {bc}&quot;},
+    &quot;5&quot;: {&quot;match&quot;: &quot;^\\d00\\d$&quot;, &quot;format&quot;: &quot;{formatted_thousand} {formatted_decade} {bc}&quot;},
+    &quot;6&quot;: {&quot;match&quot;: &quot;^\\d{2}0\\d$&quot;, &quot;format&quot;: &quot;{formatted_thousand} oh {formatted_decade} {bc}&quot;},
+    &quot;7&quot;: {&quot;match&quot;: &quot;^\\d{4}$&quot;, &quot;format&quot;: &quot;{formatted_thousand} {formatted_decade} {bc}&quot;},
+    &quot;default&quot;: &quot;{year} {bc}&quot;,
+  &quot;bc&quot;: &quot;b.c.&quot;
+}
+</code></pre>
+<p>The first entry handles years below 100, e.g. 22 (twenty two).</p>
+<p>The second entry handles years below 1000, that are multiples of 100, e.g. 800 (eight hundred).</p>
+<p>The third entry handles years below 1000, that are not multiples of 100 (they were caught by the second entry), e.g. 832 (eight hundred thirty two).</p>
+<p>The fourth entry handles years that are multiples of 100, e.g. 2000 (two thousand).</p>
+<p>The fifth entry handles the first decade of a millennia, e.g. 2001 (two thousand one).
+The sixth entry handles the first decade of other years than millennia (millennia was caught earlier), e.g. 2101 (twenty one oh one).</p>
+<p>The seventh entry handles the rest, e.g. 2018 (twenty eighteen).</p>
+<p>The default entry is used if the year is larger than 9999.</p>
+<p>The entry "bc" is the string to be used in the year format, if the year is b.c. Python does not handle years b.c. and a year b.c. is made by creating a datetime of the year (a.d.), and calling nice_year() whit the bc flag set to True. When bc=False, or not provided, the {bc} format is not used when creating the year.</p>
+<p>The result of the year format is <code>{formatted_year}</code>, that can be used as a component in other formats.</p>
+<h4 id="components-in-the-year-template">Components in the year template</h4>
+<ul>
+<li>{formatted_decade}</li>
+<li>{formatted_hundreds}</li>
+<li>{formatted_thousands}</li>
+<li>{century} : The datetime century as digits</li>
+<li>{decade}: The datetime decade as digits</li>
+<li>{year}: The datetime year as digits</li>
+<li>{bc}: A string to apply for years B.C.</li>
+</ul>
+<h3 id="the-date_format">The date_format</h3>
+<p>This section contains information on how to format a pronounceable date. For <code>en-us</code> the configuration looks like this:</p>
+<pre><code class="language-json">&quot;date_format&quot;: {
+    &quot;date_full&quot;: &quot;{weekday}, {month} {day}, {formatted_year}&quot;,
+    &quot;date_full_no_year&quot;: &quot;{weekday}, {month} {day}&quot;,
+    &quot;date_full_no_year_month&quot;: &quot;{weekday}, {day}&quot;,
+    &quot;today&quot;: &quot;today&quot;,
+    &quot;tomorrow&quot;: &quot;tomorrow&quot;,
+    &quot;yesterday&quot;: &quot;yesterday&quot;
+}
+</code></pre>
+<p>The <code>nice_date()</code> function takes an optional <code>now</code> parameter in addition to the <code>datetime</code> parameter. If the <code>now</code> parameter is not supplied, the <code>date_full</code> format is always used. If the <code>now</code> parameter is supplied, the other formats may come into play, as described below in the paragraph about keys for the <code>date_format</code>.</p>
+<p>If your language doesn't have, for instance, a tradition for saying yesterday, it is of course possible to use arguments here instead. For example:</p>
+<pre><code class="language-json">&quot;yesterday&quot;: &quot;{weekday}, {month} {day}, {formatted_year}&quot;
+</code></pre>
+<p>will create the same output as <code>date_full</code> above, in case of yesterday.</p>
+<p>The result of the date format is <code>{formatted_date}</code>, that can be used as a component in other formats.</p>
+<p>The following keys exist for the date_format:</p>
+<ul>
+<li>"date_full": A format containing a full date</li>
+<li>"date_full_no_year": A format without the year, used if the "now" date parameter is set, and if "now" is in the same year and before the date.</li>
+<li>"date_full_no_year_month": A format without the year and month, used if the "now" date parameter is set, and if "now" is before the date and is in the same year and month as the date.</li>
+<li>"today": The word for today, used if the "now" date parameter is set, and if "now" is in the same year and month and day as the date.</li>
+<li>"tomorrow": The word for tomorrow, used if the "now" date parameter is set, and if "now" is in the same year and month, but one day before the day in the date.</li>
+<li>"yesterday": The word for yesterday, used if the "now" date parameter is set, and if "now" is in the same year and month, but one day after the day in the date.</li>
+</ul>
+<h4 id="components-in-the-date-template">Components in the date template</h4>
+<ul>
+<li>{formatted_year}: The year formatted like in <a href="## The year_format">The year_format</a></li>
+<li>{weekday}: The weekday, formatted according to <a href="## The weekday section">The weekday section</a></li>
+<li>{month}: The month, formatted according to <a href="## The month section">The month section</a></li>
+<li>{day}: The day of the month, formatted according to <a href="## The date section">The date section</a></li>
+</ul>
+<h3 id="the-date_time_format">The date_time_format</h3>
+<p>This section contains information on how to format a pronounceable date and time. For <code>en-us</code> the configuration looks like this:</p>
+<pre><code class="language-json">&quot;date_time_format&quot;: {
+&quot;date_time&quot;: &quot;{formatted_date} at {formatted_time}&quot;
+}
+</code></pre>
+<p>The formatted time is obtained using the existing <code>mycroft.util.nice_time()</code> function. The output of this function is not configurable like the other formatting functions mentioned in this document. If <code>mycroft.util.nice_time()</code> does not support a language, it will still produce a string, but it will not be formatted.</p>
+<h4 id="arguments-to-format-templates">Arguments to format templates</h4>
+<ul>
+<li>{formatted_date}: Date formatted as specified in the "date_format" section</li>
+<li>{formatted_time}: Time formatted by nice_time(), <a href="https://mycroft-core.readthedocs.io/en/latest/">please refer to the Mycroft API documentation</a></li>
+</ul>
+<h2 id="maps">Maps</h2>
+<h3 id="the-weekday-section">The weekday section</h3>
+<p>A map from the day number in the week to the pronounceable weekday name</p>
+<h3 id="the-date-section">The date section</h3>
+<p>A map from date as a number to a pronounceable date</p>
+<h3 id="the-month-section">The month section</h3>
+<p>A map from the month number to a pronounceable month</p>
+<h2 id="unit-testing">Unit testing</h2>
+<p>A new language requires new unit tests, to ensure that it produce correct results. Unit tests that assert that all years between 1 and 9999 produce a non-empty string, and that all dates in a year produce a non-empty string, already exist. The unit tests will automatically find and test a new language.</p>
+<p>To prove the likelihood that formatting makes sense, a configuration file must be provided, that lists the unit tests. One unit test file exists for each language, it is placed in:</p>
+<pre><code class="language-text">mycroft/res/text//date_time_test.json
+</code></pre>
+<p>Section <a href="# Test file for en-us">Test file for en-us</a> contains the test file for the en-us language. It has three sections:</p>
+<ul>
+<li>test_nice_year</li>
+<li>test_nice_date</li>
+<li>test_nice_date_time</li>
+</ul>
+<p>one section for each of the three <code>nice_*()</code> functions.</p>
+<p>For each section there is a list, the index must start at 1 and continue in increments of 1. The content of a list entry is <code>datetime_param</code>, which contains the parameters that the Python datetime.datetime class take. Then there is <code>assertEqual</code>, which is the expected formatted value when given the datetime. Each <code>nice_*()</code> function takes different parameters, the parameters must be specified in the list entry as well, they cannot be omitted even if they are Python <code>None</code>.</p>
+<h2 id="configuration-file-for-en-us">Configuration file for en-us</h2>
+<pre><code class="language-json">{
+  &quot;decade_format&quot;: {
+    &quot;1&quot;: { &quot;match&quot;: &quot;^\\d$&quot;, &quot;format&quot;: &quot;{x}&quot; },
+    &quot;2&quot;: { &quot;match&quot;: &quot;^1\\d$&quot;, &quot;format&quot;: &quot;{xx}&quot; },
+    &quot;3&quot;: { &quot;match&quot;: &quot;^\\d0$&quot;, &quot;format&quot;: &quot;{x0}&quot; },
+    &quot;4&quot;: { &quot;match&quot;: &quot;^[2-9]\\d$&quot;, &quot;format&quot;: &quot;{x0} {x}&quot; },
+    &quot;default&quot;: &quot;{number}&quot;
+  },
+  &quot;hundreds_format&quot;: {
+    &quot;1&quot;: { &quot;match&quot;: &quot;^\\d{3}$&quot;, &quot;format&quot;: &quot;{x_in_x00} hundred&quot; },
+    &quot;default&quot;: &quot;{number}&quot;
+  },
+  &quot;thousand_format&quot;: {
+    &quot;1&quot;: { &quot;match&quot;: &quot;^\\d00\\d$&quot;, &quot;format&quot;: &quot;{x_in_x000} thousand&quot; },
+    &quot;2&quot;: { &quot;match&quot;: &quot;^1\\d00$&quot;, &quot;format&quot;: &quot;{xx_in_xx00} hundred&quot; },
+    &quot;3&quot;: { &quot;match&quot;: &quot;^\\d{2}00$&quot;, &quot;format&quot;: &quot;{x0_in_x000} {x_in_x00} hundred&quot; },
+    &quot;4&quot;: { &quot;match&quot;: &quot;^(1\\d{3})|(\\d0\\d{2})$&quot;, &quot;format&quot;: &quot;{xx_in_xx00}&quot; },
+    &quot;5&quot;: { &quot;match&quot;: &quot;^\\d{4}$&quot;, &quot;format&quot;: &quot;{x0_in_x000} {x_in_x00}&quot; },
+    &quot;default&quot;: &quot;{number}&quot;
+  },
+  &quot;year_format&quot;: {
+    &quot;1&quot;: { &quot;match&quot;: &quot;^\\d\\d?$&quot;, &quot;format&quot;: &quot;{formatted_decade} {bc}&quot; },
+    &quot;2&quot;: { &quot;match&quot;: &quot;^\\d00$&quot;, &quot;format&quot;: &quot;{formatted_hundreds} {bc}&quot; },
+    &quot;3&quot;: {
+      &quot;match&quot;: &quot;^\\d{3}$&quot;,
+      &quot;format&quot;: &quot;{formatted_hundreds} {formatted_decade} {bc}&quot;
+    },
+    &quot;4&quot;: { &quot;match&quot;: &quot;^\\d{2}00$&quot;, &quot;format&quot;: &quot;{formatted_thousand} {bc}&quot; },
+    &quot;5&quot;: {
+      &quot;match&quot;: &quot;^\\d00\\d$&quot;,
+      &quot;format&quot;: &quot;{formatted_thousand} {formatted_decade} {bc}&quot;
+    },
+    &quot;6&quot;: {
+      &quot;match&quot;: &quot;^\\d{2}0\\d$&quot;,
+      &quot;format&quot;: &quot;{formatted_thousand} oh {formatted_decade} {bc}&quot;
+    },
+    &quot;7&quot;: {
+      &quot;match&quot;: &quot;^\\d{4}$&quot;,
+      &quot;format&quot;: &quot;{formatted_thousand} {formatted_decade} {bc}&quot;
+    },
+    &quot;default&quot;: &quot;{year} {bc}&quot;,
+    &quot;bc&quot;: &quot;b.c.&quot;
+  },
+  &quot;date_format&quot;: {
+    &quot;date_full&quot;: &quot;{weekday}, {month} {day}, {formatted_year}&quot;,
+    &quot;date_full_no_year&quot;: &quot;{weekday}, {month} {day}&quot;,
+    &quot;date_full_no_year_month&quot;: &quot;{weekday}, {day}&quot;,
+    &quot;today&quot;: &quot;today&quot;,
+    &quot;tomorrow&quot;: &quot;tomorrow&quot;,
+    &quot;yesterday&quot;: &quot;yesterday&quot;
+  },
+  &quot;date_time_format&quot;: {
+    &quot;date_time&quot;: &quot;{formatted_date} at {formatted_time}&quot;
+  },
+  &quot;weekday&quot;: {
+    &quot;0&quot;: &quot;monday&quot;,
+    &quot;1&quot;: &quot;tuesday&quot;,
+    &quot;2&quot;: &quot;wednesday&quot;,
+    &quot;3&quot;: &quot;thursday&quot;,
+    &quot;4&quot;: &quot;friday&quot;,
+    &quot;5&quot;: &quot;saturday&quot;,
+    &quot;6&quot;: &quot;sunday&quot;
+  },
+  &quot;date&quot;: {
+    &quot;1&quot;: &quot;first&quot;,
+    &quot;2&quot;: &quot;second&quot;,
+    &quot;3&quot;: &quot;third&quot;,
+    &quot;4&quot;: &quot;fourth&quot;,
+    &quot;5&quot;: &quot;fifth&quot;,
+    &quot;6&quot;: &quot;sixth&quot;,
+    &quot;7&quot;: &quot;seventh&quot;,
+    &quot;8&quot;: &quot;eighth&quot;,
+    &quot;9&quot;: &quot;ninth&quot;,
+    &quot;10&quot;: &quot;tenth&quot;,
+    &quot;11&quot;: &quot;eleventh&quot;,
+    &quot;12&quot;: &quot;twelfth&quot;,
+    &quot;13&quot;: &quot;thirteenth&quot;,
+    &quot;14&quot;: &quot;fourteenth&quot;,
+    &quot;15&quot;: &quot;fifteenth&quot;,
+    &quot;16&quot;: &quot;sixteenth&quot;,
+    &quot;17&quot;: &quot;seventeenth&quot;,
+    &quot;18&quot;: &quot;eighteenth&quot;,
+    &quot;19&quot;: &quot;nineteenth&quot;,
+    &quot;20&quot;: &quot;twentieth&quot;,
+    &quot;21&quot;: &quot;twenty-first&quot;,
+    &quot;22&quot;: &quot;twenty-second&quot;,
+    &quot;23&quot;: &quot;twenty-third&quot;,
+    &quot;24&quot;: &quot;twenty-fourth&quot;,
+    &quot;25&quot;: &quot;twenty-fifth&quot;,
+    &quot;26&quot;: &quot;twenty-sixth&quot;,
+    &quot;27&quot;: &quot;twenty-seventh&quot;,
+    &quot;28&quot;: &quot;twenty-eighth&quot;,
+    &quot;29&quot;: &quot;twenty-ninth&quot;,
+    &quot;30&quot;: &quot;thirtieth&quot;,
+    &quot;31&quot;: &quot;thirty-first&quot;
+  },
+  &quot;month&quot;: {
+    &quot;1&quot;: &quot;january&quot;,
+    &quot;2&quot;: &quot;february&quot;,
+    &quot;3&quot;: &quot;march&quot;,
+    &quot;4&quot;: &quot;april&quot;,
+    &quot;5&quot;: &quot;may&quot;,
+    &quot;6&quot;: &quot;june&quot;,
+    &quot;7&quot;: &quot;july&quot;,
+    &quot;8&quot;: &quot;august&quot;,
+    &quot;9&quot;: &quot;september&quot;,
+    &quot;10&quot;: &quot;october&quot;,
+    &quot;11&quot;: &quot;november&quot;,
+    &quot;12&quot;: &quot;december&quot;
+  },
+  &quot;number&quot;: {
+    &quot;0&quot;: &quot;zero&quot;,
+    &quot;1&quot;: &quot;one&quot;,
+    &quot;2&quot;: &quot;two&quot;,
+    &quot;3&quot;: &quot;three&quot;,
+    &quot;4&quot;: &quot;four&quot;,
+    &quot;5&quot;: &quot;five&quot;,
+    &quot;6&quot;: &quot;six&quot;,
+    &quot;7&quot;: &quot;seven&quot;,
+    &quot;8&quot;: &quot;eight&quot;,
+    &quot;9&quot;: &quot;nine&quot;,
+    &quot;10&quot;: &quot;ten&quot;,
+    &quot;11&quot;: &quot;eleven&quot;,
+    &quot;12&quot;: &quot;twelve&quot;,
+    &quot;13&quot;: &quot;thirteen&quot;,
+    &quot;14&quot;: &quot;fourteen&quot;,
+    &quot;15&quot;: &quot;fifteen&quot;,
+    &quot;16&quot;: &quot;sixteen&quot;,
+    &quot;17&quot;: &quot;seventeen&quot;,
+    &quot;18&quot;: &quot;eighteen&quot;,
+    &quot;19&quot;: &quot;nineteen&quot;,
+    &quot;20&quot;: &quot;twenty&quot;,
+    &quot;30&quot;: &quot;thirty&quot;,
+    &quot;40&quot;: &quot;forty&quot;,
+    &quot;50&quot;: &quot;fifty&quot;,
+    &quot;60&quot;: &quot;sixty&quot;,
+    &quot;70&quot;: &quot;seventy&quot;,
+    &quot;80&quot;: &quot;eighty&quot;,
+    &quot;90&quot;: &quot;ninety&quot;
+  }
+}
+</code></pre>
+<h2 id="test-file-for-en-us">Test file for en-us</h2>
+<pre><code class="language-json">{
+  &quot;test_nice_year&quot;: {
+    &quot;1&quot;: {
+      &quot;datetime_param&quot;: &quot;1, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;True&quot;,
+      &quot;assertEqual&quot;: &quot;one b.c.&quot;
+    },
+    &quot;2&quot;: {
+      &quot;datetime_param&quot;: &quot;10, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;True&quot;,
+      &quot;assertEqual&quot;: &quot;ten b.c.&quot;
+    },
+    &quot;3&quot;: {
+      &quot;datetime_param&quot;: &quot;92, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;True&quot;,
+      &quot;assertEqual&quot;: &quot;ninety two b.c.&quot;
+    },
+    &quot;4&quot;: {
+      &quot;datetime_param&quot;: &quot;803, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;eight hundred three&quot;
+    },
+    &quot;5&quot;: {
+      &quot;datetime_param&quot;: &quot;811, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;eight hundred eleven&quot;
+    },
+    &quot;6&quot;: {
+      &quot;datetime_param&quot;: &quot;454, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;four hundred fifty four&quot;
+    },
+    &quot;7&quot;: {
+      &quot;datetime_param&quot;: &quot;1005, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;one thousand five&quot;
+    },
+    &quot;8&quot;: {
+      &quot;datetime_param&quot;: &quot;1012, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;ten twelve&quot;
+    },
+    &quot;9&quot;: {
+      &quot;datetime_param&quot;: &quot;1046, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;ten forty six&quot;
+    },
+    &quot;10&quot;: {
+      &quot;datetime_param&quot;: &quot;1807, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;eighteen oh seven&quot;
+    },
+    &quot;11&quot;: {
+      &quot;datetime_param&quot;: &quot;1717, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;seventeen seventeen&quot;
+    },
+    &quot;12&quot;: {
+      &quot;datetime_param&quot;: &quot;1988, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;nineteen eighty eight&quot;
+    },
+    &quot;13&quot;: {
+      &quot;datetime_param&quot;: &quot;2009, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;two thousand nine&quot;
+    },
+    &quot;14&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;twenty eighteen&quot;
+    },
+    &quot;15&quot;: {
+      &quot;datetime_param&quot;: &quot;2021, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;twenty twenty one&quot;
+    },
+    &quot;16&quot;: {
+      &quot;datetime_param&quot;: &quot;2030, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;twenty thirty&quot;
+    },
+    &quot;17&quot;: {
+      &quot;datetime_param&quot;: &quot;2100, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;twenty one hundred&quot;
+    },
+    &quot;18&quot;: {
+      &quot;datetime_param&quot;: &quot;1000, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;one thousand&quot;
+    },
+    &quot;19&quot;: {
+      &quot;datetime_param&quot;: &quot;2000, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;two thousand&quot;
+    },
+    &quot;20&quot;: {
+      &quot;datetime_param&quot;: &quot;3120, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;True&quot;,
+      &quot;assertEqual&quot;: &quot;thirty one twenty b.c.&quot;
+    },
+    &quot;21&quot;: {
+      &quot;datetime_param&quot;: &quot;3241, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;True&quot;,
+      &quot;assertEqual&quot;: &quot;thirty two forty one b.c.&quot;
+    },
+    &quot;22&quot;: {
+      &quot;datetime_param&quot;: &quot;5200, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;fifty two hundred&quot;
+    },
+    &quot;23&quot;: {
+      &quot;datetime_param&quot;: &quot;1100, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;eleven hundred&quot;
+    },
+    &quot;24&quot;: {
+      &quot;datetime_param&quot;: &quot;2100, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;twenty one hundred&quot;
+    }
+  },
+  &quot;test_nice_date&quot;: {
+    &quot;1&quot;: {
+      &quot;datetime_param&quot;: &quot;2017, 1, 31, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;tuesday, january thirty-first, twenty seventeen&quot;
+    },
+    &quot;2&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2017, 1, 1, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;sunday, february fourth, twenty eighteen&quot;
+    },
+    &quot;3&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2018, 1, 1, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;sunday, february fourth&quot;
+    },
+    &quot;4&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2018, 2, 1, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;sunday, fourth&quot;
+    },
+    &quot;5&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2018, 2, 3, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;tomorrow&quot;
+    },
+    &quot;6&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;today&quot;
+    },
+    &quot;7&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2018, 2, 5, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;yesterday&quot;
+    },
+    &quot;8&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2018, 2, 6, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;sunday, february fourth&quot;
+    },
+    &quot;9&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2019, 2, 6, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;sunday, february fourth, twenty eighteen&quot;
+    }
+  },
+  &quot;test_nice_date_time&quot;: {
+    &quot;1&quot;: {
+      &quot;datetime_param&quot;: &quot;2017, 1, 31, 13, 22, 3&quot;,
+      &quot;now&quot;: &quot;None&quot;,
+      &quot;use_24hour&quot;: &quot;False&quot;,
+      &quot;use_ampm&quot;: &quot;True&quot;,
+      &quot;assertEqual&quot;: &quot;tuesday, january thirty-first, twenty seventeen at one twenty two PM&quot;
+    },
+    &quot;2&quot;: {
+      &quot;datetime_param&quot;: &quot;2017, 1, 31, 13, 22, 3&quot;,
+      &quot;now&quot;: &quot;None&quot;,
+      &quot;use_24hour&quot;: &quot;True&quot;,
+      &quot;use_ampm&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;tuesday, january thirty-first, twenty seventeen at thirteen twenty two&quot;
+    }
+  }
+}
+</code></pre>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

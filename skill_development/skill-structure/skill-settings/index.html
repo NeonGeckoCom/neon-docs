@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Skill Settings - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="./" class="active">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="skill-settings">Skill Settings</h1>
+<p><strong>Note:</strong> Skill settings are commonly used in most Mycroft skills, but less common in Neon or OVOS skills. The examples in this documentation come from Mycroft skills which may or may not be compatible with Neon. However, the skill settings portion is compatible with Neon.</p>
+<p>Skill settings provide the ability for users to configure a Skill using a web-based interface. This is often used to:</p>
+<ul>
+<li>Change default behaviors - such as the sound used for users alarms.</li>
+<li>Authenticate with external services - such as Spotify.</li>
+<li>Enter longer data as text rather than by voice - such as the IP address of the user's Home Assistant server.</li>
+</ul>
+<p>Skill settings are completely optional. Also note that the web-based interface for a skill setting is only available if a backend is being used for your Neon setup. By default, there is no backend. For more information see <a href="https://openvoiceos.github.io/community-docs/arch_backend/">the OpenVoice OS backend documentation</a>.</p>
+<h2 id="define-settings-for-a-skill">Define settings for a Skill</h2>
+<p>To define our Skills settings we use a <code>settingsmeta.json</code> or <code>settingsmeta.yaml</code> file. This file must be in the root directory of the Skill and must follow a specific structure.</p>
+<h3 id="example-settings-file">Example settings file</h3>
+<p>To see it in action, lets look at a simple example from the <a href="https://github.com/MycroftAI/skill-date-time">Mycroft Date-Time Skill</a>. First using the JSON syntax as a <code>settingsmeta.json</code> file:</p>
+<pre><code class="language-javascript">{
+    &quot;skillMetadata&quot;: {
+        &quot;sections&quot;: [
+            {
+                &quot;name&quot;: &quot;Display&quot;,
+                &quot;fields&quot;: [
+                    {
+                        &quot;name&quot;: &quot;show_time&quot;,
+                        &quot;type&quot;: &quot;checkbox&quot;,
+                        &quot;label&quot;: &quot;Show digital clock when idle&quot;,
+                        &quot;value&quot;: &quot;true&quot;
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+<p>Now, here is the same settings, as it would be defined with YAML in a <code>settingsmeta.yaml</code> file:</p>
+<pre><code class="language-yaml">skillMetadata:
+  sections:
+    - name: Display
+      fields:
+        - name: show_time
+          type: checkbox
+          label: Show digital clock when idle
+          value: &quot;true&quot;
+</code></pre>
+<p>Notice that the value of <code>false</code> is surrounded by "quotation marks". This is because Neon expects a string of <code>"true"</code> or <code>"false"</code> rather than a Boolean.</p>
+<p>Both of these files would result in the same settings block.</p>
+<p><img alt="Date-Time skill settings example" src="../../../img/Date-Time-Settings (1).png" /></p>
+<p>It is up to your personal preference which syntax you choose.</p>
+<h3 id="structure-of-the-settingsmeta-file">Structure of the settingsmeta file</h3>
+<p>Whilst the syntax differs, the structure of these two filetypes is the same. This starts at the top level of the file by defining a <code>skillMetadata</code> object. This object must contain one or more <code>sections</code> elements.</p>
+<h4 id="sections">Sections</h4>
+<p>Each section represents a group of settings that logically sit together. This enables us to display the settings more clearly in the web interface for users.</p>
+<p>In the simple example above we have just one section. However the <a href="https://github.com/forslund/spotify-skill/blob/19.08/settingsmeta.json">Spotify Skill settings</a> contains two sections. The first is for Spotify Account authentication, and the second section contains settings to define your default playback device.</p>
+<p>Each section must contain a <code>name</code> attribute that is used as the heading for that section, and an Array of <code>fields</code>.</p>
+<h4 id="fields">Fields</h4>
+<p>Each section has one or more <code>fields</code>. Each field is a setting available to the user. Each field takes four properties:</p>
+<ul>
+<li><code>name</code> (String)</li>
+</ul>
+<p>The <code>name</code> of the <code>field</code> is used by the Skill to get and set the value of the <code>field</code>. It will not usually be displayed to the user, unless the <code>label</code> property has not been set.</p>
+<ul>
+<li><code>type</code> (Enum)</li>
+</ul>
+<p>The data type of this field. The supported types are:</p>
+<blockquote>
+<ul>
+<li><code>text</code>: any kind of text</li>
+<li><code>email</code>: text validated as an email address</li>
+<li><code>checkbox</code>: boolean, True or False</li>
+<li><code>number</code>: text validated as a number</li>
+<li><code>password</code>: text hidden from view by default</li>
+<li><code>select</code>: a drop-down menu of options</li>
+<li><code>label</code>: special field to display text for information purposes only. No name or value is required for a <code>label</code> field.</li>
+</ul>
+</blockquote>
+<ul>
+<li><code>label</code> (String)</li>
+</ul>
+<p>The text to be displayed above the setting field.</p>
+<ul>
+<li><code>value</code> (String)</li>
+</ul>
+<p>The initial value of the field.</p>
+<p>Examples for each type of field are provided in JSON and YAML at the end of this page.</p>
+<h2 id="using-settings-in-your-skill">Using settings in your Skill</h2>
+<p>Once settings have been defined using a <code>settingsmeta</code> file, they will only be presented to the user if they are using a backend with a web-based interface.</p>
+<p>When settings are fetched from the backend, they are saved into a <code>settings.json</code> file. This file is automatically created when a Skill is loaded even if the Skill does not have any settings. Your Skill then accesses the settings from this file. Nowadays the file is located in the Skill's XDG_CONFIG_DIR (usually <code>~/config/neon/skills/&lt;skillname&gt;</code>), however if a <code>settings.json</code> file already exists in the Skill's root directory (the deprecated location) that location is used for compatibility.</p>
+<h3 id="reading-settings">Reading settings</h3>
+<p>Skill settings are available on the NeonSkill class and inherit from a Python Dict. This means that you can use it just like you would any other Python dictionary.</p>
+<p>To access the <code>show_time</code> variable from our example above we would use the <code>Dict.get</code> method:</p>
+<pre><code class="language-python">self.settings.get('show_time')
+</code></pre>
+<p>If the setting we are trying to access is not available, the <code>get</code> method will return <code>None</code>. Instead of assigning this to a variable and then testing for <code>None</code>, we can provide a default value as the second argument to the <code>get</code> method.</p>
+<pre><code class="language-python">self.settings.get('show_time', False)
+</code></pre>
+<p>In this example, if the settings have not been received, or the <code>show_time</code> setting has not been assigned, it will return the default value <code>False</code>.</p>
+<p><strong>A few warnings</strong></p>
+<p>We recommend using the <code>Dict.get</code> method above rather than accessing the setting directly with:</p>
+<pre><code class="language-python">self.settings['show_time']
+</code></pre>
+<p>Directly referencing the value may throw a KeyError if the setting has not yet been fetched from the server or if the settings does not exist.</p>
+<p>It is also important to note that the <code>settings</code> dictionary will not be available in your Skills <code>__init__</code> method as this is setting up your Skills Class. You should instead use a separate method with a <code>@property</code> decorator. More detail is available at:</p>
+<p><a href="../lifecycle-methods/">lifecycle-methods.md</a></p>
+<h3 id="handling-settings-changes">Handling settings changes</h3>
+<p>Each Neon device will check for updates to a users settings regularly, and write these to the Skills <code>settings.json</code>. To perform some action when settings are updated, you can register a callback function in your Skill.</p>
+<pre><code class="language-python">def initialize(self):
+  self.settings_change_callback = self.on_settings_changed
+  self.on_settings_changed()
+
+def on_settings_changed(self):
+  show_time = self.settings.get('show_time', False)
+  self.trigger_time_display(show_time)
+</code></pre>
+<p>In the example above, we have registered the <code>on_settings_changed</code> method to be our callback function. We have then immediately called the method to perform the relevant actions when the Skill is being initialized even though the Skills settings have not changed.</p>
+<p>In the <code>on_settings_changed</code> method we have assigned the value of the <code>show_time</code> setting to a local variable. Then we have passed it as an argument to another method in our Skill that will trigger the display of the time based on its value.</p>
+<p>Also note that this is not necessary if you use a property method, which is preferred:</p>
+<pre><code class="language-python">@property
+def show_time(self):
+  return self.settings.get('show_time', False)
+</code></pre>
+<h3 id="writing-to-settings">Writing to settings</h3>
+<p>Your Skill can reassign a setting locally, however these values remain local and cannot be pushed to the server. To do this we assign a value like you would with any other dictionary key.</p>
+<pre><code class="language-python">self.settings['show_time'] = True
+</code></pre>
+<p>The new value for the <code>show_time</code> setting will persist until a new setting is assigned locally by the Skill, or remotely by the user clicking <code>save</code> on the web view.</p>
+<h2 id="settings-field-examples">Settings Field Examples</h2>
+<h3 id="label-field">Label Field</h3>
+<details>
+  <summary>JSON</summary>
+
+
+<pre><code class="language-javascript">{
+    &quot;skillMetadata&quot;: {
+        &quot;sections&quot;: [
+            {
+                &quot;name&quot;: &quot;Label Field Example&quot;,
+                &quot;fields&quot;: [
+                    {
+                        &quot;type&quot;: &quot;label&quot;,
+                        &quot;label&quot;: &quot;This is descriptive text.&quot;
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+
+
+</details>
+
+<details>
+  <summary>YAML</summary>
+
+
+<pre><code class="language-yaml">skillMetadata:
+  sections:
+    - name: Label Field Example
+      fields:
+        - type: label
+          label: This is descriptive text.
+</code></pre>
+
+
+</details>
+
+<h3 id="text-field">Text Field</h3>
+<details>
+  <summary>JSON</summary>
+
+
+<pre><code class="language-javascript">{
+    &quot;skillMetadata&quot;: {
+        &quot;sections&quot;: [
+            {
+                &quot;name&quot;: &quot;Text Field Example&quot;,
+                &quot;fields&quot;: [
+                    {
+                        &quot;name&quot;: &quot;my_string&quot;,
+                        &quot;type&quot;: &quot;text&quot;,
+                        &quot;label&quot;: &quot;Enter any text&quot;,
+                        &quot;value&quot;: &quot;&quot;
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+
+
+</details>
+
+<details>
+  <summary>YAML</summary>
+
+
+<pre><code class="language-yaml">skillMetadata:
+  sections:
+    - name: Text Field Example
+      fields:
+        - name: my_string
+          type: text
+          label: Enter any text
+          value:
+</code></pre>
+
+
+</details>
+
+<h3 id="email">Email</h3>
+<details>
+  <summary>JSON</summary>
+
+
+<pre><code class="language-javascript">{
+    &quot;skillMetadata&quot;: {
+        &quot;sections&quot;: [
+            {
+                &quot;name&quot;: &quot;Email Field Example&quot;,
+                &quot;fields&quot;: [
+                    {
+                        &quot;name&quot;: &quot;my_email_address&quot;,
+                        &quot;type&quot;: &quot;email&quot;,
+                        &quot;label&quot;: &quot;Enter your email address&quot;,
+                        &quot;value&quot;: &quot;&quot;
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+
+
+</details>
+
+<details>
+  <summary>YAML</summary>
+
+
+<pre><code class="language-yaml">skillMetadata:
+  sections:
+    - name: Email Field Example
+      fields:
+        - name: my_email_address
+          type: email
+          label: Enter your email address
+          value:
+</code></pre>
+
+
+</details>
+
+<h3 id="checkbox">Checkbox</h3>
+<details>
+  <summary>JSON</summary>
+
+
+<pre><code class="language-javascript">{
+    &quot;skillMetadata&quot;: {
+        &quot;sections&quot;: [
+            {
+                &quot;name&quot;: &quot;Checkbox Field Example&quot;,
+                &quot;fields&quot;: [
+                    {
+                        &quot;name&quot;: &quot;my_boolean&quot;,
+                        &quot;type&quot;: &quot;checkbox&quot;,
+                        &quot;label&quot;: &quot;This is an example checkbox. It creates a Boolean value.&quot;,
+                        &quot;value&quot;: &quot;false&quot;
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+
+
+</details>
+
+<details>
+  <summary>YAML</summary>
+
+
+<pre><code class="language-yaml">skillMetadata:
+  sections:
+    - name: Checkbox Field Example
+      fields:
+        - name: my_boolean
+          type: checkbox
+          label: This is an example checkbox. It creates a Boolean value.
+          value: &quot;false&quot;
+</code></pre>
+
+
+</details>
+
+<h3 id="number">Number</h3>
+<details>
+  <summary>JSON</summary>
+
+
+<pre><code class="language-javascript">{
+    &quot;skillMetadata&quot;: {
+        &quot;sections&quot;: [
+            {
+                &quot;name&quot;: &quot;Number Field Example&quot;,
+                &quot;fields&quot;: [
+                    {
+                        &quot;name&quot;: &quot;my_number&quot;,
+                        &quot;type&quot;: &quot;number&quot;,
+                        &quot;label&quot;: &quot;Enter any number&quot;,
+                        &quot;value&quot;: &quot;7&quot;
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+
+
+</details>
+
+<details>
+  <summary>YAML</summary>
+
+
+<pre><code class="language-yaml">skillMetadata:
+  sections:
+    - name: Number Field Example
+      fields:
+        - name: my_number
+          type: number
+          label: Enter any number
+          value: 7
+</code></pre>
+
+
+</details>
+
+<h3 id="password">Password</h3>
+<details>
+  <summary>JSON</summary>
+
+
+<pre><code class="language-javascript">{
+    &quot;skillMetadata&quot;: {
+        &quot;sections&quot;: [
+            {
+                &quot;name&quot;: &quot;Password Field Example&quot;,
+                &quot;fields&quot;: [
+                    {
+                        &quot;name&quot;: &quot;my_password&quot;,
+                        &quot;type&quot;: &quot;password&quot;,
+                        &quot;label&quot;: &quot;Enter your password&quot;,
+                        &quot;value&quot;: &quot;&quot;
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+
+
+</details>
+
+<details>
+  <summary>YAML</summary>
+
+
+<pre><code class="language-yaml">skillMetadata:
+  sections:
+    - name: Password Field Example
+      fields:
+        - name: my_password
+          type: password
+          label: Enter your password
+          value:
+</code></pre>
+
+
+</details>
+
+<h3 id="select">Select</h3>
+<details>
+  <summary>JSON</summary>
+
+
+<pre><code class="language-javascript">{
+    &quot;skillMetadata&quot;: {
+        &quot;sections&quot;: [
+            {
+                &quot;name&quot;: &quot;Select Field Example&quot;,
+                &quot;fields&quot;: [
+                    {
+                      &quot;name&quot;: &quot;my_selected_option&quot;,
+                      &quot;type&quot;: &quot;select&quot;,
+                      &quot;label&quot;: &quot;Select an option&quot;,
+                      &quot;options&quot;: &quot;Option 1|option_one;Option 2|option_two;Option 3|option_three&quot;,
+                      &quot;value&quot;: &quot;option_one&quot;
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+
+
+</details>
+
+<details>
+  <summary>YAML</summary>
+
+
+<pre><code class="language-yaml">skillMetadata:
+  sections:
+    - name: Select Field Example
+      fields:
+        - name: my_selected_option
+          type: select
+          label: Select an option
+          options: Option 1|option_one;Option 2|option_two;Option 3|option_three
+          value: option_one
+</code></pre>
+
+
+</details>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

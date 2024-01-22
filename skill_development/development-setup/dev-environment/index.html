@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Setting Up Your Development Environment - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="./" class="active">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="setting-up-your-neon-development-environment">Setting Up Your Neon Development Environment</h1>
+<p>Before you can complete your skill you'll need a Neon environment in which to test it. It's not time-efficient to do your initial development inside of existing Neon hardware like a Mycroft Mark II, but fully testing all portions of a skill requires that hardware.</p>
+<p>The Mycroft Mark II <a href="https://neonai.square.site/product/neon-ovos-mycroft-ai-mark-ii/1?cs=true">can be purchased from Neon AI</a> or <a href="https://mycroft.ai/product/mark-ii/">from Mycroft AI</a>, and is also offered by Neon AI as a bounty for skills development.
+If you're interested in receiving a Mark II for skills development, email <a href="mailto:Clary@Neon.AI">Clary@Neon.AI</a> describing your skill development plans, or to ask about skills that are priorities for us right now</p>
+<p>This section details some of the ways you can set up a Neon development environment and makes some recommendations on the best way to use each one.</p>
+<h2 id="recommended-options">Recommended options</h2>
+<h3 id="containers">Containers</h3>
+<p><a href="https://github.com/NeonGeckoCom/NeonCore">Neon Core</a> comes with a <code>docker-compose</code> file that has all of the necessary components for a minimal Neon setup. At the time of this writing, it does not fully support the GUI, due to issues with serving QML files over a network connection. A minimal GUI does exist.</p>
+<p>The NeonCore repository has directions for running each Neon service in a container. Note that the Neon containers will take ~8GB of disk space and that must all be downloaded, so the first time you run <code>docker-compose up -d</code> it will take time.</p>
+<p>The containerized option is best for development and testing, since the feedback loop is usually shorter than installing a skill and running it on Neon smartspeaker hardware like a Mycroft Mark 2. Due to the limited GUI support, however, it is not a great option for heavy GUI development and testing.</p>
+<p>For now, Neon only distributes AMD64 Docker images. Each service can be <code>git clone</code>d locally and the Docker image can be built on other architectures such as ARM64 (Mac OS running Apple Silicon). This is necessary in order to use a Linux VM running Docker containers on Apple Silicon. Images must also be built locally to run Neon containers on a Raspberry Pi. Neon does not recommend a Raspberry Pi for Docker containers for Neon due to limited hardware, but it is possible if you build the images for the correct architecture.</p>
+<h3 id="laptop-installationvm-image">Laptop installation/VM image</h3>
+<p>The next recommended option for a development environment is running directly on a Linux laptop or VM. This setup is similar to running in Docker containers, but since everything is local to one machine, it is much better for serious GUI development.</p>
+<p>For directions on installing a Dev or User environment directly to a Linux laptop or VM, <a href="https://neon.ai/NeonSDKInstallationInstructions">please see the Neon website</a>. Be aware that installing from scratch here is a long process. You can also <a href="https://neonai.square.site/product/NeonAIMycroftMarkIIBootableUSBDrive">purchase a bootable USB drive with Neon pre-installed</a>. Just be aware that this drive is optimized for a Mycroft Mark 2 and will require some configuration adjustments before it will work fully on other hardware.</p>
+<p>Finally, there are <a href="https://2222.us/app/files/neon_images/pi/">Neon images available for Raspberry Pi</a>. If you do choose the develop directly on a Raspberry Pi this is the simplest way to get started. Download your preferred image, use imaging software such as Balena Etcher to prepare a USB or MicroSD drive, and insert it into the Pi. Be aware that not all Raspberry Pi models will boot from USB automatically, so you may need to change BIOS/UEFI settings to allow it.</p>
+<h3 id="mark-2-or-dev-kit">Mark 2 or Dev Kit</h3>
+<p>If you have a Mycroft Mark 2 or Mark 2 Dev Kit, <a href="https://2222.us/app/files/neon_images/pi/mycroft_mark_2/">Neon has images available for download</a> as well as <a href="https://neonai.square.site/product/NeonAIMycroftMarkIIBootableUSBDrive">bootable USB drives for sale</a>. Neon does not recommend trying to install from scratch since the Mark 2 is highly specialized hardware.</p>
+<h2 id="minimal-environment">Minimal environment</h2>
+<p>If you're developing in containers or in an environment with limited resources, note that you do not need to run every single Neon service for it to run properly. The minimum services required are the <code>neon-messagebus</code> and <code>neon-skills</code> services if you only want to test the text portions of your code. This can make for a quick feedback loop using <code>neon-cli</code> or <code>mana</code>.</p>
+<p>To add TTS and STT, <code>neon-audio</code> and <code>neon-speech</code> are required, respectively.</p>
+<p>Finally, <code>neon-gui</code> is required only to test out any GUI functionality your skill may require, and <code>neon-enclosure</code> is required only if you are using a PHAL plugin or need to interact with Neon hardware in some way.</p>
+<h3 id="minimum-for-standard-vui-skills">Minimum for standard VUI skills</h3>
+<p>In order:</p>
+<ul>
+<li>neon-messagebus</li>
+<li>neon-skills</li>
+</ul>
+<p>Optional unless testing STT/TTS:</p>
+<ul>
+<li>neon-audio</li>
+<li>neon-speech</li>
+</ul>
+<p>Semi-optional:</p>
+<ul>
+<li>neon-enclosure (unless you're working with a PHAL plugin or a VUI associated with a PHAL plugin)</li>
+<li>neon-gui (unless you're doing GUI work)</li>
+</ul>
+<h3 id="minimum-for-vui-skills-for-phal-plugins">Minimum for VUI skills for PHAL plugins</h3>
+<p>In order:</p>
+<ul>
+<li>neon-messagebus</li>
+<li>neon-enclosure</li>
+<li>neon-skills</li>
+</ul>
+<h2 id="shortening-the-feedback-loop">Shortening the feedback loop</h2>
+<p>Installing a skill and restarting the <code>neon-skills</code> service can take a long time. This is especially true if you have a large number of skills to load or end up needing to restart other Neon services. Besides the minimal setup tips above, here are some tips to shorten the development feedback loop while writing a skill:</p>
+<ol>
+<li><strong>Keep your logic separate from the skill itself.</strong> In addition to just being good development practice, this makes it very easy to test key logic for your code without having to restart the skills service. You also get the added benefit of your code being easier to unit test.</li>
+<li>Example: In the Plex skill, the code to interact with the Plex API and construct dictionaries for OVOS Common Play is in a separate file from the skill itself. That code is also broken into multiple small functions to allow for easy unit testing.</li>
+<li><strong>Take advantage of Neon's testing automation.</strong> Unit tests for your skill's core logic are highly recommended. However, you don't need to unit test Neon-specific behavior in most cases. We handle that for you with automated test suites. For more information <a href="../../voice-user-interface-design-guidelines/skill-testing/">see the documentation on available GitHub Actions tests</a>.</li>
+<li><strong>Develop on your fastest, smallest environment first.</strong> All of the options explored in this page are valid options for creating a development environment. However, you may find it more efficient to do initial development and testing in the smallest and fastest environment possible, e.g. Docker containers on a laptop/desktop. After you've done all the testing you can there, a copy of your skill can be installed in a different environment like a Mycroft Mark 2 for live testing.</li>
+<li><strong>Exclude default skills.</strong> The default <code>docker-compose</code> setup pulls <code>neon_skills-default_skills</code>. If your skill development does not require them, you can change it to <code>neon_skils</code> instead. This excludes default skills and only loads the mounted skills directory. Loading skills often takes significant time.</li>
+</ol>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

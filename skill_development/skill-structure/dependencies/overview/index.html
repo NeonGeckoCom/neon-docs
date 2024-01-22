@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Dependencies - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../../css/style.min.css" rel="stylesheet">
+<link href="../../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="dependencies">Dependencies</h1>
+<p>There are three main categories of dependencies:</p>
+<ul>
+<li>Python packages sourced from <a href="https://pypi.org/">PyPI</a>.</li>
+<li>Linux system packages sourced from the repositories available on the Neon device.</li>
+<li>Skills sourced from the <a href="https://market.mycroft.ai/">Mycroft Skills Marketplace</a> or other <a href="https://openvoiceos.github.io/community-docs/install_skills/#supported-stores">Marketplaces</a>.</li>
+</ul>
+<p>Some of these may already be installed on a User's device, however some may not. To make sure a system has everything that your Skill needs, we can define the dependencies or requirements of the Skill. During installation Neon will then check that they are installed, and if not attempt to do so.</p>
+<p>For more information on Python package management and Python virtual environments, see our <a href="../../introduction/python-resources.md">general Python Resources.</a></p>
+<p>There are three files that we can use to define these dependencies.</p>
+<h2 id="recommended">Recommended</h2>
+<p><a href="../manifest-yml/"><code>manifest.yml</code> is the default method</a>. This can include all three types of dependencies including variations for different operating systems if required.</p>
+<h2 id="alternatives">Alternatives</h2>
+<p><code>requirements.txt</code> can be used only for Python packages.</p>
+<p><code>requirements.sh</code> is used to run a custom script during installation.</p>
+<p><a href="../requirements-files/">More details on each are available in this documentation</a>.</p>
+<p>Which ever file you choose to use, it must be located in the root directory of your Skill.</p>
+<p>There is no limit to the number of packages you can install, however these are reviewed for all official Neon skills to ensure they are appropriate for the Skill being installed and do not pose a security concern for Users. <em>For this reason and many others, install non-official skills at your own risk, and be sure to review the code for questionable sources if you can.</em></p>
+<h2 id="manual-installation">Manual installation</h2>
+<p>The files outlined above ensure that dependencies are available on devices when a Skill is being installed by Neon. If you are developing the Skill on your own machine, you may need to install these dependencies manually.</p>
+<p>System packages can be installed using your standard package manager, for example:</p>
+<pre><code class="language-bash">apt install system-package-name
+</code></pre>
+<p>Neon Skills should ideally be installed using pip:</p>
+<pre><code class="language-bash">pip install required-skill-name
+pip install git+https://github.com/neongeckocom/required-skill-name
+</code></pre>
+<p>Neon Skills can be installed using the OVOS Skills Manager (may behave unexpectedly):</p>
+<pre><code class="language-bash">osm install required-skill-name
+</code></pre>
+<p>Python packages must be installed in the Neon virtual environment. When logging into any official Neon image, this environment shell will automatically be loaded, so you can just use the <code>pip</code> command.</p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/gitbook.min.js"></script>
+<script src="../../../../js/theme.min.js"></script>
+</body>
+</html>

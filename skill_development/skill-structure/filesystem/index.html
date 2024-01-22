@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Filesystem Access - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../css/style.min.css" rel="stylesheet">
+<link href="../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="./" class="active">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="filesystem-access">Filesystem access</h1>
+<p>Many Skills may want access to parts of the filesystem. To account for the many different platforms that can run Neon there are three locations that a Skill can utilize.</p>
+<ul>
+<li>Persistent filesystem</li>
+<li>Temporary cache</li>
+</ul>
+<h2 id="persistent-files">Persistent Files</h2>
+<p>When your Skill needs to store some data that will persist over time and cannot easily be rebuilt, there is a persistent filesystem namespaced to your Skill.</p>
+<h3 id="reading-and-writing-to-files">Reading and writing to files</h3>
+<p>This uses the standard Python <code>open()</code> method to read and write files. It takes two parameters:</p>
+<ul>
+<li>file_name (str) - a path relative to the namespace. subdirs not currently supported.</li>
+<li>mode (str) – a file handle mode [r, r+, w, w+, rb, rb+, wb+, a, ab, a+, ab+, x]</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-python">    def write_line_to_file(self, file_name, line):
+        &quot;&quot;&quot;Write a single line to a file in the Skills persistent filesystem.&quot;&quot;&quot;
+        with self.file_system.open(file_name, &quot;w&quot;) as my_file:
+            my_file.write(line)
+
+    def read_file(self, file_name):
+        &quot;&quot;&quot;Read the contents of a file in the Skills persistent filesystem.&quot;&quot;&quot;
+        with self.file_system.open(file_name, &quot;r&quot;) as my_file:
+            return my_file.read()
+</code></pre>
+<h3 id="check-if-a-file-exists">Check if a file exists</h3>
+<p>Quick method to see if some file exists in the namespaced directory.</p>
+<p>Example:</p>
+<pre><code class="language-python">        file_name = &quot;example.txt&quot;
+        with self.file_system.open(file_name, &quot;w&quot;) as my_file:
+            my_file.write(&quot;Hello world&quot;)
+        self.log.info(self.file_system.exists(file_name))
+        # True
+        self.log.info(self.file_system.exists(&quot;new.txt&quot;))
+        # False
+</code></pre>
+<h3 id="get-the-path-of-the-namespaced-directory">Get the path of the namespaced directory</h3>
+<p><code>self.file_system.path</code> is a member value containing the root path of the namespace. However it is recommended that you use the <code>self.file_system.open()</code> method to read and write files.</p>
+<p>Example:</p>
+<pre><code class="language-python">from neon_utils.skills.neon_skill import NeonSkill
+
+class FileSystemSkill(NeonSkill):
+
+    def initialize(self):
+        &quot;&quot;&quot;Log the path of this Skills persistent namespace.&quot;&quot;&quot;
+        self.log.info(self.file_system.path)
+
+def create_skill():
+    return FileSystemSkill()
+</code></pre>
+<h3 id="create-subdirectories">Create subdirectories</h3>
+<p>Now that we have the path of our namespaced filesystem, we can organize our files however we like within that directory.</p>
+<p>In this example, we create a subdirectory called "cache", then write to a text file inside of it.</p>
+<pre><code class="language-python">from os import mkdir
+from os.path import join
+
+from neon_utils.skills.neon_skill import NeonSkill
+
+class FileSystemSkill(NeonSkill):
+
+    def initialize(self):
+        &quot;&quot;&quot;Create a cache subdirectory and write to a file inside it&quot;&quot;&quot;
+        cache_dir = &quot;cache&quot;
+        file_name = &quot;example.txt&quot;
+        if not self.file_system.exists(cache_dir):
+            mkdir(join(self.file_system.path, cache_dir))
+        with self.file_system.open(join(cache_dir, file_name), &quot;w&quot;) as my_file:
+            my_file.write('hello')
+
+
+def create_skill():
+    return FileSystemSkill()
+</code></pre>
+<h3 id="example-skill">Example Skill</h3>
+<pre><code class="language-python">from neon_utils.skills.neon_skill import NeonSkill
+from ovos_workshop.decorators import intent_handler
+
+class FileSystemSkill(NeonSkill):
+
+    def initialize(self):
+        &quot;&quot;&quot;Perform initial setup for the Skill.
+
+        For this example we do four things:
+        1. Log the path of this directory.
+        2. Write to a file in the directory.
+        3. Check that our file exists.
+        4. Read the contents of our file from disk.
+        &quot;&quot;&quot;
+        file_name = &quot;example.txt&quot;
+        self.log.info(self.file_system.path)
+        self.write_line_to_file(file_name, &quot;hello world&quot;)
+        self.log.info(self.file_system.exists(file_name))
+        self.log.info(self.read_file(file_name))
+
+    def write_line_to_file(self, file_name, line):
+        &quot;&quot;&quot;Write a single line to a file in the Skills persistent filesystem.&quot;&quot;&quot;
+        with self.file_system.open(file_name, &quot;w&quot;) as my_file:
+            my_file.write(line)
+
+    def read_file(self, file_name):
+        &quot;&quot;&quot;Read the contents of a file in the Skills persistent filesystem.&quot;&quot;&quot;
+        with self.file_system.open(file_name, &quot;r&quot;) as my_file:
+            return my_file.read()
+
+def create_skill():
+    return FileSystemSkill()
+</code></pre>
+<h2 id="temporary-cache">Temporary Cache</h2>
+<p>Skills can create a directory for caching temporary data to speed up performance.</p>
+<p>This directory will likely be part of a small RAM disk and may be cleared at any time. So code that uses these cached files must be able to fallback and regenerate the file.</p>
+<h3 id="example-skill_1">Example Skill</h3>
+<pre><code class="language-python">from os.path import join
+from neon_utils.skills.neon_skill import NeonSkill
+from ovos_workshop.decorators import intent_handler
+from mycroft.util import get_cache_directory
+
+class CachingSkill(NeonSkill):
+
+    def initialize(self):
+        &quot;&quot;&quot;Perform initial setup for the Skill.
+
+        For this example we do four things:
+        1. Get a cache directory namespaced for our Skill.
+        2. Define a file path for the cache_file.
+        3. Write some data to the cache_file
+        4. Log the path of the cache_file
+        4. Log the contents of the cache_file.
+        &quot;&quot;&quot;
+        cache_dir = get_cache_directory('CachingSkill')
+        self.cache_file = join(cache_dir, &quot;myfile.txt&quot;)
+        self.cache_data()
+        self.log.info(self.cache_file)
+        self.log.info(self.read_cached_data())
+
+    def cache_data(self):
+        with open(self.cache_file, &quot;w&quot;) as cache_file:
+            cache_file.write(&quot;Some cached data&quot;)
+
+    def read_cached_data(self):
+        with open(self.cache_file, &quot;r&quot;) as cache_file:
+            return cache_file.read()
+
+def create_skill():
+    return CachingSkill()
+</code></pre>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../js/main.js"></script>
+<script src="../../../js/gitbook.min.js"></script>
+<script src="../../../js/theme.min.js"></script>
+</body>
+</html>

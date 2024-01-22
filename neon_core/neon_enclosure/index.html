@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Enclosure - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet">
+<link href="../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="./" class="active">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../skill_development/development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill_development/skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../skill_development/development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../skill_development/language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../skill_development/user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../skill_development/displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill_development/skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="neon-enclosure">Neon Enclosure</h1>
+<p>The enclosure module implements the Platform and Hardware Abstraction Layer (PHAL)
+from <a href="https://github.com/OpenVoiceOS/ovos-PHAL">OpenVoiceOS</a>. This service loads
+PHAL plugins that provide different functionality to the core; plugins primarily 
+differ from skills in that they do not have any intents and that they may only
+be valid in certain core environments (i.e. only for particular hardware or
+operating system environments).</p>
+<h2 id="admin-services">Admin Services</h2>
+<p><code>neon_enclosure.admin</code> contains a service much like <code>neon_enclosure</code>, but plugins
+it loads will have <code>root</code> privileges. This service is intended for handling any
+OS-level interactions requiring escalation of privileges and is excluded from Docker support.
+Because this service runs as root, it also requires configuration be initialized
+prior to its initialization; user-level configurations will be placed in the <code>/root</code>
+directory per XDG, so any configuration should be done at the system-level.</p>
+<h2 id="running-in-docker">Running in Docker</h2>
+<p>The included <code>Dockerfile</code> may be used to build a docker container for the neon_audio module. The below command may be used
+to start the container.</p>
+<pre><code class="language-shell">docker run -d \
+--network=host \
+--name=neon_enclosure \
+-v ~/.config/pulse/cookie:/home/neon/.config/pulse/cookie:ro \
+-v ${XDG_RUNTIME_DIR}/pulse:${XDG_RUNTIME_DIR}/pulse:ro \
+--device=/dev/snd:/dev/snd \
+-e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
+-e PULSE_COOKIE=/home/neon/.config/pulse/cookie \
+neon_enclosure
+</code></pre>
+<blockquote>
+<p><em>Note:</em> The above example assumes Docker data is stored in the standard user locations <code>~/.local/share</code> and <code>~/.config</code>.
+You may want to change these values to some other path to separate container and host system data.</p>
+</blockquote>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

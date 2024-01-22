@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Install and Deploy NeonAI Diana - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet">
+<link href="../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../skill_development/voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../skill_development/development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../skill_development/development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../skill_development/skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../skill_development/development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../skill_development/language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../skill_development/user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../skill_development/user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../skill_development/displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../skill_development/displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../skill_development/skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../skill_development/skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="install-and-deploy-neonai-diana">Install and Deploy NeonAI Diana</h1>
+<p>Device Independent API for Neon Applications (Diana) is a collection of microservices that add functionality to NeonAI systems. Diana microservices are deployed in a Kubernetes cluster.</p>
+<p>After you have installed Diana, use <code>diana --help</code> to get detailed help.</p>
+<p>For more information about using NeonAI, see <a href="https://neongeckocom.github.io/neon-docs/">the NeonAI documentation site</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To install Diana:</p>
+<ul>
+<li><a href="https://ubuntu.com/">Ubuntu</a> 20.04 or later. </li>
+<li>Diana will most likely work on other flavors of Linux, but we have not yet verified this.</li>
+<li><a href="https://www.python.org/getit/">Python</a> 3.8 or later.</li>
+<li><a href="https://pypi.org/project/pip/">Pip</a> Python package installer.</li>
+</ul>
+<p>To deploy Diana: </p>
+<ul>
+<li><a href="https://kubernetes.io/docs/reference/kubectl/">Kubectl</a> Kubernetes command-line tool.</li>
+<li><a href="https://helm.sh/">Helm</a> package manager for Kubernetes.</li>
+<li>A <a href="https://kubernetes.io/">Kubernetes</a> installation.</li>
+<li>The following instructions assume a local installation using <a href="https://microk8s.io/">Microk8s</a> version 1.26/stable or later.</li>
+<li>You can likely deploy Diana on a Kubernetes cluster in the cloud, but we have not yet verified this.</li>
+</ul>
+<h2 id="use-a-python-virtual-environment">Use a Python virtual environment</h2>
+<p>We recommend you use a <a href="https://docs.python.org/3/library/venv.html">Python virtual environment</a> for installing and testing Diana. In addition to the usual benefits, using a virtual environment makes it easier to ensure you are using the correct versions of Python and Diana.</p>
+<ol>
+<li>Create a Python virtual environment:</li>
+</ol>
+<pre><code>python3.10 -m venv venv
+</code></pre>
+<ol>
+<li>Open a new terminal window. Activate the Python virtual environment in this new window:</li>
+</ol>
+<pre><code>. venv/bin/activate
+</code></pre>
+<p>Using this new window, proceed with the instructions.</p>
+<h2 id="install-diana">Install Diana</h2>
+<ol>
+<li>Use Pip to install Diana:</li>
+</ol>
+<pre><code>pip install --pre neon-diana-utils
+</code></pre>
+<p>This command installs the newest pre-release version, which is described in this tutorial. </p>
+<p><strong>Warning:</strong> You can use <code>pip install neon-diana-utils</code> to install the current stable version. Version 1.0.0 includes Helm chart support. For information on installing and running older versions, see <a href="https://github.com/NeonGeckoCom/neon-diana-utils/blob/dev/README.md">the archived documentation in the README file</a>.</p>
+<p>For more information on the available versions of Diana, see <a href="https://pypi.org/project/neon-diana-utils/">the Python Package Index repo for Neon Diana</a>.</p>
+<ol>
+<li>Verify Diana is installed:</li>
+</ol>
+<pre><code>diana --version
+</code></pre>
+<p><strong>Tip:</strong> If your computer does not recognize this command, you may need to add <code>~/.local/bin</code> to your $PATH with a command like <code>export PATH=$PATH:/home/${USER}/.local/bin</code>.</p>
+<p>Use <code>diana --help</code> for detailed information about Diana and its commands.</p>
+<p>The output of <code>diana --help</code> looks like:</p>
+<pre><code>Usage: diana [OPTIONS] COMMAND [ARGS]...
+
+  Diana: Device Independent API for Neon Applications.
+
+  See also: diana COMMAND --help
+
+Options:
+  -v, --version  Print the current version
+  --help         Show this message and exit.
+
+Commands:
+  configure-backend     Configure a Diana Backend
+  configure-mq-backend  Configure RabbitMQ and export user credentials
+  make-github-secret    Generate Kubernetes secret for Github images
+  make-keys-config      Generate a configuration file with access keys
+  make-rmq-config       Generate RabbitMQ definitions
+  start-backend         Start a Diana Backend
+  stop-backend          Stop a Diana Backend
+
+</code></pre>
+<h2 id="deploy-neonai-diana">Deploy NeonAI Diana</h2>
+<p>This example deploys Diana in a local <a href="https://microk8s.io/">Microk8s Kubernetes</a> cluster. </p>
+<h3 id="install-and-run-microk8s">Install and Run Microk8s</h3>
+<p>If you don't have Microk8s installed, you can install it and create the necessary user with:</p>
+<pre><code>sudo snap install microk8s --classic
+sudo usermod -aG microk8s $USER
+newgrp microk8s
+</code></pre>
+<ol>
+<li>Start Microk8s:</li>
+</ol>
+<pre><code>microk8s start
+</code></pre>
+<ol>
+<li>Enable the services for persistent storage, DNS, and the Kubernetes dashboard:</li>
+</ol>
+<pre><code>microk8s enable hostpath-storage
+microk8s enable dns
+microk8s enable dashboard
+</code></pre>
+<ol>
+<li>Enable the MetalLB service:</li>
+</ol>
+<pre><code>microk8s enable metallb
+</code></pre>
+<p>At the prompt, enter a subnet  which is not being used by your router. For example: </p>
+<pre><code>10.10.10.10-10.10.10.10
+</code></pre>
+<p>Note: Unless you plan on adding multiple nodes, this range only needs one address.</p>
+<ol>
+<li>
+<p>After Microk8s is running, use <code>microk8s kubectl create token default</code> to create a Microk8s token.</p>
+</li>
+<li>
+<p>In the new terminal window, use <code>microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 1443:443</code> to forward the dashboard port. </p>
+</li>
+</ol>
+<p>You can now access your Kubernetes dashboard in a browser at https://localhost:1443/ using the token you created in step 2. </p>
+<ol>
+<li>The process in this terminal needs to keep running. Either background the process, or leave this terminal window open and open a new terminal window to continue working.</li>
+</ol>
+<h3 id="set-up-dns">Set Up DNS</h3>
+<p>The ingress controller needs URLs to be mapped to services. There are a number of different ways you can accomplish this, depending on your networking setup. </p>
+<p>For this guide, we will use the simple case of editing the <code>/etc/hosts</code> file.</p>
+<ol>
+<li>Edit the <code>/etc/hosts</code> file. Add one entry for the domain name of each service you intend to run. Add the canonical domain and point it to the IP address you gave MetalLB in step 3.</li>
+</ol>
+<p>For example, if you plan to run a service named <code>test-service</code> on the <code>diana.k8s</code> domain, add the following line:</p>
+<pre><code>10.10.10.10 test-service.diana.k8s
+</code></pre>
+<p>This tells your computer that <code>test-service.diana.k8s</code> is at IP address <code>10.10.10.10</code>. Your computer will route all requests for <code>test-service.diana.k8s</code> to the Kubernetes cluster you set up at <code>10.10.10.10</code>, instead of looking for it on the public internet.</p>
+<p>Add one line for each service. Point each service to the same IP address.</p>
+<h3 id="prepare-for-deployment">Prepare for Deployment</h3>
+<ol>
+<li>After you set up your Kubernetes cluster and configure DNS, configure the Diana backend with:</li>
+</ol>
+<pre><code>diana configure-mq-backend OUTPUT_PATH
+</code></pre>
+<p>Replace <code>OUTPUT_PATH</code> with the directory where you want Diana to store its Helm charts and configurations. For example:</p>
+<pre><code>diana configure-mq-backend ~/neon_diana
+</code></pre>
+<p>Follow the prompts to provide any necessary configuration parameters. </p>
+<ol>
+<li>
+<p><strong>Optional:</strong> To add extra TCP ports (i.e. for RabbitMQ), update the <code>OUTPUT_PATH/ingress-nginx/values.yaml</code> file accordingly.</p>
+</li>
+<li>
+<p>Deploy the NGINX ingress:</p>
+</li>
+</ol>
+<pre><code>helm install ingress-nginx OUTPUT_PATH/ingress-common --namespace ingress-nginx --create-namespace
+</code></pre>
+<ol>
+<li>
+<p>Edit <code>OUTPUT_PATH/diana-backend-values.yaml</code> and update any necessary configuration. At minimum, you need to update the following parameters:</p>
+</li>
+<li>
+<p><code>domain</code> Change this to the domain you added to the <code>/etc/hosts</code> file in step 11.</p>
+</li>
+<li><code>letsencrypt.email</code> If you are using a "real" domain, change this to the email address you want to use for the <a href="https://letsencrypt.org/">Let's Encrypt</a> SSL certificate. For local testing, leave this as is.</li>
+<li><code>letsencrypt.server</code> If you are using a "real" domain, change this to a valid Let's Encrypt server address, such as <code>https://acme-v02.api.letsencrypt.org/directory</code>. For local testing, leave this as is.</li>
+</ol>
+<h2 id="deploy-the-diana-backend">Deploy the Diana Backend</h2>
+<ol>
+<li>Update the Helm dependency:</li>
+</ol>
+<pre><code>helm dependency update OUTPUT_PATH/diana-backend
+</code></pre>
+<ol>
+<li>Use Helm to launch Diana:</li>
+</ol>
+<pre><code>helm install diana-backend OUTPUT_PATH/test/diana-backend --namespace backend --create-namespace
+</code></pre>
+<p>This creates the <code>backend</code> namespace and launches Diana into that namespace. You can change this to any namespace name you prefer. You may want to use separate namespaces for test versus production deployments, to separate the Diana backend from other deployments, or both.</p>
+<p>```</p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

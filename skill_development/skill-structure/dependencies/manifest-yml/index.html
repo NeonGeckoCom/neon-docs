@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Manifest.yml - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../../css/style.min.css" rel="stylesheet">
+<link href="../../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="./" class="active">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../../user-interaction/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../../../user-interaction/intents/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/intents/adapt-intents/" class="">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/intents/padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../../user-interaction/statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../../user-interaction/converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="manifestyml">Manifest.yml</h1>
+<p><strong>NOTE:</strong> Manifest.yml is not supported fully by pip-installed skills. <a href="../../../development-setup/skill_json/">It is recommended to use the <code>skill.json</code> file instead</a>.</p>
+<p>In this file we can include Python packages, Linux applications or other Neon skills that are required for our own Skill to function properly.</p>
+<p><a href="https://en.wikipedia.org/wiki/YAML">YAML</a> is a language commonly used for configuration files. It uses indentation rather than brackets or parentheses to define the structure or hierarchy of its contents.</p>
+<h2 id="file-contents">File contents</h2>
+<p>We start the <code>manifest.yml</code> by defining a top-level key of <code>dependencies</code> and the type of dependency we want to include.</p>
+<pre><code class="language-yaml">dependencies:
+  python:
+</code></pre>
+<h3 id="python-packages">Python Packages</h3>
+<p>Here we can see a simple example that defines the <code>requests</code> and <code>gensim</code> Python packages as required dependencies.</p>
+<pre><code class="language-yaml">dependencies:
+  python:
+    - requests
+    - gensim
+</code></pre>
+<p>When a Skill with this <code>manifest.yml</code> file is being installed, Neon would check for, and if required install, both packages from <a href="https://pypi.org/">PyPI</a> using the PIP installer.</p>
+<p>There is no limit to the number of packages you can install, however these are reviewed during the <a href="../../marketplace-submission/skills-acceptance-process/">Skills Acceptance Process</a> to ensure they are appropriate for the Skill being installed.</p>
+<h3 id="linux-system-packages">Linux System Packages</h3>
+<p>Linux packages are defined under the <code>system</code> key. As Neon can be installed on many different Linux distributions, support is provided for a range of package managers.</p>
+<p>For packages that have consistent naming across package managers, we can use <code>all</code>.</p>
+<pre><code class="language-yaml">dependencies:
+  system:
+    all: pianobar piano-dev
+</code></pre>
+<p>If the package has a different name on specific platforms, we can define that using the name of the package manager as a key. In the following example, we want to use the <code>libpiano-dev</code> package when using the <code>APT</code> package manager on Debian, Ubuntu and other related distributions.</p>
+<pre><code class="language-yaml">dependencies:
+  system:
+    all: pianobar piano-dev
+    apt-get: pianobar libpiano-dev
+</code></pre>
+<p>Finally we can check that certain executables are available for the install to succeed. This is done by checking the <a href="http://www.linfo.org/path_env_var.html">PATH environment variable</a>.</p>
+<pre><code class="language-yaml">dependencies:
+  system:
+    all: pianobar piano-dev
+    apt-get: pianobar libpiano-dev
+
+  exes:
+    - pianobar
+</code></pre>
+<p>Here we have installed a number of <code>pianobar</code> packages, and then verify that the <code>pianobar</code> executable is available for our Skill.</p>
+<h3 id="other-neon-skills">Other Neon Skills</h3>
+<p>A Skill may even require that other Neon Skills are installed rather than duplicate functionality. Here we can see that the Cocktails Skill and the Mozilla Webthings Gateway are listed as dependencies.</p>
+<pre><code class="language-yaml">dependencies:
+  skill:
+    - cocktails
+    - webthings-gateway
+</code></pre>
+<p>Anything listed in this section will be passed to Neon for installation.</p>
+<h2 id="example-files">Example files</h2>
+<p>A complete <code>manifest.yml</code> example can be found in the <a href="https://github.com/MycroftAI/mycroft-skills/blob/19.08/00__skill_template/manifest.yml">official Mycroft Template Skill on Github</a>.</p>
+<p>A simple example from a real Skill can be found in the <a href="https://github.com/MycroftAI/skill-desktop-launcher/blob/19.08/manifest.yml">Desktop Launcher Skill</a>.</p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/gitbook.min.js"></script>
+<script src="../../../../js/theme.min.js"></script>
+</body>
+</html>

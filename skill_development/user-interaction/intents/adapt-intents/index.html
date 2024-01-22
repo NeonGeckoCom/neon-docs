@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Adapt Intents - Neon.AI® Documentation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.5.3, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../../../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../../../css/style.min.css" rel="stylesheet">
+<link href="../../../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href="../../../.." target="_blank" class="custom-link">Neon.AI® Documentation</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="../../../..">About</a>
+<li class="header">Overview</li>
+
+<li>
+<a href="../../../../overview/definitions" class="">Definitions</a>
+</li>
+
+<li>
+<a href="../../../../overview/faq" class="">Frequently Asked Questions</a>
+</li>
+
+<li class="header">Neon Core</li>
+
+<li>
+<a href="../../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/quick_start/" class="">Quick Start</a>
+</li>
+
+<li>
+<a href="#">Core Modules</a>
+<ul>
+
+<li>
+<a href="../../../../neon_core/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_messagebus/" class="">Messagebus</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_speech/" class="">Speech</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_audio/" class="">Audio</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_gui/" class="">GUI</a>
+</li>
+
+<li>
+<a href="../../../../neon_core/neon_enclosure/" class="">Enclosure</a>
+</li>
+</ul>
+</li>
+
+<li class="header">Neon OS</li>
+
+<li>
+<a href="../../../../neon_os/" class="">Introduction</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_os_installation/" class="">Installation</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/using_neon_os/" class="">Using Neon OS</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_os_updates/" class="">Updating</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/On_the_MarkII/" class="">Neon OS on the Mark II</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_debos/" class="">Debos Base Images</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/neon_image_recipe/" class="">Neon Image Recipes</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/developers/" class="">Developer References</a>
+</li>
+
+<li>
+<a href="../../../../neon_os/tips/" class="">Tips</a>
+</li>
+
+<li class="header">Quick Reference Guides</li>
+
+<li>
+<a href="../../../../quick_reference/terminal/" class="">Terminal</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/logging/" class="">Logs</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/configuration/" class="">Configuration</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/installing_skills/" class="">Installing Skills</a>
+</li>
+
+<li>
+<a href="../../../../quick_reference/installing_plugins/" class="">Installing Plugins</a>
+</li>
+
+<li class="header">Skill Development</li>
+
+<li>
+<a href="#">Voice User Interface Design Guidelines</a>
+<ul>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="">What Can A Skill Do?</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/design-process/" class="">Design Process</a>
+</li>
+
+<li>
+<a href="#">Interactions</a>
+<ul>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="">Statements and Prompts</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="">Confirmations</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/conversations/" class="">Conversations</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/error-handling/" class="">Error Handling</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/example-dialogs/" class="">Example Interaction Script</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/prototyping/" class="">Prototyping</a>
+</li>
+
+<li>
+<a href="../../../voice-user-interface-design-guidelines/skill-testing/" class="">Skill Testing</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Development Setup</a>
+<ul>
+
+<li>
+<a href="../../../development-setup/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../development-setup/git_overview/" class="">Working with Git(Hub)</a>
+</li>
+
+<li>
+<a href="../../../development-setup/python-resources/" class="">Python Resources</a>
+</li>
+
+<li>
+<a href="../../../development-setup/dev-environment/" class="">Setting Up Your Development Environment</a>
+</li>
+
+<li>
+<a href="../../../development-setup/your-first-skill/" class="">Your First Skill</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Skill Structure</a>
+<ul>
+
+<li>
+<a href="../../../skill-structure/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../skill-structure/lifecycle-methods/" class="">Lifecycle Methods</a>
+</li>
+
+<li>
+<a href="../../../skill-structure/logging/" class="">Logging</a>
+</li>
+
+<li>
+<a href="../../../skill-structure/skill-settings/" class="">Skill Settings</a>
+</li>
+
+<li>
+<a href="#">Dependencies</a>
+<ul>
+
+<li>
+<a href="../../../development-setup/skill_json/" class="">skill.json</a>
+</li>
+
+<li>
+<a href="../../../skill-structure/dependencies/manifest-yml/" class="">Manifest.yml</a>
+</li>
+
+<li>
+<a href="../../../skill-structure/dependencies/requirements-files/" class="">Requirements files</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../../skill-structure/filesystem/" class="">Filesystem Access</a>
+</li>
+
+<li>
+<a href="../../../skill-structure/api/" class="">Skill API</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Language Support</a>
+<ul>
+
+<li>
+<a href="../../../language-support/using-nice-date-and-time-functions-for-your-language/" class="">Using nice date and time functions for your language</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">User Interaction</a>
+<ul>
+
+<li>
+<a href="../../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="#">Intents</a>
+<ul>
+
+<li>
+<a href="../overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="./" class="active">Adapt Intents</a>
+</li>
+
+<li>
+<a href="../padatious-intents/" class="">Padatious Intents</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="../../statements/" class="">Statements</a>
+</li>
+
+<li>
+<a href="../../prompts/" class="">Prompts</a>
+</li>
+
+<li>
+<a href="../../parsing/" class="">Parsing Utterances</a>
+</li>
+
+<li>
+<a href="../../confirmations/" class="">Confirmations</a>
+</li>
+
+<li>
+<a href="../../conversational-context/" class="">Conversational Context</a>
+</li>
+
+<li>
+<a href="../../converse/" class="">Converse</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Displaying Information</a>
+<ul>
+
+<li>
+<a href="../../../displaying-information/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../displaying-information/mycroft-gui/" class="">GUI Framework</a>
+</li>
+
+<li>
+<a href="../../../displaying-information/show-simple-content/" class="">Show Simple Content</a>
+</li>
+
+<li>
+<a href="../../../displaying-information/neon-gui-on-a-pc/" class="">Neon-GUI On A PC</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="#">Advanced Skill Types</a>
+<ul>
+
+<li>
+<a href="../../../skill-types/overview/" class="">Overview</a>
+</li>
+
+<li>
+<a href="../../../skill-types/fallback-skill/" class="">Fallback Skill</a>
+</li>
+
+<li>
+<a href="../../../skill-types/ovos-common-play/" class="">OVOS Common Play Skills</a>
+</li>
+
+<li>
+<a href="../../../skill-types/common-query-framework/" class="">Common Query Framework</a>
+</li>
+
+<li>
+<a href="../../../skill-types/vuis-for-phal-plugins/" class="">Voice User Interfaces for PHAL Plugins</a>
+</li>
+</ul>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="adapt-intents">Adapt Intents</h1>
+<p>Adapt is a keyword based intent parser. It determines user intent based on a list of keywords or entities contained within a users utterance.</p>
+<p><a href="" title="https://www.youtube.com/watch?v=zR9xvPtM6Ro">Introducing the Adapt Parser (YouTube)</a></p>
+<p>For technical details or usage of Adapt outside of a Neon Skill, see the <a href="https://mycroft-ai.gitbook.io/docs/mycroft-technologies/adapt">Adapt documentation</a>.</p>
+<h2 id="defining-keywords-and-entities">Defining keywords and entities</h2>
+<h3 id="vocab-voc-files">Vocab (.voc) Files</h3>
+<p>Vocab files define keywords that Adapt will look for in a Users utterance to determine their intent.</p>
+<p>These files can be located in either the <code>vocab/lang-code/</code> or <code>locale/lang-code/</code> directories of a Skill. They can have one or more lines to list synonyms or terms that have the same meaning in the context of this Skill. Neon will match <em>any</em> of these keywords with the Intent.</p>
+<p>Consider a simple <code>potato.voc</code>. Within this file we might include:</p>
+<pre><code>potato
+potatoes
+spud
+</code></pre>
+<p>If the User speaks <em>either</em>:</p>
+<blockquote>
+<p>potato</p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p>potatoes</p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p>spud</p>
+</blockquote>
+<p>Neon will match this to any Adapt Intents that are using the <code>Potato</code> keyword.</p>
+<h3 id="regular-expression-rx-files">Regular Expression (.rx) Files</h3>
+<p>Regular expressions (or regex) allow us to capture entities based on the structure of an utterance.</p>
+<p>These files can be located in either the <code>regex/lang-code/</code> or <code>locale/lang-code/</code> directories of a Skill. They can have one or more lines to provide different ways that an entity may be referenced. Neon will execute these lines in the order they appear and return the first result as an entity to the Intent Handler.</p>
+<p>Let's consider a <code>type.rx</code> file to extract the type of potato we are interested in. Within this file we might include:</p>
+<pre><code>.* about (?P&lt;Type&gt;.*) potatoes
+.* (make|like) (?P&lt;Type&gt;.*) potato
+</code></pre>
+<p><strong>What is this regex doing?</strong> <code>.*</code> matches zero, one or more of any single character. <code>(?P&lt;Type&gt;.*)</code> is known as a Named Capturing Group. The variable name is defined between the , and what is captured is defined after this name. In this case we use <code>.*</code> to capture anything.</p>
+<p><a href="https://github.com/ziishaned/learn-regex/blob/master/README.md">Learn more about Regular Expressions</a>.</p>
+<p>So our first line would match an utterance such as:</p>
+<blockquote>
+<p>Tell me about <em>sweet potatoes</em></p>
+</blockquote>
+<p>Whilst the second line will match either:</p>
+<blockquote>
+<p>Do you like <em>deep fried potato</em></p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p>How do I make <em>mashed potato</em></p>
+</blockquote>
+<p>From these three utterances, what will the extracted <code>Type</code> be:\
+1. <code>sweet</code>\
+2. <code>deep fried</code>\
+3. <code>mashed</code></p>
+<p>This <code>Type</code> will be available to use in your Skill's Intent Handler on the <code>message</code> object. We can access this using:</p>
+<pre><code>message.data.get('Type')
+</code></pre>
+<h2 id="using-adapt-in-a-skill">Using Adapt in a Skill</h2>
+<p>Now that we have a Vocab and Regular Expression defined, let's look at how to use these in a simple Skill.</p>
+<p>For the following example we will use the two files we outlined above:</p>
+<ul>
+<li><code>potato.voc</code></li>
+<li><code>type.rx</code></li>
+</ul>
+<p>We will also add some new <code>.voc</code> files:</p>
+<ul>
+<li><code>like.voc</code> - containing a single line "like"</li>
+<li><code>you.voc</code> - containing a single line "you"</li>
+<li><code>i.voc</code> - containing a single line "I"</li>
+</ul>
+<h3 id="creating-the-intent-handler">Creating the Intent Handler</h3>
+<p>To construct an Adapt Intent, we use the intent<em>handler() _decorator</em> and pass in the Adapt IntentBuilder.</p>
+<p><a href="https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Decorators">Learn more about <em>decorators</em> in Python</a>.</p>
+<p>Both of these must be imported before we can use them:</p>
+<pre><code class="language-python">from ovos_utils.intents import IntentBuilder
+from ovos_workshop.decorators import intent_handler
+</code></pre>
+<p>The IntentBuilder is then passed the name of the Intent as a string, followed by one or more parameters that correspond with one of our <code>.voc</code> or <code>.rx</code> files.</p>
+<pre><code class="language-python">@intent_handler(IntentBuilder('IntentName')
+                              .require('Potato')
+                              .require('Like')
+                              .optionally('Type')
+                              .one_of('You', 'I'))
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>the <code>Potato</code> and <code>Like</code> keywords are required. It must be present for the intent to match.</li>
+<li>the <code>Type</code> entity is optional. A stronger match will be made if this is found, but it is not required.</li>
+<li>we require at least one of the <code>You</code> or <code>I</code> keywords.</li>
+</ul>
+<p>What are some utterances that would match this intent?</p>
+<blockquote>
+<p>Do you like potato? Do you like fried potato? Will I like mashed potato? Do you think I would like potato?</p>
+</blockquote>
+<p>What are some utterances that would <em>not</em> match the intent?</p>
+<blockquote>
+<p>How do I make mashed potato?</p>
+</blockquote>
+<p><em>The required <code>Like</code> keyword is not found.</em></p>
+<blockquote>
+<p>Is it like a potato?</p>
+</blockquote>
+<p><em>Neither the <code>You</code> nor <code>I</code> keyword is found.</em></p>
+<h3 id="including-it-in-a-skill">Including it in a Skill</h3>
+<p>Now we can create our Potato Skill:</p>
+<pre><code class="language-python">from ovos_utils.intents import IntentBuilder
+from neon_core.skills import NeonSkill
+from ovos_workshop.decorators import intent_handler
+
+class PotatoSkill(NeonSkill):
+
+    @intent_handler(IntentBuilder('WhatIsPotato').require('What')
+                    .require('Potato'))
+    def handle_what_is(self, message):
+        self.speak_dialog('potato.description')
+
+    @intent_handler(IntentBuilder('DoYouLikePotato').require('Potato')
+                    .require('Like').optionally('Type').one_of('You', 'I'))
+    def handle_do_you_like(self, message):
+        potato_type = message.data.get('Type')
+        if potato_type is not None:
+            self.speak_dialog('like.potato.type',
+                              {'type': potato_type})
+        else:
+            self.speak_dialog('like.potato.generic')
+
+def create_skill():
+    return PotatoSkill()
+</code></pre>
+<p>You can <a href="https://github.com/krisgesling/dev-ex-adapt-intents-skill/blob/master/__init__.py">download this entire Potato Skill from Github</a>, or see another Adapt intent handler example in the <a href="https://github.com/MycroftAI/skill-hello-world/blob/f3eb89be6d80e1834637a64566c707d05fb8e3fa/__init__.py#L37">Mycroft Hello World Skill</a></p>
+<h2 id="common-problems">Common Problems</h2>
+<h3 id="more-vocab">More vocab!</h3>
+<p>One of the most common mistakes when getting started with Skills is that the vocab file doesn't include all of the keywords or terms that a User might use to trigger the intent. It is important to map out your Skill and test the interactions with others to see how they might ask questions differently.</p>
+<h3 id="i-have-added-new-phrases-in-the-voc-file-but-neon-isnt-recognizing-them">I have added new phrases in the .voc file, but Neon isn't recognizing them</h3>
+<ol>
+<li>Compound words like "don't", "won't", "shouldn't" etc. are normalized by Neon - so they become "do not", "will not", "should not". You should use the normalized words in your <code>.voc</code> files. Similarly, definite articles like the word "the" are removed in the normalization process, so avoid using them in your <code>.voc</code> or <code>.rx</code> files as well.</li>
+<li>Tab != 4 Spaces, sometimes your text editor or IDE automatically replaces tabs with spaces or vice versa. This may lead to an indentation error. So make sure there's no extra tabs and that your editor doesn't replace your spaces!</li>
+<li>Wrong order of files directories is a very common mistake. You have to make a language sub-folder inside the dialog, vocab or locale folders such as <code>skill-dir/locale/en-us/somefile.dialog</code>. So make sure that your <code>.voc</code> files and <code>.dialog</code> files are inside a language subfolder.</li>
+</ol>
+<h3 id="i-am-unable-to-match-against-the-utterance-string">I am unable to match against the utterance string</h3>
+<p>The utterance string received from the speech-to-text engine is received all lowercase. As such any string matching you are trying to do should also be converted to lowercase. For example:</p>
+<pre><code class="language-python">    @intent_handler(IntentBuilder('Example').require('Example').require('Intent'))
+    def handle_example(self, message):
+        utterance = message.data.get('utterance')
+        if 'Proper Noun'.lower() in utterance:
+            self.speak('Found it')
+</code></pre>
+<h2 id="need-more-help">Need more help?</h2>
+<p>If something isn't working as expected, please join us in the <a href="https://matrix.to/#/#NeonMycroft:matrix.org">Neon Chat</a>.</p>
+<p>It's also really helpful for us if you add an issue to our <a href="https://github.com/NeonGeckoCom/neon-docs/issues">documentation repo</a>. This means we can make sure it gets covered for all developers in the future.</p>
+
+
+</section>
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/gitbook.min.js"></script>
+<script src="../../../../js/theme.min.js"></script>
+</body>
+</html>
