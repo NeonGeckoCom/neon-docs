@@ -93,6 +93,5 @@ nav:
       - Voice User Interfaces for PHAL Plugins: skill_development/skill-types/vuis-for-phal-plugins.md
   - DevOps Workflows:
       - Neon OS:
-          - Releases: operations/neon_os/releases.md
           - Stable Release Workflow: operations/neon_os/workflow_stable_release.md
           - Beta Release Workflow: operations/neon_os/workflow_beta_release.md
