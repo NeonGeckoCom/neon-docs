@@ -95,3 +95,4 @@ nav:
       - Neon OS:
           - Stable Release Workflow: operations/neon_os/workflow_stable_release.md
           - Beta Release Workflow: operations/neon_os/workflow_beta_release.md
+          - Remove a Release Workflow: operations/neon_os/workflow_remove_release.md
