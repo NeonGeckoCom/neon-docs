@@ -12,7 +12,7 @@ This process applies in the following situations
   of Neon OS are eligible for release.
 - If a Neon OS release has already been pushed on this day, another release will
   have to wait until the next day for versioning to make sense.
-  > For this reason, a stable release should be pushed after all relevant cores
+  > For this reason, a stable release should be pushed after all relevant `core`
     and `neon-debos` releases for the day are completed.
 - The developer approving release will run the workflow to trigger a release in
   the [neon-os repository](https://github.com/NeonGeckoCom/neon-os/actions/workflows/manual_release.yaml)
