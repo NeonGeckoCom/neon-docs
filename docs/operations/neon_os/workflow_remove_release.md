@@ -15,3 +15,5 @@ This process applies in the following situations
 
 ### Exceptions
 - There should be no exceptions to this workflow.
+- If this is a beta release and the release files do not contain any sensitive
+  information, they may be left on the public server.
