@@ -1,19 +1,19 @@
 ## Stable Release Workflow
-This describes the process for pushing a stable Neon OS release
+This describes the process for pushing a stable Neon OS release.
 
 ### Application
-This process applies in the following situations
-- A new `stable` version of a `core` package is released
-- A new `stable` version of `neon_debos` is released
-- A major fix is applied to a `core` package dependency
+This process applies in the following situations:
+- A new `stable` version of a `core` package is released.
+- A new `stable` version of `neon_debos` is released.
+- A major fix is applied to a `core` package dependency.
 
 ### Process
 - Upon a new release in the `core` or `neon_debos` repository, relevant editions
   of Neon OS are eligible for release.
-- If a Neon OS release has already been pushed on this day, another release will
-  have to wait until the next day for versioning to make sense.
+- If a Neon OS release has already been pushed on this calendar day, another 
+  release will have to wait until the next day for consistent versioning.
   > For this reason, a stable release should be pushed after all relevant `core`
-    and `neon-debos` releases for the day are completed.
+    and `neon-debos` stable releases for the day are completed.
 - The developer approving release will run the workflow to trigger a release in
   the [neon-os repository](https://github.com/NeonGeckoCom/neon-os/actions/workflows/manual_release.yaml)
   and verify the automation has started.
@@ -34,5 +34,5 @@ This process applies in the following situations
 
 ### Exceptions
 - A maintaining developer may choose at their discretion to push a new stable
-  release at any time, provided they validate the release functions as expected
-  and stable versions of the `core` and `neon_debos` packages are used
+  release at any time, provided (1) they validate the release functionality
+  and (2) stable versions of the `core` and `neon_debos` packages are used.
