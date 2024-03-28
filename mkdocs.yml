@@ -91,3 +91,8 @@ nav:
       - OVOS Common Play Skills: skill_development/skill-types/ovos-common-play.md
       - Common Query Framework: skill_development/skill-types/common-query-framework.md
       - Voice User Interfaces for PHAL Plugins: skill_development/skill-types/vuis-for-phal-plugins.md
+  - DevOps Workflows:
+      - Neon OS:
+          - Stable Release Workflow: operations/neon_os/workflow_stable_release.md
+          - Beta Release Workflow: operations/neon_os/workflow_beta_release.md
+          - Remove a Release Workflow: operations/neon_os/workflow_remove_release.md
