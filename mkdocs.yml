@@ -104,6 +104,6 @@ nav:
       - Git:
           - Undo a Stable PR Workflow: operations/git/undo_stable_pr.md
       - Skills:
-          - Review Workflow: operations/skills/wokflow_review.md
           - Stable Release Workflow: operations/skills/workflow_stable_release.md
           - Alpha Release Workflow: operations/skills/workflow_alpha_release.md
+          - Review Workflow: operations/skills/wokflow_review.md

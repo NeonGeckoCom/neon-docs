@@ -2,7 +2,7 @@
 This describes the process for reviewing a skill PR.
 
 ### Application
-This process applies when reviewing a PR to the `dev` of `master` branch of any skill.
+This process applies when reviewing a PR to the `dev` or `master` branch of any skill.
 > Note that part of the process only applies to stable releases.
 
 ### Process
@@ -25,4 +25,7 @@ This process applies when reviewing a PR to the `dev` of `master` branch of any 
   i.e. "Unable to test." or "Noted pending TODO"
 
 ### Exceptions
-- There should be no exceptions to this review process.
+- A maintaining developer may choose at their discretion to allow a pinned alpha
+  dependency for a stable release if the pinned version has been adequately 
+  tested, and it is unreasonable or impossible to use a stable release for the
+  dependency.

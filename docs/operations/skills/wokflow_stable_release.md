@@ -31,5 +31,9 @@ This process applies when pushing a stable release for a skill.
 ### Exceptions
 - A maintaining developer may choose at their discretion to allow alpha dependencies in 
   optional extras, i.e. test dependencies.
+- A maintaining developer may choose at their discretion to allow a pinned alpha
+  dependency for a stable release if the pinned version has been adequately 
+  tested, and it is unreasonable or impossible to use a stable release for the
+  dependency.
 - A maintaining developer may choose at their discretion to not request another review if
   tests are passing and there is not another developer qualified and available to review.
