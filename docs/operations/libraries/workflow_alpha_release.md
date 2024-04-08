@@ -14,9 +14,11 @@ This process applies when making any change to a `library` module.
   > Ensure the PR title is descriptive and the template is completed. A description
     is required and relevant issues must be noted as either related to the PR or
     closed by the PR.
-- If any tests fail, mark the Pull Request as a Draft and make necessary changes.
-- After tests are passing, request a review from a maintainer.
-  > If the PR was marked as a draft, mark it ready for review here.
+- If any tests fail, mark the Pull Request as a Draft and make necessary changes. 
+  > After tests are passing, mark it ready for review here.
+- If permissions allow, request a review from a maintainer. If you are unable to
+  request a review and have discussed changes with a maintainer, tag them in a
+  comment.
 - Upon approving review, `Squash and Merge` changes to the `dev` branch
 
 ### Exceptions
