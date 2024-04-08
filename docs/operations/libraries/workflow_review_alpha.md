@@ -12,7 +12,7 @@ This process applies when reviewing a PR to the `dev` branch of a `library` modu
   warning is logged in the replaced method (either `deprecated` decorator or
   `log_deprecation` call).
 - If tests are modified, make sure newly deprecated methods are still tested and
-  that changes do not remove any test cases/
+  that changes do not remove any test cases.
 - Highlight any added `TODO` or existing `TODO` comments related to the changes.
   > It is up to the PR author and reviewer to decide if a `TODO` must be completed
     before merging OR if an issue can be created to address it in a later PR.
