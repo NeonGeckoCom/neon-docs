@@ -44,7 +44,7 @@ Refers to a module that may be replaced by an equivalent module. These will usua
 extend a class from [ovos-plugin-manager](https://github.com/openvoiceos/ovos-plugin-manager).
 
 ### Skill
-Refers to a class that extends `MycroftSkill`. A `skill` is a subset of a `plugin`.
+Refers to a class that extends `MycroftSkill`, `OVOSSkill`, or `NeonSkill`. A `skill` is a subset of a `plugin`.
 For the purposes of the operations documentation, a skill is distinctly different
 from a plugin.
 
