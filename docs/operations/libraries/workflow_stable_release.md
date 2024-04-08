@@ -29,7 +29,7 @@ This process applies when pushing a stable release for a `library`.
 - Review the PR as normal and request a review from another developer.
 - Upon approval, `Create a Merge Commit` to create the stable release.
   > If changes are required, a maintaining developer is responsible for closing the PR
-    and force-pushing the `dev` branch to the last commit prior to the release automation.
+    and [reverting changes on the `dev` branch](https://neongeckocom.github.io/neon-docs/operations/git/undo_stable_pr/).
     After this is completed, a PR to `dev` should be created, referencing the PR where
     changes were requested.
 ### Exceptions
