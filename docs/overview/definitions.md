@@ -53,6 +53,8 @@ Refers to a module that runs as a standalone service. This often includes a Dock
 container that runs the service. Many plugins may be run as a standalone service,
 but for the purposes of the operations documentation those are considered plugins
 and not services.
+> For example, `neon-audio` is a service but `neon-tts-plugin-coqui` is not. Even
+  though the plugin has a container with a web UI, it is a TTS plugin first.
 
 ### Library
 Refers to Python packages that do not expose any services or implement a specific
