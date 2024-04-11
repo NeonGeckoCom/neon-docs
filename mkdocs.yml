@@ -91,19 +91,22 @@ nav:
       - OVOS Common Play Skills: skill_development/skill-types/ovos-common-play.md
       - Common Query Framework: skill_development/skill-types/common-query-framework.md
       - Voice User Interfaces for PHAL Plugins: skill_development/skill-types/vuis-for-phal-plugins.md
-  - DevOps Workflows:
-      - Neon OS:
-          - Stable Release Workflow: operations/neon_os/workflow_stable_release.md
-          - Beta Release Workflow: operations/neon_os/workflow_beta_release.md
-          - Remove a Release Workflow: operations/neon_os/workflow_remove_release.md
-      - Library Modules:
-          - Stable Release Workflow: operations/libraries/workflow_stable_release.md
-          - Alpha Release Workflow: operations/libraries/workflow_alpha_release.md
-          - Stable Release Review Workflow: operations/libraries/workflow_review_stable.md
-          - Alpha Release Review Workflow: operations/libraries/workflow_review_alpha.md
-      - Git:
-          - Undo a Stable PR Workflow: operations/git/undo_stable_pr.md
-      - Skills:
-          - Stable Release Workflow: operations/skills/workflow_stable_release.md
-          - Alpha Release Workflow: operations/skills/workflow_alpha_release.md
-          - Review Workflow: operations/skills/wokflow_review.md
+
+  - DevOps:
+    - Repository Branches and Releases: operations/repository_structure.md
+    - Workflows:
+        - Neon OS:
+            - Stable Release Workflow: operations/neon_os/workflow_stable_release.md
+            - Beta Release Workflow: operations/neon_os/workflow_beta_release.md
+            - Remove a Release Workflow: operations/neon_os/workflow_remove_release.md
+        - Library Modules:
+            - Stable Release Workflow: operations/libraries/workflow_stable_release.md
+            - Alpha Release Workflow: operations/libraries/workflow_alpha_release.md
+            - Stable Release Review Workflow: operations/libraries/workflow_review_stable.md
+            - Alpha Release Review Workflow: operations/libraries/workflow_review_alpha.md
+        - Git:
+            - Undo a Stable PR Workflow: operations/git/undo_stable_pr.md
+        - Skills:
+            - Stable Release Workflow: operations/skills/workflow_stable_release.md
+            - Alpha Release Workflow: operations/skills/workflow_alpha_release.md
+            - Review Workflow: operations/skills/wokflow_review.md
