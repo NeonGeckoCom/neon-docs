@@ -103,3 +103,7 @@ nav:
           - Alpha Release Review Workflow: operations/libraries/workflow_review_alpha.md
       - Git:
           - Undo a Stable PR Workflow: operations/git/undo_stable_pr.md
+      - Skills:
+          - Stable Release Workflow: operations/skills/workflow_stable_release.md
+          - Alpha Release Workflow: operations/skills/workflow_alpha_release.md
+          - Review Workflow: operations/skills/wokflow_review.md
