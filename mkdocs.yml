@@ -96,3 +96,10 @@ nav:
           - Stable Release Workflow: operations/neon_os/workflow_stable_release.md
           - Beta Release Workflow: operations/neon_os/workflow_beta_release.md
           - Remove a Release Workflow: operations/neon_os/workflow_remove_release.md
+      - Library Modules:
+          - Stable Release Workflow: operations/libraries/workflow_stable_release.md
+          - Alpha Release Workflow: operations/libraries/workflow_alpha_release.md
+          - Stable Release Review Workflow: operations/libraries/workflow_review_stable.md
+          - Alpha Release Review Workflow: operations/libraries/workflow_review_alpha.md
+      - Git:
+          - Undo a Stable PR Workflow: operations/git/undo_stable_pr.md

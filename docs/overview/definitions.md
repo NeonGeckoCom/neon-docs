@@ -35,6 +35,31 @@ Commandline Application for interacting with services on the MQ Bus.
 More information is available 
 [on Github](https://neongeckocom.github.io/neon-docs/neon_core/index).
 
+## Operations Documentation
+The Operations Documentation and other documents discussing code organization or
+processes use some specific terms to refer to different kinds of modules.
+
+### Plugin
+Refers to a module that may be replaced by an equivalent module. These will usually 
+extend a class from [ovos-plugin-manager](https://github.com/openvoiceos/ovos-plugin-manager).
+
+### Skill
+Refers to a class that extends `MycroftSkill`, `OVOSSkill`, or `NeonSkill`. A `skill` is a subset of a `plugin`.
+For the purposes of the operations documentation, a skill is distinctly different
+from a plugin.
+
+### Service
+Refers to a module that runs as a standalone service. This often includes a Docker
+container that runs the service. Many plugins may be run as a standalone service,
+but for the purposes of the operations documentation those are considered plugins
+and not services.
+> For example, `neon-audio` is a service but `neon-tts-plugin-coqui` is not. Even
+  though the plugin has a container with a web UI, it is a TTS plugin first.
+
+### Library
+Refers to Python packages that do not expose any services or implement a specific
+plugin. These are often dependencies of many plugins and services.
+
 ## Neon (and OVOS and Mycroft) Core
 Some commonly used terms in the context of Neon (and other) Cores. See also
 the [OVOS Docs](https://openvoiceos.github.io/community-docs/glossary/) and
