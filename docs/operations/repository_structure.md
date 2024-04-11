@@ -59,3 +59,10 @@ to a specific version or tag. These are used for development and testing and sho
 be considered unstable references. Any maintaining developer may publish an 
 `alpha` image or enable repository automation for others to publish alpha images
 without review or testing.
+
+## Kubernetes Deployments
+In general, the `alpha` namespace will track `alpha` or `dev` images,
+`beta` namespace will track `dev`, and `prod` will track specific stable versions.
+`prod` will often specify versions equivalent to `latest` for each service, but
+it should specify version tags to prevent accidental updates when a new `latest`
+image is tagged and pods are re-created for some reason.
