@@ -8,7 +8,7 @@ pre-installed media.
 ### Downloadable Image
 Neon OS images are available for download from [neon.ai](https://neon.ai/NeonAIforMycroftMarkII).
 The website is updated with new images as they are published and images may be written to
-an 8GB or larger USB drive or Micro SD card.
+an 8GB or larger USB flash drive, USB SSD, or Micro SD card.
 
 ### Prepared Boot Media
 If you prefer a simpler solution, NeonAI® sells prepared boot devices on 
