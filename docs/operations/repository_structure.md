@@ -17,7 +17,7 @@ describes the process of making changes to a repository. This allows the commit
 history of the `dev` branch to be used as a changelog for the project, with each
 change corresponding to a specific (alpha) version and a descriptive commit/PR.
 
-When an alpha release is ready to be promoted to a satble release, a PR is created
+When an alpha release is ready to be promoted to a stable release, a PR is created
 to merge changes from `dev` into `master` with a version number that generally 
 follows [semver](https://semver.org/) or [calver](https://calver.org/). This
 [Stable Release Workflow](https://neongeckocom.github.io/neon-docs/operations/libraries/workflow_stable_release/)
