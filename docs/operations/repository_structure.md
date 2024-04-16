@@ -51,14 +51,14 @@ releases tags will always correspond to a specific "normal release".
 ## Docker Containers
 For repositories that publish Docker images, the `dev` image tag will always
 match the `dev` branch and the `latest` image will match the `master` branch.
-Images that correspond to any release (pre-release or normal release) will have
-an additional tag indicating the version.
+A `stable` tag will always be equivalent to `latest`, tracking the `master`
+branch. Images that correspond to any release (pre-release or normal release) 
+will have an additional tag indicating the version.
 
 A repository may optionally publish `alpha` tagged images that do not correspond
 to a specific version or tag. These are used for development and testing and should
-be considered unstable references. Any maintaining developer may publish an 
-`alpha` image or enable repository automation for others to publish alpha images
-without review or testing.
+be considered unstable references. If `alpha` images are used in a repository,
+they should track a branch named `alpha`.
 
 ## Kubernetes Deployments
 In general, the `alpha` namespace will track `alpha` or `dev` images,
