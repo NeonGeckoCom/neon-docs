@@ -109,4 +109,4 @@ nav:
         - Skills:
             - Stable Release Workflow: operations/skills/workflow_stable_release.md
             - Alpha Release Workflow: operations/skills/workflow_alpha_release.md
-            - Review Workflow: operations/skills/wokflow_review.md
+            - Review Workflow: operations/skills/workflow_review.md
