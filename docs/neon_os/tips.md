@@ -32,8 +32,9 @@ You can ask Neon "what is my IP address" to get the device IP address. You can
 also access this via the `Settings Menu`, under `About`.
 
 ## Installing On Raspberry Pi
-The OS drive should be installed to the port marked in the image below. Other
+The OS drive should be installed to the port marked in the images below. Other
 ports may work, but installing to the proper port ensures that the boot drive
 is loaded first and helps avoid issues with other USB devices at boot time.
 
 ![Raspberry Pi 4](./RPi.jpg)
+![Mark 2](./mk2.jpg)
