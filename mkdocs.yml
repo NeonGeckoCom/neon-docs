@@ -31,6 +31,8 @@ nav:
     - Neon Image Recipes: neon_os/neon_image_recipe.md
     - Developer References: neon_os/developers.md
     - Tips: neon_os/tips.md
+  - DIANA:
+      - Backend Installation: diana/backend.md
   - Quick Reference Guides:
     - Terminal: quick_reference/terminal.md
     - Logs: quick_reference/logging.md
