@@ -10,7 +10,7 @@ This process applies in the following situations:
 ### Process
 - Open the new issue on GitHub.
 - Read the issue comment and verify it is valid and complete.
-  - If this is a duplicate issue, close it with a comment linking the existing issue.
+  - If this is a duplicate issue, apply the `duplicate` tag, close it with a comment linking the existing issue.
   - If the issue is mis-categorized as a bug or feature, update the PR title.
   - If the issue is in the wrong repository, transfer it as appropriate.
 - If you know about more context (i.e. a chat thread or forum post), add it to the issue description.
