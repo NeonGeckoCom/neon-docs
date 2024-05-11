@@ -1,8 +1,13 @@
 site_name: Neon.AI® Documentation
 site_url: https://neongeckocom.github.io/neon-docs
-plugins: []
+plugins: 
+  - search
 theme:
-  name: gitbook
+  name: material
+  features:
+    - search.suggest
+    - search.highlight
+    - search.share
 extra_css:
   - css/gitbook.css
 nav:
