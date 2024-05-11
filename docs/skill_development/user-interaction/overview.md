@@ -8,7 +8,7 @@ description: >-
 
 ## Intents
 
-The initial interactions with your Skill will start with a general utterance from the User. [Your Skill must register intents](intents/) that it can handle and Neon will then determine which Skill can respond to the Users request.
+The initial interactions with your Skill will start with a general utterance from the User. [Your Skill must register intents](./intents/overview.md) that it can handle and Neon will then determine which Skill can respond to the Users request.
 
 ## Statements
 

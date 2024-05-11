@@ -1,5 +1,5 @@
 site_name: Neon.AI® Documentation
-site_url: https://neongeckocom.github.io/neon-docs
+site_url: https://mikejgray.github.io/neon-docs
 plugins: 
   - search
 theme:
