@@ -3,7 +3,8 @@ Welcome to the official Neon AI® Documentation. All Neon AI® project documenta
 is available here and is updated regularly from source project repositories.
 
 ## Get Involved
-The best place to get involved is [on Matrix](https://matrix.to/#/#neon-ai-community:matrix.org).
+The best place to get involved is on the [openconversational.ai forums](https://forums.openconversational.ai)
+or [Matrix chat](https://matrix.to/#/#neon-ai-community:matrix.org).
 You can interact with Neon developers and other users there to discuss projects,
 find support, and provide feedback. Also feel free to open issues and pull requests
 in any of [our repositories](https://github.com/NeonGeckoCom).
