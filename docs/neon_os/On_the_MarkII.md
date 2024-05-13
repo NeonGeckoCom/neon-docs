@@ -1,6 +1,15 @@
 # Neon OS on the Mark II
 This section is for content specific to the Neon AI private personal assistant on the Mycroft Mark II Device
 
+
+## Rear Pin Header
+The Mark II includes a 10-pin connector at the rear of the device that may be used
+for debugging and for connecting accessory hardware. This is intended for developer
+use; most users will not plug anything into this connector.
+
+![Mark II](./mk2.jpg)
+> The highlighted USB port is where the boot media should be plugged in.
+
 ## Making an Additional Boot Drive
 Summary: 
 To create an additional bootable drive using your Mark II, plug a second USB or an SSD into the right hand blue port, and say "Hey Neon, make bootable media" then follow the prompts. When finished, shut down your device, move the new drive into the first port and plug it back in. 
@@ -30,8 +39,7 @@ Select the alert by touching the alert icon, and then the words of the alert its
 9. Plug power back in and Neon will boot up from the new drive. 
 
 
-
-### Troubleshooting and Tech Support with the Neon OS on the Mycroft Mark II
+## Troubleshooting and Tech Support with the Neon OS on the Mycroft Mark II
 
 Here is our troubleshooting walk-through, and I am also available for a personal tech support video call if you prefer more in-person assistance. 
 
@@ -122,3 +130,4 @@ Here is our troubleshooting walk-through, and I am also available for a personal
 It's important to us that you have a functioning Neon OS to use. **If this troubleshooting hasn't resolved your issue, please email me at clary@neon.ai of contact us on any of the forums for a next step.** 
 
 Thank you for working with Neon OS, and improving the experience for all users. 
+
