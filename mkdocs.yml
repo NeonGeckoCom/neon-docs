@@ -44,6 +44,7 @@ nav:
     - Configuration: quick_reference/configuration.md
     - Installing Skills: quick_reference/installing_skills.md
     - Installing Plugins: quick_reference/installing_plugins.md
+    - Metrics: quick_reference/metrics.md
   - Skill Development:
     - Voice User Interface Design Guidelines:
       - What Can A Skill Do?: skill_development/voice-user-interface-design-guidelines/what-can-a-skill-do.md
