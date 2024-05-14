@@ -32,3 +32,9 @@ reset, either plug in a powered off device or restart. When the LED ring lights 
 buttons on top of the device until the LEDs light up white. After the LEDs illuminate,
 release the buttons and Neon will restart, reset, and then boot as if it is the
 first time it was powered on.
+
+## Get Device Information
+To get device information, swipe down from the top of the screen and select
+"Settings". Select "About" to view software information, such as the installed
+version of Neon OS, IP Address, and more. More information about release versioning
+can be found [here](./index.md).
