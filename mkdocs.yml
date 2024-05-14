@@ -88,7 +88,6 @@ nav:
       - Conversational Context: skill_development/user-interaction/conversational-context.md
       - Converse: skill_development/user-interaction/converse.md
     - Displaying Information:
-      - Overview: skill_development/displaying-information/overview.md
       - GUI Framework: skill_development/displaying-information/mycroft-gui.md
       - Show Simple Content: skill_development/displaying-information/show-simple-content.md
       - Neon-GUI On A PC: skill_development/displaying-information/neon-gui-on-a-pc.md
