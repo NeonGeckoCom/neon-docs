@@ -6,7 +6,7 @@ description: >-
 
 # Conversational Context
 
-_NOTE: Conversational context is currently only available with the_ [_Adapt_](./intents/adapt-intents) _Intent Parser, and is not yet available for_ [_Padatious_](./intents/padatious-intents)
+_NOTE: Conversational context is currently only available with the_ [_Adapt_](./intents/adapt-intents.md) _Intent Parser, and is not yet available for_ [_Padatious_](./intents/padatious-intents.md)
 
 Also note that Conversational Context is not likely to work with multiple users. The OVOS and Neon teams are working on a solution to this.
 
