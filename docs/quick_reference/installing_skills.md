@@ -4,6 +4,9 @@ to specify additional skills as [described below](#configuring-extra-skills), or
 you can manually install a skill like any other Python package 
 (i.e. `pip install <skill-reference>`).
 
+> `<skill_reference>` here is usually a [package name](../overview/definitions.md#package-name),
+  but may also be a git spec like `git+https://github.com/neongeckocom/skill-about@dev`.
+
 
 > [OVOS Skills Manager](https://openvoiceos.github.io/community-docs/osm/) (OSM) 
 > was previously recommended here but support has been deprecated. Please use

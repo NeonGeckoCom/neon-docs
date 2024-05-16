@@ -109,3 +109,26 @@ Structured plaintext files that define a skill's responses.
 ### regex (rx)
 Structured plaintext files that define 
 [regex parsing](https://docs.python.org/3/howto/regex.html) for a skill.
+
+### Skill ID
+A skill ID is used to identify a globally unique skill, and generally follows the
+format of `<skill_name>.<skill_author>`. For most skills, this is specified
+[in setup.py](https://github.com/NeonGeckoCom/skill-about/blob/d0796bbbdf37cb53dfe583e701048331f5e9731e/setup.py#L35).
+For older skills without a `setup.py` the skill ID is specified as the directory
+containing the skill's `__init__.py`; tools like `msm` and `osm` install skills
+to directories matching the usual format, using information from a git URL or
+[skill.json](https://github.com/NeonGeckoCom/skill-about/blob/dev/skill.json#L48-L49).
+
+### Package name
+A skill package may be created with an arbitrary package name 
+[in setup.py](https://github.com/NeonGeckoCom/skill-about/blob/d0796bbbdf37cb53dfe583e701048331f5e9731e/setup.py#L87).
+This identifier is used for installing the skill or listing it as a dependency like other
+Python packages. If the skill is uploaded to PyPI, then it may be installed by package
+name using pip (i.e. `pip install neon-skill-about`). Older skills that are not packaged
+will not have a package name.
+
+### Skill Class
+A [skill class](https://github.com/NeonGeckoCom/skill-about/blob/d0796bbbdf37cb53dfe583e701048331f5e9731e/__init__.py#L45)
+generally has a descriptive name and is capitalized according to [Python standards](https://peps.python.org/pep-0008/#class-names).
+This class is referenced in the [setup.py entrypoint](https://github.com/NeonGeckoCom/skill-about/blob/d0796bbbdf37cb53dfe583e701048331f5e9731e/setup.py#L35)
+but is otherwise not referenced directly.

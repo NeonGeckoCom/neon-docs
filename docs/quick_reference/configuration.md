@@ -86,6 +86,8 @@ skills:
     - <other blacklisted skill id>
 ```
 
+> The `skill_id` here is usually something like `skill_name.author`. See also [definitions](../overview/definitions.md#skill-id)
+
 > More information about skills can be found [in the OVOS docs](https://openvoiceos.github.io/community-docs/080-ht_skills/).
 
 ### Change the Wakeword
