@@ -1,5 +1,5 @@
 # Neon OS Developer Documentation
-[Neon OS](https://neongeckocom.github.io/neon-docs/neon_os/) is a customized
+[Neon OS](./index.md) is a customized
 Debian distribution used to deploy Neon to edge devices. Developers may wish to
 change some default behaviors of Neon OS to aid in debugging or development.
 
@@ -9,7 +9,7 @@ debug logging, add the below line to `~/.config/neon/neon.yaml`:
 ```yaml
 log_level: DEBUG
 ```
-More information about configuration can be found [here](https://neongeckocom.github.io/neon-docs/quick_reference/configuration/).
+More information about configuration can be found [here](../quick_reference/configuration.md).
 
 ## Disable `log2ram`
 By default [`log2ram`](https://github.com/azlux/log2ram) is used to minimize writing to persistent storage.
