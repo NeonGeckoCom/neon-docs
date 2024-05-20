@@ -7,17 +7,15 @@ More information about configuration is available
 [in the Neon Docs](https://neongeckocom.github.io/neon-docs/quick_reference/configuration/).
 
 ## STT
-STT plugins convert your recorded voice into text. More information about 
-STT plugins and some known plugins can be found 
-[in the OVOS Docs](https://openvoiceos.github.io/community-docs/stt_plugins/).
+STT plugins convert your recorded voice into text.
 
 ### Example
 This example shows the steps you would take to install and configure the
-[Deepspeech STT Plugin](https://github.com/NeonGeckoCom/neon-stt-plugin-deepspeech_stream_local).
+[Nemo Remote STT Plugin](https://github.com/NeonGeckoCom/neon-stt-plugin-nemo-remote).
 
 ```shell
 # Install the plugin package
-pip install neon-stt-plugin-deepspeech-stream-local
+pip install neon-stt-plugin-nemo-remote
 # Configure Neon to use the new plugin
 nano ~/.config/neon/neon.yaml
 ```
@@ -28,18 +26,14 @@ Add or update the user configuration to use the new plugin and configure the plu
 stt:
   # Set the module to the Plugin's entrypoint.
   # This is usually in the plugin's `README.md` file, or it can be found in `setup.py`
-  module: deepspeech_stream_local
-  deepspeech_stream_local:
-    model_path: ~/.local/share/neon/deepspeech-0.8.1-models.pbmm
-    scorer_path: ~/.local/share/neon/deepspeech-0.8.1-models.scorer
+  neon-stt-plugin-nemo-remote:
+    url: "https://nemo.neonaibeta.com"
 ```
 
 Restart core services after making this change to reload with these changes.
 
 ## TTS
-TTS plugins convert skill responses into audio. More information about TTS plugins
-and some known plugins can be found
-[in the OVOS Docs](https://openvoiceos.github.io/community-docs/tts_plugins/).
+TTS plugins convert skill responses into audio.
 
 ### Example
 This example shows the steps you would take to install and configure the
