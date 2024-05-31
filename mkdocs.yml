@@ -101,6 +101,7 @@ nav:
 
   - DevOps:
     - Repository Branches and Releases: operations/repository_structure.md
+    - Code Quality Standards: operations/qa_standards.md
     - Workflows:
         - Neon OS:
             - Stable Release Workflow: operations/neon_os/workflow_stable_release.md
