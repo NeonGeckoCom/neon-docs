@@ -23,9 +23,14 @@ return to the GUI, leaving any other sessions running in the background.
 
 ## Taking a screenshot
 You can ask Neon to "take a screenshot" to create a screenshot saved on-device.
-The path of the created file will be displayed on-screen as a notification. To
-retrieve a screenshot, you can use `scp` or shut down your mark 2 and plug the
-USB drive into another computer that can read an EXT4 file system(Linux or MacOS).
+> If you have a terminal session open, you can also use `mana say-to "take a screenshot"`.
+
+The path of the created file will be displayed on-screen as a notification. This
+path is generally in `~/Pictures`. To retrieve a screenshot, you can use `scp` 
+or shut down your mark 2 and plug the USB drive into another computer that can 
+read an EXT4 file system(Linux or MacOS). The file is generally located in
+`<root>/overlay/upperdir/home/neon/Pictures`.
+> You will need root permissions to open this path in Linux.
 
 ## Getting device IP address
 You can ask Neon "what is my IP address" to get the device IP address. You can
