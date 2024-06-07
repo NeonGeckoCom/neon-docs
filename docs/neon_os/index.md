@@ -45,4 +45,41 @@ different `core`.
 - `release`: a GitHub release in the Neon OS repository, identified by the `build version`.
 
 ## Build System
-Neon OS images are built using recipes in [neon-debos](https://github.com/NeonGeckoCom/neon_debos).
+[Neon OS](https://github.com/neongeckocom/neon-os) images are built using recipes 
+in [neon-debos](https://github.com/NeonGeckoCom/neon_debos).
+OS images and updates are served via HTTP server with a predictable directory
+structure. The build scripts are located in the [neon-os repository](https://github.com/neongeckocom/neon-os).
+
+## Build Image Action
+An OS build is triggered via GitHub actions and generally runs on a self-hosted
+runner. This action may build for multiple platforms (i.e. rpi4, opi5) and may
+build for multiple [cores](../neon_os/index.md#glossary). The following inputs 
+are accepted:
+- REF: `beta` or `stable` to indicate if the build is a beta or stable release.
+  > This was previously labelled as `dev` and `master` as it was tied to the
+    `core` branch used in the build.
+- DEBOS_REF: branch of `neon_debos` to check out, generally `dev` or `master`
+- CORE_REF: branch of the [core repository](../neon_os/index.md#glossary) to
+  check out, generally `dev` or `master`
+- PLATFORMS: space-delimited list of platforms to build for (i.e. `"rpi4 opi5"`)
+- UPLOAD_URL: base URL outputs may be downloaded from (i.e. `"https://2222.us"`)
+- OUTPUT_DIR: directory to move outputs to, may be a local or a remote directory
+  spec (i.e. `/var/www/html/neon_images`, `<remote>:/<path_to_directory>`)
+- DO_CORE: boolean value, if true then build a release with the `debian-neon-image` recipe
+- DO_NODE: boolean value, if true then build a release with the `debian-node-image` recipe
+
+## Build Outputs
+Output images are served via HTTP server, based on the inputs to the 
+[build image action](#build-image-action).
+
+An output image looks like:
+```text
+<core>/<platform>/<ref>/<build_id>_<timestamp>.img.xz
+ node /   opi5   / dev / debian-node-image-opi5_2024-06-06_16_25.img.xz
+```
+
+Update files include a `squashfs` update and `json` metadata:
+```text
+<core>/<platform>/updates/<ref>/<build_id>_<timestamp>.<ext>
+ node /   opi5   /updates/ dev / debian-node-image-opi5_2024-06-06_16_25.squashfs
+```
