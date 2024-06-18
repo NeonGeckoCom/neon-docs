@@ -8,6 +8,7 @@ This process applies when reviewing a PR to the `dev` branch of a `library` modu
 - Complete the following. Note any issues in Review Comments before leaving a 
   review to `Request Changes`. If there are no comments or the comments do not
   require code changes, then you *may* `Approve` the PR.
+
   - Review changes to imports and verify dependency minimum versions are accurate.
   - Ensure code changes have adequate unit test coverage.
   - Ensure there are no breaking changes.

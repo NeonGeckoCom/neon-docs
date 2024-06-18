@@ -48,6 +48,7 @@ Pi device.
 
 ## Using Neon OS
 To use Neon OS:
+
 1. Turn off and unplug your Mark2.
 2. Remove any USB drives and plug your Neon OS drive into the upper left (blue) USB 3 port at the back of your Mark2.
 3. Plug your Mark2 back in and [get started](./using_neon_os.md)
