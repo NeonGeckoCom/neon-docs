@@ -24,8 +24,8 @@ components and regular collaboration. You can find more information at
 [on Matrix](https://matrix.to/#/!XFpdtmgyCoPDxOMPpH:matrix.org?via=matrix.org).
 
 ### Mycroft AI
-Mycroft Core is where Neon and OVOS both started. NeonAI® is a Mycroft 
-Channel Partner, working with them to provide alternative solutions focused on
-enterprise users and other integrations. You can find more information at
-[Mycroft.ai](https://mycroft.ai) and in their chat 
-[on Mattermost](https://chat.mycroft.ai).
+Mycroft Core is where Neon and OVOS both started. NeonAI® was a Mycroft 
+Channel Partner, working with them to provide solutions focused on enterprise 
+users and other integrations. Mycroft has dissolved and Neon is maintaining the
+evolution of their forums at 
+[community.openconversational.ai](https://community.openconversational.ai).
