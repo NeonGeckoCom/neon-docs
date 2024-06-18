@@ -3,13 +3,30 @@ site_url: https://neongeckocom.github.io/neon-docs
 plugins: 
   - search
 theme:
+  logo: assets/neon_logo_transparent.svg
+  favicon: assets/favicon.png
   name: material
   features:
     - search.suggest
     - search.highlight
     - search.share
-extra_css:
-  - css/gitbook.css
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep_orange
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep_orange
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 nav:
   - About: index.md
   - Overview:
