@@ -13,7 +13,7 @@
 Neon AI is an open source voice assistant. Follow these instructions to start using Neon on your computer. If you are 
 using a Raspberry Pi, you may use the prebuilt image available [on our website](https://neon.ai/DownloadNeonAI).
 
-# Quick Start
+# Quick Start with Docker
 The fastest method for getting started with Neon is to run the modules in Docker containers.
 The `docker` directory contains everything you need to run Neon Core with default skills.
 
@@ -76,8 +76,10 @@ docker logs -f neon-messagebus  # messagebus module (includes signal manager)
 
 ## d. Skill Development
 By default, the skills container includes a set of default skills to provide base functionality.
-You can pass a local skill directory into the skills container to develop skills and have them
-reloaded in real-time for testing. Just set the environment variable `NEON_SKILLS_DIR` before starting
+To add more skills to your installation, check out 
+[Configuring Extra Skills](../quick_reference/installing_skills.md#configuring-extra-skills).
+Alternatively, you can pass a local skill directory into the skills container to load skills that
+are under development. Just set the environment variable `NEON_SKILLS_DIR` before starting
 the skills module. Dependency installation is handled on container start automatically.
 
 ```shell
@@ -117,58 +119,40 @@ STT/TTS model files, TTS audio files, and other downloaded files.
 > In order to modify anything in the `xdg` directory, you may need to take ownership with:
 > `sudo chown -R $USER:$USER xdg`
 
-# Making Code Changes
-After completing setup and testing, you are ready to begin making changes and creating skills. An example workflow for 
-making a change would be:
 
-1. Create or modify a skill
-1. Test changes in the Developer Environment (Look for errors in logs, unexpected behaviour, etc.)
-1. Run `Test Neon` to check that all skills and TTS/STT behave as expected
-1. Commit and Push changes to git (for collaborative development, it is often best to create a new branch for any changes)
-1. Install your updated skill in a User Environment (check for any missing dependencies, invalid file paths, etc.)
-1. Run complete tests using `Test Neon`
-1. Check logs for any errors
+# Troubleshooting
+Here are some common questions and answers that come up during installation:
 
-## a. System Overview
-There are two aspects of the Neon AI system: `core` and `skills`.
+## Images fail to pull
+Make sure you have at least ~10GB of free space to pull images.
+> `docker image prune –a` can help free up space if you have old images left over
+> after updates
 
-The `core` is composed of several modules, but generally includes:
-  - `speech` for handling user inputs and performing speech-to-text (STT)
-  - `skills` for processing user input to find intent and provide a response
-  - `audio` for speaking the response generated in skills
-  - `bus` for handling all communications between modules
-  - `enclosure` for handling any hardware interactions like speakers, microphone, lights, and buttons
-
-Other modules may also be running for gui functionality, etc and may be added to provide new functionality.
-
-`skills` provide the functionality of handling user inputs and generating responses or performing actions. 
-
-
-## b. Creating a Skill
-Check out our three part youtube series on how to create a skill:
-https://youtu.be/fxg25MaxIcE
-https://youtu.be/DVSroqv6E6k
-https://youtu.be/R_3Q-P3pk8o
-
-## Additional Steps for Developers Using PyCharm
-11. Next you should update your IDE in your Developer Environment
->    *Note*: This is PyCharm if you followed our setup guide.
-10. In PyCharm, select `VCS` from the menu bar, and then `Update Project`
-    > ![NewRelease](https://0000.us/klatchat/app/files/neon_images/neon_release_screens/NewRelease4.png)
-11. You will be prompted to `Update Project`, you may leave the default settings and click `OK`
-    > ![NewRelease](https://0000.us/klatchat/app/files/neon_images/neon_release_screens/NewRelease5.png)
-
-# Running Docker Modules
-
-Skills Service
+## Permissions errors/unable to run `docker` commands
+By default, users are not given access to `docker`, this can be fixed by running:
 ```shell
-docker run -d \
---name=neon_skills \
---network=host \
--v ~/.config/pulse/cookie:/tmp/pulse_cookie:ro \
--v ${XDG_RUNTIME_DIR}/pulse:${XDG_RUNTIME_DIR}/pulse:ro \
---device=/dev/snd:/dev/snd \
--e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
--e PULSE_COOKIE=/tmp/pulse_cookie \
-neon_skills
+sudo usermod -aG docker $USER && newgrp docker
+```
+If you still have permissions issues, try restarting before re-running any `docker`
+command.
+
+## Something went wrong in Neon
+A good first step to troubleshooting issues in Neon is to restart the containers
+with a clean configuration.
+To stop the containers and remove configuration:
+```shell
+docker compose down
+docker volume rm docker_config
+docker volume rm docker_xdg
+```
+> This stops the containers and removes any configuration, cache, and data files.
+
+To make sure the latest images are available:
+```shell
+docker compose pull
+```
+
+Finally, bring the containers back up with:
+```shell
+docker compose up -d
 ```
