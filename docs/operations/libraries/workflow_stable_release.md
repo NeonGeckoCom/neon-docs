@@ -8,18 +8,22 @@ This process applies when pushing a stable release for a `library`.
 - Verify the current alpha version is used in any projects that depend on the
   proposed changes.
 - Compare the latest alpha release to the latest stable release to determine the `release type`:
-  - If any breaking changes are present, the next version will be a `major` release.
-  - If any non-breaking functional changes are present, the next version will be a `minor` release.
-  - If no functional changes are present (i.e. only bugfixes or optimizations), the next version
-    will be a `patch` release.
+
+    - If any breaking changes are present, the next version will be a `major` release.
+    - If any non-breaking functional changes are present, the next version will be a `minor` release.
+    - If no functional changes are present (i.e. only bugfixes or optimizations), the next version
+      will be a `patch` release.
+
 - If this is a `major` release:
-  - Ensure that any deprecated methods had deprecation warnings in the previous 
-    stable release.
+
+    - Ensure that any deprecated methods had deprecation warnings in the previous 
+      stable release.
     > If they did not, create a PR to replace the removed methods and add a 
       deprecation warning and start this process over.
-  - Ensure that anything marked for deprecation in this release has been removed.
+    - Ensure that anything marked for deprecation in this release has been removed.
     > If there is code marked for deprecation in this release, create a PR to 
-      remove the relevant code and unit tests and start this process over.
+        remove the relevant code and unit tests and start this process over.
+
 - Look at package requirements to verify there are no alpha dependencies.
   > If there are any alpha dependencies, create an alpha release with no alpha dependencies and
     start this process over.

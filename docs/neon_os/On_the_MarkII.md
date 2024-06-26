@@ -1,9 +1,12 @@
 # Neon OS on the Mark II
-This section is for content specific to the Neon AI private personal assistant on the Mycroft Mark II Device
+This section is for content specific to the Neon AI private personal assistant on the Mycroft Mark II Device.
 
 ## Making an Additional Boot Drive
 Summary: 
-To create an additional bootable drive using your Mark II, plug a second USB or an SSD into the right hand blue port, and say "Hey Neon, make bootable media" then follow the prompts. When finished, shut down your device, move the new drive into the first port and plug it back in. 
+To create an additional bootable drive using your Mark II, plug a second USB or 
+an SSD into the right hand blue port, and say "Hey Neon, make bootable media" 
+then follow the prompts. When finished, shut down your device, move the new drive 
+into the first port and plug it back in. 
 
 ### Detailed Instructions 
 **Supplies needed:**
@@ -29,15 +32,18 @@ Select the alert by touching the alert icon, and then the words of the alert its
 8. Unplug your original drive, and move the new drive over into the upper left USB port.
 9. Plug power back in and Neon will boot up from the new drive. 
 
+> If you do not have a functioning Mark 2 device, see the 
+  [Installation Instructions](./neon_os_installation.md#installing-a-downloaded-image-to-a-usb-drive).
 
 
-### Troubleshooting and Tech Support with the Neon OS on the Mycroft Mark II
+
+### Troubleshooting and Tech Support
 
 Here is our troubleshooting walk-through, and I am also available for a personal tech support video call if you prefer more in-person assistance. 
 
 **The first things to check are the power and your USB boot drive:**
 
-​	**Start by unplugging your Mark II.**
+**Start by unplugging your Mark II.**
 
 1. The boot drive (either a USB memory key or SSD) should be securely plugged into the top left USB port, which is port 0. 
 2. There should be no other USB drives plugged in for the first boot.
@@ -83,39 +89,11 @@ Here is our troubleshooting walk-through, and I am also available for a personal
 
   
 
-**How to image or re-image a drive:**
+#### How to image or re-image a drive
+See the [Installation Instructions](./neon_os_installation.md#installing-a-downloaded-image-to-a-usb-drive)
+for instructions on how to create a Neon OS drive.
 
-1. Download the Neon OS to your computer from [here](https://2222.us/app/files/neon_images/pi/mycroft_mark_2/recommended_mark_2.img.xz) - or use the link [here on the Neon.AI webpage](https://neon.ai/NeonAIforMycroftMarkII). This takes several minutes or more, depending on your connection speed.
-
-2. Download a (free) imaging program, if you don't have one already. We suggest [Raspberry Pi Imager](https://www.raspberrypi.com/software/) or [Balena Etcher](https://www.balena.io/etcher).
-
-3. Plug your blank or nonfunctional USB 3.0 or greater drive or SSD drive into your computer.
-
-4. Open your imager program (we suggest [Raspberry Pi Imager](https://www.raspberrypi.com/software/) or [Balena Etcher](https://www.balena.io/etcher)). 
-
-5. If using Raspberry Pi Imager:
-
-6. 1. Under the 'Operating System' menu, select 'Use Custom'.
-   2. Locate and select the Neon OS image you downloaded.
-   3. Under 'Storage', select the drive you intend to write to.
-   4. Click 'Write' and wait for the image to be written and verified. This takes several minutes, depending on your system.
-
-7. If using Balena Etcher
-
-8. 1. Under the '+', choose 'Flash from file'.
-   2. Locate and select the Neon OS image you downloaded.
-   3. Under 'Select target', select the drive you intend to write to.
-   4. Click 'Flash' and wait for the image to be written and verified. This takes several minutes, depending on your system.
-
-9. Remove the USB or SSD drive from your computer.
-
-10. Disconnect power from your Mark II.
-
-11. Plug the newly imaged USB drive into the top left USB port on your Mark II (Port 0).
-
-12. Reconnect power to your Mark II.
-
-13. After starting up, you will be guided through connecting to WiFi.
+> After starting up, you will be guided through connecting to WiFi.
 
 
 

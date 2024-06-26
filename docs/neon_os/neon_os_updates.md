@@ -46,6 +46,7 @@ you can connect via SSH to start the update.
 ### Update via on-device terminal
 If you have a USB keyboard available, you can open a terminal on your Neon device
 to start the update.
+
 1. Connect a USB keyboard to your Neon device.
 2. Press `ctrl`+`shift`+`F1` to open a terminal.
 3. Tap or click on the terminal.

@@ -9,10 +9,12 @@ This process applies when pushing a stable release for a skill.
   `NeonCore` dependencies (if applicable).
 - Validate skill functionality in a Neon OS and/or Iris deployment (as applicable).
 - Compare the latest alpha release to the latest stable release to determine the `release type`:
-  - If any breaking changes are present, the next version will be a `major` release.
-  - If any non-breaking functional changes are present, the next version will be a `minor` release.
-  - If no functional changes are present (i.e. only bugfixes or optimizations), the next version
-    will be a `patch` release.
+
+    - If any breaking changes are present, the next version will be a `major` release.
+    - If any non-breaking functional changes are present, the next version will be a `minor` release.
+    - If no functional changes are present (i.e. only bugfixes or optimizations), the next version
+      will be a `patch` release.
+
 - Look at package requirements to verify there are no alpha dependencies.
   > If there are any alpha dependencies, create an alpha release with no alpha dependencies and
     start this process over.

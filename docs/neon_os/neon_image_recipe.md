@@ -1,5 +1,5 @@
 # neon-image-recipe
-Make a Pi image from scratch.
+*DEPRECATED PROJECT* Make a Pi image from scratch.
 - [Core Configuration](#core_configuration) - Base configuration of ubuntu server
 - [Network Manager](#network_manager) - Configures networking to allow for wifi configuration via
   [wifi-connect](https://github.com/balena-os/wifi-connect).

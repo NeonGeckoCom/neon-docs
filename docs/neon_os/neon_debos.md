@@ -1,11 +1,11 @@
 # Embedded device images
-This repo contains [debos](https://github.com/go-debos/debos) recipes for building base images for embedded voice assistant
+This repo contains [debos](https://github.com/go-debos/debos) recipes for building OS images for embedded voice assistant
 devices. Images generated here are intended to include all dependencies, drivers, and OS-level configuration that an assistant
 device might need, such as Camera Drivers, wifi-connect, QT packages, Vocal Fusion Drivers, etc.
 
 ## Available recipes
-- debian-base-image-rpi4.yml: Debian Bookworm image with updated RPi kernel, RPi userland binaries, libcamera, 
-  wifi-connect, SJ-201/Vocalfusion drivers, and a Splash Screen.
+- `debian-neon-image.yml`: Default image that runs Neon on an edge device.
+- `debian-node-image.yml`: Node image that connects to a central Neon instance.
 
 ## Repository Structure
 Each directory contains numbered files or directories; earlier numbers correspond to earlier build stages, and 

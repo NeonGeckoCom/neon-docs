@@ -16,10 +16,12 @@ This process applies when reviewing a PR to the `dev` or `master` branch of any 
   > It is up to the PR author and reviewer to decide if a `TODO` must be completed
     before merging OR if an issue can be created to address it in a later PR.
 - If reviewing a `Stable Release`:
-  - Validate there are no alpha dependencies
-  - Validate that the skill works as expected in an alpha deployment (i.e. Iris, HANA, or Neon OS).
-    If the skill is not deployed to any of those, test agaomst a local installation.
-  - Ensure the skill is not generating any `ERROR` or `WARNING` logs.
+
+    - Validate there are no alpha dependencies
+    - Validate that the skill works as expected in an alpha deployment (i.e. Iris, HANA, or Neon OS).
+      If the skill is not deployed to any of those, test agaomst a local installation.
+    - Ensure the skill is not generating any `ERROR` or `WARNING` logs.
+
 - Leave a review to `Approve` or `Request Changes`. If reviewing a draft or if unable to test 
   changes, leave a `Comment` review indicating why it isn't an Approval, 
   i.e. "Unable to test." or "Noted pending TODO"
