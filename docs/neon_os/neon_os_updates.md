@@ -4,13 +4,88 @@ In most cases though, you can perform in-place updates from your device. Updates
 will generally take about 30 minutes to complete and once started, you will not
 be able to use your device until updates finish.
 
-## Updates via Skill Intent (since Neon Core 22.10.2a15)
+## Update via Skill Intent
 For images as of December 20, 2022, you may check for updates by asking your
 device `"are there any updates?"`. Neon will tell you the installed Neon Core version
 and if there is an update available. If a newer version is available, you will be
 given the option to install it.
 
-## Manual Update for Installations (prior to Neon Core 22.10.2a15)
+## Manual Update via Terminal
+As an alternative to the skill intent, updates can be started manually from a 
+terminal session. Instructions for getting a terminal open are 
+[documented here](./tips.md). This method is supported 
+[as of October 26, 2023](https://github.com/NeonGeckoCom/neon_debos/pull/85).
+
+```shell
+/opt/neon/update master
+# `master` refers to the stable release branch; for alpha updates use `dev`
+```
+
+## Update Process
+The update process may vary slightly as systems mature, but a description of the
+components is included here.
+
+### Neon Updates Skill
+The [Neon Updates Skill](https://github.com/NeonGeckoCom/skill-update/tree/dev)
+handles user requests to check for updates. If an update is requested, the skill
+will emit a message to start an update which the relevant plugin will handle. 
+This skill is also where settings determine if pre-release versions
+are included in updates.
+
+### Device Updater Plugin
+NeonOS Releases since July 20, 2023, use SquashFS to perform a different kind
+of update. Operating System updates are managed by the 
+[Device Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-device-updater)
+which checks configured remote paths for new SquashFS or InitramFS images to be
+applied. When an update is available, the plugin downloads and applies updates;
+InitramFS is applied without needing a restart, SquashFS updates require a system
+reboot to be applied.
+
+SquashFS updates will overwrite much of the root file system to make sure everything
+is in a working state after updating. Any custom scripts or user files should be
+kept in the `/home` directory to avoid being removed as part of the update 
+process. Note that system packages may be removed during the course of an update,
+so any manually installed packages may need to be re-installed after updating.
+
+#### Advanced Usage
+SquashFS updates attempt to migrate relevant information (like `/var`, `/home`, 
+SSH keys, NetworkManager config, etc.) between updates, but system packages and 
+other manual configuration may be removed as part of the update process. For most
+users, this is helpful to clean up incidental changes and restore an installation
+to a predictable state after updating. For users who want to apply customizations
+that persist through updates, here are some guidelines.
+
+- With the exception of `venv`, the user directory is not modified between updates.
+  `venv` is replaced with a clean version as part of an update to ensure package
+  compatibility and allow for updating python versions.
+- Extra skills should be added to the user configuration file. This allows Neon core
+  to manage dependency installation, and makes sure a skill is re-installed after
+  system updates.
+- Any extra customizations can be added to `/root/post_update`. This script will be
+  run as root after an update is applied and is intended to handle any desired
+  system package installation, system service configuration, etc. The system
+  service does *not* specify an interpreter, so this file should start with a `#!`,
+  i.e. `#!/bin/bash` or `#!/usr/bin/python3`. This file will be marked as executable
+  automatically before each execution.
+- Any changes not explicitly handled during the update will be saved at
+  `/opt/neon/old_overlay`. A `post_update` script may choose to do something to
+  restore specific files from here.
+
+### Core Updater Plugin
+Python package updates are managed by the [Core Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-core-updater)
+which is configured in Neon OS to run the `neon-updater` SystemD service. The
+[`neon-updater`](#neon-updater-service) service is responsible for backing up 
+the current system and installing a newer version of `neon-core`.
+
+### neon-updater Service
+The `neon-updater` service comes from 
+[neon-image-recipe](https://github.com/NeonGeckoCom/neon-image-recipe/blob/master/10_updater/configure_updates.sh)
+and is responsible for performing Python package updates. The service will stop
+all core processes, backup the current Python environment, and then update 
+Python packages. After installation, the service will check that the core services
+load before optionally rolling back failed changes and then restarting Neon.
+
+## Legacy Update Process for Installations prior to Neon Core 22.10.2a15
 If you have an older version of Neon that does not include the update skill, you
 may still update your device manually without having to install a new image.
 
@@ -67,68 +142,3 @@ Run the following commands to download and run the one-time update script:
    ![image](https://user-images.githubusercontent.com/100237954/209029608-cc138b16-8579-445a-aa5a-4ab033c24e9f.png)   
 
    **Your Mark II display should change to show the Neon logo, and words showing its status. This may take a couple minutes, or longer depending on your connection speed. When you see the home screen return, you're good to go!**
-
-## Update Process
-The update process may vary slightly as systems mature, but a description of the
-components is included here.
-
-### Neon Updates Skill
-The [Neon Updates Skill](https://github.com/NeonGeckoCom/skill-update/tree/dev)
-handles user requests to check for updates. If an update is requested, the skill
-will emit a message to start an update which the relevant plugin will handle. 
-This skill is also where settings determine if pre-release versions
-are included in updates.
-
-### Device Updater Plugin (since Neon Core 23.7.31a4)
-NeonOS Releases since July 20, 2023 now use SquashFS to perform a different kind
-of update. Operating System updates are managed by the 
-[Device Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-device-updater)
-which checks configured remote paths for new SquashFS or InitramFS images to be
-applied. When an update is available, the plugin downloads and applies updates;
-InitramFS is applied without needing a restart, SquashFS updates require a system
-reboot to be applied.
-
-SquashFS updates will overwrite much of the root file system to make sure everything
-is in a working state after updating. Any custom scripts or user files should be
-kept in the `/home` directory to avoid being removed as part of the update 
-process. Note that system packages may be removed during the course of an update,
-so any manually installed packages may need to be re-installed after updating.
-
-#### Advanced Usage
-SquashFS updates attempt to migrate relevant information (like `/var`, `/home`, 
-SSH keys, NetworkManager config, etc.) between updates, but system packages and 
-other manual configuration may be removed as part of the update process. For most
-users, this is helpful to clean up incidental changes and restore an installation
-to a predictable state after updating. For users who want to apply customizations
-that persist through updates, here are some guidelines.
-
-- With the exception of `venv`, the user directory is not modified between updates.
-  `venv` is replaced with a clean version as part of an update to ensure package
-  compatibility and allow for updating python versions.
-- Extra skills should be added to the user configuration file. This allows Neon core
-  to manage dependency installation, and makes sure a skill is re-installed after
-  system updates.
-- Any extra customizations can be added to `/root/post_update`. This script will be
-  run as root after an update is applied and is intended to handle any desired
-  system package installation, system service configuration, etc. The system
-  service does *not* specify an interpreter, so this file should start with a `#!`,
-  i.e. `#!/bin/bash` or `#!/usr/bin/python3`. This file will be marked as executable
-  automatically before each execution.
-- Any changes not explicitly handled during the update will be saved at
-  `/opt/neon/old_overlay`. A `post_update` script may choose to do something to
-  restore specific files from here.
-
-### Core Updater Plugin
-Python package updates are managed by the [Core Updater Plugin](https://github.com/NeonGeckoCom/neon-phal-plugin-core-updater)
-which is configured in Neon OS to run the `neon-updater` SystemD service. The
-[`neon-updater`](#neon-updater-service) service is responsible for backing up 
-the current system and installing a newer version of `neon-core`.
-
-### neon-updater Service
-The `neon-updater` service comes from 
-[neon-image-recipe](https://github.com/NeonGeckoCom/neon-image-recipe/blob/master/10_updater/configure_updates.sh)
-and is responsible for performing Python package updates. The service will stop
-all core processes, backup the current Python environment, and then update 
-Python packages. After installation, the service will check that the core services
-load before optionally rolling back failed changes and then restarting Neon.
-
