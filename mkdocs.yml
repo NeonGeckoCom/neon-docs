@@ -11,10 +11,15 @@ theme:
     - search.highlight
     - search.share
   palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep_orange
+      primary: deep orange
       accent: orange
       toggle:
         icon: material/brightness-7
@@ -22,7 +27,7 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep_orange
+      primary: deep orange
       accent: orange
       toggle:
         icon: material/brightness-4
