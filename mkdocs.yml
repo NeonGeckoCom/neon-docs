@@ -97,7 +97,9 @@ nav:
       - OVOS Common Play Skills: skill_development/skill-types/ovos-common-play.md
       - Common Query Framework: skill_development/skill-types/common-query-framework.md
       - Voice User Interfaces for PHAL Plugins: skill_development/skill-types/vuis-for-phal-plugins.md
-
+    - Skill Testing:
+      - Introduction: skill_development/testing/index.md
+      - GitHub Actions: skill_development/testing/github_actions.md
   - DevOps:
     - Repository Branches and Releases: operations/repository_structure.md
     - Workflows:
