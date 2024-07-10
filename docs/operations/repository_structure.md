@@ -51,9 +51,12 @@ releases tags will always correspond to a specific "normal release".
 ## Docker Containers
 For repositories that publish Docker images, the `dev` image tag will always
 match the `dev` branch and the `latest` image will match the `master` branch.
-A `stable` tag will always be equivalent to `latest`, tracking the `master`
-branch. Images that correspond to any release (pre-release or normal release) 
-will have an additional tag indicating the version.
+A `stable` version tag (i.e. `1.0.1`) will always be equivalent to `latest`, 
+tracking the `master` branch. Images that correspond to any release 
+(pre-release or normal release) will have an additional tag indicating the version
+(i.e. `1.0.0`, `1.0.0-a.1`).
+> Note: These versions often match PyPI releases, with some formatting differences
+  to comply with Docker tag formatting requirements
 
 A repository may optionally publish `alpha` tagged images that do not correspond
 to a specific version or tag. These are used for development and testing and should
