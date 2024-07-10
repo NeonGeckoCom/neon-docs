@@ -11,7 +11,7 @@ journal since the services are started via systemD. You can see service logs via
 `journalctl -u <service_name>`. You could copy logs off of your Mark2 from a 
 computer on the same network with:
 ```
-scp neon@<device_ip>:/home/neon/.local/state/neon/logs ./
+scp neon@<device_ip>:/home/neon/.local/state/neon/*.log* ./
 ```
 
 ## Docker
