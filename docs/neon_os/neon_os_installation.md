@@ -26,7 +26,7 @@ Pi device.
 
 ### Instructions
 1. Download the latest Neon OS image from 
-   [this link](https://2222.us/app/files/neon_images/pi/mycroft_mark_2/recommended_mark_2.img.xz).
+   [this link](https://download.neonaiservices.com/neon_os/recommended/mark_2.img.xz).
 2. Plug in your USB drive.
    > Everything on this drive will be erased in the next steps
 3. Open [Raspberry Pi Imager](https://www.raspberrypi.com/software/). This is 
