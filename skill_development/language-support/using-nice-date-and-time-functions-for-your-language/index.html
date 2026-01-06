@@ -1,0 +1,5225 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="If you're building Skills that support multiple languages, use this documentation to help you ensure that spoken phrases associated with numbers, times, and dates are customized for your language.">
+      
+      
+      
+        <link rel="canonical" href="https://neongeckocom.github.io/neon-docs/skill_development/language-support/using-nice-date-and-time-functions-for-your-language/">
+      
+      
+        <link rel="prev" href="../../skill-structure/api/">
+      
+      
+        <link rel="next" href="../../user-interaction/overview/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Using nice date and time functions for your language - Neon.AI® Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuring-some-of-the-nice-functions-for-a-language" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Neon.AI® Documentation" class="md-header__button md-logo" aria-label="Neon.AI® Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/neon_logo_transparent.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Neon.AI® Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Using nice date and time functions for your language
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Neon.AI® Documentation" class="md-nav__button md-logo" aria-label="Neon.AI® Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/neon_logo_transparent.svg" alt="logo">
+
+    </a>
+    Neon.AI® Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/definitions" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/faq" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frequently Asked Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Neon Core
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Neon Core
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_core/quick_start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_core/neon_messagebus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Messagebus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_core/neon_speech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_core/neon_audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_core/neon_gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GUI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_core/neon_enclosure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enclosure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Neon OS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Neon OS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_os/neon_os_installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_os/using_neon_os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using Neon OS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_os/neon_os_updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_os/On_the_MarkII/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Neon OS on the Mark II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_os/neon_debos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debos Images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_os/developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neon_os/tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DIANA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DIANA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../diana/backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Reference Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quick Reference Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quick_reference/terminal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quick_reference/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quick_reference/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quick_reference/installing_skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing Skills
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quick_reference/installing_plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quick_reference/metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Skill Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice User Interface Design Guidelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Voice User Interface Design Guidelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../voice-user-interface-design-guidelines/what-can-a-skill-do/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Can A Skill Do?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../voice-user-interface-design-guidelines/design-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1_3" id="__nav_7_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interactions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Interactions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statements and Prompts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../voice-user-interface-design-guidelines/interactions-and-guidelines/confirmations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confirmations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../voice-user-interface-design-guidelines/conversations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conversations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../voice-user-interface-design-guidelines/error-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../voice-user-interface-design-guidelines/example-dialogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Interaction Script
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../voice-user-interface-design-guidelines/prototyping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prototyping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../voice-user-interface-design-guidelines/skill-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-setup/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-setup/git_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working with Git(Hub)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-setup/python-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-setup/dev-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting Up Your Development Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-setup/your-first-skill/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your First Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill Structure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Skill Structure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill-structure/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill-structure/lifecycle-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill-structure/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill-structure/skill-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_5" id="__nav_7_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dependencies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dependencies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-setup/skill_json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    skill.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill-structure/dependencies/manifest-yml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifest.yml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill-structure/dependencies/requirements-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill-structure/filesystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filesystem Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill-structure/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using nice date and time functions for your language
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using nice date and time functions for your language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-files-in-the-file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration files in the file system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The configuration file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The configuration file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The building blocks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The building blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-decade_format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The decade_format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The decade_format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-in-the-decade-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components in the decade format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-hundreds-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The hundreds format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The hundreds format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-in-the-hundreds-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components in the hundreds format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-thousands_format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The thousands_format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The thousands_format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-in-the-thousand-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components in the thousand format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-year_format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The year_format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The year_format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-in-the-year-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components in the year template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-date_format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The date_format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The date_format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-in-the-date-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components in the date template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-date_time_format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The date_time_format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The date_time_format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments-to-format-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arguments to format templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-weekday-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The weekday section
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-date-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The date section
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-month-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The month section
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-file-for-en-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration file for en-us
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-file-for-en-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test file for en-us
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Interaction
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Interaction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interaction/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5_2" id="__nav_7_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interaction/intents/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interaction/intents/adapt-intents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adapt Intents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interaction/intents/padatious-intents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Padatious Intents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interaction/statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interaction/prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interaction/parsing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parsing Utterances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interaction/confirmations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confirmations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interaction/conversational-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conversational Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interaction/converse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Converse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Displaying Information
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Displaying Information
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displaying-information/mycroft-gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GUI Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displaying-information/show-simple-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Show Simple Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displaying-information/neon-gui-on-a-pc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Neon-GUI On A PC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Skill Types
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Skill Types
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill-types/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill-types/fallback-skill/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fallback Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill-types/ovos-common-play/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OVOS Common Play Skills
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill-types/common-query-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Query Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill-types/vuis-for-phal-plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice User Interfaces for PHAL Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Skill Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testing/github_actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DevOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/repository_structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repository Branches and Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/qa_standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_1" id="__nav_8_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Neon OS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Neon OS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/neon_os/workflow_stable_release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stable Release Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/neon_os/workflow_beta_release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beta Release Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/neon_os/workflow_remove_release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remove a Release Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_2" id="__nav_8_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Library Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Library Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/libraries/workflow_stable_release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stable Release Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/libraries/workflow_alpha_release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alpha Release Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/libraries/workflow_review_stable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stable Release Review Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/libraries/workflow_review_alpha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alpha Release Review Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_3" id="__nav_8_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Git
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/git/undo_stable_pr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Undo a Stable PR Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/git/triage_issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Triage New GitHub Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_4" id="__nav_8_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/skills/workflow_stable_release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stable Release Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/skills/workflow_alpha_release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alpha Release Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/skills/workflow_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Review Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-files-in-the-file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration files in the file system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The configuration file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The configuration file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The building blocks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The building blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-decade_format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The decade_format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The decade_format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-in-the-decade-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components in the decade format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-hundreds-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The hundreds format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The hundreds format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-in-the-hundreds-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components in the hundreds format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-thousands_format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The thousands_format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The thousands_format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-in-the-thousand-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components in the thousand format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-year_format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The year_format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The year_format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-in-the-year-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components in the year template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-date_format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The date_format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The date_format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-in-the-date-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components in the date template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-date_time_format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The date_time_format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The date_time_format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments-to-format-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arguments to format templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-weekday-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The weekday section
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-date-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The date section
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-month-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The month section
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-file-for-en-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration file for en-us
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-file-for-en-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test file for en-us
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="configuring-some-of-the-nice-functions-for-a-language">Configuring some of the “nice” functions for a language</h1>
+<p>The following functions are used to convert a Python datetime to a pronounceable string for a given language. They are available from the <a href="https://github.com/OpenVoiceOS/ovos-lingua-franca/">lingua-franca</a> library. If you have an older skill that uses the Mycroft core library functions, please consider converting them to use lingua-franca instead, although backwards compatibility will remain for several versions.</p>
+<ul>
+<li><code>nice_date(dt, lang='en-us', now=None)</code></li>
+<li><code>nice_date_time(dt, lang='en-us', now=None, use_24hour=False, use_ampm=False)</code></li>
+<li><code>nice_year(dt, lang='en-us', bc=False)</code></li>
+</ul>
+<p>Adding a new language and unit testing it can be added using configuration only.</p>
+<p>This page describe how to add a new language, or change configuration for an existing language. Unit testing is covered as well.</p>
+<h2 id="configuration-files-in-the-file-system">Configuration files in the file system</h2>
+<p>Each language has a configuration file and a unit test file. The configuration files are written in json. The configurations are:</p>
+<ul>
+<li><code>mycroft/res/text//date_time.json</code></li>
+<li><code>mycroft/res/text//date_time_test.json</code></li>
+</ul>
+<p>For example: <code>mycroft/res/text/en-us/date_time.json</code></p>
+<p>The <code>mycroft.util.nice_time()</code> function is not configurable using the approach described in this document (historical reasons). The <code>nice_date_and_time()</code> depends on <code>nice_time()</code>, which must be able to support the selected language, if you want nice results from <code>nice_date_time()</code>. Without support for a language in <code>nice_time()</code>, <code>nice_date_and_time(</code>) will still return a string, but the time part not be appropriate for your language.</p>
+<h2 id="the-configuration-file">The configuration file</h2>
+<p>The section <a href="# Configuration file for en-us">Configuration file for en-us</a> contains an example configuration file. The configuration file contains several main sections, some of which contain maps from numbers to words to be spoken, others containing the format template to use when the pronounceable string is created.</p>
+<p>The template sections are:</p>
+<ol>
+<li>decade_format</li>
+<li>hundreds_format</li>
+<li>thousands_format</li>
+<li>year_format</li>
+<li>date_format</li>
+<li>date_time_format</li>
+</ol>
+<p>The map sections are:</p>
+<ul>
+<li>weekday</li>
+<li>date</li>
+<li>month</li>
+<li>number</li>
+</ul>
+<p>The format templates operate on a number of components, like a <code>{formatted_year}</code>. The components are substituted by a value calculated by the <code>nice_*()</code> function. In general, a format created by a template at the top of the list above, can be used in a template lower on the list. The exact possibilities are described later in this document.</p>
+<h3 id="the-building-blocks">The building blocks</h3>
+<p>Before the template sections are considered, the input year is decomposed into components, and each component is translated to a word using the number map. The components can then be used in the template sections. The building of the basic components are not configurable, and it is typically not necessary to map all components.</p>
+<p>A list of basic components with examples for year 1969 in en-us are shown below:</p>
+<ul>
+<li>{x} example: 'nine'</li>
+<li>{xx} example: '69' (fall back to number since the map does not contain '69')</li>
+<li>{x0} example: 'sixty'</li>
+<li>{x_in_x0} example: 'six'</li>
+<li>{xxx} example: '969' (fall back to number since the map does not contain '969')</li>
+<li>{x00} example: '969' (fall back to number since the map does not contain '900')</li>
+<li>{x_in_x00} example: 'one'</li>
+<li>{xx00} example: '1969' (fall back number since the map does not contain '1900')</li>
+<li>{xx_in_xx00} example: 'nineteen'</li>
+<li>{x000} example: '1969' (fall back number since the map does not contain '1000')</li>
+<li>{x_in_x000} example: 'one'</li>
+<li>{number} example: '1969' (can be used for fall back by templates, if no other patterns match)</li>
+</ul>
+<p>When we look at the list above, it is possible to create 'nineteen sixty nine' if we choose the correct components. That process happens in the templates.</p>
+<p>The <code>decade_format</code>, <code>hundreds_format</code> and <code>thousand_format</code> templates create new components, that can be used by the other templates. And so, those new component are configurable. The <code>year_format</code> template can assemble decades, hundreds and thousands. The <code>date_format</code> will assemble the year_format and dates.</p>
+<p>The best practice is to limit the <code>decade_format</code> to only produce words for the numbers 0 to 99. Consider the decade format as numbers used for years before year 100. For <code>en-us</code> the <code>decade_format</code> produces 'seventeen' for 17, and 'four' for 4.</p>
+<p>Limit the <code>hundreds_format</code> to only produce words for 100, 200,,,900, i.e. do not include decades in the hundreds. Consider the hundreds format as numbers for centuries before year 1000. For <code>en-us</code> the <code>hundreds_format</code> produces 'five hundred' for 524.</p>
+<p>The <code>thousands_format</code> should produce words for thousands, and if needed in your language, hundreds above 999. Consider the <code>thousands_format</code> as numbers for millennium and optionally centuries above 999, and below 10.000. For en-us the <code>thousands_format</code> produces 'nineteen hundred' for 1969, and 'two thousand' for 2018.</p>
+<p>The <code>decade_format</code>, <code>hundreds_format</code>, <code>thousands_format</code> and the <code>year_format</code> are using indexed lists and regular expressions to do their task. Each list entry contains a regular expression to match, and a format to apply. The lists are searched from beginning (index 1) to end. The first match is used, if any. The lists are read from a <code>json</code> configuration file, and must start with index 1, and the increment must be 1.</p>
+<h4 id="the-decade_format">The decade_format</h4>
+<p>The decade format will work on the two rightmost digits of the year. For <code>en-us</code> it looks like this:</p>
+<pre><code class="language-json">&quot;decade_format&quot;: {
+&quot;1&quot;: {&quot;match&quot;: &quot;^\\d$&quot;, &quot;format&quot;: &quot;{x}&quot;},
+&quot;2&quot;: {&quot;match&quot;: &quot;^1\\d$&quot;, &quot;format&quot;: &quot;{xx}&quot;},
+&quot;3&quot;: {&quot;match&quot;: &quot;^\\d0$&quot;, &quot;format&quot;: &quot;{x0}&quot;},
+&quot;4&quot;: {&quot;match&quot;: &quot;^[2-9]\\d$&quot;, &quot;format&quot;: &quot;{x0} {x}&quot;},
+&quot;default&quot;: &quot;{number}&quot;
+}
+</code></pre>
+<p>The format consists of a list of four templates, and a default fall back template. The two rightmost digits of the year are converted to a string, and then matched to the value of the 'match' keyword above, starting from index 1. For instance, the first list entry match <code>^\d$</code>, which is a single digit. The second list entry are for numbers between 10 and 19, the third matches multiples of ten, the fourth is for the rest, the 'default' entry will never be used. The double <code>\\</code> in the <code>json</code> file is used because it acts as an escape character.</p>
+<p>Let's use 1969 as an example with language en-us:</p>
+<p>The string '1969' is used, and the first match is index 4: <code>^[2-9]d</code>. The components <code>{x0}</code> is <code>'sixty'</code> and <code>{x}</code> is <code>{nine}</code>, the end result is <code>'sixty nine'</code>. If the string had been 1910, the second list entry would have been used, since that would be the first match, even if the third entry also match '10'.</p>
+<p>In some languages, for instance Danish, the order of ones and tens is reversed, so 69 is pronounced 'ni og tres' (nine and sixty). The list entry for Danish would be:</p>
+<p><code>"4": {"match": "^[2-9]\\d$", "format": "{x} og {x0}"}</code></p>
+<p>The result of the decade format is <code>{formatted_decade}</code>, that can be used as a component in other formats.</p>
+<h5 id="components-in-the-decade-format">Components in the decade format</h5>
+<p>The following components can be used in the decade format:</p>
+<ul>
+<li>{x}</li>
+<li>{xx}</li>
+<li>{x0}</li>
+<li>{x_in_x0}</li>
+<li>{number}</li>
+</ul>
+<h3 id="the-hundreds-format">The hundreds format</h3>
+<p>The hundreds format will work on the three rightmost digits of the year. For <code>en-us</code> it looks like this:</p>
+<pre><code class="language-json">&quot;hundreds_format&quot;: {
+&quot;1&quot;: {&quot;match&quot;: &quot;^\\d{3}$&quot;, &quot;format&quot;: &quot;{x_in_x00} hundred&quot;},
+&quot;default&quot;: &quot;{number}&quot;
+}
+</code></pre>
+<p>Lets use 1969 as an example with language en-us:</p>
+<p>The string '969' is used, and matches the first (and only) list entry. <code>{x_in_x00}</code> is nine, so the end result is <code>'nine hundred'</code>.</p>
+<p>The result of the hundreds format is <code>{formatted_hundreds}</code>, that can be used as a component in other formats.</p>
+<p>In the hundreds format, we are only interested in how to pronounce the first digit of the hundreds, we use the <code>year_format</code> to put together the decade, hundreds and thousand formats laster.</p>
+<h4 id="components-in-the-hundreds-format">Components in the hundreds format</h4>
+<p>The following components can be used in the hundreds format:</p>
+<ul>
+<li>{xxx}</li>
+<li>{x00}</li>
+<li>{x_in_x00}</li>
+<li>{formatted_decade}</li>
+<li>{number}</li>
+</ul>
+<p>Even if <code>{formatted_decade}</code> can be used as a component in hundreds, it is usually easier to configure, test and read if it is not used. Instead use the <code>year_format</code> to put hundreds and decades together.</p>
+<h3 id="the-thousands_format">The thousands_format</h3>
+<p>The thousand format will work on the four rightmost digits of the year. For <code>en-us</code> it looks like this:</p>
+<pre><code class="language-json">&quot;thousand_format&quot;: {
+    &quot;1&quot;: {&quot;match&quot;: &quot;^\\d00\\d$&quot;, &quot;format&quot;: &quot;{x_in_x000} thousand&quot;},
+    &quot;2&quot;: {&quot;match&quot;: &quot;^1\\d00$&quot;, &quot;format&quot;: &quot;{xx_in_xx00} hundred&quot;},
+    &quot;3&quot;: {&quot;match&quot;: &quot;^\\d{2}00$&quot;, &quot;format&quot;: &quot;{x0_in_x000} {x_in_x00} hundred&quot;},
+    &quot;4&quot;: {&quot;match&quot;: &quot;^(1\\d{3})|(\\d0\\d{2})$&quot;, &quot;format&quot;: &quot;{xx_in_xx00}&quot;},
+    &quot;5&quot;: {&quot;match&quot;: &quot;^\\d{4}$&quot;, &quot;format&quot;: &quot;{x0_in_x000} {x_in_x00}&quot;},
+    &quot;default&quot;: &quot;{number}&quot;
+}
+</code></pre>
+<p>The first list entry handles thousands and the first decade (year 0-9) of a thousand, e.g. 3004, or 2000.</p>
+<p>The second list entry handles the hundreds in range 1100 to 1900 (e.g. 1800), and the third entry handles the hundreds above 1900, e.g. 2100.
+Note that since the first entry caught whole thousands, like 2000, the third entry will only catch the thousand with a century, like 2100.</p>
+<p>The fourth list entry handles whatever was not handled before, and are either below 2000, or before the first century of a thousand, e.g. 1864 or 3021.</p>
+<p>The fifth entry handles the rest, e.g. 2113.</p>
+<p>In the thousands format, we are only interested in how to pronounce the first two digits of the thousand, we use the <code>year_format</code> to put together the decade, hundreds and thousand formats later.</p>
+<p>Lets use 1969 as an example with language <code>en-us</code>:</p>
+<p>The string <code>'1969'</code> is used, it matches the fourth list entry and is formatted to <code>'nineteen'</code>. In the <code>year_format</code> this will be combined with <code>'sixty nine'</code> from the <code>decade_format</code>, to produce <code>'nineteen sixty nine'</code>.</p>
+<p>The result of the thousands format is <code>{formatted_thousands}</code>, that can be used as a component in other formats.</p>
+<h4 id="components-in-the-thousand-format">Components in the thousand format</h4>
+<p>The following components can be used in the thousand format:</p>
+<ul>
+<li>{x_in_x00}</li>
+<li>{xx00}</li>
+<li>{xx_in_xx00}</li>
+<li>{x000}</li>
+<li>{x_in_x000}</li>
+<li>{formatted_decade}</li>
+<li>{formatted_hundreds}</li>
+<li>{number}</li>
+</ul>
+<p>Even if <code>{formatted_decade}</code> and <code>{formatted_hundreds}</code> can be used as a component in thousands, it is usually easier to configure, test and read if it is not used. Instead use the <code>year_format</code> to put thousands, hundreds and decades together.</p>
+<h3 id="the-year_format">The year_format</h3>
+<p>This section contains information on how to format a pronounceable year. For <code>en-us</code> the configuration looks like this:</p>
+<pre><code class="language-json">  &quot;year_format&quot;: {
+    &quot;1&quot;: {&quot;match&quot;: &quot;^\\d\\d?$&quot;, &quot;format&quot;: &quot;{formatted_decade} {bc}&quot;},
+    &quot;2&quot;: {&quot;match&quot;: &quot;^\\d00$&quot;, &quot;format&quot;: &quot;{formatted_hundreds} {bc}&quot;},
+    &quot;3&quot;: {&quot;match&quot;: &quot;^\\d{3}$&quot;, &quot;format&quot;: &quot;{formatted_hundreds} {formatted_decade} {bc}&quot;},
+    &quot;4&quot;: {&quot;match&quot;: &quot;^\\d{2}00$&quot;, &quot;format&quot;: &quot;{formatted_thousand} {bc}&quot;},
+    &quot;5&quot;: {&quot;match&quot;: &quot;^\\d00\\d$&quot;, &quot;format&quot;: &quot;{formatted_thousand} {formatted_decade} {bc}&quot;},
+    &quot;6&quot;: {&quot;match&quot;: &quot;^\\d{2}0\\d$&quot;, &quot;format&quot;: &quot;{formatted_thousand} oh {formatted_decade} {bc}&quot;},
+    &quot;7&quot;: {&quot;match&quot;: &quot;^\\d{4}$&quot;, &quot;format&quot;: &quot;{formatted_thousand} {formatted_decade} {bc}&quot;},
+    &quot;default&quot;: &quot;{year} {bc}&quot;,
+  &quot;bc&quot;: &quot;b.c.&quot;
+}
+</code></pre>
+<p>The first entry handles years below 100, e.g. 22 (twenty two).</p>
+<p>The second entry handles years below 1000, that are multiples of 100, e.g. 800 (eight hundred).</p>
+<p>The third entry handles years below 1000, that are not multiples of 100 (they were caught by the second entry), e.g. 832 (eight hundred thirty two).</p>
+<p>The fourth entry handles years that are multiples of 100, e.g. 2000 (two thousand).</p>
+<p>The fifth entry handles the first decade of a millennia, e.g. 2001 (two thousand one).
+The sixth entry handles the first decade of other years than millennia (millennia was caught earlier), e.g. 2101 (twenty one oh one).</p>
+<p>The seventh entry handles the rest, e.g. 2018 (twenty eighteen).</p>
+<p>The default entry is used if the year is larger than 9999.</p>
+<p>The entry "bc" is the string to be used in the year format, if the year is b.c. Python does not handle years b.c. and a year b.c. is made by creating a datetime of the year (a.d.), and calling nice_year() whit the bc flag set to True. When bc=False, or not provided, the {bc} format is not used when creating the year.</p>
+<p>The result of the year format is <code>{formatted_year}</code>, that can be used as a component in other formats.</p>
+<h4 id="components-in-the-year-template">Components in the year template</h4>
+<ul>
+<li>{formatted_decade}</li>
+<li>{formatted_hundreds}</li>
+<li>{formatted_thousands}</li>
+<li>{century} : The datetime century as digits</li>
+<li>{decade}: The datetime decade as digits</li>
+<li>{year}: The datetime year as digits</li>
+<li>{bc}: A string to apply for years B.C.</li>
+</ul>
+<h3 id="the-date_format">The date_format</h3>
+<p>This section contains information on how to format a pronounceable date. For <code>en-us</code> the configuration looks like this:</p>
+<pre><code class="language-json">&quot;date_format&quot;: {
+    &quot;date_full&quot;: &quot;{weekday}, {month} {day}, {formatted_year}&quot;,
+    &quot;date_full_no_year&quot;: &quot;{weekday}, {month} {day}&quot;,
+    &quot;date_full_no_year_month&quot;: &quot;{weekday}, {day}&quot;,
+    &quot;today&quot;: &quot;today&quot;,
+    &quot;tomorrow&quot;: &quot;tomorrow&quot;,
+    &quot;yesterday&quot;: &quot;yesterday&quot;
+}
+</code></pre>
+<p>The <code>nice_date()</code> function takes an optional <code>now</code> parameter in addition to the <code>datetime</code> parameter. If the <code>now</code> parameter is not supplied, the <code>date_full</code> format is always used. If the <code>now</code> parameter is supplied, the other formats may come into play, as described below in the paragraph about keys for the <code>date_format</code>.</p>
+<p>If your language doesn't have, for instance, a tradition for saying yesterday, it is of course possible to use arguments here instead. For example:</p>
+<pre><code class="language-json">&quot;yesterday&quot;: &quot;{weekday}, {month} {day}, {formatted_year}&quot;
+</code></pre>
+<p>will create the same output as <code>date_full</code> above, in case of yesterday.</p>
+<p>The result of the date format is <code>{formatted_date}</code>, that can be used as a component in other formats.</p>
+<p>The following keys exist for the date_format:</p>
+<ul>
+<li>"date_full": A format containing a full date</li>
+<li>"date_full_no_year": A format without the year, used if the "now" date parameter is set, and if "now" is in the same year and before the date.</li>
+<li>"date_full_no_year_month": A format without the year and month, used if the "now" date parameter is set, and if "now" is before the date and is in the same year and month as the date.</li>
+<li>"today": The word for today, used if the "now" date parameter is set, and if "now" is in the same year and month and day as the date.</li>
+<li>"tomorrow": The word for tomorrow, used if the "now" date parameter is set, and if "now" is in the same year and month, but one day before the day in the date.</li>
+<li>"yesterday": The word for yesterday, used if the "now" date parameter is set, and if "now" is in the same year and month, but one day after the day in the date.</li>
+</ul>
+<h4 id="components-in-the-date-template">Components in the date template</h4>
+<ul>
+<li>{formatted_year}: The year formatted like in <a href="## The year_format">The year_format</a></li>
+<li>{weekday}: The weekday, formatted according to <a href="## The weekday section">The weekday section</a></li>
+<li>{month}: The month, formatted according to <a href="## The month section">The month section</a></li>
+<li>{day}: The day of the month, formatted according to <a href="## The date section">The date section</a></li>
+</ul>
+<h3 id="the-date_time_format">The date_time_format</h3>
+<p>This section contains information on how to format a pronounceable date and time. For <code>en-us</code> the configuration looks like this:</p>
+<pre><code class="language-json">&quot;date_time_format&quot;: {
+&quot;date_time&quot;: &quot;{formatted_date} at {formatted_time}&quot;
+}
+</code></pre>
+<p>The formatted time is obtained using the existing <code>mycroft.util.nice_time()</code> function. The output of this function is not configurable like the other formatting functions mentioned in this document. If <code>mycroft.util.nice_time()</code> does not support a language, it will still produce a string, but it will not be formatted.</p>
+<h4 id="arguments-to-format-templates">Arguments to format templates</h4>
+<ul>
+<li>{formatted_date}: Date formatted as specified in the "date_format" section</li>
+<li>{formatted_time}: Time formatted by nice_time(), <a href="https://mycroft-core.readthedocs.io/en/latest/">please refer to the Mycroft API documentation</a></li>
+</ul>
+<h2 id="maps">Maps</h2>
+<h3 id="the-weekday-section">The weekday section</h3>
+<p>A map from the day number in the week to the pronounceable weekday name</p>
+<h3 id="the-date-section">The date section</h3>
+<p>A map from date as a number to a pronounceable date</p>
+<h3 id="the-month-section">The month section</h3>
+<p>A map from the month number to a pronounceable month</p>
+<h2 id="unit-testing">Unit testing</h2>
+<p>A new language requires new unit tests, to ensure that it produce correct results. Unit tests that assert that all years between 1 and 9999 produce a non-empty string, and that all dates in a year produce a non-empty string, already exist. The unit tests will automatically find and test a new language.</p>
+<p>To prove the likelihood that formatting makes sense, a configuration file must be provided, that lists the unit tests. One unit test file exists for each language, it is placed in:</p>
+<pre><code class="language-text">mycroft/res/text//date_time_test.json
+</code></pre>
+<p>Section <a href="# Test file for en-us">Test file for en-us</a> contains the test file for the en-us language. It has three sections:</p>
+<ul>
+<li>test_nice_year</li>
+<li>test_nice_date</li>
+<li>test_nice_date_time</li>
+</ul>
+<p>one section for each of the three <code>nice_*()</code> functions.</p>
+<p>For each section there is a list, the index must start at 1 and continue in increments of 1. The content of a list entry is <code>datetime_param</code>, which contains the parameters that the Python datetime.datetime class take. Then there is <code>assertEqual</code>, which is the expected formatted value when given the datetime. Each <code>nice_*()</code> function takes different parameters, the parameters must be specified in the list entry as well, they cannot be omitted even if they are Python <code>None</code>.</p>
+<h2 id="configuration-file-for-en-us">Configuration file for en-us</h2>
+<pre><code class="language-json">{
+  &quot;decade_format&quot;: {
+    &quot;1&quot;: { &quot;match&quot;: &quot;^\\d$&quot;, &quot;format&quot;: &quot;{x}&quot; },
+    &quot;2&quot;: { &quot;match&quot;: &quot;^1\\d$&quot;, &quot;format&quot;: &quot;{xx}&quot; },
+    &quot;3&quot;: { &quot;match&quot;: &quot;^\\d0$&quot;, &quot;format&quot;: &quot;{x0}&quot; },
+    &quot;4&quot;: { &quot;match&quot;: &quot;^[2-9]\\d$&quot;, &quot;format&quot;: &quot;{x0} {x}&quot; },
+    &quot;default&quot;: &quot;{number}&quot;
+  },
+  &quot;hundreds_format&quot;: {
+    &quot;1&quot;: { &quot;match&quot;: &quot;^\\d{3}$&quot;, &quot;format&quot;: &quot;{x_in_x00} hundred&quot; },
+    &quot;default&quot;: &quot;{number}&quot;
+  },
+  &quot;thousand_format&quot;: {
+    &quot;1&quot;: { &quot;match&quot;: &quot;^\\d00\\d$&quot;, &quot;format&quot;: &quot;{x_in_x000} thousand&quot; },
+    &quot;2&quot;: { &quot;match&quot;: &quot;^1\\d00$&quot;, &quot;format&quot;: &quot;{xx_in_xx00} hundred&quot; },
+    &quot;3&quot;: { &quot;match&quot;: &quot;^\\d{2}00$&quot;, &quot;format&quot;: &quot;{x0_in_x000} {x_in_x00} hundred&quot; },
+    &quot;4&quot;: { &quot;match&quot;: &quot;^(1\\d{3})|(\\d0\\d{2})$&quot;, &quot;format&quot;: &quot;{xx_in_xx00}&quot; },
+    &quot;5&quot;: { &quot;match&quot;: &quot;^\\d{4}$&quot;, &quot;format&quot;: &quot;{x0_in_x000} {x_in_x00}&quot; },
+    &quot;default&quot;: &quot;{number}&quot;
+  },
+  &quot;year_format&quot;: {
+    &quot;1&quot;: { &quot;match&quot;: &quot;^\\d\\d?$&quot;, &quot;format&quot;: &quot;{formatted_decade} {bc}&quot; },
+    &quot;2&quot;: { &quot;match&quot;: &quot;^\\d00$&quot;, &quot;format&quot;: &quot;{formatted_hundreds} {bc}&quot; },
+    &quot;3&quot;: {
+      &quot;match&quot;: &quot;^\\d{3}$&quot;,
+      &quot;format&quot;: &quot;{formatted_hundreds} {formatted_decade} {bc}&quot;
+    },
+    &quot;4&quot;: { &quot;match&quot;: &quot;^\\d{2}00$&quot;, &quot;format&quot;: &quot;{formatted_thousand} {bc}&quot; },
+    &quot;5&quot;: {
+      &quot;match&quot;: &quot;^\\d00\\d$&quot;,
+      &quot;format&quot;: &quot;{formatted_thousand} {formatted_decade} {bc}&quot;
+    },
+    &quot;6&quot;: {
+      &quot;match&quot;: &quot;^\\d{2}0\\d$&quot;,
+      &quot;format&quot;: &quot;{formatted_thousand} oh {formatted_decade} {bc}&quot;
+    },
+    &quot;7&quot;: {
+      &quot;match&quot;: &quot;^\\d{4}$&quot;,
+      &quot;format&quot;: &quot;{formatted_thousand} {formatted_decade} {bc}&quot;
+    },
+    &quot;default&quot;: &quot;{year} {bc}&quot;,
+    &quot;bc&quot;: &quot;b.c.&quot;
+  },
+  &quot;date_format&quot;: {
+    &quot;date_full&quot;: &quot;{weekday}, {month} {day}, {formatted_year}&quot;,
+    &quot;date_full_no_year&quot;: &quot;{weekday}, {month} {day}&quot;,
+    &quot;date_full_no_year_month&quot;: &quot;{weekday}, {day}&quot;,
+    &quot;today&quot;: &quot;today&quot;,
+    &quot;tomorrow&quot;: &quot;tomorrow&quot;,
+    &quot;yesterday&quot;: &quot;yesterday&quot;
+  },
+  &quot;date_time_format&quot;: {
+    &quot;date_time&quot;: &quot;{formatted_date} at {formatted_time}&quot;
+  },
+  &quot;weekday&quot;: {
+    &quot;0&quot;: &quot;monday&quot;,
+    &quot;1&quot;: &quot;tuesday&quot;,
+    &quot;2&quot;: &quot;wednesday&quot;,
+    &quot;3&quot;: &quot;thursday&quot;,
+    &quot;4&quot;: &quot;friday&quot;,
+    &quot;5&quot;: &quot;saturday&quot;,
+    &quot;6&quot;: &quot;sunday&quot;
+  },
+  &quot;date&quot;: {
+    &quot;1&quot;: &quot;first&quot;,
+    &quot;2&quot;: &quot;second&quot;,
+    &quot;3&quot;: &quot;third&quot;,
+    &quot;4&quot;: &quot;fourth&quot;,
+    &quot;5&quot;: &quot;fifth&quot;,
+    &quot;6&quot;: &quot;sixth&quot;,
+    &quot;7&quot;: &quot;seventh&quot;,
+    &quot;8&quot;: &quot;eighth&quot;,
+    &quot;9&quot;: &quot;ninth&quot;,
+    &quot;10&quot;: &quot;tenth&quot;,
+    &quot;11&quot;: &quot;eleventh&quot;,
+    &quot;12&quot;: &quot;twelfth&quot;,
+    &quot;13&quot;: &quot;thirteenth&quot;,
+    &quot;14&quot;: &quot;fourteenth&quot;,
+    &quot;15&quot;: &quot;fifteenth&quot;,
+    &quot;16&quot;: &quot;sixteenth&quot;,
+    &quot;17&quot;: &quot;seventeenth&quot;,
+    &quot;18&quot;: &quot;eighteenth&quot;,
+    &quot;19&quot;: &quot;nineteenth&quot;,
+    &quot;20&quot;: &quot;twentieth&quot;,
+    &quot;21&quot;: &quot;twenty-first&quot;,
+    &quot;22&quot;: &quot;twenty-second&quot;,
+    &quot;23&quot;: &quot;twenty-third&quot;,
+    &quot;24&quot;: &quot;twenty-fourth&quot;,
+    &quot;25&quot;: &quot;twenty-fifth&quot;,
+    &quot;26&quot;: &quot;twenty-sixth&quot;,
+    &quot;27&quot;: &quot;twenty-seventh&quot;,
+    &quot;28&quot;: &quot;twenty-eighth&quot;,
+    &quot;29&quot;: &quot;twenty-ninth&quot;,
+    &quot;30&quot;: &quot;thirtieth&quot;,
+    &quot;31&quot;: &quot;thirty-first&quot;
+  },
+  &quot;month&quot;: {
+    &quot;1&quot;: &quot;january&quot;,
+    &quot;2&quot;: &quot;february&quot;,
+    &quot;3&quot;: &quot;march&quot;,
+    &quot;4&quot;: &quot;april&quot;,
+    &quot;5&quot;: &quot;may&quot;,
+    &quot;6&quot;: &quot;june&quot;,
+    &quot;7&quot;: &quot;july&quot;,
+    &quot;8&quot;: &quot;august&quot;,
+    &quot;9&quot;: &quot;september&quot;,
+    &quot;10&quot;: &quot;october&quot;,
+    &quot;11&quot;: &quot;november&quot;,
+    &quot;12&quot;: &quot;december&quot;
+  },
+  &quot;number&quot;: {
+    &quot;0&quot;: &quot;zero&quot;,
+    &quot;1&quot;: &quot;one&quot;,
+    &quot;2&quot;: &quot;two&quot;,
+    &quot;3&quot;: &quot;three&quot;,
+    &quot;4&quot;: &quot;four&quot;,
+    &quot;5&quot;: &quot;five&quot;,
+    &quot;6&quot;: &quot;six&quot;,
+    &quot;7&quot;: &quot;seven&quot;,
+    &quot;8&quot;: &quot;eight&quot;,
+    &quot;9&quot;: &quot;nine&quot;,
+    &quot;10&quot;: &quot;ten&quot;,
+    &quot;11&quot;: &quot;eleven&quot;,
+    &quot;12&quot;: &quot;twelve&quot;,
+    &quot;13&quot;: &quot;thirteen&quot;,
+    &quot;14&quot;: &quot;fourteen&quot;,
+    &quot;15&quot;: &quot;fifteen&quot;,
+    &quot;16&quot;: &quot;sixteen&quot;,
+    &quot;17&quot;: &quot;seventeen&quot;,
+    &quot;18&quot;: &quot;eighteen&quot;,
+    &quot;19&quot;: &quot;nineteen&quot;,
+    &quot;20&quot;: &quot;twenty&quot;,
+    &quot;30&quot;: &quot;thirty&quot;,
+    &quot;40&quot;: &quot;forty&quot;,
+    &quot;50&quot;: &quot;fifty&quot;,
+    &quot;60&quot;: &quot;sixty&quot;,
+    &quot;70&quot;: &quot;seventy&quot;,
+    &quot;80&quot;: &quot;eighty&quot;,
+    &quot;90&quot;: &quot;ninety&quot;
+  }
+}
+</code></pre>
+<h2 id="test-file-for-en-us">Test file for en-us</h2>
+<pre><code class="language-json">{
+  &quot;test_nice_year&quot;: {
+    &quot;1&quot;: {
+      &quot;datetime_param&quot;: &quot;1, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;True&quot;,
+      &quot;assertEqual&quot;: &quot;one b.c.&quot;
+    },
+    &quot;2&quot;: {
+      &quot;datetime_param&quot;: &quot;10, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;True&quot;,
+      &quot;assertEqual&quot;: &quot;ten b.c.&quot;
+    },
+    &quot;3&quot;: {
+      &quot;datetime_param&quot;: &quot;92, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;True&quot;,
+      &quot;assertEqual&quot;: &quot;ninety two b.c.&quot;
+    },
+    &quot;4&quot;: {
+      &quot;datetime_param&quot;: &quot;803, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;eight hundred three&quot;
+    },
+    &quot;5&quot;: {
+      &quot;datetime_param&quot;: &quot;811, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;eight hundred eleven&quot;
+    },
+    &quot;6&quot;: {
+      &quot;datetime_param&quot;: &quot;454, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;four hundred fifty four&quot;
+    },
+    &quot;7&quot;: {
+      &quot;datetime_param&quot;: &quot;1005, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;one thousand five&quot;
+    },
+    &quot;8&quot;: {
+      &quot;datetime_param&quot;: &quot;1012, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;ten twelve&quot;
+    },
+    &quot;9&quot;: {
+      &quot;datetime_param&quot;: &quot;1046, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;ten forty six&quot;
+    },
+    &quot;10&quot;: {
+      &quot;datetime_param&quot;: &quot;1807, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;eighteen oh seven&quot;
+    },
+    &quot;11&quot;: {
+      &quot;datetime_param&quot;: &quot;1717, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;seventeen seventeen&quot;
+    },
+    &quot;12&quot;: {
+      &quot;datetime_param&quot;: &quot;1988, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;nineteen eighty eight&quot;
+    },
+    &quot;13&quot;: {
+      &quot;datetime_param&quot;: &quot;2009, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;two thousand nine&quot;
+    },
+    &quot;14&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;twenty eighteen&quot;
+    },
+    &quot;15&quot;: {
+      &quot;datetime_param&quot;: &quot;2021, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;twenty twenty one&quot;
+    },
+    &quot;16&quot;: {
+      &quot;datetime_param&quot;: &quot;2030, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;twenty thirty&quot;
+    },
+    &quot;17&quot;: {
+      &quot;datetime_param&quot;: &quot;2100, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;twenty one hundred&quot;
+    },
+    &quot;18&quot;: {
+      &quot;datetime_param&quot;: &quot;1000, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;one thousand&quot;
+    },
+    &quot;19&quot;: {
+      &quot;datetime_param&quot;: &quot;2000, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;two thousand&quot;
+    },
+    &quot;20&quot;: {
+      &quot;datetime_param&quot;: &quot;3120, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;True&quot;,
+      &quot;assertEqual&quot;: &quot;thirty one twenty b.c.&quot;
+    },
+    &quot;21&quot;: {
+      &quot;datetime_param&quot;: &quot;3241, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;True&quot;,
+      &quot;assertEqual&quot;: &quot;thirty two forty one b.c.&quot;
+    },
+    &quot;22&quot;: {
+      &quot;datetime_param&quot;: &quot;5200, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;fifty two hundred&quot;
+    },
+    &quot;23&quot;: {
+      &quot;datetime_param&quot;: &quot;1100, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;eleven hundred&quot;
+    },
+    &quot;24&quot;: {
+      &quot;datetime_param&quot;: &quot;2100, 1, 31, 13, 22, 3&quot;,
+      &quot;bc&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;twenty one hundred&quot;
+    }
+  },
+  &quot;test_nice_date&quot;: {
+    &quot;1&quot;: {
+      &quot;datetime_param&quot;: &quot;2017, 1, 31, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;None&quot;,
+      &quot;assertEqual&quot;: &quot;tuesday, january thirty-first, twenty seventeen&quot;
+    },
+    &quot;2&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2017, 1, 1, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;sunday, february fourth, twenty eighteen&quot;
+    },
+    &quot;3&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2018, 1, 1, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;sunday, february fourth&quot;
+    },
+    &quot;4&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2018, 2, 1, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;sunday, fourth&quot;
+    },
+    &quot;5&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2018, 2, 3, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;tomorrow&quot;
+    },
+    &quot;6&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;today&quot;
+    },
+    &quot;7&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2018, 2, 5, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;yesterday&quot;
+    },
+    &quot;8&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2018, 2, 6, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;sunday, february fourth&quot;
+    },
+    &quot;9&quot;: {
+      &quot;datetime_param&quot;: &quot;2018, 2, 4, 0, 2, 3&quot;,
+      &quot;now&quot;: &quot;2019, 2, 6, 0, 2, 3&quot;,
+      &quot;assertEqual&quot;: &quot;sunday, february fourth, twenty eighteen&quot;
+    }
+  },
+  &quot;test_nice_date_time&quot;: {
+    &quot;1&quot;: {
+      &quot;datetime_param&quot;: &quot;2017, 1, 31, 13, 22, 3&quot;,
+      &quot;now&quot;: &quot;None&quot;,
+      &quot;use_24hour&quot;: &quot;False&quot;,
+      &quot;use_ampm&quot;: &quot;True&quot;,
+      &quot;assertEqual&quot;: &quot;tuesday, january thirty-first, twenty seventeen at one twenty two PM&quot;
+    },
+    &quot;2&quot;: {
+      &quot;datetime_param&quot;: &quot;2017, 1, 31, 13, 22, 3&quot;,
+      &quot;now&quot;: &quot;None&quot;,
+      &quot;use_24hour&quot;: &quot;True&quot;,
+      &quot;use_ampm&quot;: &quot;False&quot;,
+      &quot;assertEqual&quot;: &quot;tuesday, january thirty-first, twenty seventeen at thirteen twenty two&quot;
+    }
+  }
+}
+</code></pre>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
