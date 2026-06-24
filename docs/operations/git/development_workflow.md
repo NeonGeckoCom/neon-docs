@@ -15,7 +15,10 @@ page to documentation is labeled `doc_developer-workflow`.
   git ref parsing that naively assumes it can segment the complete ref on `/`.
 
 This naming convention is not a hard requirement for submitting changes, but
-it is recommended to help quickly organize and manage branches.
+it is recommended to help quickly organize and manage branches. Note that 
+branch names are case-sensitive, but it is recommended to use lowercase strings
+for consistency and to avoid potential conflicts on file systems that are not
+case-sensitive (i.e. APFS on macOS).
 
 ## Committing Changes
 Since PRs will squash the commit history into a single commit on the base branch,
@@ -106,6 +109,9 @@ When rebasing a branch, it is possible that merge conflicts will arise due to
 changes in the base branch overlapping changes in the feature branch. When this
 happens, the developer performing the rebase must make decisions about how to
 resolve the conflicts.
+> Since these conflicts can be complicated to resolve, it may be best to defer
+  to or collaborate with the developer(s) who are responsible for the
+  conflicting changes.
 
 Since resolving conflicts is a potentially destructive operation, it is
 recommended to create a backup of the feature branch being rebased; this may
