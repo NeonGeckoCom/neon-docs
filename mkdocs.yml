@@ -138,6 +138,8 @@ nav:
         - Git:
             - Undo a Stable PR Workflow: operations/git/undo_stable_pr.md
             - Triage New GitHub Issues: operations/git/triage_issues.md
+            - Development Workflow: operations/git/development_workflow.md
+            - Pull Request Review: operations/git/review_pr.md
         - Skills:
             - Stable Release Workflow: operations/skills/workflow_stable_release.md
             - Alpha Release Workflow: operations/skills/workflow_alpha_release.md
